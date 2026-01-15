@@ -1,0 +1,72 @@
+'use client';
+
+import React from 'react';
+
+export default function CTA() {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src="/cta-background.png"
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6 py-24 lg:py-32 text-center">
+        {/* Headline */}
+        <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold italic tracking-tight leading-[1.1] mb-6">
+          Focused On Precision, Care,
+          <br />
+          And Long-Term Results
+        </h2>
+
+        {/* Subtitle */}
+        <p className="text-white/70 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-12 lg:mb-16">
+          Our practice is dedicated to providing orthodontic and aesthetic care through thoughtful treatment planning, modern technology, and a patient-centered approach.
+        </p>
+
+        {/* White Card */}
+        <div className="inline-block bg-white rounded-3xl p-6 lg:p-8 shadow-2xl max-w-xl mx-auto">
+          {/* Card Image */}
+          <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6 bg-[#0a0a0a]">
+            <img
+              src="/cta-small.png"
+              alt="Golden ratio proportion"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Card Content */}
+          <h3 className="text-[#1d1d1f] text-xl lg:text-2xl font-semibold tracking-tight mb-3">
+            Personalized, Technology-Driven Care
+          </h3>
+          <p className="text-[#1d1d1f]/60 text-sm lg:text-base leading-relaxed">
+            Every patient receives an individualized treatment plan supported by modern technology and focused on long-term stability and results.
+          </p>
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="mt-12 lg:mt-16 flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1d1d1f] text-sm font-semibold rounded-full hover:bg-white/90 transition-colors duration-200"
+          >
+            Schedule Free Consultation
+          </a>
+          <a
+            href="tel:+1234567890"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white text-sm font-medium rounded-full border border-white/30 hover:bg-white/10 transition-colors duration-200"
+          >
+            <iconify-icon icon="solar:phone-linear" width="18" height="18" />
+            Call (123) 456-7890
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
