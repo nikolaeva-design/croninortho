@@ -80,7 +80,7 @@ export default function Navbar() {
         {/* Logo Image */}
         <a
           href="/"
-          className="flex items-center group focus:outline-none focus:ring-2 focus:ring-white/50 rounded-lg"
+          className="flex items-center group focus:outline-none"
           aria-label="CroninOrtho - Go to homepage"
         >
           <Image
