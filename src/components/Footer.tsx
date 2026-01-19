@@ -27,16 +27,17 @@ export default function Footer() {
       role="contentinfo"
     >
       {/* Top Image Section */}
-      <div className="relative h-[200px] lg:h-[300px] overflow-hidden">
+      <div className="relative h-[280px] sm:h-[350px] lg:h-[420px] overflow-hidden">
         <Image
-          src="/smile-woman.png"
-          alt="Happy patient showing confident smile after orthodontic treatment at CroninOrtho"
+          src="/adults-ortho.png"
+          alt="Close-up of a confident smile with clear braces at CroninOrtho"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
         />
+        {/* Bottom gradient - blends with footer */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-transparent to-[#141414]"
+          className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#141414] to-transparent"
           aria-hidden="true"
         />
       </div>
@@ -87,7 +88,7 @@ export default function Footer() {
             </div>
 
             {/* Inner Pages */}
-            <nav className="lg:col-span-2" aria-label="Main navigation">
+            <nav className="lg:col-span-2 lg:col-start-7" aria-label="Main navigation">
               <h3 className="text-white text-sm font-semibold mb-6">
                 Inner Pages
               </h3>
@@ -106,7 +107,7 @@ export default function Footer() {
             </nav>
 
             {/* Utility Pages */}
-            <nav className="lg:col-span-2" aria-label="Utility pages">
+            <nav className="lg:col-span-3 lg:col-start-10" aria-label="Utility pages">
               <h3 className="text-white text-sm font-semibold mb-6">
                 Utility Pages
               </h3>
@@ -123,43 +124,6 @@ export default function Footer() {
                 ))}
               </ul>
             </nav>
-
-            {/* Newsletter */}
-            <div className="lg:col-span-4">
-              <h3 className="text-white text-sm font-semibold mb-4">
-                Subscribe to Newsletter
-              </h3>
-              <p className="text-white/40 text-sm mb-6">
-                Stay updated with our latest news, tips, and special
-                offers—straight to your inbox.
-              </p>
-
-              <form
-                className="space-y-4"
-                onSubmit={(e) => e.preventDefault()}
-                aria-label="Newsletter subscription form"
-              >
-                <div>
-                  <label htmlFor="newsletter-email" className="sr-only">
-                    Email address
-                  </label>
-                  <input
-                    id="newsletter-email"
-                    type="email"
-                    placeholder="Enter your email address"
-                    required
-                    autoComplete="email"
-                    className="w-full px-5 py-4 bg-transparent border border-white/10 rounded-xl text-white text-sm placeholder:text-white/30 focus:outline-none focus:border-white/30 focus:ring-2 focus:ring-white/10 transition-colors"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full px-8 py-4 bg-white text-[#141414] text-sm font-medium rounded-full hover:bg-white/90 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#141414]"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </div>

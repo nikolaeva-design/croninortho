@@ -18,6 +18,7 @@ const careTypes = [
     imageAlt:
       'Child receiving early orthodontic treatment with ceramic braces for growth modification and bite correction',
     badgeText: 'Ceramic Orthodontic System',
+    href: '/orthodontics/kids',
   },
   {
     id: 'teens',
@@ -32,6 +33,7 @@ const careTypes = [
     imageAlt:
       'Teenager showing results of comprehensive orthodontic treatment with advanced alignment system',
     badgeText: 'Advanced Alignment System',
+    href: '/orthodontics/teens',
   },
   {
     id: 'adults',
@@ -46,6 +48,7 @@ const careTypes = [
     imageAlt:
       'Adult patient with Invisalign clear aligners demonstrating discreet orthodontic treatment options',
     badgeText: 'Invisalign Clear Aligners',
+    href: '/orthodontics/adults',
   },
 ];
 
@@ -201,7 +204,7 @@ export default function OrthodonticCare() {
                   <Button
                     variant="secondary"
                     size="md"
-                    href="#contact"
+                    href={care.href}
                     className="w-fit border-none px-0 hover:bg-transparent hover:scale-100"
                     icon="solar:arrow-right-linear"
                   >

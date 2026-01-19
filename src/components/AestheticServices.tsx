@@ -220,7 +220,7 @@ export default function AestheticServices() {
 
               {/* Image - Right Side with mask */}
               <div 
-                className="absolute inset-0"
+                className="absolute -inset-1"
                 style={{
                   maskImage: 'linear-gradient(to left, black 0%, black 30%, transparent 80%)',
                   WebkitMaskImage: 'linear-gradient(to left, black 0%, black 30%, transparent 80%)'
@@ -232,7 +232,7 @@ export default function AestheticServices() {
                   fill
                   quality={100}
                   priority
-                  className="object-cover object-[85%_30%]"
+                  className="object-cover object-[80%_30%] scale-105"
                   sizes="(max-width: 1024px) 100vw, 66vw"
                 />
               </div>

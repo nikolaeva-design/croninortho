@@ -5,7 +5,7 @@ import AestheticServices from '@/components/AestheticServices';
 import OtherServices from '@/components/OtherServices';
 import CTA from '@/components/CTA';
 import About from '@/components/About';
-import Gallery from '@/components/Gallery';
+import Technology from '@/components/Technology';
 import LogoSection from '@/components/LogoSection';
 import Footer from '@/components/Footer';
 
@@ -22,8 +22,8 @@ export default function Home() {
 
       <Navbar />
 
-      <main id="main-content" className="min-h-screen">
-        {/* Main content - above the fixed LogoSection */}
+      <main id="main-content">
+        {/* Main content sections */}
         <div className="relative z-10 bg-background">
           <Hero />
           <OrthodonticCare />
@@ -31,14 +31,17 @@ export default function Home() {
           <OtherServices />
           <CTA />
           <About />
-          <Gallery />
+          <Technology />
         </div>
-        {/* LogoSection is fixed at z-0 */}
+        
+        {/* LogoSection with sticky scroll animation */}
         <LogoSection />
+        
+        {/* Footer slides over after LogoSection */}
+        <div className="relative z-20 bg-background">
+          <Footer />
+        </div>
       </main>
-
-      {/* Footer slides over LogoSection */}
-      <Footer />
     </>
   );
 }

@@ -1,125 +1,141 @@
 'use client';
 
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 
+// Logo positions - start positions (percentage from center)
+const logos = [
+  { id: 'apple', icon: 'logos:apple-pay', startX: -40, startY: -35, size: 64 },
+  { id: 'google', icon: 'logos:google-pay', startX: 40, startY: -35, size: 64 },
+  { id: 'visa', icon: 'logos:visa', startX: -45, startY: 5, size: 56 },
+  { id: 'mastercard', icon: 'logos:mastercard', startX: 45, startY: 5, size: 56 },
+  { id: 'amex', icon: 'logos:amex', startX: -30, startY: 30, size: 48 },
+  { id: 'discover', icon: 'logos:discover', startX: -40, startY: 40, size: 48 },
+  { id: 'diners', icon: 'logos:diners-club', startX: 40, startY: 40, size: 48 },
+  { id: 'paypal', icon: 'logos:paypal', startX: 30, startY: 30, size: 48 },
+];
+
 export default function LogoSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    let animationFrame: number;
+    let currentProgress = 0;
+    let targetProgress = 0;
+
+    const animate = () => {
+      currentProgress += (targetProgress - currentProgress) * 0.1;
+      setProgress(currentProgress);
+      animationFrame = requestAnimationFrame(animate);
+    };
+
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      const sectionHeight = rect.height;
+      const scrollableHeight = sectionHeight - window.innerHeight;
+      
+      // How far we've scrolled into the sticky section
+      const scrolled = -rect.top;
+      
+      // Calculate progress (0 to 1)
+      let prog = scrolled / scrollableHeight;
+      prog = Math.max(0, Math.min(1, prog));
+      
+      targetProgress = prog;
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(animationFrame);
+    };
+  }, []);
+
+  // Calculate logo position based on progress
+  const getLogoStyle = (logo: typeof logos[0]) => {
+    // Ease function for smoother animation
+    const easeProgress = progress < 0.5 
+      ? 2 * progress * progress 
+      : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+    const x = logo.startX * (1 - easeProgress);
+    const y = logo.startY * (1 - easeProgress);
+    const scale = 1 - (easeProgress * 0.5); // Scale down as they approach center
+    const opacity = 1 - (easeProgress * 0.8); // Fade out as they approach center
+
+    return {
+      transform: `translate(${x}vw, ${y}vh) scale(${scale})`,
+      opacity: Math.max(0.1, opacity),
+    };
+  };
+
   return (
-    <>
-      {/* Fixed background section - stays in place */}
-      <section
-        className="fixed inset-0 bg-[#e8e8e8] flex items-center justify-center overflow-hidden z-0"
-        aria-label="Accepted Payment Methods"
-      >
-        <div className="relative max-w-[1400px] w-full mx-auto px-6 lg:px-12 min-h-[500px] lg:min-h-[600px]">
-          {/* Floating Logos - Using Iconify for reliable display */}
+    <div 
+      ref={sectionRef}
+      className="relative"
+      style={{ height: '300vh' }} // 3x viewport height for scroll distance
+    >
+      {/* Sticky container */}
+      <div className="sticky top-0 h-screen bg-[#e8e8e8] flex items-center justify-center overflow-hidden">
+        <div className="relative w-full h-full">
+          
+          {/* Floating Payment Logos */}
+          {logos.map((logo) => (
+            <div
+              key={logo.id}
+              className="absolute top-1/2 left-1/2 transition-none pointer-events-none"
+              style={{
+                ...getLogoStyle(logo),
+                marginLeft: -logo.size / 2,
+                marginTop: -logo.size / 2,
+              }}
+            >
+              <iconify-icon
+                icon={logo.icon}
+                width={logo.size}
+                height={logo.size / 2}
+                aria-hidden="true"
+              />
+            </div>
+          ))}
 
-          {/* Top Left - Apple Pay */}
-          <div
-            className="absolute top-8 left-8 lg:top-12 lg:left-16 opacity-40 hover:opacity-100 transition-opacity duration-300"
-            aria-label="Apple Pay accepted"
+          {/* Center - Main Logo (always visible, grows slightly) */}
+          <div 
+            className="absolute inset-0 flex items-center justify-center z-10"
           >
-            <iconify-icon
-              icon="logos:apple-pay"
-              width="48"
-              height="24"
-              aria-hidden="true"
-            />
+            <div
+              style={{
+                transform: `scale(${1 + progress * 0.2})`,
+              }}
+            >
+              <Image
+                src="/logo.svg"
+                alt="CroninOrtho - Dr. D.G. Cronin & Dr. M. Sarfraz Orthodontic Practice"
+                width={320}
+                height={64}
+                className="h-16 lg:h-20 xl:h-24 w-auto object-contain invert"
+                priority
+              />
+            </div>
           </div>
 
-          {/* Top Right - Google Pay */}
-          <div
-            className="absolute top-8 right-8 lg:top-12 lg:right-16 opacity-40 hover:opacity-100 transition-opacity duration-300"
-            aria-label="Google Pay accepted"
-          >
-            <iconify-icon
-              icon="logos:google-pay"
-              width="48"
-              height="24"
-              aria-hidden="true"
-            />
-          </div>
+          {/* Subtle radial glow when logos converge */}
+          <div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full pointer-events-none transition-opacity duration-500"
+            style={{
+              background: 'radial-gradient(circle, rgba(0,0,0,0.05) 0%, transparent 70%)',
+              opacity: progress,
+            }}
+          />
 
-          {/* Center - Main Logo */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <Image
-              src="/logo.svg"
-              alt="CroninOrtho - Dr. D.G. Cronin & Dr. M. Sarfraz Orthodontic Practice"
-              width={280}
-              height={56}
-              className="h-14 lg:h-16 xl:h-20 w-auto object-contain invert"
-            />
-          </div>
-
-          {/* Middle Left - Visa */}
-          <div
-            className="absolute top-[55%] left-4 lg:left-8 opacity-40 hover:opacity-100 transition-opacity duration-300"
-            aria-label="Visa accepted"
-          >
-            <iconify-icon
-              icon="logos:visa"
-              width="48"
-              height="24"
-              aria-hidden="true"
-            />
-          </div>
-
-          {/* Middle Right - Mastercard */}
-          <div
-            className="absolute top-[55%] right-4 lg:right-8 opacity-40 hover:opacity-100 transition-opacity duration-300"
-            aria-label="Mastercard accepted"
-          >
-            <iconify-icon
-              icon="logos:mastercard"
-              width="48"
-              height="24"
-              aria-hidden="true"
-            />
-          </div>
-
-          {/* Bottom Center Left - Amex */}
-          <div
-            className="absolute bottom-[30%] left-[20%] lg:left-[25%] opacity-40 hover:opacity-100 transition-opacity duration-300"
-            aria-label="American Express accepted"
-          >
-            <iconify-icon
-              icon="logos:amex"
-              width="48"
-              height="24"
-              aria-hidden="true"
-            />
-          </div>
-
-          {/* Bottom Left - Discover */}
-          <div
-            className="absolute bottom-12 left-8 lg:bottom-16 lg:left-16 opacity-40 hover:opacity-100 transition-opacity duration-300"
-            aria-label="Discover accepted"
-          >
-            <iconify-icon
-              icon="logos:discover"
-              width="48"
-              height="24"
-              aria-hidden="true"
-            />
-          </div>
-
-          {/* Bottom Right - Diners Club */}
-          <div
-            className="absolute bottom-12 right-8 lg:bottom-16 lg:right-16 opacity-40 hover:opacity-100 transition-opacity duration-300"
-            aria-label="Diners Club accepted"
-          >
-            <iconify-icon
-              icon="logos:diners-club"
-              width="48"
-              height="24"
-              aria-hidden="true"
-            />
-          </div>
         </div>
-      </section>
-
-      {/* Spacer to maintain scroll height */}
-      <div className="h-screen" aria-hidden="true" />
-    </>
+      </div>
+    </div>
   );
 }

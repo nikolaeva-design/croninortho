@@ -9,7 +9,7 @@ const services = [
     title: 'Retainers',
     description:
       'Retainers are used after orthodontic treatment to help maintain the final position of the teeth and preserve long-term results.',
-    image: '/Gemini_Generated_Image_7lyjnr7lyjnr7lyj (1).png',
+    image: '/Gemini_Generated_Image_ncuakencuakencua (1).png',
     alt: 'Clear retainer - maintains teeth alignment with 8-10 hours daily usage',
   },
   {
@@ -17,7 +17,7 @@ const services = [
     title: 'Nightguards',
     description:
       'Nightguards help protect teeth and reduce stress on the jaw during sleep, particularly for patients who grind or clench their teeth.',
-    image: '/Gemini_Generated_Image_ncuakencuakencua (1).png',
+    image: '/Gemini_Generated_Image_sy8cpxsy8cpxsy8c (1).png',
     alt: 'Night guard - reduces grinding and clenching, supports TMJ comfort',
   },
   {
@@ -25,26 +25,26 @@ const services = [
     title: 'Splints',
     description:
       'Splints are therapeutic appliances used to support jaw alignment and manage bite-related discomfort.',
-    image: '/Gemini_Generated_Image_sy8cpxsy8cpxsy8c (1).png',
+    image: '/Gemini_Generated_Image_7lyjnr7lyjnr7lyj (1).png',
     alt: 'Therapeutic splint - supports jaw alignment, reduces bite-related discomfort',
   },
 ];
 
-function ServiceCard({ service }: { service: typeof services[0] }) {
+function ServiceCard({ service }: { service: (typeof services)[0] }) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
-    
+
     const rect = cardRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    
+
     const rotateX = ((y - centerY) / centerY) * -10;
     const rotateY = ((x - centerX) / centerX) * 10;
-    
+
     cardRef.current.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   };
 
@@ -55,44 +55,30 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
 
   return (
     <article className="group">
-      {/* 3D Card Wrapper - allows overflow for transforms */}
-      <div className="relative aspect-[3/4] mb-6" style={{ perspective: '1000px' }}>
-        <div 
+      {/* 3D Card Wrapper */}
+      <div
+        className="relative aspect-square mb-6"
+        style={{ perspective: '1000px' }}
+      >
+        <div
           ref={cardRef}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
-          className="relative w-full h-full rounded-2xl lg:rounded-3xl cursor-pointer transition-all duration-300 ease-out bg-black"
-          style={{ 
+          className="relative w-full h-full cursor-pointer transition-all duration-300 ease-out"
+          style={{
             transformStyle: 'preserve-3d',
             willChange: 'transform',
           }}
         >
-          {/* Ambient glow */}
-          <div className="absolute inset-0 rounded-2xl lg:rounded-3xl opacity-40 group-hover:opacity-70 transition-opacity duration-500 pointer-events-none"
-            style={{
-              background: 'radial-gradient(ellipse at 50% 80%, rgba(56, 189, 248, 0.15) 0%, transparent 60%)',
-            }}
+          <Image
+            src={service.image}
+            alt={service.alt}
+            fill
+            className="object-contain"
+            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 450px"
+            quality={100}
+            priority
           />
-          
-          {/* Edge highlight on hover */}
-          <div className="absolute inset-0 rounded-2xl lg:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-            style={{
-              boxShadow: 'inset 0 0 0 1px rgba(56, 189, 248, 0.2), 0 0 60px rgba(56, 189, 248, 0.15), 0 20px 40px rgba(0, 0, 0, 0.4)',
-            }}
-          />
-          
-          <div className="absolute inset-2 rounded-2xl lg:rounded-3xl overflow-hidden">
-            <Image
-              src={service.image}
-              alt={service.alt}
-              fill
-              className="object-contain"
-              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 450px"
-              quality={100}
-              priority
-              unoptimized
-            />
-          </div>
         </div>
       </div>
 
