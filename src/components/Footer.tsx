@@ -44,7 +44,7 @@ export default function Footer() {
 
       {/* CTA Section */}
       <div className="bg-[#141414] py-12 lg:py-16">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
           <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
             START YOUR SMILE JOURNEY TODAY
           </h2>
@@ -63,7 +63,7 @@ export default function Footer() {
 
       {/* Main Footer */}
       <div className="bg-[#141414] border-t border-white/5 py-16 lg:py-20">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
             {/* Logo & Description */}
             <div className="lg:col-span-4">
@@ -130,7 +130,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="bg-[#141414] border-t border-white/5 py-6">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-sm">
             © {new Date().getFullYear()} CroninOrtho. All rights reserved.
           </p>

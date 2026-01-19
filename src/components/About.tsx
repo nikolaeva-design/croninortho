@@ -11,7 +11,7 @@ export default function About() {
       className="py-24 lg:py-32 bg-[#e8e8e8] relative overflow-hidden"
       aria-labelledby="about-heading"
     >
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="relative max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left - Text Content */}
           <div className="max-w-lg">

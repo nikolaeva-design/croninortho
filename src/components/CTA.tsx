@@ -25,7 +25,7 @@ export default function CTA() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 py-24 lg:py-32 text-center">
+      <div className="relative z-10 max-w-[1200px] 2xl:max-w-[1400px] mx-auto px-6 2xl:px-12 py-24 lg:py-32 text-center">
         {/* Headline */}
         <h2
           id="cta-heading"

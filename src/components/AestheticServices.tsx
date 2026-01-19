@@ -21,7 +21,7 @@ export default function AestheticServices() {
             }}
           />
 
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="relative max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
         {/* Section Header */}
         <div className="mb-14 lg:mb-20">
           <h2

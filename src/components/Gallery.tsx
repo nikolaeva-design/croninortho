@@ -17,7 +17,7 @@ export default function Gallery() {
       />
 
       <div className="py-16 lg:py-24">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
           <div className="flex items-center justify-center">
             <div className="relative w-full max-w-5xl aspect-[16/9]">
               <Image

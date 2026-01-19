@@ -116,7 +116,7 @@ export default function OtherServices() {
       className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden"
       aria-labelledby="services-heading"
     >
-      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="relative max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
         {/* Section Header - Centered */}
         <div className="text-center mb-16 lg:mb-20">
           <h2

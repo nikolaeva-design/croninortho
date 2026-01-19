@@ -75,7 +75,7 @@ export default function Technology() {
       className="py-20 lg:py-32 bg-black relative"
       aria-label="3D Technology"
     >
-      <div className="relative w-full max-w-[1200px] mx-auto px-6 lg:px-12">
+      <div className="relative w-full max-w-[1200px] 2xl:max-w-[1400px] mx-auto px-6 lg:px-12 2xl:px-16">
         {/* Image Container - 20% smaller */}
         <div className="relative w-[80%] max-w-2xl mx-auto aspect-square rounded-2xl overflow-hidden">
           {/* Base Image - Normal (always visible) */}

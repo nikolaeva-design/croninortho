@@ -31,10 +31,10 @@ export default function Hero() {
       </div>
 
       {/* Main Content - Full width */}
-      <div className="relative z-10 w-full px-6 lg:px-16 xl:px-24 pb-12 lg:pb-16">
-        <div className="max-w-[1800px] mx-auto">
+      <div className="relative z-10 w-full px-6 lg:px-16 xl:px-24 2xl:px-32 pb-12 lg:pb-16">
+        <div className="max-w-[2200px] mx-auto">
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[64px] xl:text-[76px] font-bold leading-[1.05] tracking-tight mb-8 lg:mb-10">
+          <h1 className="text-4xl sm:text-5xl lg:text-[64px] xl:text-[76px] 2xl:text-[90px] font-bold leading-[1.05] tracking-tight mb-8 lg:mb-10">
             <span
               className="block animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}

@@ -74,7 +74,7 @@ export default function Navbar() {
       role="banner"
     >
       <nav
-        className="max-w-[1400px] mx-auto px-6 flex items-center justify-between"
+        className="max-w-[2000px] mx-auto px-6 lg:px-12 2xl:px-16 flex items-center justify-between"
         aria-label="Main navigation"
       >
         {/* Logo Image */}
