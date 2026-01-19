@@ -3,16 +3,15 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 
-// Logo positions - start positions (percentage from center)
-const logos = [
-  { id: 'apple', icon: 'logos:apple-pay', startX: -40, startY: -35, size: 64 },
-  { id: 'google', icon: 'logos:google-pay', startX: 40, startY: -35, size: 64 },
-  { id: 'visa', icon: 'logos:visa', startX: -45, startY: 5, size: 56 },
-  { id: 'mastercard', icon: 'logos:mastercard', startX: 45, startY: 5, size: 56 },
-  { id: 'amex', icon: 'logos:amex', startX: -30, startY: 30, size: 48 },
-  { id: 'discover', icon: 'logos:discover', startX: -40, startY: 40, size: 48 },
-  { id: 'diners', icon: 'logos:diners-club', startX: 40, startY: 40, size: 48 },
-  { id: 'paypal', icon: 'logos:paypal', startX: 30, startY: 30, size: 48 },
+// Partner brand logos - orthodontic industry partners
+const partnerLogos = [
+  { id: 'invisalign', name: 'invisalign', startX: -35, startY: -30, fontSize: 24 },
+  { id: '3shape', name: '3shape', startX: 35, startY: -30, fontSize: 26 },
+  { id: 'itero', name: 'iTero', startX: -40, startY: 5, fontSize: 28 },
+  { id: 'american-ortho', name: 'American Orthodontics', startX: 38, startY: 5, fontSize: 16 },
+  { id: 'ivoclar', name: 'Ivoclar', startX: -32, startY: 32, fontSize: 22 },
+  { id: 'henry-schein', name: 'Henry Schein', startX: 35, startY: 32, fontSize: 18 },
+  { id: 'sinclair', name: 'SINCLAIR', startX: 0, startY: -38, fontSize: 20 },
 ];
 
 export default function LogoSection() {
@@ -58,7 +57,7 @@ export default function LogoSection() {
   }, []);
 
   // Calculate logo position based on progress
-  const getLogoStyle = (logo: typeof logos[0]) => {
+  const getLogoStyle = (logo: typeof partnerLogos[0]) => {
     // Ease function for smoother animation
     const easeProgress = progress < 0.5 
       ? 2 * progress * progress 
@@ -85,23 +84,19 @@ export default function LogoSection() {
       <div className="sticky top-0 h-screen bg-[#e8e8e8] flex items-center justify-center overflow-hidden">
         <div className="relative w-full h-full">
           
-          {/* Floating Payment Logos */}
-          {logos.map((logo) => (
+          {/* Floating Partner Logos */}
+          {partnerLogos.map((logo) => (
             <div
               key={logo.id}
-              className="absolute top-1/2 left-1/2 transition-none pointer-events-none"
-              style={{
-                ...getLogoStyle(logo),
-                marginLeft: -logo.size / 2,
-                marginTop: -logo.size / 2,
-              }}
+              className="absolute top-1/2 left-1/2 transition-none pointer-events-none whitespace-nowrap"
+              style={getLogoStyle(logo)}
             >
-              <iconify-icon
-                icon={logo.icon}
-                width={logo.size}
-                height={logo.size / 2}
-                aria-hidden="true"
-              />
+              <span 
+                className="font-semibold tracking-tight text-[#1d1d1f]/70"
+                style={{ fontSize: `${logo.fontSize}px` }}
+              >
+                {logo.name}
+              </span>
             </div>
           ))}
 
