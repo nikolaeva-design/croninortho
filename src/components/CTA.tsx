@@ -29,7 +29,7 @@ export default function CTA() {
         {/* Headline */}
         <h2
           id="cta-heading"
-          className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold italic tracking-tight leading-[1.1] mb-6"
+          className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-[1.1] mb-6"
         >
           Focused On Precision, Care,
           <br />
