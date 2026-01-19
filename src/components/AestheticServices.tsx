@@ -46,7 +46,7 @@ export default function AestheticServices() {
               
               {/* Badge */}
               <div className="absolute top-6 left-6 lg:top-8 lg:left-8 z-20">
-                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent/20 text-accent text-sm font-semibold backdrop-blur-sm border border-accent/30">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-white text-sm font-semibold backdrop-blur-sm border border-white/20">
                   01
                 </span>
               </div>
@@ -156,7 +156,7 @@ export default function AestheticServices() {
               
               {/* Badge */}
               <div className="absolute top-6 right-6 lg:top-8 lg:right-8 z-20">
-                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent/20 text-accent text-sm font-semibold backdrop-blur-sm border border-accent/30">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-white text-sm font-semibold backdrop-blur-sm border border-white/20">
                   03
                 </span>
               </div>
@@ -261,7 +261,7 @@ export default function AestheticServices() {
             <div className="relative h-[400px] lg:h-[480px] rounded-[2.5rem] overflow-hidden bg-[#0a1525] border border-white/5 flex flex-col">
               {/* Badge */}
               <div className="absolute top-6 right-6 lg:top-8 lg:right-8 z-20">
-                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent/20 text-accent text-sm font-semibold backdrop-blur-sm border border-accent/30">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-white text-sm font-semibold backdrop-blur-sm border border-white/20">
                   05
                 </span>
               </div>
