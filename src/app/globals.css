@@ -3,14 +3,14 @@
 :root {
   --background: #0a0a0a;
   --foreground: #f5f5f7;
-  --accent: #1e5a8a;
-  --accent-light: #2a6a9a;
+  --accent: #c9a962;
+  --accent-light: #d4b978;
   --navy: #0f2a44;
   --navy-light: #1a3a5c;
   --muted: #86868b;
   --card-bg: #111214;
   --card-border: #1e2024;
-  --gradient-warm: linear-gradient(135deg, #1e5a8a 0%, #164a7a 100%);
+  --gradient-warm: linear-gradient(135deg, #c9a962 0%, #b8975f 100%);
 }
 
 @theme inline {
@@ -168,11 +168,11 @@ html {
 
 /* Stat Number Glow */
 .stat-number {
-  text-shadow: 0 0 40px rgba(30, 90, 138, 0.3);
+  text-shadow: 0 0 40px rgba(201, 169, 98, 0.3);
 }
 
 .stat-card:hover .stat-number {
-  text-shadow: 0 0 60px rgba(30, 90, 138, 0.5);
+  text-shadow: 0 0 60px rgba(201, 169, 98, 0.5);
   transition: text-shadow 0.3s ease;
 }
 
@@ -266,7 +266,7 @@ html {
 .orbit-ring {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(30, 90, 138, 0.2);
+  border: 1px solid rgba(201, 169, 98, 0.2);
   transform-style: preserve-3d;
 }
 
@@ -309,7 +309,7 @@ html {
   height: 8px;
   background: var(--accent);
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(30, 90, 138, 0.8);
+  box-shadow: 0 0 20px rgba(201, 169, 98, 0.8);
 }
 
 /* ==========================================
@@ -351,8 +351,8 @@ html {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(30, 90, 138, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30, 90, 138, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(201, 169, 98, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 169, 98, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   transform: perspective(500px) rotateX(60deg);
   transform-origin: center top;
@@ -385,10 +385,10 @@ html {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(30, 90, 138, 0.3);
+    box-shadow: 0 0 20px rgba(201, 169, 98, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(30, 90, 138, 0.6);
+    box-shadow: 0 0 40px rgba(201, 169, 98, 0.6);
   }
 }
 
@@ -454,7 +454,7 @@ html {
   background: linear-gradient(
     to right,
     transparent 0%,
-    rgba(30, 90, 138, 0.1) 50%,
+    rgba(201, 169, 98, 0.1) 50%,
     transparent 100%
   );
   transform: rotate(30deg);
@@ -492,8 +492,8 @@ html {
   position: absolute;
   width: 60px;
   height: 60px;
-  background: rgba(30, 90, 138, 0.1);
-  border: 1px solid rgba(30, 90, 138, 0.3);
+  background: rgba(201, 169, 98, 0.1);
+  border: 1px solid rgba(201, 169, 98, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -604,7 +604,7 @@ html {
   height: 12px;
   background: var(--accent);
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(30, 90, 138, 0.6);
+  box-shadow: 0 0 15px rgba(201, 169, 98, 0.6);
 }
 
 @keyframes dna-rotate {
