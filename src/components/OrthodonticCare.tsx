@@ -11,10 +11,13 @@ const careTypes = [
     title: 'Kids',
     subtitle: 'Orthodontics',
     age: 'Ages 7–12',
-    description: 'Early orthodontic care focused on growth modification, airway development, and preventing complex issues later.',
+    description:
+      'Early orthodontic care focused on growth modification, airway development, and preventing complex issues later.',
     features: ['Growth Modification', 'Airway Development', 'Prevention'],
-    image: '/kids-ortho.png',
-    badgeText: 'Ceramic\nOrthodontic\nSystem',
+    image: '/Gemini_Generated_Image_oymo7foymo7foymo.png',
+    imageAlt:
+      'Child receiving early orthodontic treatment with ceramic braces for growth modification and bite correction',
+    badgeText: 'Ceramic Orthodontic System',
   },
   {
     id: 'teens',
@@ -22,10 +25,13 @@ const careTypes = [
     title: 'Teens',
     subtitle: 'Orthodontics',
     age: 'Ages 13–19',
-    description: 'Comprehensive orthodontic solutions designed to align teeth, correct bite issues, and support healthy development.',
+    description:
+      'Comprehensive orthodontic solutions designed to align teeth, correct bite issues, and support healthy development.',
     features: ['Teeth Alignment', 'Bite Correction', 'Clear Aligners'],
-    image: '/teens-ortho.png',
-    badgeText: 'Advanced\nAlignment\nSystem',
+    image: '/teens-ortho.jpg',
+    imageAlt:
+      'Teenager showing results of comprehensive orthodontic treatment with advanced alignment system',
+    badgeText: 'Advanced Alignment System',
   },
   {
     id: 'adults',
@@ -33,10 +39,13 @@ const careTypes = [
     title: 'Adults',
     subtitle: 'Orthodontics',
     age: 'Ages 20+',
-    description: 'Modern orthodontic options for adults seeking improved function, aesthetics, and long-term oral health.',
+    description:
+      'Modern orthodontic options for adults seeking improved function, aesthetics, and long-term oral health.',
     features: ['Invisible Options', 'Flexible Schedule', 'Quick Results'],
-    image: '/adults-ortho.png',
-    badgeText: 'Invisalign\nClear\nAligners',
+    image: '/Gemini_Generated_Image_ojvtklojvtklojvt.png',
+    imageAlt:
+      'Adult patient with Invisalign clear aligners demonstrating discreet orthodontic treatment options',
+    badgeText: 'Invisalign Clear Aligners',
   },
 ];
 
@@ -44,21 +53,19 @@ export default function OrthodonticCare() {
   const [activeId, setActiveId] = useState<string>('kids');
 
   return (
-    <section id="orthodontic-care" className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
-      {/* Subtle Background */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `linear-gradient(90deg, white 1px, transparent 1px),
-                           linear-gradient(180deg, white 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
-        }}
-      />
+    <section
+      id="orthodontic-care"
+      className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden"
+      aria-labelledby="orthodontic-care-heading"
+    >
 
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="mb-12 lg:mb-16">
-          <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-4">
+          <h2
+            id="orthodontic-care-heading"
+            className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-4"
+          >
             Orthodontic Care
           </h2>
           <p className="text-white/50 text-lg max-w-xl">
@@ -75,7 +82,7 @@ export default function OrthodonticCare() {
               <div
                 key={care.id}
                 onClick={() => setActiveId(care.id)}
-                className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-out ${
+                className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-[800ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[flex] ${
                   isActive 
                     ? 'lg:flex-[3] flex-1' 
                     : 'lg:flex-[0.8] flex-none lg:hover:flex-[1]'
@@ -84,25 +91,25 @@ export default function OrthodonticCare() {
                 {/* Background Image */}
                 <Image
                   src={care.image}
-                  alt={care.title}
+                  alt={care.imageAlt}
                   fill
-                  className={`object-cover transition-transform duration-700 ${isActive ? 'scale-100' : 'scale-110'}`}
+                  className={`object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${isActive ? 'scale-100' : 'scale-110'}`}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 
                 {/* Gradient Overlays */}
-                <div className={`absolute inset-0 transition-opacity duration-500 ${
+                <div className={`absolute inset-0 transition-opacity duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                   isActive 
-                    ? 'bg-gradient-to-t from-black/80 via-black/30 to-black/10' 
+                    ? 'bg-gradient-to-t from-black/85 via-black/40 to-black/20' 
                     : 'bg-black/60'
                 }`} />
-                <div className={`absolute inset-0 transition-opacity duration-500 ${
-                  isActive ? 'bg-gradient-to-r from-black/50 via-transparent to-transparent' : ''
+                <div className={`absolute inset-0 transition-opacity duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                  isActive ? 'bg-gradient-to-r from-black/55 via-black/10 to-transparent' : ''
                 }`} />
 
                 {/* Collapsed State - Vertical Title */}
-                <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${
-                  isActive ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                <div className={`absolute inset-0 flex items-center justify-center transition-all duration-[500ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                  isActive ? 'opacity-0 scale-95 pointer-events-none' : 'opacity-100 scale-100 delay-200'
                 }`}>
                   {/* Mobile: Horizontal layout */}
                   <div className="lg:hidden flex items-center gap-4 px-6">
@@ -123,50 +130,38 @@ export default function OrthodonticCare() {
                 </div>
 
                 {/* Expanded State - Full Content */}
-                <div className={`absolute inset-0 flex flex-col justify-end p-8 lg:p-10 transition-all duration-500 ${
-                  isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'
+                <div className={`absolute inset-0 flex flex-col justify-end p-8 lg:p-10 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                  isActive ? 'opacity-100 translate-y-0 delay-150' : 'opacity-0 translate-y-6 pointer-events-none'
                 }`}>
                   {/* Hero-style Badge Overlay */}
-                  {isActive && (
-                    <div className="absolute top-[15%] right-8 lg:right-12 hidden md:block">
-                      <div className="flex items-start gap-3 flex-row-reverse">
-                        <span className="text-white/20 text-7xl lg:text-8xl font-light leading-none -mt-4 select-none">
-                          {care.number}
-                        </span>
-                        <div className="relative mt-4">
-                          <div className="flex items-center gap-3 p-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md">
-                            <div className="flex gap-1.5 flex-row-reverse">
-                              {/* Icon slots - different icons for different types */}
-                              <div className="w-5 h-5 rounded-md bg-white/20 flex items-center justify-center">
-                                <div className="w-2 h-2 rounded-full bg-white/40" />
-                              </div>
-                              <div className="w-5 h-5 rounded-md bg-white/20 flex items-center justify-center">
-                                <div className="w-2 h-2 rounded-full bg-white/40" />
-                              </div>
+                  <div className={`absolute top-[8%] right-8 lg:right-12 hidden md:block transition-all duration-[500ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                    isActive ? 'opacity-100 translate-x-0 delay-300' : 'opacity-0 translate-x-4 pointer-events-none'
+                  }`}>
+                    <div className="flex items-center gap-4 flex-row-reverse">
+                      <span className="text-white/20 text-7xl lg:text-8xl font-light leading-none select-none">
+                        {care.number}
+                      </span>
+                      <div className="relative">
+                        <div className="flex items-center gap-3 p-3 rounded-xl border border-white/20 bg-white/10 backdrop-blur-xl">
+                          <div className="flex gap-1.5 flex-row-reverse">
+                            {/* Icon slots - different icons for different types */}
+                            <div className="w-5 h-5 rounded-md bg-white/20 flex items-center justify-center">
+                              <div className="w-2 h-2 rounded-full bg-white/40" />
                             </div>
-                            <div className="text-[10px] leading-tight text-white/50 font-semibold uppercase tracking-[0.2em] whitespace-pre-line text-right">
-                              {care.badgeText}
+                            <div className="w-5 h-5 rounded-md bg-white/20 flex items-center justify-center">
+                              <div className="w-2 h-2 rounded-full bg-white/40" />
                             </div>
                           </div>
-                          
-                          {/* Pointer Line - adjusted to point down-left from the right side */}
-                          <svg className={`absolute top-[80%] right-[40%] w-48 h-48 pointer-events-none opacity-40 transition-transform duration-1000 ${
-                            care.id === 'kids' ? 'rotate-0' : care.id === 'teens' ? 'rotate-12' : '-rotate-12'
-                          }`} viewBox="0 0 100 100">
-                            <path 
-                              d="M 90 10 L 40 70" 
-                              stroke="white" 
-                              strokeWidth="0.5" 
-                              fill="none" 
-                              className="animate-pulse"
-                            />
-                            <circle cx="40" cy="70" r="5" stroke="white" strokeWidth="0.5" fill="white" fillOpacity="0.1" />
-                            <circle cx="40" cy="70" r="1.5" fill="white" />
-                          </svg>
+                          <div className="text-[10px] leading-tight text-white/50 font-semibold uppercase tracking-[0.2em] text-right">
+                            {care.badgeText.split(' ').map((word, i) => (
+                              <div key={i}>{word}</div>
+                            ))}
+                          </div>
                         </div>
+                        
                       </div>
                     </div>
-                  )}
+                  </div>
 
                   {/* Number (Mobile or default) */}
                   <span className={`text-white/40 text-5xl lg:text-6xl font-light mb-4 ${isActive ? 'md:hidden' : ''}`}>
@@ -215,9 +210,9 @@ export default function OrthodonticCare() {
                 </div>
 
                 {/* Active Indicator Line */}
-                {isActive && (
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent to-transparent" />
-                )}
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent to-transparent transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                  isActive ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
+                } origin-left`} />
               </div>
             );
           })}

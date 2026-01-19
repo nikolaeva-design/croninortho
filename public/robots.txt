@@ -1,0 +1,10 @@
+# robots.txt for CroninOrtho
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://croninortho.com/sitemap.xml
+
+# Disallow admin or private areas (add as needed)
+# Disallow: /admin/
+# Disallow: /private/

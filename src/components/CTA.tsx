@@ -1,25 +1,36 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 export default function CTA() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      aria-labelledby="cta-heading"
+    >
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src="/cta-background.png"
-          alt="Background"
-          className="w-full h-full object-cover"
+          alt="Patient receiving orthodontic consultation at CroninOrtho clinic"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          quality={85}
+          priority={false}
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-[1200px] mx-auto px-6 py-24 lg:py-32 text-center">
         {/* Headline */}
-        <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold italic tracking-tight leading-[1.1] mb-6">
+        <h2
+          id="cta-heading"
+          className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold italic tracking-tight leading-[1.1] mb-6"
+        >
           Focused On Precision, Care,
           <br />
           And Long-Term Results
@@ -27,17 +38,21 @@ export default function CTA() {
 
         {/* Subtitle */}
         <p className="text-white/70 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-12 lg:mb-16">
-          Our practice is dedicated to providing orthodontic and aesthetic care through thoughtful treatment planning, modern technology, and a patient-centered approach.
+          Our practice is dedicated to providing orthodontic and aesthetic care
+          through thoughtful treatment planning, modern technology, and a
+          patient-centered approach.
         </p>
 
         {/* White Card */}
         <div className="inline-block bg-white rounded-3xl p-6 lg:p-8 shadow-2xl max-w-xl mx-auto">
           {/* Card Image */}
           <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6 bg-[#0a0a0a]">
-            <img
+            <Image
               src="/cta-small.png"
-              alt="Golden ratio proportion"
-              className="w-full h-full object-cover"
+              alt="Golden ratio smile analysis demonstrating precise aesthetic planning"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 90vw, 500px"
             />
           </div>
 
@@ -46,7 +61,8 @@ export default function CTA() {
             Personalized, Technology-Driven Care
           </h3>
           <p className="text-[#1d1d1f]/60 text-sm lg:text-base leading-relaxed">
-            Every patient receives an individualized treatment plan supported by modern technology and focused on long-term stability and results.
+            Every patient receives an individualized treatment plan supported by
+            modern technology and focused on long-term stability and results.
           </p>
         </div>
 
@@ -61,8 +77,14 @@ export default function CTA() {
           <a
             href="tel:+1234567890"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white text-sm font-medium rounded-full border border-white/30 hover:bg-white/10 transition-colors duration-200"
+            aria-label="Call us at (123) 456-7890"
           >
-            <iconify-icon icon="solar:phone-linear" width="18" height="18" />
+            <iconify-icon
+              icon="solar:phone-linear"
+              width="18"
+              height="18"
+              aria-hidden="true"
+            />
             Call (123) 456-7890
           </a>
         </div>

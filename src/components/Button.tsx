@@ -10,6 +10,9 @@ interface ButtonProps {
   onClick?: () => void;
   className?: string;
   icon?: string;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  ariaLabel?: string;
 }
 
 export default function Button({
@@ -20,12 +23,16 @@ export default function Button({
   onClick,
   className = '',
   icon,
+  type = 'button',
+  disabled = false,
+  ariaLabel,
 }: ButtonProps) {
   const baseStyles = `
     inline-flex items-center justify-center gap-2 
     font-medium transition-all duration-300 ease-out
     rounded-full cursor-pointer
     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background
+    disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
   `;
 
   const variants = {
@@ -55,21 +62,32 @@ export default function Button({
     <>
       {children}
       {icon && (
-        <iconify-icon icon={icon} width="20" height="20" />
+        <iconify-icon icon={icon} width="20" height="20" aria-hidden="true" />
       )}
     </>
   );
 
   if (href) {
     return (
-      <a href={href} className={combinedStyles}>
+      <a
+        href={href}
+        className={combinedStyles}
+        onClick={onClick}
+        aria-label={ariaLabel}
+      >
         {content}
       </a>
     );
   }
 
   return (
-    <button onClick={onClick} className={combinedStyles}>
+    <button
+      type={type}
+      onClick={onClick}
+      className={combinedStyles}
+      disabled={disabled}
+      aria-label={ariaLabel}
+    >
       {content}
     </button>
   );
