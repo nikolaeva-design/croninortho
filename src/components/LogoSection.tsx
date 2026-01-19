@@ -3,15 +3,15 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 
-// Partner brand logos - orthodontic industry partners (spread far from center)
+// Partner brand logos - orthodontic industry partners (spread evenly around center)
 const partnerLogos = [
-  { id: 'invisalign', name: 'invisalign', startX: -30, startY: -28, fontSize: 24 },
-  { id: '3shape', name: '3shape', startX: 30, startY: -28, fontSize: 26 },
-  { id: 'itero', name: 'iTero', startX: -38, startY: 0, fontSize: 28 },
-  { id: 'american-ortho', name: 'American Orthodontics', startX: 38, startY: 0, fontSize: 16 },
-  { id: 'ivoclar', name: 'Ivoclar', startX: -30, startY: 28, fontSize: 22 },
-  { id: 'henry-schein', name: 'Henry Schein', startX: 30, startY: 28, fontSize: 18 },
-  { id: 'sinclair', name: 'SINCLAIR', startX: 0, startY: -38, fontSize: 20 },
+  { id: 'sinclair', name: 'SINCLAIR', startX: 0, startY: -35, fontSize: 20 },
+  { id: 'invisalign', name: 'invisalign', startX: -35, startY: -18, fontSize: 24 },
+  { id: '3shape', name: '3shape', startX: 35, startY: -18, fontSize: 26 },
+  { id: 'itero', name: 'iTero', startX: -42, startY: 10, fontSize: 28 },
+  { id: 'american-ortho', name: 'American Orthodontics', startX: 42, startY: 10, fontSize: 16 },
+  { id: 'ivoclar', name: 'Ivoclar', startX: -25, startY: 32, fontSize: 22 },
+  { id: 'henry-schein', name: 'Henry Schein', startX: 25, startY: 32, fontSize: 18 },
 ];
 
 export default function LogoSection() {
