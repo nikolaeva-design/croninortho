@@ -115,11 +115,11 @@ export default function LogoSection() {
               }}
             >
               <Image
-                src="/logo.svg"
+                src="/logo-dark.png"
                 alt="CroninOrtho - Dr. D.G. Cronin & Dr. M. Sarfraz Orthodontic Practice"
                 width={320}
                 height={64}
-                className="h-16 lg:h-20 xl:h-24 w-auto object-contain invert"
+                className="h-16 lg:h-20 xl:h-24 w-auto object-contain"
                 priority
               />
             </div>
