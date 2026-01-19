@@ -5,13 +5,13 @@ import Image from 'next/image';
 
 // Partner brand logos - orthodontic industry partners
 const partnerLogos = [
-  { id: 'invisalign', name: 'invisalign', startX: -35, startY: -30, fontSize: 24 },
-  { id: '3shape', name: '3shape', startX: 35, startY: -30, fontSize: 26 },
-  { id: 'itero', name: 'iTero', startX: -40, startY: 5, fontSize: 28 },
-  { id: 'american-ortho', name: 'American Orthodontics', startX: 38, startY: 5, fontSize: 16 },
-  { id: 'ivoclar', name: 'Ivoclar', startX: -32, startY: 32, fontSize: 22 },
-  { id: 'henry-schein', name: 'Henry Schein', startX: 35, startY: 32, fontSize: 18 },
-  { id: 'sinclair', name: 'SINCLAIR', startX: 0, startY: -38, fontSize: 20 },
+  { id: 'invisalign', name: 'invisalign', startX: -25, startY: -25, fontSize: 24 },
+  { id: '3shape', name: '3shape', startX: 25, startY: -25, fontSize: 26 },
+  { id: 'itero', name: 'iTero', startX: -30, startY: 0, fontSize: 28 },
+  { id: 'american-ortho', name: 'American Orthodontics', startX: 30, startY: 0, fontSize: 16 },
+  { id: 'ivoclar', name: 'Ivoclar', startX: -25, startY: 25, fontSize: 22 },
+  { id: 'henry-schein', name: 'Henry Schein', startX: 25, startY: 25, fontSize: 18 },
+  { id: 'sinclair', name: 'SINCLAIR', startX: 0, startY: -32, fontSize: 20 },
 ];
 
 export default function LogoSection() {
@@ -85,20 +85,33 @@ export default function LogoSection() {
         <div className="relative w-full h-full">
           
           {/* Floating Partner Logos */}
-          {partnerLogos.map((logo) => (
-            <div
-              key={logo.id}
-              className="absolute top-1/2 left-1/2 transition-none pointer-events-none whitespace-nowrap"
-              style={getLogoStyle(logo)}
-            >
-              <span 
-                className="font-semibold tracking-tight text-[#1d1d1f]/70"
-                style={{ fontSize: `${logo.fontSize}px` }}
+          {partnerLogos.map((logo) => {
+            const easeProgress = progress < 0.5 
+              ? 2 * progress * progress 
+              : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+            const x = logo.startX * (1 - easeProgress);
+            const y = logo.startY * (1 - easeProgress);
+            const scale = 1 - (easeProgress * 0.5);
+            const opacity = 1 - (easeProgress * 0.8);
+            
+            return (
+              <div
+                key={logo.id}
+                className="absolute top-1/2 left-1/2 transition-none pointer-events-none whitespace-nowrap"
+                style={{
+                  transform: `translate(-50%, -50%) translate(${x}vw, ${y}vh) scale(${scale})`,
+                  opacity: Math.max(0.1, opacity),
+                }}
               >
-                {logo.name}
-              </span>
-            </div>
-          ))}
+                <span 
+                  className="font-semibold tracking-tight text-[#1d1d1f]/70"
+                  style={{ fontSize: `${logo.fontSize}px` }}
+                >
+                  {logo.name}
+                </span>
+              </div>
+            );
+          })}
 
           {/* Center - Main Logo (always visible, grows slightly) */}
           <div 
