@@ -98,7 +98,7 @@ export default function Hero() {
           icon="solar:alt-arrow-down-linear"
           width="24"
           height="24"
-          class="text-white/40"
+          className="text-white/40"
           aria-hidden="true"
         />
       </button>

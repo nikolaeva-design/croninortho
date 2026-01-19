@@ -4,29 +4,22 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
 
-// Gold color from logo
-const gold = {
-  base: '#c9a962',
-  light: '#d4b978',
-  dark: '#b8975f',
-};
-
-// Warning signs - grouped for display
-const warningSignsGroups = [
+// Common concerns for adults
+const concernGroups = [
   {
-    title: 'Oral Habits',
-    description: 'Persistent habits that may affect dental development.',
-    signs: ['Thumb sucking past age 5', 'Mouth breathing', 'Tongue thrusting'],
+    title: 'Aesthetic Goals',
+    description: 'Common smile concerns adults want to address.',
+    signs: ['Crooked or crowded teeth', 'Gaps between teeth', 'Uneven smile line'],
   },
   {
-    title: 'Bite & Alignment',
-    description: 'Issues with how teeth come together.',
-    signs: ['Crowded or misplaced teeth', 'Difficulty chewing or biting', 'Teeth that don\'t meet properly'],
+    title: 'Functional Issues',
+    description: 'Problems affecting daily comfort and health.',
+    signs: ['Difficulty cleaning teeth', 'Jaw pain or TMJ', 'Uneven wear on teeth'],
   },
   {
-    title: 'Jaw & Speech',
-    description: 'Signs related to jaw development and function.',
-    signs: ['Jaws that shift or click', 'Speech difficulties', 'Facial imbalance'],
+    title: 'Previous Treatment',
+    description: 'Addressing changes over time.',
+    signs: ['Teeth have shifted', 'Lost or broken retainer', 'Never had braces'],
   },
 ];
 
@@ -34,66 +27,66 @@ const warningSignsGroups = [
 const processSteps = [
   {
     title: 'Consultation',
-    description: 'Meet our team and discuss your child\'s needs in a relaxed, no-pressure environment.',
-    tags: ['30 minutes', 'No obligation', 'Kid-friendly'],
+    description: 'Discuss your goals, concerns, and explore treatment options that fit your lifestyle and budget.',
+    tags: ['30 minutes', 'No commitment', 'All options explained'],
   },
   {
-    title: 'Comprehensive Evaluation',
-    description: 'Digital X-rays, photos, and thorough examination to understand the full picture.',
-    tags: ['Digital X-rays', 'Photos', 'Full assessment'],
+    title: 'Digital Planning',
+    description: 'Advanced 3D scanning creates a precise treatment plan. See your projected results before starting.',
+    tags: ['3D simulation', 'No impressions', 'Preview results'],
   },
   {
-    title: 'Custom Treatment Plan',
-    description: 'Personalized plan designed specifically for your child\'s unique needs and goals.',
-    tags: ['Tailored approach', 'Clear timeline', 'Cost estimate'],
+    title: 'Custom Treatment',
+    description: 'Your personalized plan begins. Most adults choose discreet options like Invisalign or clear braces.',
+    tags: ['Discreet options', 'Flexible scheduling', 'Expert care'],
   },
   {
-    title: 'Active Treatment',
-    description: 'Fun, comfortable appointments with a team that makes kids feel at ease.',
-    tags: ['Regular visits', 'Progress tracking', 'Gentle care'],
+    title: 'Your New Smile',
+    description: 'Enjoy your transformed smile. Retainers keep your results perfect for years to come.',
+    tags: ['Lasting results', 'Retention plan', 'Confidence boost'],
   },
 ];
 
 // What to expect items
 const whatToExpectItems = [
   {
-    title: 'Warm Welcome',
-    description: 'Our friendly team greets you and your child, making everyone feel at home.',
-    tags: ['Kid-friendly office', 'Welcoming staff', 'Relaxed atmosphere'],
+    title: 'Professional Environment',
+    description: 'Our practice caters to adult patients with a sophisticated, comfortable atmosphere.',
+    tags: ['Mature setting', 'Efficient appointments', 'Respectful care'],
   },
   {
-    title: 'Digital Imaging',
-    description: 'Quick, comfortable X-rays and photos to see the complete picture of your child\'s smile.',
-    tags: ['Low radiation', 'Fast & painless', 'Detailed views'],
+    title: 'Comprehensive Assessment',
+    description: 'Digital X-rays and 3D scans provide a complete picture of your dental health and treatment options.',
+    tags: ['Full evaluation', 'Digital imaging', 'Detailed analysis'],
   },
   {
-    title: 'Gentle Examination',
-    description: 'Dr. Cronin examines your child\'s teeth, jaw, and bite in a comfortable, pressure-free setting.',
-    tags: ['Thorough check', 'No discomfort', 'Child-focused'],
+    title: 'Honest Recommendations',
+    description: 'We\'ll explain all your options clearly, including timeline, costs, and what to realistically expect.',
+    tags: ['Transparent pricing', 'Realistic expectations', 'No pressure'],
   },
   {
-    title: 'Clear Discussion',
-    description: 'We explain our findings, answer your questions, and discuss next steps if treatment is needed.',
-    tags: ['Plain language', 'All questions answered', 'No pressure'],
+    title: 'Personalized Plan',
+    description: 'Leave with a clear understanding of your treatment journey, tailored to your schedule and goals.',
+    tags: ['Custom timeline', 'Flexible options', 'Clear next steps'],
   },
 ];
 
-// Common treatments
+// Treatment options for adults
 const treatmentOptions = [
   {
-    title: 'Phase 1 Treatment',
-    description: 'Early intervention to address developing problems while permanent teeth are still coming in.',
-    tags: ['Palatal expanders', 'Space maintainers', 'Habit appliances'],
+    title: 'Invisalign',
+    description: 'Nearly invisible clear aligners that fit seamlessly into your professional and social life.',
+    tags: ['Virtually invisible', 'Removable', 'Most popular'],
   },
   {
-    title: 'Growth Appliances',
-    description: 'Custom devices that guide jaw growth and create space for permanent teeth.',
-    tags: ['Headgear', 'Functional appliances', 'Jaw repositioning'],
+    title: 'Clear Ceramic Braces',
+    description: 'Tooth-colored brackets that offer the precision of braces with a more subtle appearance.',
+    tags: ['Discreet look', 'Effective results', 'Great for complex cases'],
   },
   {
-    title: 'Limited Braces',
-    description: 'Targeted treatment on specific teeth to correct immediate concerns.',
-    tags: ['Partial braces', 'Clear aligners', 'Removable appliances'],
+    title: 'Lingual Braces',
+    description: 'Brackets placed behind teeth - completely hidden from view while delivering excellent results.',
+    tags: ['100% hidden', 'Custom-made', 'Premium option'],
   },
 ];
 
@@ -101,47 +94,47 @@ const treatmentOptions = [
 const featureSections = [
   {
     number: '01',
-    badge: 'Phase 1',
-    title: 'Early Intervention',
-    subtitle: 'Treatment',
-    description: 'Phase 1 treatment addresses developing problems while your child still has a mix of baby and permanent teeth. This proactive approach can prevent more serious issues from developing.',
+    badge: 'Discretion',
+    title: 'Treatment That',
+    subtitle: 'Fits Your Life',
+    description: 'We understand that as an adult, you need treatment options that don\'t interrupt your career or lifestyle. Our discreet solutions let you straighten your teeth without anyone knowing.',
     features: [
-      'Correct harmful oral habits',
-      'Guide jaw growth patterns',
-      'Create space for erupting teeth',
-      'Reduce risk of trauma to protruding teeth',
+      'Nearly invisible options',
+      'No impact on professional image',
+      'Flexible appointment times',
+      'Work around your schedule',
     ],
-    image: '/kids-ortho.png',
+    image: '/adults-ortho.png',
     imagePosition: 'right',
   },
   {
     number: '02',
-    badge: 'Growth',
-    title: 'Jaw Development',
-    subtitle: '& Airway',
-    description: 'Proper jaw development is crucial for your child\'s overall health. We focus on creating balanced facial growth and ensuring optimal airway development for better breathing and sleep.',
+    badge: 'Technology',
+    title: 'Precision',
+    subtitle: 'Results',
+    description: 'Advanced digital technology means more accurate treatment, fewer appointments, and better results. See your transformation before you even start.',
     features: [
-      'Improve breathing patterns',
-      'Address sleep-related issues',
-      'Balance facial symmetry',
-      'Prevent TMJ problems',
+      '3D treatment simulation',
+      'Precise tooth movement',
+      'Shorter treatment times',
+      'Predictable outcomes',
     ],
-    image: '/Gemini_Generated_Image_oymo7foymo7foymo.png',
+    image: '/Gemini_Generated_Image_ojvtklojvtklojvt.png',
     imagePosition: 'left',
   },
   {
     number: '03',
-    badge: 'Prevention',
-    title: 'Setting Up',
-    subtitle: 'For Success',
-    description: 'Early treatment often means simpler, shorter treatment as a teenager. By addressing issues now, we can reduce the complexity of future orthodontic care and achieve better long-term results.',
+    badge: 'Health',
+    title: 'Beyond',
+    subtitle: 'Aesthetics',
+    description: 'Straight teeth aren\'t just about looks. Proper alignment improves oral health, makes cleaning easier, and can even help with jaw pain and headaches.',
     features: [
-      'Shorter Phase 2 treatment time',
-      'Reduced need for extractions',
-      'Better long-term stability',
-      'Improved self-confidence',
+      'Easier to clean teeth',
+      'Reduced wear and damage',
+      'Improved bite function',
+      'Better long-term health',
     ],
-    image: '/kids-ortho.png',
+    image: '/adults-ortho.png',
     imagePosition: 'right',
   },
 ];
@@ -149,24 +142,24 @@ const featureSections = [
 // Testimonials
 const testimonials = [
   {
-    quote: 'Dr. Cronin made my daughter feel so comfortable from day one. She actually looks forward to her appointments now! The team is amazing with kids.',
-    author: 'Sarah M.',
-    role: 'Parent of Emma, Age 9',
-    avatar: 'S',
+    quote: 'At 42, I finally decided to fix my smile. Invisalign was perfect - none of my colleagues even noticed I was in treatment until I told them!',
+    author: 'Robert M.',
+    role: 'Attorney, Age 42',
+    avatar: 'R',
     rating: 5,
   },
   {
-    quote: 'We caught our son\'s jaw issue early thanks to the free consultation. The treatment was quick and made a huge difference in his bite and confidence.',
-    author: 'Michael T.',
-    role: 'Parent of Jake, Age 11',
-    avatar: 'M',
-    rating: 5,
-  },
-  {
-    quote: 'The office is so kid-friendly and the staff is incredibly patient. My twins were nervous at first but now they love coming here!',
-    author: 'Jennifer L.',
-    role: 'Parent of Twins, Age 8',
+    quote: 'I wish I had done this years ago. The process was so much easier than I expected, and the results exceeded my expectations.',
+    author: 'Jennifer S.',
+    role: 'Marketing Director, Age 35',
     avatar: 'J',
+    rating: 5,
+  },
+  {
+    quote: 'Dr. Cronin took the time to understand exactly what I wanted. The clear braces worked great for my complex case and I couldn\'t be happier.',
+    author: 'David L.',
+    role: 'Engineer, Age 38',
+    avatar: 'D',
     rating: 5,
   },
 ];
@@ -174,28 +167,28 @@ const testimonials = [
 // FAQs
 const faqs = [
   {
-    question: 'When should my child first see an orthodontist?',
-    answer: 'The American Association of Orthodontists recommends children have their first orthodontic evaluation by age 7. At this age, enough permanent teeth have emerged to identify potential issues.',
+    question: 'Am I too old for orthodontic treatment?',
+    answer: 'Absolutely not! There\'s no age limit for orthodontic treatment. As long as your teeth and gums are healthy, you\'re a candidate. We treat patients of all ages, from their 20s to their 70s and beyond.',
   },
   {
-    question: 'Does my child need treatment now, or can we wait?',
-    answer: 'Not every child needs early treatment. After evaluation, we\'ll recommend the best timing for your child. Some issues benefit from early intervention, while others are better addressed once all permanent teeth have erupted.',
+    question: 'How long does adult treatment typically take?',
+    answer: 'Most adult treatments take 12-24 months, though some cases may be shorter or longer. During your consultation, we\'ll give you a personalized timeline based on your specific needs.',
   },
   {
-    question: 'How long does Phase 1 treatment typically last?',
-    answer: 'Phase 1 treatment usually lasts 12-18 months, followed by a resting period where we monitor growth and development before determining if Phase 2 treatment is needed.',
+    question: 'Will treatment interfere with my work?',
+    answer: 'Not at all. Our discreet options like Invisalign and clear braces are designed for working professionals. Appointments are typically every 6-8 weeks and we offer flexible scheduling.',
   },
   {
-    question: 'Will my child still need braces as a teenager?',
-    answer: 'Many children who have Phase 1 treatment still benefit from Phase 2 treatment as teenagers, but it\'s typically shorter and less complex than it would have been without early intervention.',
+    question: 'Is Invisalign effective for adults?',
+    answer: 'Yes! Invisalign is highly effective for most adult cases and is our most popular option. It\'s particularly well-suited for busy professionals who want a discreet treatment experience.',
   },
   {
-    question: 'What are the signs my child might need early orthodontic treatment?',
-    answer: 'Common signs include difficulty chewing or biting, mouth breathing, thumb sucking past age 5, crowded or misplaced teeth, jaws that shift or make sounds, and speech difficulties.',
+    question: 'How much does adult orthodontic treatment cost?',
+    answer: 'Costs vary based on your specific treatment plan. We offer flexible payment plans and work with most insurance providers. During your consultation, you\'ll receive a detailed cost breakdown.',
   },
   {
-    question: 'Is early treatment more expensive than waiting?',
-    answer: 'While Phase 1 treatment is an additional investment, it often reduces the complexity and duration of Phase 2 treatment. We offer flexible payment plans to make treatment accessible for your family.',
+    question: 'What if my teeth have shifted after previous treatment?',
+    answer: 'This is very common! Many adults seek treatment because their teeth have shifted over time. Whether you wore braces as a teen or never had treatment, we can help you achieve the smile you want.',
   },
 ];
 
@@ -243,15 +236,14 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
   );
 }
 
-export default function KidsOrthodonticsPage() {
+export default function AdultsOrthodonticsPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState({
-    parentName: '',
-    childName: '',
-    childAge: '',
+    name: '',
     phone: '',
     email: '',
     preferredTime: '',
+    treatmentInterest: '',
     message: '',
   });
 
@@ -272,10 +264,10 @@ export default function KidsOrthodonticsPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_oymo7foymo7foymo.png"
-            alt="Child receiving early orthodontic treatment"
+            src="/adults-ortho.png"
+            alt="Adult with confident smile showing discreet orthodontic treatment"
             fill
-            className="object-cover object-top"
+            className="object-cover object-center"
             priority
             quality={90}
             sizes="100vw"
@@ -293,7 +285,7 @@ export default function KidsOrthodonticsPage() {
               style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
             >
               <span className="w-2 h-2 rounded-full bg-[#c9a962] animate-pulse-glow" />
-              <span className="text-white/90 text-sm font-medium">Ages 7–12 • Early Intervention</span>
+              <span className="text-white/90 text-sm font-medium">Ages 20+ • Discreet Solutions</span>
             </div>
 
             {/* Title */}
@@ -301,7 +293,7 @@ export default function KidsOrthodonticsPage() {
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
             >
-              <span className="text-white">Kids </span>
+              <span className="text-white">Adult </span>
               <span className="text-white/50">Orthodontics</span>
             </h1>
 
@@ -310,7 +302,7 @@ export default function KidsOrthodonticsPage() {
               className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
             >
-              Early orthodontic care focused on growth modification, airway development, and preventing complex issues later in life.
+              It&apos;s never too late for a beautiful smile. Discover discreet treatment options designed for your lifestyle.
             </p>
 
             {/* CTAs */}
@@ -322,7 +314,7 @@ export default function KidsOrthodonticsPage() {
                 Book Consultation
               </Button>
               <Button variant="secondary" size="lg" href="#info" icon="solar:arrow-down-linear">
-                Learn More
+                Explore Options
               </Button>
             </div>
           </div>
@@ -346,23 +338,23 @@ export default function KidsOrthodonticsPage() {
             {/* Left Content */}
             <AnimatedSection>
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-8">
-                Orthodontics for
-                <span className="text-white/50 block">Growing Smiles</span>
+                The Smile You&apos;ve
+                <span className="text-white/50 block">Always Wanted</span>
             </h2>
               <div className="space-y-6 mb-10">
                 <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  The American Association of Orthodontists recommends that children have their first orthodontic evaluation by age 7. At this age, we can identify potential issues early and guide jaw growth while your child is still developing.
+                  More adults than ever are choosing orthodontic treatment. Whether you never had braces, your teeth have shifted over time, or you&apos;re ready to finally invest in yourself - now is the perfect time.
                 </p>
                 <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  Early intervention doesn&apos;t always mean early treatment. Sometimes the best approach is to monitor growth and begin treatment at the optimal time.
+                  Today&apos;s treatment options are more discreet, comfortable, and efficient than ever. Many of our adult patients complete treatment without their friends or colleagues ever knowing.
             </p>
           </div>
               <div className="flex flex-wrap gap-4">
                 <Button variant="primary" size="md" href="#contact-form">
-                  Schedule Evaluation
+                  Get Started
                 </Button>
                 <Button variant="secondary" size="md" href="#treatments">
-                  View Treatments
+                  View Options
                 </Button>
               </div>
             </AnimatedSection>
@@ -372,8 +364,8 @@ export default function KidsOrthodonticsPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative aspect-[3/4] rounded-3xl overflow-hidden">
                   <Image
-                    src="/kids-ortho.png"
-                    alt="Child smiling with braces"
+                    src="/adults-ortho.png"
+                    alt="Adult with clear aligners"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 50vw, 25vw"
@@ -382,8 +374,8 @@ export default function KidsOrthodonticsPage() {
                 </div>
                 <div className="relative aspect-[3/4] rounded-3xl overflow-hidden mt-8">
                   <Image
-                    src="/Gemini_Generated_Image_oymo7foymo7foymo.png"
-                    alt="Happy child after treatment"
+                    src="/Gemini_Generated_Image_ojvtklojvtklojvt.png"
+                    alt="Professional adult smiling"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 50vw, 25vw"
@@ -396,7 +388,7 @@ export default function KidsOrthodonticsPage() {
         </div>
       </section>
 
-      {/* Warning Signs Section - Bento Grid */}
+      {/* Concerns Section - Bento Grid */}
       <section className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           {/* Header */}
@@ -404,13 +396,13 @@ export default function KidsOrthodonticsPage() {
             <div className="mb-12 lg:mb-16">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/60 text-xs font-medium mb-6">
                 <iconify-icon icon="solar:eye-bold" width="14" height="14" className="text-[#c9a962]" />
-                Early Detection
+                Common Concerns
               </div>
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6">
-                Signs to Watch For
+                Sound Familiar?
               </h2>
               <p className="text-white/50 text-lg max-w-2xl">
-                These common signs may indicate your child could benefit from an orthodontic evaluation.
+                These are the most common reasons adults seek orthodontic treatment. If any resonate with you, we can help.
               </p>
             </div>
           </AnimatedSection>
@@ -422,8 +414,8 @@ export default function KidsOrthodonticsPage() {
               <div className="relative h-full min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden group">
                 {/* Background Image */}
                 <Image
-                  src="/kids-ortho.png"
-                  alt="Child orthodontic evaluation"
+                  src="/adults-ortho.png"
+                  alt="Adult orthodontic consultation"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 66vw"
@@ -434,13 +426,13 @@ export default function KidsOrthodonticsPage() {
                 <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-end">
                   <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white/80 text-xs font-medium w-fit mb-4">
                     <span className="w-2 h-2 rounded-full bg-[#c9a962]" />
-                    {warningSignsGroups[0].title}
+                    {concernGroups[0].title}
                   </span>
                   <h3 className="text-white text-2xl lg:text-3xl font-semibold mb-3">
-                    {warningSignsGroups[0].description}
+                    {concernGroups[0].description}
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {warningSignsGroups[0].signs.map((sign) => (
+                    {concernGroups[0].signs.map((sign) => (
                       <span
                         key={sign}
                         className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white/80 text-sm"
@@ -460,13 +452,13 @@ export default function KidsOrthodonticsPage() {
                   <iconify-icon icon="solar:health-bold" width="24" height="24" className="text-[#c9a962]" />
                 </div>
                 <h3 className="text-white text-xl font-semibold mb-2">
-                  {warningSignsGroups[1].title}
+                  {concernGroups[1].title}
                 </h3>
                 <p className="text-white/50 text-sm mb-4 flex-grow">
-                  {warningSignsGroups[1].description}
+                  {concernGroups[1].description}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {warningSignsGroups[1].signs.map((sign) => (
+                  {concernGroups[1].signs.map((sign) => (
                     <span
                       key={sign}
                       className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/60 text-xs"
@@ -482,16 +474,16 @@ export default function KidsOrthodonticsPage() {
             <AnimatedSection delay={300}>
               <div className="h-full min-h-[240px] p-6 lg:p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-[#c9a962]/30 transition-all duration-300 flex flex-col">
                 <div className="w-12 h-12 rounded-2xl bg-[#c9a962]/10 border border-[#c9a962]/20 flex items-center justify-center mb-6">
-                  <iconify-icon icon="solar:chat-round-dots-bold" width="24" height="24" className="text-[#c9a962]" />
+                  <iconify-icon icon="solar:refresh-bold" width="24" height="24" className="text-[#c9a962]" />
                 </div>
                 <h3 className="text-white text-xl font-semibold mb-2">
-                  {warningSignsGroups[2].title}
+                  {concernGroups[2].title}
                 </h3>
                 <p className="text-white/50 text-sm mb-4 flex-grow">
-                  {warningSignsGroups[2].description}
+                  {concernGroups[2].description}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {warningSignsGroups[2].signs.map((sign) => (
+                  {concernGroups[2].signs.map((sign) => (
                     <span
                       key={sign}
                       className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/60 text-xs"
@@ -508,7 +500,7 @@ export default function KidsOrthodonticsPage() {
           <AnimatedSection delay={400}>
             <div className="mt-10 text-center lg:text-left">
               <Button variant="secondary" size="md" href="#contact-form" icon="solar:arrow-right-linear">
-                Schedule Evaluation
+                Schedule Consultation
               </Button>
             </div>
           </AnimatedSection>
@@ -523,10 +515,10 @@ export default function KidsOrthodonticsPage() {
             <div className="text-center mb-16 lg:mb-20">
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6">
                 Your Journey to a
-                <span className="text-white/50 block">Healthy Smile</span>
+                <span className="text-white/50 block">Confident Smile</span>
               </h2>
               <p className="text-white/50 text-lg max-w-2xl mx-auto">
-                Our simple, stress-free process makes orthodontic care easy for you and fun for your child.
+                A straightforward process designed to fit seamlessly into your busy life.
               </p>
             </div>
           </AnimatedSection>
@@ -600,10 +592,10 @@ export default function KidsOrthodonticsPage() {
             {/* Left Content */}
             <AnimatedSection>
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6">
-                Treatment Options
+                Discreet Options
               </h2>
               <p className="text-white/50 text-lg mb-12">
-                We offer a range of early orthodontic treatments tailored to your child&apos;s specific needs and development stage.
+                Modern orthodontics offers solutions that fit seamlessly into your professional and personal life.
               </p>
 
               {/* Treatment Options List */}
@@ -641,8 +633,8 @@ export default function KidsOrthodonticsPage() {
             <AnimatedSection delay={200}>
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
               <Image
-                src="/kids-ortho.png"
-                alt="Child with orthodontic appliance"
+                src="/Gemini_Generated_Image_ojvtklojvtklojvt.png"
+                alt="Adult with Invisalign"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -654,7 +646,7 @@ export default function KidsOrthodonticsPage() {
         </div>
       </section>
 
-      {/* What to Expect Section - Treatment Options Style */}
+      {/* What to Expect Section */}
       <section className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -662,8 +654,8 @@ export default function KidsOrthodonticsPage() {
             <AnimatedSection>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
                 <Image
-                  src="/Gemini_Generated_Image_oymo7foymo7foymo.png"
-                  alt="Welcoming orthodontic office"
+                  src="/adults-ortho.png"
+                  alt="Modern orthodontic office"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -676,10 +668,10 @@ export default function KidsOrthodonticsPage() {
             <AnimatedSection delay={200}>
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6">
                 What to Expect at
-                <span className="text-white/50 block">Your First Visit</span>
+                <span className="text-white/50 block">Your Consultation</span>
               </h2>
               <p className="text-white/50 text-lg mb-12">
-                We make the first visit fun and stress-free for both you and your child.
+                A relaxed, informative conversation about your goals and options - no pressure, no commitments.
               </p>
 
               {/* What to Expect Items */}
@@ -714,7 +706,7 @@ export default function KidsOrthodonticsPage() {
 
               <div className="mt-10">
                 <Button variant="primary" size="md" href="#contact-form">
-                  Book Your Visit
+                  Book Consultation
                 </Button>
               </div>
             </AnimatedSection>
@@ -832,10 +824,10 @@ export default function KidsOrthodonticsPage() {
               </h2>
               <div className="space-y-4 mb-8">
                 <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  With over 15 years of experience in pediatric orthodontics, Dr. Cronin is passionate about creating healthy, beautiful smiles for children. His gentle approach and expertise in early intervention have helped thousands of kids achieve optimal dental health.
+                  With over 15 years of experience treating adult patients, Dr. Cronin understands the unique needs and concerns of professionals seeking orthodontic care. His expertise in discreet treatment options has helped countless adults achieve the smiles they&apos;ve always wanted.
                 </p>
                 <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  Dr. Cronin is a proud member of the American Association of Orthodontists and stays current with the latest advances in orthodontic technology and techniques.
+                  As an Invisalign Diamond Provider and AAO member, Dr. Cronin stays at the forefront of orthodontic innovation, offering the most advanced and efficient treatment options available.
                 </p>
               </div>
               
@@ -845,10 +837,10 @@ export default function KidsOrthodonticsPage() {
                   15+ Years Experience
                 </span>
                 <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm">
-                  AAO Member
+                  Invisalign Diamond Provider
                 </span>
                 <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm">
-                  Invisalign Certified
+                  Adult Treatment Specialist
                 </span>
               </div>
 
@@ -866,11 +858,11 @@ export default function KidsOrthodonticsPage() {
           <AnimatedSection>
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-4">
-                What Parents
-                <span className="text-white/50 block">Are Saying</span>
+                Success Stories
+                <span className="text-white/50 block">From Our Patients</span>
               </h2>
               <p className="text-white/50 text-lg max-w-2xl mx-auto">
-                Don&apos;t just take our word for it — hear from families who&apos;ve experienced the difference.
+                Hear from adults who finally invested in themselves and couldn&apos;t be happier with the results.
               </p>
             </div>
           </AnimatedSection>
@@ -917,7 +909,7 @@ export default function KidsOrthodonticsPage() {
                 Common Questions
               </h2>
               <p className="text-white/50 text-lg">
-                Everything you need to know about early orthodontic care for your child.
+                Everything you need to know about orthodontic treatment as an adult.
               </p>
             </div>
           </AnimatedSection>
@@ -963,13 +955,13 @@ export default function KidsOrthodonticsPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Left - Info */}
             <AnimatedSection>
-              <span className="text-[#c9a962] text-sm font-semibold tracking-wider uppercase mb-4 block">Consultation</span>
+              <span className="text-[#c9a962] text-sm font-semibold tracking-wider uppercase mb-4 block">Get Started</span>
               <h2 className="text-white text-4xl sm:text-5xl font-semibold tracking-tight leading-tight mb-6">
-                Ready to Get Started?
-                <span className="text-white/50 block">We&apos;re Here to Help</span>
+                Invest in Your
+                <span className="text-white/50 block">Best Smile</span>
               </h2>
               <p className="text-white/60 text-lg leading-relaxed mb-8">
-                Schedule your child&apos;s free consultation today. We&apos;ll evaluate their orthodontic needs and create a personalized plan for their healthiest smile.
+                Take the first step toward the smile you&apos;ve always wanted. Book a consultation to explore your options with no pressure or obligation.
               </p>
 
               {/* Contact Info */}
@@ -989,7 +981,7 @@ export default function KidsOrthodonticsPage() {
                   </div>
                   <div>
                     <div className="text-white font-medium">Mon-Fri: 9am - 6pm</div>
-                    <div className="text-white/50 text-sm">Office hours</div>
+                    <div className="text-white/50 text-sm">Early & late appointments available</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
@@ -1008,8 +1000,8 @@ export default function KidsOrthodonticsPage() {
                 <div className="flex items-start gap-3">
                   <iconify-icon icon="solar:shield-check-bold" width="24" height="24" className="text-[#c9a962] flex-shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-white font-medium mb-1">Insurance Accepted</div>
-                    <p className="text-white/60 text-sm">We accept most major insurance plans and offer flexible payment options to fit your budget.</p>
+                    <div className="text-white font-medium mb-1">Flexible Financing</div>
+                    <p className="text-white/60 text-sm">We accept most insurance plans and offer interest-free payment options to make treatment accessible.</p>
                   </div>
                 </div>
               </div>
@@ -1020,52 +1012,21 @@ export default function KidsOrthodonticsPage() {
               <form onSubmit={handleSubmit} className="p-8 rounded-3xl bg-white/[0.03] border border-white/5">
                 <h3 className="text-white text-2xl font-semibold mb-6">Request Consultation</h3>
                 
-                <div className="grid sm:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label htmlFor="parentName" className="block text-white/70 text-sm mb-2">Parent Name *</label>
-                    <input
-                      type="text"
-                      id="parentName"
-                      name="parentName"
-                      value={formData.parentName}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="childName" className="block text-white/70 text-sm mb-2">Child&apos;s Name *</label>
-                    <input
-                      type="text"
-                      id="childName"
-                      name="childName"
-                      value={formData.childName}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
-                      placeholder="Child's name"
-                    />
-                  </div>
+                <div className="mb-4">
+                  <label htmlFor="name" className="block text-white/70 text-sm mb-2">Your Name *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
+                    placeholder="Your full name"
+                  />
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label htmlFor="childAge" className="block text-white/70 text-sm mb-2">Child&apos;s Age *</label>
-                    <select
-                      id="childAge"
-                      name="childAge"
-                      value={formData.childAge}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#c9a962] transition-colors"
-                    >
-                      <option value="" className="bg-[#1a1a1a]">Select age</option>
-                      {[...Array(6)].map((_, i) => (
-                        <option key={i + 7} value={i + 7} className="bg-[#1a1a1a]">{i + 7} years old</option>
-                      ))}
-                    </select>
-                  </div>
                   <div>
                     <label htmlFor="phone" className="block text-white/70 text-sm mb-2">Phone Number *</label>
                     <input
@@ -1079,39 +1040,58 @@ export default function KidsOrthodonticsPage() {
                       placeholder="(123) 456-7890"
                     />
                   </div>
+                  <div>
+                    <label htmlFor="email" className="block text-white/70 text-sm mb-2">Email Address *</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
+                      placeholder="your@email.com"
+                    />
+                  </div>
                 </div>
 
-                <div className="mb-4">
-                  <label htmlFor="email" className="block text-white/70 text-sm mb-2">Email Address</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div className="mb-4">
-                  <label htmlFor="preferredTime" className="block text-white/70 text-sm mb-2">Preferred Time</label>
-                  <select
-                    id="preferredTime"
-                    name="preferredTime"
-                    value={formData.preferredTime}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#c9a962] transition-colors"
-                  >
-                    <option value="" className="bg-[#1a1a1a]">Select preferred time</option>
-                    <option value="morning" className="bg-[#1a1a1a]">Morning (9am - 12pm)</option>
-                    <option value="afternoon" className="bg-[#1a1a1a]">Afternoon (12pm - 3pm)</option>
-                    <option value="evening" className="bg-[#1a1a1a]">Late Afternoon (3pm - 6pm)</option>
-                  </select>
+                <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label htmlFor="treatmentInterest" className="block text-white/70 text-sm mb-2">Interested In</label>
+                    <select
+                      id="treatmentInterest"
+                      name="treatmentInterest"
+                      value={formData.treatmentInterest}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#c9a962] transition-colors"
+                    >
+                      <option value="" className="bg-[#1a1a1a]">Select option</option>
+                      <option value="invisalign" className="bg-[#1a1a1a]">Invisalign</option>
+                      <option value="clear-braces" className="bg-[#1a1a1a]">Clear/Ceramic Braces</option>
+                      <option value="lingual" className="bg-[#1a1a1a]">Lingual Braces</option>
+                      <option value="not-sure" className="bg-[#1a1a1a]">Not Sure - Need Guidance</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="preferredTime" className="block text-white/70 text-sm mb-2">Preferred Time</label>
+                    <select
+                      id="preferredTime"
+                      name="preferredTime"
+                      value={formData.preferredTime}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#c9a962] transition-colors"
+                    >
+                      <option value="" className="bg-[#1a1a1a]">Select preferred time</option>
+                      <option value="early" className="bg-[#1a1a1a]">Early Morning (8am - 10am)</option>
+                      <option value="midday" className="bg-[#1a1a1a]">Midday (11am - 2pm)</option>
+                      <option value="afternoon" className="bg-[#1a1a1a]">Afternoon (2pm - 5pm)</option>
+                      <option value="evening" className="bg-[#1a1a1a]">Evening (5pm - 6pm)</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div className="mb-6">
-                  <label htmlFor="message" className="block text-white/70 text-sm mb-2">Additional Notes</label>
+                  <label htmlFor="message" className="block text-white/70 text-sm mb-2">Tell Us About Your Goals</label>
                   <textarea
                     id="message"
                     name="message"
@@ -1119,7 +1099,7 @@ export default function KidsOrthodonticsPage() {
                     onChange={handleInputChange}
                     rows={3}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors resize-none"
-                    placeholder="Any concerns or questions..."
+                    placeholder="What would you like to achieve? Any concerns or questions..."
                   />
             </div>
 

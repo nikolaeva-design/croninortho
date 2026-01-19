@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Button from './Button';
 
@@ -25,18 +26,26 @@ const navItems = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
 
+  // Reset scroll state and check position when pathname changes
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+    // Reset to top state on route change, then check actual position
+    setScrolled(false);
+    // Use requestAnimationFrame to check after browser has settled
+    requestAnimationFrame(() => {
+      handleScroll();
+    });
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   // Close mobile menu on escape key
   useEffect(() => {
@@ -103,7 +112,7 @@ export default function Navbar() {
                     icon="solar:alt-arrow-down-linear"
                     width="14"
                     height="14"
-                    class={`transform transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180' : ''}`}
+                    className={`transform transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180' : ''}`}
                     aria-hidden="true"
                   />
                 )}
@@ -162,7 +171,7 @@ export default function Navbar() {
             }
             width="28"
             height="28"
-            class="transition-transform duration-300"
+            className="transition-transform duration-300"
             aria-hidden="true"
           />
         </button>
@@ -193,7 +202,7 @@ export default function Navbar() {
                         icon="solar:alt-arrow-down-linear"
                         width="18"
                         height="18"
-                        class={`transform transition-transform duration-300 ${mobileDropdownOpen === item.label ? 'rotate-180' : ''}`}
+                        className={`transform transition-transform duration-300 ${mobileDropdownOpen === item.label ? 'rotate-180' : ''}`}
                         aria-hidden="true"
                       />
                     </button>
