@@ -12,9 +12,9 @@ const orthodonticsDropdown = [
 ];
 
 const aboutUsDropdown = [
-  { label: 'Meet Dr. Mo', href: '#dr-mo', description: 'Dr. M. Sarfraz' },
-  { label: 'Meet Dr. Cronin', href: '#dr-cronin', description: 'Dr. D.G. Cronin' },
-  { label: 'Meet the Team', href: '#team', description: 'Our dedicated staff' },
+  { label: 'Meet Dr. Mo', href: '/about/dr-mo', description: 'Dr. M. Sarfraz' },
+  { label: 'Meet Dr. Cronin', href: '/about/dr-cronin', description: 'Dr. D.G. Cronin' },
+  { label: 'Meet the Team', href: '/about/team', description: 'Our dedicated staff' },
 ];
 
 const otherServicesDropdown = [
