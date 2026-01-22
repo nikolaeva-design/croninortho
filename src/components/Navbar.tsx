@@ -11,6 +11,12 @@ const orthodonticsDropdown = [
   { label: 'Adults', href: '/orthodontics/adults', description: 'Modern solutions for adults' },
 ];
 
+const aboutUsDropdown = [
+  { label: 'Meet Dr. Mo', href: '#dr-mo', description: 'Dr. M. Sarfraz' },
+  { label: 'Meet Dr. Cronin', href: '#dr-cronin', description: 'Dr. D.G. Cronin' },
+  { label: 'Meet the Team', href: '#team', description: 'Our dedicated staff' },
+];
+
 const otherServicesDropdown = [
   { label: 'Retainers', href: '#services', description: 'Maintain your perfect smile' },
   { label: 'Night Guards', href: '#services', description: 'Protect teeth while you sleep' },
@@ -19,7 +25,7 @@ const otherServicesDropdown = [
 
 const navItems = [
   { label: 'Orthodontic Care', href: '#orthodontic-care', hasDropdown: true, dropdownItems: orthodonticsDropdown },
-  { label: 'About Us', href: '#about', hasDropdown: false },
+  { label: 'About Us', href: '#about', hasDropdown: true, dropdownItems: aboutUsDropdown },
   { label: 'Aesthetics', href: '#aesthetic-services', hasDropdown: false },
   { label: 'Gallery', href: '#gallery', hasDropdown: false },
   { label: 'Other Services', href: '#services', hasDropdown: true, dropdownItems: otherServicesDropdown },
