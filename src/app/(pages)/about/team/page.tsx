@@ -245,22 +245,13 @@ export default function TeamPage() {
                   )}
                   
                   {/* Bio */}
-                  {member.comingSoon && !member.bio ? (
-                    <p className="text-white/40 text-sm italic">Full bio coming soon...</p>
-                  ) : (
-                    <>
-                      <p className="text-white/60 text-sm leading-relaxed mb-4">
-                        {member.bio}
-                      </p>
-                      {member.personal && (
-                        <p className="text-white/40 text-sm leading-relaxed">
-                          {member.personal}
-                        </p>
-                      )}
-                      {member.comingSoon && (
-                        <p className="text-white/30 text-xs italic mt-3">Full bio coming soon...</p>
-                      )}
-                    </>
+                  <p className="text-white/60 text-sm leading-relaxed mb-4">
+                    {member.bio}
+                  </p>
+                  {member.personal && (
+                    <p className="text-white/40 text-sm leading-relaxed">
+                      {member.personal}
+                    </p>
                   )}
                 </div>
                 
