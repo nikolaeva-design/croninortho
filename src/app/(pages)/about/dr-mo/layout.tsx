@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Meet Dr. Mo | Dr. M. Sarfraz - CroninOrtho',
-  description: 'Meet Dr. M. Sarfraz (Dr. Mo), an experienced orthodontist at CroninOrtho dedicated to creating beautiful, healthy smiles for patients of all ages.',
+  title: 'Meet Dr. Mohymen Sarfraz (Dr. Mo) | Cronin Ortho',
+  description: 'Meet Dr. Mohymen Sarfraz (Dr. Mo), an orthodontist at Cronin Ortho specializing in advanced digital techniques and personalized care in Langley, BC.',
 };
 
 export default function DrMoLayout({

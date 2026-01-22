@@ -6,35 +6,45 @@ import { Button } from '@/components';
 
 // Credentials and achievements
 const credentials = [
-  { label: 'Education', value: 'BDS, MOrth' },
-  { label: 'Experience', value: '15+ Years' },
+  { label: 'Experience', value: '25+ Years' },
+  { label: 'Education', value: 'DDS, UWO Ortho' },
   { label: 'Specialty', value: 'Orthodontics' },
-  { label: 'Patients', value: '5,000+' },
+  { label: 'Location', value: 'Langley, BC' },
 ];
 
-// Areas of expertise - rewritten for a professional and official tone
+// Memberships
+const memberships = [
+  'Pacific Coast Society of Orthodontists',
+  'American Association of Orthodontists',
+  'Canadian Association of Orthodontists',
+  'World Federation of Orthodontists',
+  'British Columbia Society of Orthodontists',
+  'Fellow of the Canadian Society of Orthodontists',
+];
+
+// Areas of expertise
 const expertiseGroups = [
   {
-    title: 'Advanced Fixed Systems',
-    description: 'Expertise in high-precision fixed appliance systems, providing comprehensive alignment for complex functional and aesthetic cases.',
-    points: ['Precision Brackets', 'Discreet Ceramic Options', 'Efficient Tooth Movement'],
+    title: 'Clinical Excellence',
+    description: 'Achieving optimal functional and aesthetic results for every patient, transforming lives through precision orthodontic care.',
+    points: ['Optimal Function', 'Aesthetic Results', 'Life-Changing Care'],
     icon: 'solar:shield-check-bold',
   },
   {
-    title: 'Pediatric Orthodontics',
-    description: 'Specialized care for children and adolescents, focusing on growth modification and early intervention for optimal long-term results.',
-    points: ['Growth Modification', 'Phase 1 Intervention', 'Preventative Care'],
-    icon: 'solar:users-group-rounded-bold',
+    title: 'Occlusion & Facial Aesthetics',
+    description: 'Advanced training in occlusion and facial aesthetics from the Roth Williams Center, focusing on the harmony of the smile and face.',
+    points: ['Facial Harmony', 'Occlusion Specialist', 'Comprehensive Planning'],
+    icon: 'solar:star-bold',
   },
   {
-    title: 'Digital Treatment Design',
-    description: 'Utilizing state-of-the-art diagnostic imaging and 3D planning to ensure accurate diagnostics and predictable clinical outcomes.',
-    points: ['3D Case Analysis', 'Virtual Simulations', 'Bespoke Planning'],
+    title: 'Advanced Technology',
+    description: 'Staying at the forefront of scientifically proven and up-to-date treatments, technologies, and diagnoses.',
+    points: ['Evidence-Based', 'Modern Technology', 'Highest Care Level'],
     icon: 'solar:cpu-bolt-bold',
   },
 ];
 
-// Patient testimonials
+// Patient testimonials - keeping existing ones as none were provided
 const testimonials = [
   {
     quote: "Dr. Cronin's expertise is evident from the first consultation. He explained every step of my daughter's treatment clearly and the results are simply outstanding.",
@@ -77,16 +87,16 @@ export default function DrCroninPage() {
             className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-[#c9a962]" />
-            <span className="text-white/90 text-sm font-medium">Expert Specialist Orthodontist</span>
+            <span className="text-white/90 text-sm font-medium">Specialist Orthodontist</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-white mb-6">
-            Precision Orthodontics
-            <span className="block text-white/50">for All Ages with Dr. Cronin</span>
+            Meet Dr. D.G. Cronin
+            <span className="block text-white/50">Transforming Smiles for 25+ Years</span>
           </h1>
           
           <p className="text-white/60 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-            With over 15 years of specialized expertise in fixed appliance systems and pediatric care, Dr. D.G. Cronin is dedicated to building healthy, confident smiles that last a lifetime.
+            Dedicated to achieving the most optimal functional and aesthetic results, Dr. Cronin has provided quality orthodontic care to Langley families for over two decades.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
@@ -94,7 +104,7 @@ export default function DrCroninPage() {
               Schedule a Consultation
             </Button>
             <Button variant="secondary" size="lg" href="#about">
-              About Dr. D.G. Cronin
+              About Dr. Cronin
             </Button>
           </div>
         </div>
@@ -119,13 +129,13 @@ export default function DrCroninPage() {
               
               <div className="space-y-6 text-white/60 text-base lg:text-lg leading-relaxed">
                 <p>
-                  Dr. D.G. Cronin is a highly regarded specialist orthodontist with a career dedicated to achieving clinical excellence and transformative smile results. With a reputation built on precision and evidence-based care, he has successfully managed thousands of orthodontic cases across Ireland.
+                  As an orthodontist, I strive to achieve the most optimal functional and aesthetic results for each of my patients. In doing so, I hope to change their lives for the better! I&apos;ve now practiced for more than 25 years and still look forward to the day before me: the people I&apos;ll interact with, the clinical challenges each presents, and how we will work together to achieve the smiles they desire.
                 </p>
                 <p>
-                  Specializing in advanced fixed appliance systems and pediatric orthodontics, Dr. Cronin stays at the forefront of the field. His clinical approach integrates state-of-the-art diagnostic tools with personalized treatment planning to ensure optimal functional and aesthetic outcomes for every patient.
+                  At heart, I am a people-person and enjoy spending my days surrounded by diverse individuals. I like the enthusiasm and freshness of my younger patients as they grow into young adults, and I equally appreciate the excitement of my adult patients who are obtaining the beautiful, healthy smile they have long desired.
                 </p>
                 <p>
-                  Dr. Cronin believes that a healthy smile is the foundation of confidence. By combining extensive clinical experience with a meticulous attention to detail, he ensures that every patient's orthodontic journey is professional, efficient, and tailored to their specific needs.
+                  Seeing the positive changes in each individual&apos;s personality as their smile is transformed is deeply rewarding. It is a privilege to provide quality orthodontic care to Langley, Surrey, and Fraser Valley families.
                 </p>
               </div>
 
@@ -172,8 +182,70 @@ export default function DrCroninPage() {
         </div>
       </section>
 
-      {/* Expertise Section - Unique Bento Grid */}
+      {/* Education & Experience Section */}
       <section className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
+        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+            <div>
+              <h2 className="text-white text-3xl lg:text-4xl font-semibold mb-8">Education & Training</h2>
+              <div className="space-y-8">
+                <div className="relative pl-8 border-l border-[#c9a962]/30">
+                  <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-[#c9a962]" />
+                  <h3 className="text-white text-xl font-medium mb-2">Doctorate of Dental Surgery (DDS)</h3>
+                  <p className="text-white/40 text-sm mb-3">University of Western Ontario, London, ON</p>
+                </div>
+                <div className="relative pl-8 border-l border-[#c9a962]/30">
+                  <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-[#c9a962]" />
+                  <h3 className="text-white text-xl font-medium mb-2">School of Dental Therapy</h3>
+                  <p className="text-white/40 text-sm mb-3">Fort Smith, NWT</p>
+                  <p className="text-white/60 text-sm">Clinical instructor and traveling practitioner for remote communities.</p>
+                </div>
+                <div className="relative pl-8 border-l border-[#c9a962]/30">
+                  <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-[#c9a962]" />
+                  <h3 className="text-white text-xl font-medium mb-2">Specialization in Orthodontics</h3>
+                  <p className="text-white/40 text-sm mb-3">University of Western Ontario</p>
+                  <p className="text-white/60 italic text-sm">Awarded the Canadian Dental Research Award</p>
+                </div>
+              </div>
+
+              <h2 className="text-white text-3xl lg:text-4xl font-semibold mb-8 mt-16">Professional Memberships</h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {memberships.map((membership, idx) => (
+                  <div key={idx} className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                    <iconify-icon icon="solar:check-read-linear" width="20" height="20" className="text-[#c9a962] shrink-0" />
+                    <span className="text-white/70 text-sm leading-tight">{membership}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-white text-3xl lg:text-4xl font-semibold mb-8">Beyond the Office</h2>
+              <div className="space-y-6 text-white/60 text-base lg:text-lg leading-relaxed">
+                <p>
+                  I grew up in Southern Ontario and have resided in South Surrey for many years. My wife and I have four children, as well as four grandchildren. Most of my spare time is dedicated to being with family and friends.
+                </p>
+                <p>
+                  I enjoy hiking, skiing, fishing, and traveling. I am also highly active in martial arts, practicing Tae-Kwando (4th Dan) and Hapkido (2nd degree).
+                </p>
+                <p>
+                  My interests extend to the skies and seas—I am an amateur radio operator, and have been a pilot and a scuba diver!
+                </p>
+              </div>
+              
+              <div className="mt-12 p-8 rounded-3xl bg-gradient-to-br from-[#c9a962]/20 to-transparent border border-[#c9a962]/20">
+                <h3 className="text-white text-xl font-semibold mb-4">Continuing Education</h3>
+                <p className="text-white/60 mb-6 leading-relaxed">
+                  I attend specialist courses locally and internationally, including a comprehensive course in occlusion and facial aesthetics at the Roth Williams Center. I have also served as a clinical instructor at the UBC Dental School.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Expertise Section - Unique Bento Grid */}
+      <section className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
         {/* Subtle background accent */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#c9a962]/[0.02] rounded-full blur-[150px] pointer-events-none" />
         
@@ -184,14 +256,14 @@ export default function DrCroninPage() {
               Areas of Expertise
             </h2>
             <p className="text-white/50 text-lg max-w-xl mx-auto">
-              Specialized training and dedication to excellence in every aspect of orthodontic care.
+              Combining 25+ years of experience with modern, evidence-based orthodontic treatments.
             </p>
           </div>
 
           {/* Luxury Bento Layout */}
           <div className="grid lg:grid-cols-12 gap-4 lg:gap-6">
             
-            {/* 1. Braces - Big Card (Top Left) */}
+            {/* 1. Clinical Excellence - Big Card (Top Left) */}
             <div className="lg:col-span-8 group">
               <div className="relative h-full min-h-[400px] rounded-3xl overflow-hidden bg-white/[0.03] border border-white/10 p-8 lg:p-12 flex flex-col justify-between hover:bg-white/[0.05] transition-all duration-500">
                 <div className="relative z-10 max-w-xl">
@@ -214,7 +286,7 @@ export default function DrCroninPage() {
               </div>
             </div>
 
-            {/* 2. Pediatric - Small Card (Top Right) */}
+            {/* 2. Aesthetics - Small Card (Top Right) */}
             <div className="lg:col-span-4">
               <div className="relative h-full min-h-[400px] rounded-3xl bg-[#141414] border border-white/5 p-8 flex flex-col justify-between hover:border-[#c9a962]/30 transition-all duration-500">
                 <div>
@@ -233,7 +305,7 @@ export default function DrCroninPage() {
               </div>
             </div>
 
-            {/* 3. Digital - Small Card (Bottom Left) */}
+            {/* 3. Technology - Small Card (Bottom Left) */}
             <div className="lg:col-span-4 order-last lg:order-none">
               <div className="relative h-full min-h-[400px] rounded-3xl bg-[#141414] border border-white/5 p-8 flex flex-col justify-between hover:border-[#c9a962]/30 transition-all duration-500">
                 <div>
@@ -252,7 +324,7 @@ export default function DrCroninPage() {
               </div>
             </div>
 
-            {/* 4. Beautiful Results - Big Card (Bottom Right) */}
+            {/* 4. Results - Big Card (Bottom Right) */}
             <div className="lg:col-span-8 group h-[400px] lg:h-auto">
               <div className="relative h-full rounded-3xl overflow-hidden border border-white/10">
                 <Image
@@ -281,7 +353,7 @@ export default function DrCroninPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
         <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
           {/* Section Header */}
           <div className="text-center mb-12 lg:mb-16">
@@ -334,7 +406,7 @@ export default function DrCroninPage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
+      <section id="contact" className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
         <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Left - Contact Info */}
@@ -350,33 +422,13 @@ export default function DrCroninPage() {
               </p>
 
               <div className="space-y-6">
-                <a href="mailto:hello@croninorthodontics.ie" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c9a962]/20 transition-all duration-300 shadow-lg shadow-[#c9a962]/5">
-                    <iconify-icon icon="solar:letter-bold" width="24" height="24" className="text-[#c9a962]" />
-                  </div>
-                  <div>
-                    <p className="text-white/40 text-sm font-medium">Email Address</p>
-                    <p className="text-white font-semibold">hello@croninorthodontics.ie</p>
-                  </div>
-                </a>
-
-                <a href="tel:+35312345678" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c9a962]/20 transition-all duration-300 shadow-lg shadow-[#c9a962]/5">
-                    <iconify-icon icon="solar:phone-bold" width="24" height="24" className="text-[#c9a962]" />
-                  </div>
-                  <div>
-                    <p className="text-white/40 text-sm font-medium">Direct Line</p>
-                    <p className="text-white font-semibold">+353 (1) 234 5678</p>
-                  </div>
-                </a>
-
                 <div className="flex items-center gap-4 group">
                   <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg shadow-[#c9a962]/5">
                     <iconify-icon icon="solar:map-point-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
                     <p className="text-white/40 text-sm font-medium">Clinic Location</p>
-                    <p className="text-white font-semibold">24 Harcourt Street, Dublin 2, Ireland</p>
+                    <p className="text-white font-semibold">Langley, British Columbia</p>
                   </div>
                 </div>
               </div>
