@@ -15,21 +15,21 @@ const credentials = [
 // Areas of expertise - rewritten for a professional and official tone
 const expertiseGroups = [
   {
-    title: 'Advanced Invisalign Treatment',
-    description: 'Expert clear aligner therapy delivered by a Diamond-status specialist, focusing on precision, aesthetics, and complex case management.',
-    points: ['Diamond Specialist Care', 'Custom Digital Planning', 'Optimized Treatment Time'],
-    icon: 'solar:star-bold',
-  },
-  {
-    title: 'Comprehensive Braces Systems',
-    description: 'Providing a full range of orthodontic solutions for pediatric, adolescent, and adult patients, tailored to individual clinical requirements.',
-    points: ['Multidisciplinary Care', 'Discreet Aesthetic Braces', 'Precision Alignment'],
+    title: 'Advanced Fixed Systems',
+    description: 'Expertise in high-precision fixed appliance systems, providing comprehensive alignment for complex functional and aesthetic cases.',
+    points: ['Precision Brackets', 'Discreet Ceramic Options', 'Efficient Tooth Movement'],
     icon: 'solar:shield-check-bold',
   },
   {
-    title: 'Digital Diagnostic Workflow',
-    description: 'Integration of state-of-the-art 3D imaging and digital impressions for high-precision diagnostics and predictable clinical outcomes.',
-    points: ['Digital 3D Scanning', 'Predictable Simulation', 'Precision Appliances'],
+    title: 'Pediatric Orthodontics',
+    description: 'Specialized care for children and adolescents, focusing on growth modification and early intervention for optimal long-term results.',
+    points: ['Growth Modification', 'Phase 1 Intervention', 'Preventative Care'],
+    icon: 'solar:users-group-rounded-bold',
+  },
+  {
+    title: 'Digital Treatment Design',
+    description: 'Utilizing state-of-the-art diagnostic imaging and 3D planning to ensure accurate diagnostics and predictable clinical outcomes.',
+    points: ['3D Case Analysis', 'Virtual Simulations', 'Bespoke Planning'],
     icon: 'solar:cpu-bolt-bold',
   },
 ];
@@ -37,26 +37,26 @@ const expertiseGroups = [
 // Patient testimonials
 const testimonials = [
   {
-    quote: "Dr. Mo transformed my smile and my confidence. His attention to detail and genuine care made the entire process enjoyable. I couldn't be happier with my results!",
-    author: 'Sarah O\'Connor',
-    treatment: 'Invisalign',
+    quote: "Dr. Cronin's expertise is evident from the first consultation. He explained every step of my daughter's treatment clearly and the results are simply outstanding.",
+    author: 'Liam Byrne',
+    treatment: 'Fixed Braces',
     rating: 5,
   },
   {
-    quote: "After years of being self-conscious about my teeth, Dr. Mo gave me the smile I always dreamed of. His expertise and warm personality made every visit a pleasure.",
-    author: 'James Murphy',
+    quote: "Highly professional and meticulous. Dr. Cronin transformed my smile with ceramic braces, and I couldn't be happier with the professional care I received.",
+    author: 'Siobhan Walsh',
     treatment: 'Ceramic Braces',
     rating: 5,
   },
   {
-    quote: "The best decision I made was choosing Dr. Mo for my orthodontic treatment. Professional, caring, and absolutely brilliant at what he does.",
-    author: 'Emma Kelly',
-    treatment: 'Invisalign',
+    quote: "A true specialist. Dr. Cronin's attention to detail and calm demeanor made my orthodontic journey a very positive experience. I highly recommend him.",
+    author: 'David O\'Reilly',
+    treatment: 'Fixed Braces',
     rating: 5,
   },
 ];
 
-export default function DrMoPage() {
+export default function DrCroninPage() {
   return (
     <div className="bg-[#0a0a0a] -mt-20">
       {/* Hero Section */}
@@ -77,16 +77,16 @@ export default function DrMoPage() {
             className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-[#c9a962]" />
-            <span className="text-white/90 text-sm font-medium">Diamond Invisalign Provider</span>
+            <span className="text-white/90 text-sm font-medium">Expert Specialist Orthodontist</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-white mb-6">
-            The Art of the Invisible
-            <span className="block text-white/50">Smile with Dr. Mo</span>
+            Precision Orthodontics
+            <span className="block text-white/50">for All Ages with Dr. Cronin</span>
           </h1>
           
           <p className="text-white/60 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-            Ireland&apos;s leading Diamond Invisalign specialist, Dr. M. Sarfraz combines world-class clinical precision with a dedicated focus on discreet, life-changing results.
+            With over 15 years of specialized expertise in fixed appliance systems and pediatric care, Dr. D.G. Cronin is dedicated to building healthy, confident smiles that last a lifetime.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
@@ -94,7 +94,7 @@ export default function DrMoPage() {
               Schedule a Consultation
             </Button>
             <Button variant="secondary" size="lg" href="#about">
-              About Dr. M. Sarfraz
+              About Dr. D.G. Cronin
             </Button>
           </div>
         </div>
@@ -113,19 +113,19 @@ export default function DrMoPage() {
                 The Specialist
               </span>
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-8">
-                Dr. M. Sarfraz
-                <span className="block text-white/50 text-3xl lg:text-4xl mt-2">MOrth RCS</span>
+                Dr. D.G. Cronin
+                <span className="block text-white/50 text-3xl lg:text-4xl mt-2">Specialist Orthodontist</span>
               </h2>
               
               <div className="space-y-6 text-white/60 text-base lg:text-lg leading-relaxed">
                 <p>
-                  Dr. M. Sarfraz, widely known as Dr. Mo, is a highly regarded specialist orthodontist dedicated to achieving clinical excellence and transformative results. With a career built on precision and patient-centered care, he has established a reputation for successfully managing both routine and complex orthodontic cases.
+                  Dr. D.G. Cronin is a highly regarded specialist orthodontist with a career dedicated to achieving clinical excellence and transformative smile results. With a reputation built on precision and evidence-based care, he has successfully managed thousands of orthodontic cases across Ireland.
                 </p>
                 <p>
-                  Having earned his Master of Orthodontics from the Royal College of Surgeons, Dr. Mo continues to stay at the forefront of the field. As a Diamond Invisalign provider, he ranks among the top specialists globally, utilizing advanced digital workflows to ensure predictable and efficient treatment outcomes.
+                  Specializing in advanced fixed appliance systems and pediatric orthodontics, Dr. Cronin stays at the forefront of the field. His clinical approach integrates state-of-the-art diagnostic tools with personalized treatment planning to ensure optimal functional and aesthetic outcomes for every patient.
                 </p>
                 <p>
-                  Dr. Mo believes that every patient deserves a personalized approach. By combining extensive clinical experience with a compassionate chairside manner, he ensures that the journey toward a healthy, functional, and aesthetic smile is a professional and rewarding experience for patients of all ages.
+                  Dr. Cronin believes that a healthy smile is the foundation of confidence. By combining extensive clinical experience with a meticulous attention to detail, he ensures that every patient's orthodontic journey is professional, efficient, and tailored to their specific needs.
                 </p>
               </div>
 
@@ -147,22 +147,22 @@ export default function DrMoPage() {
             <div className="relative opacity-0 animate-fade-in-right" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-white border border-white/10 group shadow-2xl">
                 <Image 
-                  src="/DR. MO.jpg"
-                  alt="Dr. M. Sarfraz (Dr. Mo)"
+                  src="/DR. CRONIN.jpg"
+                  alt="Dr. D.G. Cronin"
                   fill
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
                 
-                {/* Subtle overlay gradient to blend bottom of photo */}
+                {/* Subtle overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none" />
               </div>
               
               {/* Floating badge */}
               <div className="absolute -bottom-6 -left-6 p-5 rounded-2xl bg-[#c9a962] text-[#0a0a0a] shadow-[0_20px_50px_rgba(201,169,98,0.3)] z-10 animate-bounce-subtle">
                 <iconify-icon icon="solar:verified-check-bold" width="32" height="32" />
-                <p className="text-sm font-bold mt-1">Diamond Provider</p>
+                <p className="text-sm font-bold mt-1">Specialist Orthodontist</p>
               </div>
               
               {/* Decorative background glow */}
@@ -191,7 +191,7 @@ export default function DrMoPage() {
           {/* Luxury Bento Layout */}
           <div className="grid lg:grid-cols-12 gap-4 lg:gap-6">
             
-            {/* 1. Invisalign - Big Card (Top Left) */}
+            {/* 1. Braces - Big Card (Top Left) */}
             <div className="lg:col-span-8 group">
               <div className="relative h-full min-h-[400px] rounded-3xl overflow-hidden bg-white/[0.03] border border-white/10 p-8 lg:p-12 flex flex-col justify-between hover:bg-white/[0.05] transition-all duration-500">
                 <div className="relative z-10 max-w-xl">
@@ -214,7 +214,7 @@ export default function DrMoPage() {
               </div>
             </div>
 
-            {/* 2. Braces - Small Card (Top Right) */}
+            {/* 2. Pediatric - Small Card (Top Right) */}
             <div className="lg:col-span-4">
               <div className="relative h-full min-h-[400px] rounded-3xl bg-[#141414] border border-white/5 p-8 flex flex-col justify-between hover:border-[#c9a962]/30 transition-all duration-500">
                 <div>
@@ -256,7 +256,7 @@ export default function DrMoPage() {
             <div className="lg:col-span-8 group h-[400px] lg:h-auto">
               <div className="relative h-full rounded-3xl overflow-hidden border border-white/10">
                 <Image
-                  src="/smile-woman.png"
+                  src="/kids-ortho.png"
                   alt="Beautiful orthodontic result"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-[2s]"
@@ -264,8 +264,8 @@ export default function DrMoPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-10 left-10">
-                  <span className="text-[#c9a962] text-xs font-bold uppercase tracking-[0.3em] mb-2 block">The Result</span>
-                  <h3 className="text-white text-3xl font-semibold tracking-tight">Confidence that lasts a lifetime.</h3>
+                  <span className="text-[#c9a962] text-xs font-bold uppercase tracking-[0.3em] mb-2 block">Clinical Results</span>
+                  <h3 className="text-white text-3xl font-semibold tracking-tight">Precision results at every age.</h3>
                 </div>
               </div>
             </div>
@@ -292,7 +292,7 @@ export default function DrMoPage() {
               What Patients Say
             </h2>
             <p className="text-white/50 text-lg max-w-2xl mx-auto">
-              Real stories from real patients who trusted Dr. Mo with their smiles.
+              Real stories from real patients who trusted Dr. Cronin with their smiles.
             </p>
           </div>
 
@@ -346,7 +346,7 @@ export default function DrMoPage() {
                 Contact Us
               </h2>
               <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-md">
-                Ready to start your smile journey? Schedule a consultation with Dr. Mo and discover how we can help you achieve the smile you&apos;ve always wanted.
+                Ready to start your smile journey? Schedule a consultation with Dr. Cronin and discover how we can help you achieve the smile you&apos;ve always wanted.
               </p>
 
               <div className="space-y-6">

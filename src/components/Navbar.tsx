@@ -163,7 +163,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="xl:hidden p-2 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50"
+          className="xl:hidden p-2 text-white rounded-lg focus:outline-none"
           onClick={toggleMenu}
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileMenuOpen}
