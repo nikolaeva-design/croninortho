@@ -6,9 +6,9 @@ import { Button } from '@/components';
 
 // Credentials and achievements
 const credentials = [
-  { label: 'Education', value: 'BDS, MSc, UBC Ortho' },
+  { label: 'Education', value: 'BDS, MSc' },
+  { label: 'Training', value: 'UBC Ortho' },
   { label: 'Specialty', value: 'Orthodontics' },
-  { label: 'Focus', value: 'Digital Techniques' },
   { label: 'Location', value: 'Langley, BC' },
 ];
 
