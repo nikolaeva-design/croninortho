@@ -693,3 +693,20 @@ html {
 .logo-white:hover {
   opacity: 1;
 }
+
+/* ==========================================
+   ZIGZAG PATH ANIMATION
+   ========================================== */
+
+.animate-dash {
+  animation: dashFlow 2s linear infinite;
+}
+
+@keyframes dashFlow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -32;
+  }
+}

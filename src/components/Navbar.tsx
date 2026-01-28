@@ -18,16 +18,16 @@ const aboutUsDropdown = [
 ];
 
 const otherServicesDropdown = [
-  { label: 'Retainers', href: '#services', description: 'Maintain your perfect smile' },
-  { label: 'Night Guards', href: '#services', description: 'Protect teeth while you sleep' },
-  { label: 'Splints', href: '#services', description: 'TMJ & bite therapy solutions' },
+  { label: 'Retainers', href: '/services/retainers', description: 'Maintain your perfect smile' },
+  { label: 'Night Guards', href: '/services/nightguards', description: 'Protect teeth while you sleep' },
+  { label: 'Splints', href: '/services/splints', description: 'TMJ & bite therapy solutions' },
 ];
 
 const navItems = [
   { label: 'Orthodontic Care', href: '#orthodontic-care', hasDropdown: true, dropdownItems: orthodonticsDropdown },
   { label: 'About Us', href: '#about', hasDropdown: true, dropdownItems: aboutUsDropdown },
-  { label: 'Aesthetics', href: '#aesthetic-services', hasDropdown: false },
-  { label: 'Gallery', href: '#gallery', hasDropdown: false },
+  { label: 'Aesthetics', href: '/aesthetics', hasDropdown: false },
+  { label: 'Gallery', href: '/gallery', hasDropdown: false },
   { label: 'Other Services', href: '#services', hasDropdown: true, dropdownItems: otherServicesDropdown },
 ];
 

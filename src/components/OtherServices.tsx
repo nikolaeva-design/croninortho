@@ -11,6 +11,7 @@ const services = [
       'Retainers are used after orthodontic treatment to help maintain the final position of the teeth and preserve long-term results.',
     image: '/Gemini_Generated_Image_ncuakencuakencua (1).png',
     alt: 'Clear retainer - maintains teeth alignment with 8-10 hours daily usage',
+    href: '/services/retainers',
   },
   {
     id: 'nightguards',
@@ -19,6 +20,7 @@ const services = [
       'Nightguards help protect teeth and reduce stress on the jaw during sleep, particularly for patients who grind or clench their teeth.',
     image: '/Gemini_Generated_Image_sy8cpxsy8cpxsy8c (1).png',
     alt: 'Night guard - reduces grinding and clenching, supports TMJ comfort',
+    href: '/services/nightguards',
   },
   {
     id: 'splints',
@@ -27,6 +29,7 @@ const services = [
       'Splints are therapeutic appliances used to support jaw alignment and manage bite-related discomfort.',
     image: '/Gemini_Generated_Image_7lyjnr7lyjnr7lyj (1).png',
     alt: 'Therapeutic splint - supports jaw alignment, reduces bite-related discomfort',
+    href: '/services/splints',
   },
 ];
 
@@ -92,7 +95,7 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
 
       {/* Learn More Link */}
       <a
-        href="#contact"
+        href={service.href}
         className="inline-flex items-center gap-2 text-white/70 text-sm font-medium hover:text-white transition-colors group/link"
         aria-label={`Learn more about ${service.title}`}
       >

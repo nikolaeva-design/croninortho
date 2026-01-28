@@ -80,11 +80,11 @@ export default function AestheticServices() {
                 </p>
                 
                 <div className="flex flex-wrap items-center gap-4">
-                  <Button variant="secondary" size="md" href="#contact">
-                    Request a Consultation
-                  </Button>
-                  <a href="#" className="inline-flex items-center gap-2 text-white/70 text-sm font-medium hover:text-white transition-colors">
+                  <Button variant="secondary" size="md" href="/aesthetics">
                     Explore Aesthetics
+                  </Button>
+                  <a href="#contact" className="inline-flex items-center gap-2 text-white/70 text-sm font-medium hover:text-white transition-colors">
+                    Request a Consultation
                     <iconify-icon icon="solar:arrow-right-linear" width="16" height="16" />
                   </a>
                 </div>
@@ -122,7 +122,7 @@ export default function AestheticServices() {
                 <p className="text-[#1a1a1a]/60 text-sm lg:text-base leading-relaxed mb-4">
                   Proper alignment supports both the appearance of the smile and long-term function.
                 </p>
-                <a href="#" className="inline-flex items-center gap-2 text-[#1a1a1a]/70 text-sm font-medium hover:text-[#1a1a1a] transition-colors">
+                <a href="/aesthetics" className="inline-flex items-center gap-2 text-[#1a1a1a]/70 text-sm font-medium hover:text-[#1a1a1a] transition-colors">
                   Learn More
                   <iconify-icon icon="solar:arrow-right-linear" width="16" height="16" />
                 </a>
@@ -187,7 +187,7 @@ export default function AestheticServices() {
                   <p className="text-white/60 text-sm leading-relaxed max-w-md mb-4">
                     The size, shape, and proportions of teeth play a key role in creating a natural smile.
                   </p>
-                  <a href="#" className="inline-flex items-center gap-2 text-white text-sm font-medium hover:text-white/70 transition-colors group/link">
+                  <a href="/aesthetics" className="inline-flex items-center gap-2 text-white text-sm font-medium hover:text-white/70 transition-colors group/link">
                     Explore Aesthetics
                     <iconify-icon icon="solar:arrow-right-linear" width="16" height="16" className="transition-transform group-hover/link:translate-x-1" />
                   </a>
@@ -248,7 +248,7 @@ export default function AestheticServices() {
                 <Button 
                   variant="secondary"
                   size="md"
-                  href="#"
+                  href="/aesthetics"
                 >
                   Explore Aesthetics
                 </Button>
@@ -274,7 +274,7 @@ export default function AestheticServices() {
                 <p className="text-white/60 text-base lg:text-lg leading-relaxed max-w-md mb-4">
                   Gum shape, tooth display, and fine details influence the overall character of a smile.
                 </p>
-                <a href="#" className="inline-flex items-center gap-2 text-white text-sm font-medium hover:text-white/70 transition-colors">
+                <a href="/aesthetics" className="inline-flex items-center gap-2 text-white text-sm font-medium hover:text-white/70 transition-colors">
                   Learn More
                   <iconify-icon icon="solar:arrow-right-linear" width="16" height="16" />
                 </a>
