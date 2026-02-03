@@ -20,3 +20,4 @@ export { default as About } from './About';
 export { default as Gallery } from './Gallery';
 export { default as LogoSection } from './LogoSection';
 export { default as Technology } from './Technology';
+export { default as TeamExpertsScroll } from './TeamExpertsScroll';

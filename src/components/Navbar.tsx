@@ -12,6 +12,7 @@ const orthodonticsDropdown = [
 ];
 
 const aboutUsDropdown = [
+  { label: 'About Us', href: '/about', description: 'Our story and values' },
   { label: 'Meet Dr. Mo', href: '/about/dr-mo', description: 'Dr. M. Sarfraz' },
   { label: 'Meet Dr. Cronin', href: '/about/dr-cronin', description: 'Dr. D.G. Cronin' },
   { label: 'Meet the Team', href: '/about/team', description: 'Our dedicated staff' },
@@ -23,12 +24,19 @@ const otherServicesDropdown = [
   { label: 'Splints', href: '/services/splints', description: 'TMJ & bite therapy solutions' },
 ];
 
+const moreDropdown = [
+  { label: 'Patient', href: '/patient', description: 'Forms, visits, and helpful resources' },
+  { label: 'Patient Care', href: '/patient-care', description: 'Video guides for your treatment' },
+  { label: 'Emergency', href: '/emergency', description: 'What to do and who to contact' },
+];
+
 const navItems = [
   { label: 'Orthodontic Care', href: '#orthodontic-care', hasDropdown: true, dropdownItems: orthodonticsDropdown },
   { label: 'About Us', href: '#about', hasDropdown: true, dropdownItems: aboutUsDropdown },
   { label: 'Aesthetics', href: '/aesthetics', hasDropdown: false },
   { label: 'Gallery', href: '/gallery', hasDropdown: false },
   { label: 'Other Services', href: '#services', hasDropdown: true, dropdownItems: otherServicesDropdown },
+  { label: 'More', href: '#more', hasDropdown: true, dropdownItems: moreDropdown },
 ];
 
 export default function Navbar() {
