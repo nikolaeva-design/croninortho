@@ -689,7 +689,7 @@ export default function AestheticsPage() {
                 </a>
 
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+16045331151"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#c9a962]/30 transition-all group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -702,7 +702,7 @@ export default function AestheticsPage() {
                   </div>
                   <div>
                     <div className="text-white/50 text-sm">Phone</div>
-                    <div className="text-white font-medium">(123) 456-7890</div>
+                    <div className="text-white font-medium">(604) 533-1151</div>
                   </div>
                 </a>
 
@@ -718,7 +718,7 @@ export default function AestheticsPage() {
                   <div>
                     <div className="text-white/50 text-sm">Address</div>
                     <div className="text-white font-medium">
-                      123 Main St, City, State 12345
+                      Langley, BC, Canada
                     </div>
                   </div>
                 </div>
@@ -771,7 +771,7 @@ export default function AestheticsPage() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
-                        placeholder="(123) 456-7890"
+                        placeholder="(604) 533-1151"
                       />
                     </div>
                     <div>

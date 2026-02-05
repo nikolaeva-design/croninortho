@@ -17,7 +17,7 @@ const careTypes = [
     image: '/Gemini_Generated_Image_oymo7foymo7foymo.png',
     imageAlt:
       'Child receiving early orthodontic treatment with ceramic braces for growth modification and bite correction',
-    badgeText: 'Ceramic Orthodontic System',
+    badgeText: 'Faster Orthodontic System',
     href: '/orthodontics/kids',
   },
   {
@@ -46,8 +46,8 @@ const careTypes = [
     features: ['Invisible Options', 'Flexible Schedule', 'Quick Results'],
     image: '/Gemini_Generated_Image_ojvtklojvtklojvt.png',
     imageAlt:
-      'Adult patient with Invisalign clear aligners demonstrating discreet orthodontic treatment options',
-    badgeText: 'Invisalign Clear Aligners',
+      'Adult patient with clear aligners demonstrating discreet orthodontic treatment options',
+    badgeText: 'Invisible Solution',
     href: '/orthodontics/adults',
   },
 ];

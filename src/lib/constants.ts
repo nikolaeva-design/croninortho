@@ -10,15 +10,15 @@ export const SITE_URL = 'https://croninortho.com';
 
 // Contact Information (update with real values)
 export const CONTACT = {
-  phone: '+1234567890',
-  phoneDisplay: '(123) 456-7890',
+  phone: '+16045331151',
+  phoneDisplay: '(604) 533-1151',
   email: 'contact@croninortho.com',
   address: {
-    street: '123 Main Street',
-    city: 'City',
-    state: 'State',
-    zip: '12345',
-    country: 'USA',
+    street: '',
+    city: 'Langley',
+    state: 'BC',
+    zip: '',
+    country: 'Canada',
   },
 } as const;
 

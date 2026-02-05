@@ -12,8 +12,8 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero image.png"
-          alt="Close-up of a confident smile with low friction orthodontic braces system for precise teeth alignment"
+          src="/ortho-new.jpg"
+          alt="Close-up of a confident smile with aesthetic orthodontic braces system for precise teeth alignment"
           fill
           className="object-cover object-center"
           priority

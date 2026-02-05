@@ -4,17 +4,9 @@ import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
 
-// Team members data
+// Team members data - grouped by role type
 const teamMembers = [
-  {
-    name: 'Michelle',
-    role: 'Certified Orthodontic Assistant',
-    years: 'Since 1998',
-    image: '/MICHELLE.jpg',
-    bio: 'Since joining in 2019, I\'ve loved working alongside Dr. Cronin and our amazing team. In the clinic, I assist with patient care and help patients stay motivated with their home care routines.',
-    personal: null,
-    featured: false,
-  },
+  // Certified Orthodontic Assistants
   {
     name: 'Catherine',
     role: 'Certified Orthodontic Assistant',
@@ -25,11 +17,29 @@ const teamMembers = [
     featured: false,
   },
   {
-    name: 'Jodie',
-    role: 'CDA & Treatment Coordinator',
-    years: 'Since 1999',
-    image: '/JODIE.jpg',
-    bio: 'Trained at VCC and UBC, I\'ve been part of the Cronin Ortho family since 2000. I assist with procedures and patient education—our team truly feels like my second family. Seeing how pleased everyone is with their new smiles is the best reward!',
+    name: 'Crystal',
+    role: 'Certified Orthodontic Assistant',
+    years: 'Since 1996',
+    image: '/CRYSTAL.jpg',
+    bio: 'With experience as both receptionist and chairside assistant since 1996, I\'ve been with this wonderful team since 2000. I assist Dr. Cronin and coordinate with referring doctors. Watching patients\' confidence grow throughout treatment is incredibly rewarding!',
+    personal: 'I spend my time with my spouse, three kids, our dog, and chickens. I love outdoor activities and watching my kids play sports.',
+    featured: false,
+  },
+  {
+    name: 'Cheryl',
+    role: 'Certified Orthodontic Assistant',
+    years: 'Since 1996',
+    image: '/CHERYL.jpg',
+    bio: 'Certified since 1996 with ortho and receptionist credentials, I joined the team in 2019. I provide chairside assistance and patient education—making young patients and teenagers feel comfortable throughout treatment keeps me smiling!',
+    personal: 'Happily married with three sons. Proud hockey mom who loves cooking, walking our dog Gabi, and family movie nights.',
+    featured: false,
+  },
+  {
+    name: 'Michelle',
+    role: 'Certified Orthodontic Assistant',
+    years: 'Since 1998',
+    image: '/MICHELLE.jpg',
+    bio: 'Since joining in 2019, I\'ve loved working alongside Dr. Cronin and our amazing team. In the clinic, I assist with patient care and help patients stay motivated with their home care routines.',
     personal: null,
     featured: false,
   },
@@ -43,14 +53,44 @@ const teamMembers = [
     featured: false,
   },
   {
-    name: 'Cheryl',
+    name: 'Nasim',
     role: 'Certified Orthodontic Assistant',
-    years: 'Since 1996',
-    image: '/CHERYL.jpg',
-    bio: 'Certified since 1996 with ortho and receptionist credentials, I joined the team in 2019. I provide chairside assistance and patient education—making young patients and teenagers feel comfortable throughout treatment keeps me smiling!',
-    personal: 'Happily married with three sons. Proud hockey mom who loves cooking, walking our dog Gabi, and family movie nights.',
+    years: null,
+    image: '/NASIM.jpg',
+    bio: 'I provide skilled chairside assistance and patient care, helping ensure every visit is comfortable and efficient.',
+    personal: null,
     featured: false,
   },
+  // Certified Dental Assistant
+  {
+    name: 'Chelsey',
+    role: 'Certified Dental Assistant',
+    years: null,
+    image: '/CHELSEY.jpg',
+    bio: 'I take orthodontic records and assist with Invisalign checkups and retention appointments, providing patient instruction along the way.',
+    personal: null,
+    featured: false,
+  },
+  // Treatment Coordinators
+  {
+    name: 'Jodie',
+    role: 'Treatment Coordinator',
+    years: 'Since 1999',
+    image: '/JODIE.jpg',
+    bio: 'Trained at VCC and UBC, I\'ve been part of the Cronin Ortho family since 2000. I assist with procedures and patient education—our team truly feels like my second family. Seeing how pleased everyone is with their new smiles is the best reward!',
+    personal: null,
+    featured: false,
+  },
+  {
+    name: 'Alyssa',
+    role: 'Treatment Coordinator',
+    years: null,
+    image: '/ALYSSA.jpg',
+    bio: 'I assist with patient care and orthodontic procedures, ensuring every visit is comfortable and efficient.',
+    personal: null,
+    featured: false,
+  },
+  // Administrative Assistants
   {
     name: 'Natasha',
     role: 'Administrative Assistant',
@@ -75,42 +115,6 @@ const teamMembers = [
     years: null,
     image: '/SEHAR.jpg',
     bio: 'I help keep our front desk running smoothly, ensuring patients have a welcoming experience from the moment they arrive.',
-    personal: null,
-    featured: false,
-  },
-  {
-    name: 'Crystal',
-    role: 'Certified Orthodontic Assistant',
-    years: 'Since 1996',
-    image: '/CRYSTAL.jpg',
-    bio: 'With experience as both receptionist and chairside assistant since 1996, I\'ve been with this wonderful team since 2000. I assist Dr. Cronin and coordinate with referring doctors. Watching patients\' confidence grow throughout treatment is incredibly rewarding!',
-    personal: 'I spend my time with my spouse, three kids, our dog, and chickens. I love outdoor activities and watching my kids play sports.',
-    featured: false,
-  },
-  {
-    name: 'Chelsey',
-    role: 'Certified Dental Assistant',
-    years: null,
-    image: '/CHELSEY.jpg',
-    bio: 'I take orthodontic records and assist with Invisalign checkups and retention appointments, providing patient instruction along the way.',
-    personal: null,
-    featured: false,
-  },
-  {
-    name: 'Nasim',
-    role: 'Certified Orthodontic Assistant',
-    years: null,
-    image: '/NASIM.jpg',
-    bio: 'I provide skilled chairside assistance and patient care, helping ensure every visit is comfortable and efficient.',
-    personal: null,
-    featured: false,
-  },
-  {
-    name: 'Alyssa',
-    role: 'Certified Orthodontic Assistant',
-    years: null,
-    image: '/ALYSSA.jpg',
-    bio: 'I assist with patient care and orthodontic procedures, ensuring every visit is comfortable and efficient.',
     personal: null,
     featured: false,
   },
@@ -150,11 +154,11 @@ export default function TeamPage() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="primary" size="lg" href="#team">
-              Meet Everyone
-            </Button>
-            <Button variant="secondary" size="lg" href="/about/dr-cronin">
+            <Button variant="primary" size="lg" href="/about/dr-cronin">
               Meet Dr. Cronin
+            </Button>
+            <Button variant="secondary" size="lg" href="/about/dr-mo">
+              Meet Dr. Mo
             </Button>
           </div>
         </div>
@@ -182,7 +186,7 @@ export default function TeamPage() {
             </p>
             
             <p className="text-[#c9a962] text-lg font-semibold">
-              ~ Dr. Cronin & Dr. Mo
+              ~ Drs. Cronin and Moore
             </p>
           </div>
         </div>
@@ -272,14 +276,9 @@ export default function TeamPage() {
             <p className="text-white/60 text-lg leading-relaxed mb-10">
               Our team is here to welcome you and provide the personalized, caring orthodontic experience you deserve. Schedule your consultation today!
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="primary" size="lg" href="/#contact">
-                Schedule a Consultation
-              </Button>
-              <Button variant="secondary" size="lg" href="/about/dr-mo">
-                Meet Dr. Mo
-              </Button>
-            </div>
+            <Button variant="primary" size="lg" href="/#contact">
+              Schedule a Consultation
+            </Button>
           </div>
         </div>
       </section>

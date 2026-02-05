@@ -40,19 +40,27 @@ export default function About() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3">
               <Button
                 variant="primary"
                 size="md"
-                href="#doctors"
+                href="/about/dr-cronin"
                 className="!bg-[#1d1d1f] !text-white shadow-none"
               >
-                Meet Our Doctors
+                Meet Dr. Cronin
+              </Button>
+              <Button
+                variant="primary"
+                size="md"
+                href="/about/dr-mo"
+                className="!bg-[#1d1d1f] !text-white shadow-none"
+              >
+                Meet Dr. Mo
               </Button>
               <Button
                 variant="secondary"
                 size="md"
-                href="#team"
+                href="/about/team"
                 className="!text-[#1d1d1f] !border-[#1d1d1f]/20 hover:!bg-[#1d1d1f]/5"
               >
                 Meet the Team
@@ -60,38 +68,28 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right - Overlapping Images */}
+          {/* Right - Balanced Images */}
           <div className="relative h-[500px] lg:h-[600px]">
-            {/* Main Large Image */}
-            <div className="absolute left-0 lg:left-8 top-0 bottom-0 w-[70%] lg:w-[65%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-gradient-to-br from-[#1e5a8a] to-[#0f2a44]">
-              {/* Placeholder: Add /about-main.jpg to public folder */}
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center text-white/60 p-8">
-                  <iconify-icon
-                    icon="solar:buildings-3-linear"
-                    width="64"
-                    height="64"
-                    aria-hidden="true"
-                  />
-                  <p className="mt-4 text-sm">Practice Image</p>
-                </div>
-              </div>
+            {/* Dr. Cronin - Left */}
+            <div className="absolute left-0 top-[5%] w-[55%] lg:w-[55%] h-[75%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-10">
+              <Image
+                src="/DR. CRONIN.jpg"
+                alt="Dr. Cronin - Orthodontist"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 55vw, 35vw"
+              />
             </div>
 
-            {/* Smaller Overlapping Image */}
-            <div className="absolute right-0 top-[15%] w-[45%] lg:w-[40%] aspect-square rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-gradient-to-br from-[#2a6a9a] to-[#1a3a5c]">
-              {/* Placeholder: Add /about-secondary.jpg to public folder */}
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center text-white/60 p-4">
-                  <iconify-icon
-                    icon="solar:users-group-rounded-linear"
-                    width="48"
-                    height="48"
-                    aria-hidden="true"
-                  />
-                  <p className="mt-2 text-xs">Team Image</p>
-                </div>
-              </div>
+            {/* Dr. Mo - Right */}
+            <div className="absolute right-0 top-[20%] w-[55%] lg:w-[55%] h-[75%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+              <Image
+                src="/DR. MO.jpg"
+                alt="Dr. Mo - Orthodontist"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 55vw, 35vw"
+              />
             </div>
           </div>
         </div>

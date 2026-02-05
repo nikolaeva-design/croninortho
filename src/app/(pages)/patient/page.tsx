@@ -646,12 +646,12 @@ export default function PatientPage() {
           <div className="flex animate-marquee gap-5">
             {/* First set of testimonials */}
             {[
-              { name: 'Cory', initial: 'C', quote: "From my first consultation, I knew I could place my confidence in Dr. Cronin. The end result has exceeded my expectations!" },
-              { name: 'Pam', initial: 'P', quote: 'Fabulous support and communication. Everyone is very kind and makes you feel welcome.' },
-              { name: 'Anonymous', initial: 'A', quote: "My daughter has anxiety and felt comfortable and was treated so well." },
-              { name: 'Anonymous', initial: 'A', quote: 'My overall experience was amazing. The best part was seeing my new beautiful smile.' },
-              { name: 'Anonymous', initial: 'A', quote: 'All specialists were in one building and could consult each other about my case.' },
-              { name: 'Anonymous', initial: 'A', quote: 'Friendly — always informed about what took place. The balloons and treats were a nice touch.' },
+              { name: 'M Prins', initial: 'M', quote: "The best orthodontic and patient care! They treated myself and my three daughters with some tricky situations over the last 6 years, and have given us royal treatment the entire time. The team at reception are exceptional!" },
+              { name: 'Scott Drummond', initial: 'S', quote: 'We now have our third child going through with Cronin Ortho. The service has never wavered over the years and the end results are fantastic. All of the staff are so friendly and very accommodating.' },
+              { name: 'Melissa Ketel', initial: 'M', quote: "Cronin Ortho is fantastic! Both Dr. Mo and Dr. Cronin are attentive and caring, they take care of children's comfort, understand exactly what's happening, and are always ready to help." },
+              { name: 'Daine DOK', initial: 'D', quote: 'Great place to get Ortho treatment for yourself or your kids. Staff are knowledgeable and friendly. They happily answer questions or address your concerns, giving you a stress free experience.' },
+              { name: 'Tiffany Froese', initial: 'T', quote: 'Absolutely amazing ortho office! The staff is friendly, gentle, and always on time. They made the whole process so easy and stress-free. Highly recommend!' },
+              { name: 'Yuliya Davidovsky', initial: 'Y', quote: 'We had a great experience at the orthodontic clinic Cronin. The staff was friendly, professional, and very patient. Everything was explained clearly, and the treatment was done with care.' },
             ].map((testimonial, idx) => (
               <div
                 key={`first-${idx}`}
@@ -675,12 +675,12 @@ export default function PatientPage() {
             ))}
             {/* Duplicate set for seamless loop */}
             {[
-              { name: 'Cory', initial: 'C', quote: "From my first consultation, I knew I could place my confidence in Dr. Cronin. The end result has exceeded my expectations!" },
-              { name: 'Pam', initial: 'P', quote: 'Fabulous support and communication. Everyone is very kind and makes you feel welcome.' },
-              { name: 'Anonymous', initial: 'A', quote: "My daughter has anxiety and felt comfortable and was treated so well." },
-              { name: 'Anonymous', initial: 'A', quote: 'My overall experience was amazing. The best part was seeing my new beautiful smile.' },
-              { name: 'Anonymous', initial: 'A', quote: 'All specialists were in one building and could consult each other about my case.' },
-              { name: 'Anonymous', initial: 'A', quote: 'Friendly — always informed about what took place. The balloons and treats were a nice touch.' },
+              { name: 'M Prins', initial: 'M', quote: "The best orthodontic and patient care! They treated myself and my three daughters with some tricky situations over the last 6 years, and have given us royal treatment the entire time. The team at reception are exceptional!" },
+              { name: 'Scott Drummond', initial: 'S', quote: 'We now have our third child going through with Cronin Ortho. The service has never wavered over the years and the end results are fantastic. All of the staff are so friendly and very accommodating.' },
+              { name: 'Melissa Ketel', initial: 'M', quote: "Cronin Ortho is fantastic! Both Dr. Mo and Dr. Cronin are attentive and caring, they take care of children's comfort, understand exactly what's happening, and are always ready to help." },
+              { name: 'Daine DOK', initial: 'D', quote: 'Great place to get Ortho treatment for yourself or your kids. Staff are knowledgeable and friendly. They happily answer questions or address your concerns, giving you a stress free experience.' },
+              { name: 'Tiffany Froese', initial: 'T', quote: 'Absolutely amazing ortho office! The staff is friendly, gentle, and always on time. They made the whole process so easy and stress-free. Highly recommend!' },
+              { name: 'Yuliya Davidovsky', initial: 'Y', quote: 'We had a great experience at the orthodontic clinic Cronin. The staff was friendly, professional, and very patient. Everything was explained clearly, and the treatment was done with care.' },
             ].map((testimonial, idx) => (
               <div
                 key={`second-${idx}`}

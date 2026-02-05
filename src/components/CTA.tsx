@@ -75,9 +75,9 @@ export default function CTA() {
             Schedule Free Consultation
           </a>
           <a
-            href="tel:+1234567890"
+            href="tel:+16045331151"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white text-sm font-medium rounded-full border border-white/30 hover:bg-white/10 transition-colors duration-200"
-            aria-label="Call us at (123) 456-7890"
+            aria-label="Call us at (604) 533-1151"
           >
             <iconify-icon
               icon="solar:phone-linear"
@@ -85,7 +85,7 @@ export default function CTA() {
               height="18"
               aria-hidden="true"
             />
-            Call (123) 456-7890
+            Call (604) 533-1151
           </a>
         </div>
       </div>

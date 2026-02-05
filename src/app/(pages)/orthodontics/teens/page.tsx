@@ -50,19 +50,19 @@ const processSteps = [
 // What to expect items
 const whatToExpectItems = [
   {
-    title: 'Relaxed Environment',
-    description: 'Our modern office is designed with teens in mind - comfortable, welcoming, and judgement-free.',
-    tags: ['Teen-friendly vibe', 'Modern space', 'Positive atmosphere'],
+    title: 'Comprehensive Diagnosis',
+    description: 'Our friendly team greets you and your teen, making everyone feel at home.',
+    tags: ['Teen-friendly office', 'Welcoming staff', 'Relaxed atmosphere'],
   },
   {
-    title: 'Advanced Technology',
-    description: 'Digital scans, 3D treatment planning, and the latest orthodontic technology for better results.',
-    tags: ['No impressions', '3D visualization', 'Precise planning'],
+    title: 'Digital Imaging',
+    description: 'Quick, comfortable CBCT and photos to see the complete picture of your teen\'s smile.',
+    tags: ['Low radiation', 'Fast & painless', 'Detailed views'],
   },
   {
-    title: 'Treatment Options',
-    description: 'We\'ll explain all your options - from traditional braces to nearly invisible aligners.',
-    tags: ['Clear explanations', 'Multiple options', 'Your choice'],
+    title: 'Detailed Orthodontic Consultation',
+    description: 'Our orthodontist examines your teen\'s teeth, jaw, and bite in a comfortable, pressure-free setting.',
+    tags: ['Thorough check', 'No discomfort', 'Teen-focused'],
   },
   {
     title: 'Personalized Timeline',
@@ -76,12 +76,12 @@ const treatmentOptions = [
   {
     title: 'Metal Braces',
     description: 'Classic, effective treatment with modern low-profile brackets. Customize with colored bands!',
-    tags: ['Most effective', 'Color options', 'Affordable'],
+    tags: ['Better control', 'Color options', 'Affordable'],
   },
   {
     title: 'Clear/Ceramic Braces',
     description: 'Tooth-colored brackets that blend with your smile while delivering the same great results.',
-    tags: ['Less visible', 'Same effectiveness', 'Popular choice'],
+    tags: ['Less visible', 'Less visible', 'Popular choice'],
   },
   {
     title: 'Invisalign Teen',
@@ -115,7 +115,7 @@ const featureSections = [
     description: 'We use the latest technology to make your treatment faster, more comfortable, and more precise. See your future smile before you even start.',
     features: [
       '3D treatment simulation',
-      'Digital scanning (no goop)',
+      'Digital scanning',
       'Faster treatment times',
       'Fewer office visits',
     ],
@@ -142,25 +142,40 @@ const featureSections = [
 // Testimonials
 const testimonials = [
   {
-    quote: 'I was nervous about getting braces before junior year, but Dr. Cronin made me feel so comfortable. Plus, the colored bands are actually pretty cool!',
-    author: 'Madison K.',
-    role: 'Age 16, Metal Braces',
-    avatar: 'M',
-    rating: 5,
+    quote: 'The overall experience was pretty good. It was fairly straightforward and it got me out of school for a bit. To sum it up, ortho has been a good experience and I would recommend.',
+    author: 'Levi N.',
+    role: 'Teen Patient',
+    avatar: 'L',
   },
   {
-    quote: 'Invisalign was perfect for me since I play soccer. I can take them out for games and no one even knows I\'m in treatment.',
-    author: 'Tyler R.',
-    role: 'Age 15, Invisalign Teen',
+    quote: 'Dr.Cronin is amazing and so is his staff! I came here as a teen and now my own kids are seeing them. Hands down the best ortho in the province ;)',
+    author: 'C Rae',
+    role: 'Former Teen Patient',
+    avatar: 'C',
+  },
+  {
+    quote: 'Great care of teeth, I have been with them for my braces for 5 months so far. Honestly, great and gentle care of teeth. Lots of progress seen so far.',
+    author: 'Terrence',
+    role: 'Teen in Treatment',
     avatar: 'T',
-    rating: 5,
   },
   {
-    quote: 'The whole team treats you like a person, not just another patient. My smile looks amazing now and it only took 18 months!',
-    author: 'Sophia L.',
-    role: 'Age 17, Clear Braces',
-    avatar: 'S',
-    rating: 5,
+    quote: 'Dr Cronin and Dr Mo are the best. I went as a child and my teeth are still perfect and now my kids see them!',
+    author: 'Krista Groat',
+    role: 'Former Teen Patient',
+    avatar: 'K',
+  },
+  {
+    quote: 'Dr. Cronin was my orthodontist as a child in the 90\'s and now my kids come here too! A consistently positive experience, highly recommend!',
+    author: 'Joelle Henderson',
+    role: 'Former Teen Patient',
+    avatar: 'J',
+  },
+  {
+    quote: 'Dr. Mo is an amazing orthodontist! He\'s so fun, kind and attentive. The staff are wonderful too, every visit runs smoothly. I look forward to every appointment and can\'t wait to see my smile when the braces come off!',
+    author: 'Kuljeet Sandhu',
+    role: 'Teen Patient',
+    avatar: 'K',
   },
 ];
 
@@ -788,71 +803,6 @@ export default function TeensOrthodonticsPage() {
         </section>
       ))}
 
-      {/* Doctor Section */}
-      <section className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Image */}
-            <AnimatedSection>
-              <div className="relative">
-                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden max-w-md mx-auto lg:mx-0">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#c9a962]/20 to-[#c9a962]/5 flex items-center justify-center">
-                    <div className="text-center">
-                      <iconify-icon icon="solar:user-circle-bold" width="120" height="120" className="text-white/20" />
-                      <p className="text-white/30 mt-4">Doctor Photo</p>
-                    </div>
-                  </div>
-                </div>
-                {/* Credentials Badge */}
-                <div className="absolute -bottom-4 -right-4 lg:right-auto lg:-left-4 p-4 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/10">
-                  <div className="flex items-center gap-3">
-                    <iconify-icon icon="solar:verified-check-bold" width="32" height="32" className="text-[#c9a962]" />
-                    <div>
-                      <div className="text-white font-semibold">AAO Member</div>
-                      <div className="text-white/50 text-sm">Board Certified</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Content */}
-            <AnimatedSection delay={200}>
-              <span className="text-[#c9a962] text-sm font-semibold tracking-wider uppercase mb-4 block">Meet Your Doctor</span>
-              <h2 className="text-white text-4xl sm:text-5xl font-semibold tracking-tight leading-tight mb-6">
-                Dr. D.G. Cronin
-                <span className="text-white/50 block text-2xl sm:text-3xl mt-2">Orthodontic Specialist</span>
-              </h2>
-              <div className="space-y-4 mb-8">
-                <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  Dr. Cronin has helped thousands of teens achieve the smile they&apos;ve always wanted. His approachable style and expertise make the orthodontic experience comfortable and even fun.
-                </p>
-                <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  As a member of the American Association of Orthodontists, Dr. Cronin stays at the forefront of orthodontic innovation, offering the latest treatments and technology.
-                </p>
-              </div>
-              
-              {/* Credentials */}
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm">
-                  15+ Years Experience
-                </span>
-                <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm">
-                  Invisalign Diamond Provider
-                </span>
-                <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm">
-                  Teen Treatment Expert
-                </span>
-              </div>
-
-              <Button variant="primary" size="md" href="#contact-form">
-                Book With Dr. Cronin
-              </Button>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
       <section className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -867,35 +817,70 @@ export default function TeensOrthodonticsPage() {
               </p>
             </div>
           </AnimatedSection>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {testimonials.map((testimonial, index) => (
-              <AnimatedSection key={testimonial.author} delay={index * 100}>
-                <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-white/10 transition-all duration-300 h-full flex flex-col">
-                  {/* Rating */}
-                  <div className="flex gap-1 mb-6">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <iconify-icon key={i} icon="solar:star-bold" width="20" height="20" className="text-yellow-400" />
-                    ))}
+        {/* Infinite Marquee */}
+        <div className="overflow-hidden">
+          <div className="flex animate-marquee gap-6">
+            {/* First set of testimonials */}
+            {testimonials.map((testimonial, idx) => (
+              <div
+                key={`first-${idx}`}
+                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5"
+              >
+                {/* Rating */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <iconify-icon key={i} icon="solar:star-bold" width="18" height="18" className="text-[#c9a962]" />
+                  ))}
+                </div>
+                
+                {/* Quote */}
+                <p className="text-white/70 text-sm leading-relaxed mb-6">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                
+                {/* Author */}
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white text-sm font-semibold">
+                    {testimonial.avatar}
                   </div>
-                  
-                  {/* Quote */}
-                  <p className="text-white/70 text-base leading-relaxed mb-8 flex-grow">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-                  
-                  {/* Author */}
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white font-semibold">
-                      {testimonial.avatar}
-                    </div>
-                    <div>
-                      <div className="text-white font-medium">{testimonial.author}</div>
-                      <div className="text-white/50 text-sm">{testimonial.role}</div>
-                    </div>
+                  <div>
+                    <div className="text-white font-medium text-sm">{testimonial.author}</div>
+                    <div className="text-white/50 text-xs">{testimonial.role}</div>
                   </div>
                 </div>
-              </AnimatedSection>
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {testimonials.map((testimonial, idx) => (
+              <div
+                key={`second-${idx}`}
+                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5"
+              >
+                {/* Rating */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <iconify-icon key={i} icon="solar:star-bold" width="18" height="18" className="text-[#c9a962]" />
+                  ))}
+                </div>
+                
+                {/* Quote */}
+                <p className="text-white/70 text-sm leading-relaxed mb-6">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                
+                {/* Author */}
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white text-sm font-semibold">
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <div className="text-white font-medium text-sm">{testimonial.author}</div>
+                    <div className="text-white/50 text-xs">{testimonial.role}</div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -967,12 +952,12 @@ export default function TeensOrthodonticsPage() {
 
               {/* Contact Info */}
               <div className="space-y-4 mb-8">
-                <a href="tel:+1234567890" className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-white/10 transition-all group">
+                <a href="tel:+16045331151" className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-white/10 transition-all group">
                   <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <iconify-icon icon="solar:phone-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">(123) 456-7890</div>
+                    <div className="text-white font-medium">(604) 533-1151</div>
                     <div className="text-white/50 text-sm">Call or text us</div>
                   </div>
                 </a>
@@ -990,22 +975,12 @@ export default function TeensOrthodonticsPage() {
                     <iconify-icon icon="solar:map-point-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">123 Main Street</div>
-                    <div className="text-white/50 text-sm">City, State 12345</div>
+                    <div className="text-white font-medium">Langley, BC</div>
+                    <div className="text-white/50 text-sm">Canada</div>
                   </div>
                 </div>
               </div>
 
-              {/* Insurance Note */}
-              <div className="p-4 rounded-2xl bg-[#c9a962]/10 border border-[#c9a962]/20">
-                <div className="flex items-start gap-3">
-                  <iconify-icon icon="solar:shield-check-bold" width="24" height="24" className="text-[#c9a962] flex-shrink-0 mt-0.5" />
-                  <div>
-                    <div className="text-white font-medium mb-1">Insurance & Payment Plans</div>
-                    <p className="text-white/60 text-sm">We accept most insurance and offer flexible monthly payment options to fit any budget.</p>
-                  </div>
-                </div>
-              </div>
             </AnimatedSection>
 
             {/* Right - Form */}
@@ -1068,7 +1043,7 @@ export default function TeensOrthodonticsPage() {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
-                      placeholder="(123) 456-7890"
+                      placeholder="(604) 533-1151"
                     />
                   </div>
                 </div>

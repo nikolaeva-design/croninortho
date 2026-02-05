@@ -9,7 +9,7 @@ const concernGroups = [
   {
     title: 'Aesthetic Goals',
     description: 'Common smile concerns adults want to address.',
-    signs: ['Crooked or crowded teeth', 'Gaps between teeth', 'Uneven smile line'],
+    signs: ['Crooked or crowded teeth', 'Gaps between teeth', 'Uneven smile line', 'Missing teeth'],
   },
   {
     title: 'Functional Issues',
@@ -50,31 +50,31 @@ const processSteps = [
 // What to expect items
 const whatToExpectItems = [
   {
-    title: 'Professional Environment',
-    description: 'Our practice caters to adult patients with a sophisticated, comfortable atmosphere.',
-    tags: ['Mature setting', 'Efficient appointments', 'Respectful care'],
+    title: 'Comprehensive Diagnosis',
+    description: 'Our friendly team welcomes you in a professional, comfortable environment designed for adult patients.',
+    tags: ['Professional setting', 'Welcoming staff', 'Relaxed atmosphere'],
   },
   {
-    title: 'Comprehensive Assessment',
-    description: 'Digital X-rays and 3D scans provide a complete picture of your dental health and treatment options.',
-    tags: ['Full evaluation', 'Digital imaging', 'Detailed analysis'],
+    title: 'Digital Imaging',
+    description: 'Quick, comfortable CBCT and photos provide a complete picture of your dental health and treatment options.',
+    tags: ['Low radiation', 'Fast & painless', 'Detailed views'],
   },
   {
-    title: 'Honest Recommendations',
-    description: 'We\'ll explain all your options clearly, including timeline, costs, and what to realistically expect.',
-    tags: ['Transparent pricing', 'Realistic expectations', 'No pressure'],
+    title: 'Detailed Orthodontic Consultation',
+    description: 'Our orthodontist examines your teeth, jaw, and bite, explaining all findings in a pressure-free setting.',
+    tags: ['Thorough check', 'No discomfort', 'Adult-focused'],
   },
   {
-    title: 'Personalized Plan',
-    description: 'Leave with a clear understanding of your treatment journey, tailored to your schedule and goals.',
-    tags: ['Custom timeline', 'Flexible options', 'Clear next steps'],
+    title: 'Multiple Treatment Plans',
+    description: 'We present all your options clearly, including timelines, costs, and what to realistically expect from each.',
+    tags: ['Plain language', 'All questions answered', 'No pressure'],
   },
 ];
 
 // Treatment options for adults
 const treatmentOptions = [
   {
-    title: 'Invisalign',
+    title: 'Clear Aligners',
     description: 'Nearly invisible clear aligners that fit seamlessly into your professional and social life.',
     tags: ['Virtually invisible', 'Removable', 'Most popular'],
   },
@@ -84,9 +84,9 @@ const treatmentOptions = [
     tags: ['Discreet look', 'Effective results', 'Great for complex cases'],
   },
   {
-    title: 'Lingual Braces',
-    description: 'Brackets placed behind teeth - completely hidden from view while delivering excellent results.',
-    tags: ['100% hidden', 'Custom-made', 'Premium option'],
+    title: 'Metal Braces',
+    description: 'Traditional metal braces offer precise control and excellent results for even the most complex cases.',
+    tags: ['Proven results', 'Cost-effective', 'Great for complex cases'],
   },
 ];
 
@@ -142,25 +142,40 @@ const featureSections = [
 // Testimonials
 const testimonials = [
   {
-    quote: 'At 42, I finally decided to fix my smile. Invisalign was perfect - none of my colleagues even noticed I was in treatment until I told them!',
-    author: 'Robert M.',
-    role: 'Attorney, Age 42',
+    quote: 'My experience with this clinic has always been amazing! From the entire staff to Dr. Cronin and Mo, everyone makes me feel completely comfortable. I used to be very nervous about going to the dentist, but now I actually look forward to my appointments.',
+    author: 'Lovely Digo',
+    role: 'Adult Patient',
+    avatar: 'L',
+  },
+  {
+    quote: 'Having had a couple of bad experiences with first consults at other clinics, I had an incredible experience here. Not only they completed full photo assessment, 360 scan, but Dr Mo also showed me an AI model of potential alignment and provided 2 treatment options.',
+    author: 'Sky Blu',
+    role: 'Adult Patient',
+    avatar: 'S',
+  },
+  {
+    quote: 'I just had my consultation with Dr. Mo, and the experience was excellent from beginning to end. The staff was friendly, welcoming, and very professional. Dr. Mo took the time to explain everything clearly and made me feel completely comfortable with the treatment plan.',
+    author: 'Aakem',
+    role: 'Adult Patient',
+    avatar: 'A',
+  },
+  {
+    quote: 'Twice a patient now at Cronin Ortho. First with Dr Cronin and second with Dr Mo. Both are fantastic and if you wear your retainer you won\'t have to come back like me!',
+    author: 'Amanda R.',
+    role: 'Returning Adult Patient',
+    avatar: 'A',
+  },
+  {
+    quote: 'I received orthodontic treatment from Dr. Cronin. I can\'t say enough positive things about him and his team. I come from Kelowna and they\'ve always been very accommodating. I am beyond happy with my results. Thank you everyone who helped me, you changed my life!',
+    author: 'Corey Defouw',
+    role: 'Adult Patient',
+    avatar: 'C',
+  },
+  {
+    quote: 'Dr Mo is the best! Such compassionate care for patients with sensory needs. He truly cares about each patient as an individual and has their best interests at heart. Support staff is wonderful as well.',
+    author: 'Renee Inaba',
+    role: 'Adult Patient',
     avatar: 'R',
-    rating: 5,
-  },
-  {
-    quote: 'I wish I had done this years ago. The process was so much easier than I expected, and the results exceeded my expectations.',
-    author: 'Jennifer S.',
-    role: 'Marketing Director, Age 35',
-    avatar: 'J',
-    rating: 5,
-  },
-  {
-    quote: 'Dr. Cronin took the time to understand exactly what I wanted. The clear braces worked great for my complex case and I couldn\'t be happier.',
-    author: 'David L.',
-    role: 'Engineer, Age 38',
-    avatar: 'D',
-    rating: 5,
   },
 ];
 
@@ -787,71 +802,6 @@ export default function AdultsOrthodonticsPage() {
         </section>
       ))}
 
-      {/* Doctor Section */}
-      <section className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Image */}
-            <AnimatedSection>
-              <div className="relative">
-                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden max-w-md mx-auto lg:mx-0">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#c9a962]/20 to-[#c9a962]/5 flex items-center justify-center">
-                    <div className="text-center">
-                      <iconify-icon icon="solar:user-circle-bold" width="120" height="120" className="text-white/20" />
-                      <p className="text-white/30 mt-4">Doctor Photo</p>
-                    </div>
-                  </div>
-                </div>
-                {/* Credentials Badge */}
-                <div className="absolute -bottom-4 -right-4 lg:right-auto lg:-left-4 p-4 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/10">
-                  <div className="flex items-center gap-3">
-                    <iconify-icon icon="solar:verified-check-bold" width="32" height="32" className="text-[#c9a962]" />
-                    <div>
-                      <div className="text-white font-semibold">AAO Member</div>
-                      <div className="text-white/50 text-sm">Board Certified</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Content */}
-            <AnimatedSection delay={200}>
-              <span className="text-[#c9a962] text-sm font-semibold tracking-wider uppercase mb-4 block">Meet Your Doctor</span>
-              <h2 className="text-white text-4xl sm:text-5xl font-semibold tracking-tight leading-tight mb-6">
-                Dr. D.G. Cronin
-                <span className="text-white/50 block text-2xl sm:text-3xl mt-2">Orthodontic Specialist</span>
-              </h2>
-              <div className="space-y-4 mb-8">
-                <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  With over 15 years of experience treating adult patients, Dr. Cronin understands the unique needs and concerns of professionals seeking orthodontic care. His expertise in discreet treatment options has helped countless adults achieve the smiles they&apos;ve always wanted.
-                </p>
-                <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  As an Invisalign Diamond Provider and AAO member, Dr. Cronin stays at the forefront of orthodontic innovation, offering the most advanced and efficient treatment options available.
-                </p>
-              </div>
-              
-              {/* Credentials */}
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm">
-                  15+ Years Experience
-                </span>
-                <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm">
-                  Invisalign Diamond Provider
-                </span>
-                <span className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm">
-                  Adult Treatment Specialist
-                </span>
-              </div>
-
-              <Button variant="primary" size="md" href="#contact-form">
-                Book With Dr. Cronin
-              </Button>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
       <section className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -866,35 +816,70 @@ export default function AdultsOrthodonticsPage() {
               </p>
             </div>
           </AnimatedSection>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {testimonials.map((testimonial, index) => (
-              <AnimatedSection key={testimonial.author} delay={index * 100}>
-                <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-white/10 transition-all duration-300 h-full flex flex-col">
-                  {/* Rating */}
-                  <div className="flex gap-1 mb-6">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <iconify-icon key={i} icon="solar:star-bold" width="20" height="20" className="text-yellow-400" />
-                    ))}
+        {/* Infinite Marquee */}
+        <div className="overflow-hidden">
+          <div className="flex animate-marquee gap-6">
+            {/* First set of testimonials */}
+            {testimonials.map((testimonial, idx) => (
+              <div
+                key={`first-${idx}`}
+                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5"
+              >
+                {/* Rating */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <iconify-icon key={i} icon="solar:star-bold" width="18" height="18" className="text-[#c9a962]" />
+                  ))}
+                </div>
+                
+                {/* Quote */}
+                <p className="text-white/70 text-sm leading-relaxed mb-6">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                
+                {/* Author */}
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white text-sm font-semibold">
+                    {testimonial.avatar}
                   </div>
-                  
-                  {/* Quote */}
-                  <p className="text-white/70 text-base leading-relaxed mb-8 flex-grow">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-                  
-                  {/* Author */}
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white font-semibold">
-                      {testimonial.avatar}
-                    </div>
-                    <div>
-                      <div className="text-white font-medium">{testimonial.author}</div>
-                      <div className="text-white/50 text-sm">{testimonial.role}</div>
-                    </div>
+                  <div>
+                    <div className="text-white font-medium text-sm">{testimonial.author}</div>
+                    <div className="text-white/50 text-xs">{testimonial.role}</div>
                   </div>
                 </div>
-              </AnimatedSection>
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {testimonials.map((testimonial, idx) => (
+              <div
+                key={`second-${idx}`}
+                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5"
+              >
+                {/* Rating */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <iconify-icon key={i} icon="solar:star-bold" width="18" height="18" className="text-[#c9a962]" />
+                  ))}
+                </div>
+                
+                {/* Quote */}
+                <p className="text-white/70 text-sm leading-relaxed mb-6">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                
+                {/* Author */}
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white text-sm font-semibold">
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <div className="text-white font-medium text-sm">{testimonial.author}</div>
+                    <div className="text-white/50 text-xs">{testimonial.role}</div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -966,12 +951,12 @@ export default function AdultsOrthodonticsPage() {
 
               {/* Contact Info */}
               <div className="space-y-4 mb-8">
-                <a href="tel:+1234567890" className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-white/10 transition-all group">
+                <a href="tel:+16045331151" className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-white/10 transition-all group">
                   <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <iconify-icon icon="solar:phone-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">(123) 456-7890</div>
+                    <div className="text-white font-medium">(604) 533-1151</div>
                     <div className="text-white/50 text-sm">Call us directly</div>
                   </div>
                 </a>
@@ -989,22 +974,12 @@ export default function AdultsOrthodonticsPage() {
                     <iconify-icon icon="solar:map-point-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">123 Main Street</div>
-                    <div className="text-white/50 text-sm">City, State 12345</div>
+                    <div className="text-white font-medium">Langley, BC</div>
+                    <div className="text-white/50 text-sm">Canada</div>
                   </div>
                 </div>
               </div>
 
-              {/* Insurance Note */}
-              <div className="p-4 rounded-2xl bg-[#c9a962]/10 border border-[#c9a962]/20">
-                <div className="flex items-start gap-3">
-                  <iconify-icon icon="solar:shield-check-bold" width="24" height="24" className="text-[#c9a962] flex-shrink-0 mt-0.5" />
-                  <div>
-                    <div className="text-white font-medium mb-1">Flexible Financing</div>
-                    <p className="text-white/60 text-sm">We accept most insurance plans and offer interest-free payment options to make treatment accessible.</p>
-                  </div>
-                </div>
-              </div>
             </AnimatedSection>
 
             {/* Right - Form */}
@@ -1037,7 +1012,7 @@ export default function AdultsOrthodonticsPage() {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
-                      placeholder="(123) 456-7890"
+                      placeholder="(604) 533-1151"
                     />
                   </div>
                   <div>

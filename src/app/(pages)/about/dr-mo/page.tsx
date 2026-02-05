@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
 
@@ -21,51 +21,80 @@ const memberships = [
   'Fellow of the Royal College of Dentist Canada',
 ];
 
-// Expertise groups - based on Dr. Mo's background
+// Expertise groups - same as Dr. Cronin
 const expertiseGroups = [
   {
-    title: 'Advanced Digital Orthodontics',
-    description: 'Integrating advanced digital techniques to create individualized treatment plans that deliver precise, need-based results.',
-    points: ['Individualized Planning', 'Precise Results', 'Modern Technology'],
-    icon: 'solar:cpu-bolt-bold',
+    title: 'Clinical Excellence',
+    description: 'Achieving optimal functional and aesthetic results for every patient, transforming lives through precision orthodontic care.',
+    points: ['Optimal Function', 'Aesthetic Results', 'Life-Changing Care'],
+    icon: 'solar:shield-check-bold',
   },
   {
-    title: 'Early Dentition Invisalign',
-    description: 'Specialized expertise in the use of Invisalign for early dentition, derived from intensive research and clinical thesis at UBC.',
-    points: ['Early Intervention', 'Invisalign Research', 'Pediatric Focus'],
-    icon: 'solar:star-bold',
+    title: 'Occlusion',
+    description: 'Advanced training in occlusion from the Roth Williams Center, focusing on proper bite alignment and function.',
+    points: ['Bite Alignment', 'Occlusion Specialist', 'Comprehensive Planning'],
+    icon: 'solar:shield-check-bold',
   },
   {
-    title: 'Patient-Centered Care',
-    description: 'Building personal connections and ensuring orthodontic care is tailored specifically to the unique needs of every patient.',
-    points: ['Personal Connections', 'Tailored Care', 'Customized Plans'],
-    icon: 'solar:users-group-rounded-bold',
+    title: 'Advanced Technology',
+    description: 'Staying at the forefront of scientifically proven and up-to-date treatments, technologies, and diagnoses.',
+    points: ['Evidence-Based', 'Modern Technology', 'Highest Care Level'],
+    icon: 'solar:shield-check-bold',
   },
 ];
 
 // Patient testimonials
 const testimonials = [
   {
-    quote: "Dr. Mo transformed my smile and my confidence. His attention to detail and genuine care made the entire process enjoyable. I couldn't be happier with my results!",
-    author: 'Sarah O\'Connor',
-    treatment: 'Invisalign',
-    rating: 5,
+    quote: "Super helpful, and friendly staff. Dr. Mo really takes the time to explain his plan and vision for your future smile. I 100% recommend the team at Cronin Ortho!",
+    author: 'J Percy',
+    treatment: 'Consultation',
   },
   {
-    quote: "After years of being self-conscious about my teeth, Dr. Mo gave me the smile I always dreamed of. His expertise and warm personality made every visit a pleasure.",
-    author: 'James Murphy',
-    treatment: 'Ceramic Braces',
-    rating: 5,
+    quote: "We're just beginning our journey with Dr. Mo and so far are really happy with the service! Looking forward to making that movie star smile a reality for our little one!",
+    author: 'Andrea Petkau',
+    treatment: 'Early Treatment',
   },
   {
-    quote: "The best decision I made was choosing Dr. Mo for my orthodontic treatment. Professional, caring, and absolutely brilliant at what he does.",
-    author: 'Emma Kelly',
-    treatment: 'Invisalign',
-    rating: 5,
+    quote: "Both my boys see Cronin and now Mo. We have had the absolute best experience here so far. The staff and orthodontists are amazing. Even with my sensory kiddo who struggles with things being done in his mouth.",
+    author: 'Tamara C',
+    treatment: 'Orthodontic Treatment',
+  },
+  {
+    quote: "Dr Mo has always been kind and welcoming to our daughter. She always leaves the office with a smile!",
+    author: 'Tony Ma',
+    treatment: 'Orthodontic Treatment',
+  },
+  {
+    quote: "Dr. Cronin and Dr. Sarfaz have been incredible to work with! Their staff is super kind and extremely flexible with some of those last minute check ins!",
+    author: 'Kara Geransky',
+    treatment: 'Orthodontic Treatment',
+  },
+  {
+    quote: "I had an amazing experience at this dentist, I would recommend it to everyone. They were so sweet and nice. They are really good at their work and every person that works there is so nice.",
+    author: 'Eyleen Hasenhütl',
+    treatment: 'Orthodontic Treatment',
   },
 ];
 
 export default function DrMoPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: '',
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+  };
+
   return (
     <div className="bg-[#0a0a0a] -mt-20">
       {/* Hero Section */}
@@ -95,7 +124,7 @@ export default function DrMoPage() {
           </h1>
           
           <p className="text-white/60 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-            Dedicated to aesthetics, functionality, and long-term stability, Dr. Mo combines advanced digital techniques with personalized care in Langley.
+            Here at Cronin Ortho, we combine advanced digital techniques with personalized care.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
@@ -190,19 +219,15 @@ export default function DrMoPage() {
               <div className="space-y-8">
                 <div className="relative pl-8 border-l border-[#c9a962]/30">
                   <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-[#c9a962]" />
-                  <h3 className="text-white text-xl font-medium mb-2">Bachelor’s Degree in Dentistry</h3>
-                  <p className="text-white/40 text-sm mb-3">Pakistan</p>
+                  <h3 className="text-white text-xl font-medium mb-2">Bachelor's Degree in Dentistry</h3>
                 </div>
                 <div className="relative pl-8 border-l border-[#c9a962]/30">
                   <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-[#c9a962]" />
-                  <h3 className="text-white text-xl font-medium mb-2">Master’s in Oral and Maxillofacial Pathology</h3>
-                  <p className="text-white/40 text-sm mb-3">Full Scholarship</p>
+                  <h3 className="text-white text-xl font-medium mb-2">Master's in Oral and Maxillofacial Pathology</h3>
                 </div>
                 <div className="relative pl-8 border-l border-[#c9a962]/30">
                   <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-[#c9a962]" />
-                  <h3 className="text-white text-xl font-medium mb-2">Orthodontic Training</h3>
-                  <p className="text-white/40 text-sm mb-3">University of British Columbia</p>
-                  <p className="text-white/60 italic text-sm">Thesis: The use of Invisalign in early dentition</p>
+                  <h3 className="text-white text-xl font-medium mb-2">Masters in Craniofacial Orthodontics and Diploma in Orthodontics</h3>
                 </div>
               </div>
 
@@ -259,14 +284,14 @@ export default function DrMoPage() {
               Areas of Expertise
             </h2>
             <p className="text-white/50 text-lg max-w-xl mx-auto">
-              Reimagining orthodontics through advanced digital techniques and patient-centered care.
+              Combining experience with modern, evidence-based orthodontic treatments.
             </p>
           </div>
 
           {/* Luxury Bento Layout */}
           <div className="grid lg:grid-cols-12 gap-4 lg:gap-6">
             
-            {/* 1. Digital - Big Card (Top Left) */}
+            {/* 1. Clinical Excellence - Big Card (Top Left) */}
             <div className="lg:col-span-8 group">
               <div className="relative h-full min-h-[400px] rounded-3xl overflow-hidden bg-white/[0.03] border border-white/10 p-8 lg:p-12 flex flex-col justify-between hover:bg-white/[0.05] transition-all duration-500">
                 <div className="relative z-10 max-w-xl">
@@ -289,7 +314,7 @@ export default function DrMoPage() {
               </div>
             </div>
 
-            {/* 2. Invisalign - Small Card (Top Right) */}
+            {/* 2. Occlusion - Small Card (Top Right) */}
             <div className="lg:col-span-4">
               <div className="relative h-full min-h-[400px] rounded-3xl bg-[#141414] border border-white/5 p-8 flex flex-col justify-between hover:border-[#c9a962]/30 transition-all duration-500">
                 <div>
@@ -308,7 +333,7 @@ export default function DrMoPage() {
               </div>
             </div>
 
-            {/* 3. Patient Centered - Small Card (Bottom Left) */}
+            {/* 3. Technology - Small Card (Bottom Left) */}
             <div className="lg:col-span-4 order-last lg:order-none">
               <div className="relative h-full min-h-[400px] rounded-3xl bg-[#141414] border border-white/5 p-8 flex flex-col justify-between hover:border-[#c9a962]/30 transition-all duration-500">
                 <div>
@@ -327,7 +352,7 @@ export default function DrMoPage() {
               </div>
             </div>
 
-            {/* 4. Beautiful Results - Big Card (Bottom Right) */}
+            {/* 4. Results - Big Card (Bottom Right) */}
             <div className="lg:col-span-8 group h-[400px] lg:h-auto">
               <div className="relative h-full rounded-3xl overflow-hidden border border-white/10">
                 <Image
@@ -339,8 +364,8 @@ export default function DrMoPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-10 left-10">
-                  <span className="text-[#c9a962] text-xs font-bold uppercase tracking-[0.3em] mb-2 block">The Result</span>
-                  <h3 className="text-white text-3xl font-semibold tracking-tight">Aesthetics and stability for life.</h3>
+                  <span className="text-[#c9a962] text-xs font-bold uppercase tracking-[0.3em] mb-2 block">Clinical Results</span>
+                  <h3 className="text-white text-3xl font-semibold tracking-tight">Precision results at every age.</h3>
                 </div>
               </div>
             </div>
@@ -370,36 +395,67 @@ export default function DrMoPage() {
               Real stories from real patients who trusted Dr. Mo with their smiles.
             </p>
           </div>
+        </div>
 
-          {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <div 
-                key={index}
-                className="p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-white/10 transition-all duration-300 flex flex-col"
+        {/* Infinite Marquee */}
+        <div className="overflow-hidden">
+          <div className="flex animate-marquee gap-6">
+            {/* First set of testimonials */}
+            {testimonials.map((testimonial, idx) => (
+              <div
+                key={`first-${idx}`}
+                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5"
               >
                 {/* Rating */}
-                <div className="flex gap-1 mb-6">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <iconify-icon key={i} icon="solar:star-bold" width="20" height="20" className="text-[#c9a962]" />
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <iconify-icon key={i} icon="solar:star-bold" width="18" height="18" className="text-[#c9a962]" />
                   ))}
                 </div>
                 
                 {/* Quote */}
-                <p className="text-white/70 text-base leading-relaxed mb-8 flex-grow">
+                <p className="text-white/70 text-sm leading-relaxed mb-6">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 
                 {/* Author */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-[#0a0a0a] font-semibold">
-                      {testimonial.author.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="text-white font-medium">{testimonial.author}</p>
-                      <p className="text-white/40 text-sm">{testimonial.treatment} Patient</p>
-                    </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-[#0a0a0a] text-sm font-semibold">
+                    {testimonial.author.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="text-white font-medium text-sm">{testimonial.author}</div>
+                    <div className="text-white/50 text-xs">{testimonial.treatment}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {testimonials.map((testimonial, idx) => (
+              <div
+                key={`second-${idx}`}
+                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5"
+              >
+                {/* Rating */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <iconify-icon key={i} icon="solar:star-bold" width="18" height="18" className="text-[#c9a962]" />
+                  ))}
+                </div>
+                
+                {/* Quote */}
+                <p className="text-white/70 text-sm leading-relaxed mb-6">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                
+                {/* Author */}
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-[#0a0a0a] text-sm font-semibold">
+                    {testimonial.author.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="text-white font-medium text-sm">{testimonial.author}</div>
+                    <div className="text-white/50 text-xs">{testimonial.treatment}</div>
                   </div>
                 </div>
               </div>
@@ -408,56 +464,124 @@ export default function DrMoPage() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
-        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
+      {/* Contact Form Section */}
+      <section id="contact" className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-            {/* Left - Contact Info */}
+            {/* Left - Info */}
             <div>
-              <span className="text-[#c9a962] text-sm font-medium uppercase tracking-wider mb-4 block">
-                Get in Touch
-              </span>
-              <h2 className="text-white text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.1] mb-6">
-                Contact Us
+              <span className="text-[#c9a962] text-sm font-semibold tracking-wider uppercase mb-4 block">Get in Touch</span>
+              <h2 className="text-white text-4xl sm:text-5xl font-semibold tracking-tight leading-tight mb-6">
+                Ready to Get Started?
+                <span className="text-white/50 block">We&apos;re Here to Help</span>
               </h2>
-              <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-md">
-                Ready to start your smile journey? Schedule a consultation with Dr. Mo and discover how we can help you achieve the smile you&apos;ve always wanted.
+              <p className="text-white/60 text-lg leading-relaxed mb-8">
+                Schedule your free consultation today. We&apos;ll evaluate your orthodontic needs and create a personalized plan for your healthiest smile.
               </p>
 
-              <div className="space-y-6">
-                <a href="mailto:drmo@croninortho.com" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#c9a962]/20 transition-all duration-300 shadow-lg shadow-[#c9a962]/5">
-                    <iconify-icon icon="solar:letter-bold" width="24" height="24" className="text-[#c9a962]" />
+              {/* Contact Info */}
+              <div className="space-y-4 mb-8">
+                <a href="tel:+16045331151" className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-white/10 transition-all group">
+                  <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <iconify-icon icon="solar:phone-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <p className="text-white/40 text-sm font-medium">Email Address</p>
-                    <p className="text-white font-semibold">drmo@croninortho.com</p>
+                    <div className="text-white font-medium">(604) 533-1151</div>
+                    <div className="text-white/50 text-sm">Call us directly</div>
                   </div>
                 </a>
-
-                <div className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg shadow-[#c9a962]/5">
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
+                  <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center">
+                    <iconify-icon icon="solar:clock-circle-bold" width="24" height="24" className="text-[#c9a962]" />
+                  </div>
+                  <div>
+                    <div className="text-white font-medium">Mon-Fri: 9am - 5pm</div>
+                    <div className="text-white/50 text-sm">Office hours</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
+                  <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center">
                     <iconify-icon icon="solar:map-point-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <p className="text-white/40 text-sm font-medium">Main Office</p>
-                    <p className="text-white font-semibold">Langley, BC, Canada</p>
+                    <div className="text-white font-medium">Langley, BC</div>
+                    <div className="text-white/50 text-sm">Canada</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Right - Map Placeholder */}
-            <div className="relative h-[400px] lg:h-full min-h-[400px] rounded-3xl overflow-hidden glass group shadow-2xl">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center group-hover:scale-110 transition-transform duration-700">
-                  <iconify-icon icon="solar:map-point-wave-bold" width="64" height="64" className="text-[#c9a962]/40" />
-                  <p className="text-white/30 mt-4 font-medium tracking-wide uppercase text-xs">View Map Location</p>
+            {/* Right - Form */}
+            <div>
+              <form onSubmit={handleSubmit} className="p-8 rounded-3xl bg-white/[0.03] border border-white/5">
+                <h3 className="text-white text-2xl font-semibold mb-6">Request Consultation</h3>
+                
+                <div className="mb-4">
+                  <label htmlFor="name" className="block text-white/70 text-sm mb-2">Full Name *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
+                    placeholder="Your name"
+                  />
                 </div>
-              </div>
-              {/* Decorative gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#c9a962]/5 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent" />
+
+                <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label htmlFor="phone" className="block text-white/70 text-sm mb-2">Phone Number *</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
+                      placeholder="(604) 533-1151"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-white/70 text-sm mb-2">Email Address</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <label htmlFor="message" className="block text-white/70 text-sm mb-2">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors resize-none"
+                    placeholder="Any concerns or questions..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full px-8 py-4 bg-white text-[#0a0a0a] font-semibold rounded-full hover:bg-white/90 transition-colors"
+                >
+                  Request Consultation
+                </button>
+
+                <p className="text-white/40 text-xs text-center mt-4">
+                  By submitting this form, you agree to our privacy policy. We&apos;ll contact you within 24 hours.
+                </p>
+              </form>
             </div>
           </div>
         </div>
