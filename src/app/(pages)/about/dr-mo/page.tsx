@@ -21,7 +21,7 @@ const memberships = [
   'Fellow of the Royal College of Dentist Canada',
 ];
 
-// Expertise groups - same as Dr. Cronin
+// Expertise groups for Dr. Mo
 const expertiseGroups = [
   {
     title: 'Clinical Excellence',
@@ -30,15 +30,21 @@ const expertiseGroups = [
     icon: 'solar:shield-check-bold',
   },
   {
+    title: 'Aesthetics',
+    description: 'Creating beautiful, harmonious smiles that complement facial features through digital smile design and precision planning.',
+    points: ['Smile Design', 'Facial Harmony', 'Natural Beauty'],
+    icon: 'solar:shield-check-bold',
+  },
+  {
     title: 'Occlusion',
-    description: 'Advanced training in occlusion from the Roth Williams Center, focusing on proper bite alignment and function.',
-    points: ['Bite Alignment', 'Occlusion Specialist', 'Comprehensive Planning'],
+    description: 'Advanced training in occlusion focusing on proper bite alignment, function, and long-term stability.',
+    points: ['Bite Alignment', 'Functional Occlusion', 'Stability Focus'],
     icon: 'solar:shield-check-bold',
   },
   {
     title: 'Advanced Technology',
-    description: 'Staying at the forefront of scientifically proven and up-to-date treatments, technologies, and diagnoses.',
-    points: ['Evidence-Based', 'Modern Technology', 'Highest Care Level'],
+    description: 'Integrating advanced digital techniques to create individualized treatment plans with precise, need-based results.',
+    points: ['Digital Planning', 'Modern Technology', 'Precision Care'],
     icon: 'solar:shield-check-bold',
   },
 ];
@@ -314,27 +320,27 @@ export default function DrMoPage() {
               </div>
             </div>
 
-            {/* 2. Occlusion - Small Card (Top Right) */}
+            {/* 2. Aesthetics - Small Card (Top Right) - Dr. Mo's primary focus */}
             <div className="lg:col-span-4">
-              <div className="relative h-full min-h-[400px] rounded-3xl bg-[#141414] border border-white/5 p-8 flex flex-col justify-between hover:border-[#c9a962]/30 transition-all duration-500">
+              <div className="relative h-full min-h-[400px] rounded-3xl bg-gradient-to-br from-[#c9a962]/10 to-transparent border border-[#c9a962]/30 p-8 flex flex-col justify-between hover:border-[#c9a962]/50 transition-all duration-500">
                 <div>
                   <iconify-icon icon={expertiseGroups[1].icon} width="28" height="28" className="text-[#c9a962] mb-8 block" />
                   <h3 className="text-white text-2xl font-semibold mb-4">{expertiseGroups[1].title}</h3>
-                  <p className="text-white/40 text-sm leading-relaxed">{expertiseGroups[1].description}</p>
+                  <p className="text-white/50 text-sm leading-relaxed">{expertiseGroups[1].description}</p>
                 </div>
                 <div className="space-y-3 mt-8">
                   {expertiseGroups[1].points.map((point, idx) => (
                     <div key={idx} className="flex items-center gap-2">
                       <span className="text-[#c9a962] text-[10px]">●</span>
-                      <span className="text-white/60 text-[10px] font-bold uppercase tracking-widest">{point}</span>
+                      <span className="text-white/70 text-[10px] font-bold uppercase tracking-widest">{point}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* 3. Technology - Small Card (Bottom Left) */}
-            <div className="lg:col-span-4 order-last lg:order-none">
+            {/* 3. Occlusion - Small Card (Bottom Left) */}
+            <div className="lg:col-span-4">
               <div className="relative h-full min-h-[400px] rounded-3xl bg-[#141414] border border-white/5 p-8 flex flex-col justify-between hover:border-[#c9a962]/30 transition-all duration-500">
                 <div>
                   <iconify-icon icon={expertiseGroups[2].icon} width="28" height="28" className="text-[#c9a962] mb-8 block" />
@@ -352,20 +358,39 @@ export default function DrMoPage() {
               </div>
             </div>
 
-            {/* 4. Results - Big Card (Bottom Right) */}
-            <div className="lg:col-span-8 group h-[400px] lg:h-auto">
+            {/* 4. Advanced Technology - Small Card (Bottom Middle) */}
+            <div className="lg:col-span-4">
+              <div className="relative h-full min-h-[400px] rounded-3xl bg-[#141414] border border-white/5 p-8 flex flex-col justify-between hover:border-[#c9a962]/30 transition-all duration-500">
+                <div>
+                  <iconify-icon icon={expertiseGroups[3].icon} width="28" height="28" className="text-[#c9a962] mb-8 block" />
+                  <h3 className="text-white text-2xl font-semibold mb-4">{expertiseGroups[3].title}</h3>
+                  <p className="text-white/40 text-sm leading-relaxed">{expertiseGroups[3].description}</p>
+                </div>
+                <div className="space-y-3 mt-8">
+                  {expertiseGroups[3].points.map((point, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      <span className="text-[#c9a962] text-[10px]">●</span>
+                      <span className="text-white/60 text-[10px] font-bold uppercase tracking-widest">{point}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* 5. Results - Big Card (Bottom Right) */}
+            <div className="lg:col-span-4 group h-[400px]">
               <div className="relative h-full rounded-3xl overflow-hidden border border-white/10">
                 <Image
                   src="/smile-woman.png"
                   alt="Beautiful orthodontic result"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-[2s]"
-                  sizes="(max-width: 1024px) 100vw, 66vw"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-10 left-10">
-                  <span className="text-[#c9a962] text-xs font-bold uppercase tracking-[0.3em] mb-2 block">Clinical Results</span>
-                  <h3 className="text-white text-3xl font-semibold tracking-tight">Precision results at every age.</h3>
+                <div className="absolute bottom-8 left-6 right-6">
+                  <span className="text-[#c9a962] text-xs font-bold uppercase tracking-[0.2em] mb-2 block">Results</span>
+                  <h3 className="text-white text-xl font-semibold tracking-tight">Precision at every age</h3>
                 </div>
               </div>
             </div>
