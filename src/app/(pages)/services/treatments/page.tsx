@@ -185,7 +185,7 @@ export default function TreatmentsPage() {
               <Button
                 variant="secondary"
                 size="lg"
-                href="#contact"
+                href="/contact"
                 icon="solar:phone-bold"
               >
                 Contact Us
@@ -308,7 +308,7 @@ export default function TreatmentsPage() {
               Not sure which treatment is right for you? Schedule a consultation and our experts will create a personalized plan for your unique needs.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="primary" size="lg" href="#contact">
+              <Button variant="primary" size="lg" href="/contact">
                 Book Consultation
               </Button>
               <Button variant="secondary" size="lg" href="/orthodontics/kids">

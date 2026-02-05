@@ -65,6 +65,7 @@ function SectionShell({
   tone = 'dark',
   align = 'left',
   withOrbs = false,
+  overflowVisible = false,
 }: {
   id: string;
   eyebrow?: string;
@@ -74,13 +75,14 @@ function SectionShell({
   tone?: 'dark' | 'darker';
   align?: 'left' | 'center';
   withOrbs?: boolean;
+  overflowVisible?: boolean;
 }) {
   return (
     <section
       id={id}
-      className={`relative overflow-hidden scroll-mt-28 py-20 lg:py-28 ${
-        tone === 'darker' ? 'bg-[#0a0a0a]' : 'bg-[#0f0f0f]'
-      }`}
+      className={`relative scroll-mt-28 py-20 lg:py-28 ${
+        overflowVisible ? 'overflow-x-clip overflow-y-visible' : 'overflow-hidden'
+      } ${tone === 'darker' ? 'bg-[#0a0a0a]' : 'bg-[#0f0f0f]'}`}
     >
       {withOrbs && (
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -180,7 +182,7 @@ export default function PatientPage() {
               <Button variant="primary" size="lg" href="#patient-forms" icon="solar:document-add-linear">
                 Get Patient Forms
               </Button>
-              <Button variant="secondary" size="lg" href="/#contact" icon="solar:calendar-add-linear">
+              <Button variant="secondary" size="lg" href="/contact" icon="solar:calendar-add-linear">
                 Book a Visit
               </Button>
             </div>
@@ -640,9 +642,10 @@ export default function PatientPage() {
         tone="dark"
         align="center"
         withOrbs
+        overflowVisible
       >
         {/* Infinite Marquee */}
-        <div className="overflow-hidden">
+        <div className="overflow-hidden -mx-6 lg:-mx-12 px-6 lg:px-12">
           <div className="flex animate-marquee gap-5">
             {/* First set of testimonials */}
             {[
@@ -796,7 +799,7 @@ export default function PatientPage() {
               </div>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <Button variant="primary" size="md" href="/#contact">
+                <Button variant="primary" size="md" href="/contact">
                   Book an appointment
                 </Button>
                 <Button variant="secondary" size="md" href="/emergency">

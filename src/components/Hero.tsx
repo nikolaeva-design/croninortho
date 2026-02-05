@@ -68,7 +68,7 @@ export default function Hero() {
 
             <div className="flex flex-row gap-4 flex-shrink-0">
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center px-10 py-4 text-base font-medium bg-white text-[#1a2744] rounded-full hover:bg-white/95 hover:scale-[1.02] transition-all duration-300 shadow-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
               >
                 Request a Consultation

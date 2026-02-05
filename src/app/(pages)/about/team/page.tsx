@@ -276,7 +276,7 @@ export default function TeamPage() {
             <p className="text-white/60 text-lg leading-relaxed mb-10">
               Our team is here to welcome you and provide the personalized, caring orthodontic experience you deserve. Schedule your consultation today!
             </p>
-            <Button variant="primary" size="lg" href="/#contact">
+            <Button variant="primary" size="lg" href="/contact">
               Schedule a Consultation
             </Button>
           </div>

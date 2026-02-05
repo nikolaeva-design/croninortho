@@ -3,15 +3,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components';
 
-// Gallery categories
-const categories = [
-  { id: 'all', label: 'All Cases' },
-  { id: 'braces', label: 'Braces' },
-  { id: 'invisalign', label: 'Invisalign' },
-  { id: 'adults', label: 'Adults' },
-  { id: 'teens', label: 'Teens' },
-];
-
 // Placeholder gallery items
 const galleryItems = [
   {
@@ -219,13 +210,6 @@ function GalleryCard({
 }
 
 export default function GalleryPage() {
-  const [activeCategory, setActiveCategory] = useState('all');
-
-  const filteredItems =
-    activeCategory === 'all'
-      ? galleryItems
-      : galleryItems.filter((item) => item.category === activeCategory);
-
   return (
     <div className="bg-[#0a0a0a] -mt-20">
       {/* Hero Section */}
@@ -294,44 +278,12 @@ export default function GalleryPage() {
       {/* Gallery Section */}
       <section id="gallery" className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          {/* Category Filter */}
-          <AnimatedSection>
-            <div className="flex flex-wrap justify-center gap-3 mb-12 lg:mb-16">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                    activeCategory === category.id
-                      ? 'bg-[#c9a962] text-[#0a0a0a]'
-                      : 'bg-white/[0.05] text-white/60 hover:bg-white/[0.1] hover:text-white border border-white/10'
-                  }`}
-                >
-                  {category.label}
-                </button>
-              ))}
-            </div>
-          </AnimatedSection>
-
           {/* Gallery Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {filteredItems.map((item, index) => (
+            {galleryItems.map((item, index) => (
               <GalleryCard key={item.id} item={item} index={index} />
             ))}
           </div>
-
-          {/* Empty state */}
-          {filteredItems.length === 0 && (
-            <div className="text-center py-20">
-              <iconify-icon
-                icon="solar:gallery-bold"
-                width="64"
-                height="64"
-                className="text-white/20 mb-4"
-              />
-              <p className="text-white/50 text-lg">No cases found in this category</p>
-            </div>
-          )}
         </div>
       </section>
 
@@ -341,19 +293,19 @@ export default function GalleryPage() {
           <AnimatedSection>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
               <div className="text-center">
-                <div className="text-[#c9a962] text-5xl lg:text-6xl font-bold mb-2">500+</div>
+                <div className="text-[#c9a962] text-5xl lg:text-6xl font-bold mb-2">30k</div>
                 <p className="text-white/50 text-sm lg:text-base">Happy Patients</p>
               </div>
               <div className="text-center">
-                <div className="text-[#c9a962] text-5xl lg:text-6xl font-bold mb-2">15+</div>
+                <div className="text-[#c9a962] text-5xl lg:text-6xl font-bold mb-2">35+</div>
                 <p className="text-white/50 text-sm lg:text-base">Years Experience</p>
               </div>
               <div className="text-center">
-                <div className="text-[#c9a962] text-5xl lg:text-6xl font-bold mb-2">98%</div>
-                <p className="text-white/50 text-sm lg:text-base">Satisfaction Rate</p>
+                <div className="text-[#c9a962] text-5xl lg:text-6xl font-bold mb-2">99%</div>
+                <p className="text-white/50 text-sm lg:text-base">Success Rate</p>
               </div>
               <div className="text-center">
-                <div className="text-[#c9a962] text-5xl lg:text-6xl font-bold mb-2">1000+</div>
+                <div className="text-[#c9a962] text-5xl lg:text-6xl font-bold mb-2">30k+</div>
                 <p className="text-white/50 text-sm lg:text-base">Smile Transformations</p>
               </div>
             </div>
@@ -372,7 +324,7 @@ export default function GalleryPage() {
               Join our community of happy patients and start your smile journey today. Book a consultation to discuss your goals.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="primary" size="lg" href="/#contact">
+              <Button variant="primary" size="lg" href="/contact">
                 Book Consultation
               </Button>
               <Button variant="secondary" size="lg" href="/orthodontics/adults">

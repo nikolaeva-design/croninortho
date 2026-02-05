@@ -69,7 +69,7 @@ export default function CTA() {
         {/* CTA Buttons */}
         <div className="mt-12 lg:mt-16 flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1d1d1f] text-sm font-semibold rounded-full hover:bg-white/90 transition-colors duration-200"
           >
             Schedule Free Consultation

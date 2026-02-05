@@ -128,7 +128,7 @@ export default function DrMoPage() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="primary" size="lg" href="#contact">
+            <Button variant="primary" size="lg" href="/contact">
               Schedule a Consultation
             </Button>
             <Button variant="secondary" size="lg" href="#about">
@@ -373,7 +373,7 @@ export default function DrMoPage() {
 
           {/* Section CTA */}
           <div className="mt-12 lg:mt-16 flex justify-center">
-            <Button variant="secondary" size="lg" href="#contact">
+            <Button variant="secondary" size="lg" href="/contact">
               Discuss Your Treatment Options
             </Button>
           </div>

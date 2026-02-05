@@ -326,7 +326,7 @@ export default function TeensOrthodonticsPage() {
               className="flex flex-wrap gap-4 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
-              <Button variant="primary" size="lg" href="#contact-form">
+              <Button variant="primary" size="lg" href="/contact">
                 Book Consultation
               </Button>
               <Button variant="secondary" size="lg" href="#info" icon="solar:arrow-down-linear">
@@ -366,7 +366,7 @@ export default function TeensOrthodonticsPage() {
             </p>
           </div>
               <div className="flex flex-wrap gap-4">
-                <Button variant="primary" size="md" href="#contact-form">
+                <Button variant="primary" size="md" href="/contact">
                   Get Started
                 </Button>
                 <Button variant="secondary" size="md" href="#treatments">
@@ -515,7 +515,7 @@ export default function TeensOrthodonticsPage() {
           {/* CTA */}
           <AnimatedSection delay={400}>
             <div className="mt-10 text-center lg:text-left">
-              <Button variant="secondary" size="md" href="#contact-form" icon="solar:arrow-right-linear">
+              <Button variant="secondary" size="md" href="/contact" icon="solar:arrow-right-linear">
                 Schedule Consultation
               </Button>
             </div>
@@ -593,7 +593,7 @@ export default function TeensOrthodonticsPage() {
           {/* CTA */}
           <AnimatedSection delay={500}>
             <div className="text-center mt-16">
-              <Button variant="primary" size="lg" href="#contact-form">
+              <Button variant="primary" size="lg" href="/contact">
                 Start Your Transformation
               </Button>
             </div>
@@ -721,7 +721,7 @@ export default function TeensOrthodonticsPage() {
               </div>
 
               <div className="mt-10">
-                <Button variant="primary" size="md" href="#contact-form">
+                <Button variant="primary" size="md" href="/contact">
                   Book Your Visit
                 </Button>
               </div>
@@ -793,7 +793,7 @@ export default function TeensOrthodonticsPage() {
                     ))}
                   </div>
 
-                  <Button variant="secondary" size="md" href="#contact-form" icon="solar:arrow-right-linear">
+                  <Button variant="secondary" size="md" href="/contact" icon="solar:arrow-right-linear">
                     Get Started
                   </Button>
                 </div>

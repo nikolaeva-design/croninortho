@@ -57,7 +57,7 @@ export const FOOTER_LINKS = {
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
     { label: 'Technology', href: '#gallery' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Contact', href: '/contact' },
   ],
   utilityPages: [
     { label: 'FAQs', href: '/faqs' },

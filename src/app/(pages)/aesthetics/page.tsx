@@ -4,59 +4,41 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
 
-// Complete Smile Components - 9 key elements
+// Complete Smile Components - 6 key elements arranged in circular layout
 // Icons from: healthicons, mdi, fa6-solid, game-icons, fluent
 const smileComponents = [
   {
     number: '01',
     title: 'Alignment & Contacts',
-    description: 'Precise tooth positioning for seamless contact points and even bite force distribution.',
+    description: 'Precise tooth positioning for seamless contact points and even bite force.',
     icon: 'fa6-solid:teeth',
   },
   {
     number: '02',
-    title: 'Smile Width',
-    description: 'Optimizing the buccal corridor for a fuller, naturally radiant smile.',
-    icon: 'mdi:emoticon-happy-outline',
-  },
-  {
-    number: '03',
-    title: 'Smile Arc',
+    title: 'Smile Arc & Width',
     description: 'Creating a harmonious curve that mirrors your lower lip for youthful aesthetics.',
     icon: 'mdi:sine-wave',
   },
   {
-    number: '04',
-    title: 'Upper Tooth Position',
+    number: '03',
+    title: 'Tooth Position',
     description: 'Calibrating ideal tooth display (2-4mm at rest) for a vibrant appearance.',
     icon: 'mdi:tooth',
   },
   {
-    number: '05',
-    title: 'Midlines',
+    number: '04',
+    title: 'Midlines & Symmetry',
     description: 'Aligning dental and facial midlines for perfect symmetry and balance.',
     icon: 'mdi:reflect-vertical',
   },
   {
-    number: '06',
-    title: 'Occlusion',
-    description: 'Ensuring proper bite alignment for comfort and long-term oral health.',
-    icon: 'solar:layers-bold',
-  },
-  {
-    number: '07',
-    title: 'Tooth Shape & Proportion',
-    description: 'Applying golden ratio principles for naturally beautiful tooth proportions.',
-    icon: 'mdi:tooth-outline',
-  },
-  {
-    number: '08',
-    title: 'Gum Display & Shape',
-    description: 'Sculpting balanced gingival contours for the ideal smile frame.',
+    number: '05',
+    title: 'Tooth Shape & Gums',
+    description: 'Golden ratio proportions with sculpted gingival contours for the ideal frame.',
     icon: 'solar:crown-minimalistic-bold',
   },
   {
-    number: '09',
+    number: '06',
     title: 'Facial Balance',
     description: 'Designing your smile to complement your unique facial features.',
     icon: 'solar:face-scan-circle-bold',
@@ -149,133 +131,140 @@ function AnimatedSection({
   );
 }
 
-// Bento Card Component
-function BentoCard({
+// Smile Card Component for desktop orbital layout
+function SmileCard({
   component,
   index,
-  isFeatured,
   activeComponent,
   setActiveComponent,
 }: {
   component: { number: string; title: string; description: string; icon: string };
   index: number;
-  isFeatured: boolean;
   activeComponent: number | null;
   setActiveComponent: (index: number | null) => void;
 }) {
+  const isActive = activeComponent === index;
+  
   return (
     <div
-      className="group relative h-full min-h-[200px]"
-      style={{ transformStyle: 'preserve-3d' }}
+      className="group w-[240px]"
       onMouseEnter={() => setActiveComponent(index)}
       onMouseLeave={() => setActiveComponent(null)}
     >
-      {/* Card with 3D tilt effect */}
       <div
-        className={`relative h-full rounded-2xl transition-all duration-500 cursor-pointer overflow-hidden
-          ${isFeatured ? 'p-6 lg:p-8' : 'p-5 lg:p-6'}
-          ${activeComponent === index 
-            ? 'bg-gradient-to-br from-[#c9a962]/15 to-[#c9a962]/5 border-[#c9a962]/50 shadow-2xl shadow-[#c9a962]/20' 
-            : 'bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.04] hover:border-white/10'}
-          border backdrop-blur-sm
-          group-hover:[transform:rotateX(2deg)_rotateY(-2deg)_translateZ(10px)]
-          group-hover:shadow-[0_25px_50px_-12px_rgba(201,169,98,0.15)]`}
-        style={{ 
-          transformStyle: 'preserve-3d',
-          transition: 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s ease, background 0.5s ease, border-color 0.5s ease'
-        }}
+        className={`relative p-5 rounded-2xl transition-all duration-500 cursor-pointer overflow-hidden backdrop-blur-md
+          ${isActive 
+            ? 'bg-gradient-to-br from-[#c9a962]/25 to-[#c9a962]/5 border-[#c9a962]/60 shadow-2xl shadow-[#c9a962]/30 scale-105' 
+            : 'bg-[#0a0a0a]/90 border-white/[0.08] hover:bg-[#0a0a0a]/95 hover:border-white/15 hover:scale-[1.02]'}
+          border`}
       >
-        {/* Animated shine effect on hover */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none overflow-hidden rounded-2xl">
-          <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12" />
-        </div>
-
-        {/* Large decorative number in background */}
+        {/* Background number watermark */}
         <div 
-          className={`absolute -right-2 -bottom-4 font-bold transition-all duration-500 pointer-events-none select-none
-            ${isFeatured ? 'text-[90px] lg:text-[110px]' : 'text-6xl lg:text-7xl'}
-            ${activeComponent === index ? 'text-[#c9a962]/10' : 'text-white/[0.02]'}`}
-          style={{ transform: 'translateZ(-20px)' }}
+          className={`absolute -right-2 -bottom-4 text-6xl font-bold transition-all duration-500 pointer-events-none select-none
+            ${isActive ? 'text-[#c9a962]/15' : 'text-white/[0.03]'}`}
         >
           {component.number}
         </div>
 
-        {/* Icon with 3D float effect */}
-        <div 
-          className="absolute top-4 right-4 lg:top-5 lg:right-5 z-10"
-          style={{ transform: 'translateZ(30px)' }}
-        >
-          <div className={`relative ${isFeatured ? 'w-11 h-11 lg:w-12 lg:h-12' : 'w-9 h-9 lg:w-10 lg:h-10'} rounded-xl flex items-center justify-center transition-all duration-300
-            ${activeComponent === index 
+        {/* Icon & Number */}
+        <div className="relative z-10 flex items-start justify-between mb-3">
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300
+            ${isActive 
               ? 'bg-[#c9a962] shadow-lg shadow-[#c9a962]/40' 
               : 'bg-white/[0.05] border border-white/10'}`}>
             <iconify-icon
               icon={component.icon}
-              width={isFeatured ? '22' : '18'}
-              height={isFeatured ? '22' : '18'}
-              className={`transition-colors duration-300 ${activeComponent === index ? 'text-[#0a0a0a]' : 'text-white/50'}`}
+              width="20"
+              height="20"
+              className={`transition-colors duration-300 ${isActive ? 'text-[#0a0a0a]' : 'text-white/60'}`}
             />
           </div>
+          <span className={`text-xs font-medium px-2 py-1 rounded-full transition-all duration-300
+            ${isActive ? 'bg-[#c9a962]/20 text-[#c9a962]' : 'bg-white/5 text-white/40'}`}>
+            {component.number}
+          </span>
         </div>
 
-        {/* Decorative corner lines */}
-        <div className={`absolute top-3 right-3 w-12 h-12 lg:w-14 lg:h-14 transition-opacity duration-300 pointer-events-none
-          ${activeComponent === index ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="absolute top-0 right-0 w-full h-full border-t-2 border-r-2 border-[#c9a962]/30 rounded-tr-2xl" />
+        {/* Content */}
+        <div className="relative z-10">
+          <h3 className={`font-semibold text-base mb-2 transition-colors duration-300
+            ${isActive ? 'text-[#c9a962]' : 'text-white'}`}>
+            {component.title}
+          </h3>
+          <p className={`text-xs leading-relaxed transition-colors duration-300
+            ${isActive ? 'text-white/70' : 'text-white/50'}`}>
+            {component.description}
+          </p>
         </div>
-        <div className={`absolute bottom-3 left-3 w-12 h-12 lg:w-14 lg:h-14 transition-opacity duration-300 pointer-events-none
-          ${activeComponent === index ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="absolute bottom-0 left-0 w-full h-full border-b-2 border-l-2 border-[#c9a962]/30 rounded-bl-2xl" />
-        </div>
+      </div>
+    </div>
+  );
+}
 
-        {/* Content with 3D depth */}
+// Mobile Card Component for smaller screens
+function MobileCard({
+  component,
+  index,
+  activeComponent,
+  setActiveComponent,
+}: {
+  component: { number: string; title: string; description: string; icon: string };
+  index: number;
+  activeComponent: number | null;
+  setActiveComponent: (index: number | null) => void;
+}) {
+  const isActive = activeComponent === index;
+  
+  return (
+    <div
+      className="group relative"
+      onMouseEnter={() => setActiveComponent(index)}
+      onMouseLeave={() => setActiveComponent(null)}
+    >
+      <div
+        className={`relative p-5 rounded-2xl transition-all duration-500 cursor-pointer overflow-hidden
+          ${isActive 
+            ? 'bg-gradient-to-br from-[#c9a962]/15 to-[#c9a962]/5 border-[#c9a962]/50 shadow-xl shadow-[#c9a962]/20' 
+            : 'bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.04] hover:border-white/10'}
+          border backdrop-blur-sm`}
+      >
+        {/* Background number */}
         <div 
-          className="relative z-10"
-          style={{ transform: 'translateZ(20px)' }}
+          className={`absolute -right-1 -bottom-2 text-5xl font-bold transition-all duration-500 pointer-events-none select-none
+            ${isActive ? 'text-[#c9a962]/10' : 'text-white/[0.02]'}`}
         >
-          {/* Number badge */}
-          <div className={`inline-flex items-center justify-center rounded-xl mb-3 transition-all duration-300
-            ${isFeatured ? 'w-11 h-11 lg:w-12 lg:h-12' : 'w-9 h-9 lg:w-10 lg:h-10'}
-            ${activeComponent === index 
-              ? 'bg-[#c9a962] shadow-lg shadow-[#c9a962]/30' 
+          {component.number}
+        </div>
+
+        {/* Icon & Number */}
+        <div className="relative z-10 flex items-start justify-between mb-3">
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300
+            ${isActive 
+              ? 'bg-[#c9a962] shadow-lg shadow-[#c9a962]/40' 
               : 'bg-white/[0.05] border border-white/10'}`}>
-            <span className={`font-bold transition-colors duration-300
-              ${isFeatured ? 'text-base lg:text-lg' : 'text-sm lg:text-base'}
-              ${activeComponent === index ? 'text-[#0a0a0a]' : 'text-white/70'}`}>
+            <iconify-icon
+              icon={component.icon}
+              width="20"
+              height="20"
+              className={`transition-colors duration-300 ${isActive ? 'text-[#0a0a0a]' : 'text-white/60'}`}
+            />
+          </div>
+          <span className={`text-xs font-medium px-2 py-1 rounded-full transition-all duration-300
+            ${isActive ? 'bg-[#c9a962]/20 text-[#c9a962]' : 'bg-white/5 text-white/40'}`}>
               {component.number}
             </span>
           </div>
           
-          {/* Title */}
-          <h3 className={`font-semibold transition-colors duration-300 pr-12 lg:pr-14 mb-2
-            ${isFeatured ? 'text-lg lg:text-xl' : 'text-base lg:text-lg'}
-            ${activeComponent === index ? 'text-[#c9a962]' : 'text-white'}`}>
+        {/* Content */}
+        <div className="relative z-10">
+          <h3 className={`font-semibold text-base mb-2 transition-colors duration-300
+            ${isActive ? 'text-[#c9a962]' : 'text-white'}`}>
             {component.title}
           </h3>
-          
-          {/* Description */}
-          <p className={`leading-relaxed transition-colors duration-300
-            ${isFeatured ? 'text-sm lg:text-base' : 'text-xs lg:text-sm'}
-            ${activeComponent === index ? 'text-white/70' : 'text-white/50'}`}>
+          <p className={`text-xs leading-relaxed transition-colors duration-300
+            ${isActive ? 'text-white/70' : 'text-white/50'}`}>
             {component.description}
           </p>
-
-          {/* Extra content for featured cards */}
-          {isFeatured && (
-            <div className={`mt-4 pt-4 border-t transition-colors duration-300 ${activeComponent === index ? 'border-[#c9a962]/20' : 'border-white/5'}`}>
-              <div className="flex items-center gap-2 text-sm">
-                <iconify-icon
-                  icon="solar:star-bold"
-                  width="14"
-                  height="14"
-                  className={`transition-colors duration-300 ${activeComponent === index ? 'text-[#c9a962]' : 'text-white/40'}`}
-                />
-                <span className={`text-xs lg:text-sm transition-colors duration-300 ${activeComponent === index ? 'text-[#c9a962]' : 'text-white/40'}`}>
-                  Key component
-                </span>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </div>
@@ -373,7 +362,7 @@ export default function AestheticsPage() {
               className="flex flex-wrap gap-4 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
-              <Button variant="primary" size="lg" href="#contact">
+              <Button variant="primary" size="lg" href="/contact">
                 Book Consultation
               </Button>
               <Button
@@ -413,16 +402,16 @@ export default function AestheticsPage() {
         className="py-24 lg:py-40 bg-[#0a0a0a] relative overflow-hidden"
       >
         {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Gradient orbs */}
           <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#c9a962]/5 rounded-full blur-[150px]" />
           <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#c9a962]/5 rounded-full blur-[120px]" />
         </div>
 
-        <div className="relative max-w-[1800px] mx-auto px-6 lg:px-12 w-full">
-          {/* Section Header */}
+        {/* Section Header - inside padded container */}
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
           <AnimatedSection>
-            <div className="text-center mb-16 lg:mb-24">
+            <div className="text-center mb-12 lg:mb-16">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/60 text-xs font-medium mb-6">
                 <iconify-icon
                   icon="solar:star-shine-bold"
@@ -430,145 +419,164 @@ export default function AestheticsPage() {
                   height="14"
                   className="text-[#c9a962]"
                 />
-                9 Components of Perfection
+                6 Components of Perfection
               </div>
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6">
                 The Science of a
                 <span className="text-[#c9a962] block">Beautiful Smile</span>
               </h2>
               <p className="text-white/50 text-lg max-w-2xl mx-auto">
-                Every exceptional smile is built on these 9 fundamental components,
+                Every exceptional smile is built on these 6 fundamental components,
                 each carefully analyzed and optimized for your unique features.
               </p>
             </div>
           </AnimatedSection>
+        </div>
 
-          {/* Bento Grid Layout with 3D Tilt */}
-          {/* Layout: 
-              Row 1: [01 - 2col] [02] [03]
-              Row 2: [04] [05] [IMAGE - 2col, 2rows]
-              Row 3: [06] [07] [IMAGE cont.]
-              Row 4: [08 - 2col] [09 - 2col]
-          */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 perspective-[2000px]">
-            {/* Row 1: Card 01 (2col) + Card 02 + Card 03 */}
-            {smileComponents.slice(0, 3).map((component, index) => {
-              const isFeatured = index === 0; // Only first card is featured in row 1
+        {/* Circular/Orbital Layout - Desktop */}
+        <div className="hidden lg:flex justify-center items-center w-full" style={{ minHeight: '850px' }}>
+          <div className="relative" style={{ width: '900px', height: '850px' }}>
               
-              return (
-                <AnimatedSection 
-                  key={component.number}
-                  delay={100 + index * 60}
-                  className={`${isFeatured ? 'md:col-span-2' : ''} h-full`}
+              {/* Center circle with glow */}
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                {/* Outer glow */}
+                <div className="absolute -inset-8 bg-[#c9a962]/20 rounded-full blur-[60px]" />
+                
+                {/* Golden ring with image */}
+                <div 
+                  className="relative w-[280px] h-[280px] rounded-full border-[3px] border-[#c9a962]/60"
+                  style={{
+                    backgroundImage: 'url(/smile-woman.png)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center 30%',
+                  }}
                 >
-                  <BentoCard 
-                    component={component} 
-                    index={index} 
-                    isFeatured={isFeatured}
-                    activeComponent={activeComponent}
-                    setActiveComponent={setActiveComponent}
-                  />
-            </AnimatedSection>
-              );
-            })}
+                  {/* Subtle dark overlay for text readability */}
+                  <div className="absolute inset-0 rounded-full bg-black/20" />
+                  {/* Text overlay at bottom */}
+                  <div className="absolute inset-0 flex items-end justify-center pb-8">
+                    <span className="text-[#c9a962] text-base font-medium tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">Your Perfect Smile</span>
+                  </div>
+                </div>
+              </div>
 
-            {/* Row 2: Card 04 + Card 05 + Image Block (starts here, spans 2 rows) */}
-            {smileComponents.slice(3, 5).map((component, index) => (
-              <AnimatedSection 
-                key={component.number}
-                delay={280 + index * 60}
-                className="h-full"
+              {/* 6 Cards arranged clockwise: 01→02→03→04→05→06 */}
+              {/* Card 01 - Top Center */}
+              <div 
+                className="absolute z-20"
+                style={{ left: '50%', top: '3%', transform: 'translateX(-50%)' }}
               >
-                <BentoCard 
-                  component={component} 
-                  index={index + 3} 
-                  isFeatured={false}
+                <SmileCard 
+                  component={smileComponents[0]} 
+                  index={0}
                   activeComponent={activeComponent}
                   setActiveComponent={setActiveComponent}
                 />
-                </AnimatedSection>
-              ))}
+              </div>
 
-            {/* Image Block - spans 2 columns and 2 rows */}
-            <AnimatedSection 
-              delay={400}
-              className="md:col-span-2 lg:col-span-2 lg:row-span-2 h-full"
-            >
-              <div className="group relative h-full min-h-[280px] lg:min-h-full rounded-2xl overflow-hidden border border-white/[0.06] hover:border-[#c9a962]/30 transition-all duration-500">
-                {/* Background Image */}
+              {/* Card 02 - Upper Right */}
+              <div 
+                className="absolute z-20"
+                style={{ right: '3%', top: '20%' }}
+              >
+                <SmileCard 
+                  component={smileComponents[1]} 
+                  index={1}
+                  activeComponent={activeComponent}
+                  setActiveComponent={setActiveComponent}
+                />
+              </div>
+
+              {/* Card 03 - Lower Right */}
+              <div 
+                className="absolute z-20"
+                style={{ right: '3%', bottom: '20%' }}
+              >
+                <SmileCard 
+                  component={smileComponents[2]} 
+                  index={2}
+                  activeComponent={activeComponent}
+                  setActiveComponent={setActiveComponent}
+                />
+              </div>
+
+              {/* Card 04 - Bottom Center */}
+              <div 
+                className="absolute z-20"
+                style={{ left: '50%', bottom: '3%', transform: 'translateX(-50%)' }}
+              >
+                <SmileCard 
+                  component={smileComponents[3]} 
+                  index={3}
+                  activeComponent={activeComponent}
+                  setActiveComponent={setActiveComponent}
+                />
+              </div>
+
+              {/* Card 05 - Lower Left */}
+              <div 
+                className="absolute z-20"
+                style={{ left: '3%', bottom: '20%' }}
+              >
+                <SmileCard 
+                  component={smileComponents[4]} 
+                  index={4}
+                  activeComponent={activeComponent}
+                  setActiveComponent={setActiveComponent}
+                />
+              </div>
+
+              {/* Card 06 - Upper Left */}
+              <div 
+                className="absolute z-20"
+                style={{ left: '3%', top: '20%' }}
+              >
+                <SmileCard 
+                  component={smileComponents[5]} 
+                  index={5}
+                  activeComponent={activeComponent}
+                  setActiveComponent={setActiveComponent}
+                />
+              </div>
+            </div>
+          </div>
+
+        {/* Mobile Layout and CTA - inside padded container */}
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+          {/* Mobile Layout - Grid */}
+          <div className="lg:hidden">
+            {/* Center Image for Mobile */}
+            <AnimatedSection delay={100} className="mb-8">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-full overflow-hidden border-4 border-[#c9a962]/30 shadow-xl shadow-[#c9a962]/20">
                 <Image
                   src="/smile-woman.png"
-                  alt="Beautiful smile showcasing all 9 components"
+                  alt="Beautiful smile showcasing all components"
                   fill
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-top"
+                  sizes="250px"
                 />
-                
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#c9a962]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Content overlay */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8">
-                  <div className="space-y-3">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#c9a962]/20 backdrop-blur-sm border border-[#c9a962]/30 w-fit">
-                          <iconify-icon
-                        icon="solar:star-shine-bold"
-                        width="14"
-                        height="14"
-                        className="text-[#c9a962]"
-                      />
-                      <span className="text-[#c9a962] text-xs font-medium">Aesthetic Excellence</span>
-                        </div>
-                    <h4 className="text-white text-xl lg:text-2xl font-semibold">
-                      9 Specialized Services<br />
-                      <span className="text-white/60">For Your Perfect Smile</span>
-                    </h4>
-                    <p className="text-white/50 text-sm max-w-xs">
-                      Comprehensive aesthetic treatments designed to enhance every aspect of your smile.
-                          </p>
-                        </div>
-                      </div>
-
-                {/* Decorative elements */}
-                <div className="absolute top-4 right-4 w-20 h-20 border-t-2 border-r-2 border-[#c9a962]/20 rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-4 left-4 w-20 h-20 border-b-2 border-l-2 border-[#c9a962]/20 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    </div>
-                  </AnimatedSection>
-
-            {/* Row 3: Card 06 + Card 07 (Image continues from row 2) */}
-            {smileComponents.slice(5, 7).map((component, index) => (
-              <AnimatedSection 
-                key={component.number}
-                delay={460 + index * 60}
-                className="h-full"
-              >
-                <BentoCard 
-                  component={component} 
-                  index={index + 5} 
-                  isFeatured={false}
-                  activeComponent={activeComponent}
-                  setActiveComponent={setActiveComponent}
-                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 flex items-end justify-center pb-4">
+                  <div className="px-3 py-1.5 rounded-full bg-[#0a0a0a]/80 backdrop-blur-md border border-[#c9a962]/40">
+                    <span className="text-[#c9a962] text-xs font-medium">Your Perfect Smile</span>
+                  </div>
+                </div>
+              </div>
               </AnimatedSection>
-            ))}
 
-            {/* Row 4: Card 08 (2col) + Card 09 (2col) */}
-            {smileComponents.slice(7, 9).map((component, index) => (
-              <AnimatedSection 
-                key={component.number}
-                delay={580 + index * 60}
-                className="md:col-span-1 lg:col-span-2 h-full"
-              >
-                <BentoCard 
+            {/* Mobile Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {smileComponents.map((component, index) => (
+                <AnimatedSection key={component.number} delay={200 + index * 80}>
+                  <MobileCard
                   component={component} 
-                  index={index + 7} 
-                  isFeatured={true}
+                    index={index}
                   activeComponent={activeComponent}
                   setActiveComponent={setActiveComponent}
                 />
                   </AnimatedSection>
             ))}
+            </div>
           </div>
 
           {/* CTA */}
@@ -577,7 +585,7 @@ export default function AestheticsPage() {
               <p className="text-white/50 mb-6">
                 Ready to discover your perfect smile?
               </p>
-              <Button variant="primary" size="lg" href="#contact">
+              <Button variant="primary" size="lg" href="/contact">
                 Start Your Smile Analysis
               </Button>
             </div>
@@ -640,7 +648,7 @@ export default function AestheticsPage() {
           <AnimatedSection delay={400}>
             <div className="mt-12 text-center">
               <p className="text-white/50 mb-4">Still have questions?</p>
-              <Button variant="secondary" size="md" href="#contact">
+              <Button variant="secondary" size="md" href="/contact">
                 Contact Us
               </Button>
             </div>

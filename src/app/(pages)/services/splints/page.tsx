@@ -182,7 +182,7 @@ export default function SplintsPage() {
               className="flex flex-wrap gap-4 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
-              <Button variant="primary" size="lg" href="#contact">
+              <Button variant="primary" size="lg" href="/contact">
                 Request Consultation
               </Button>
               <Button
@@ -242,7 +242,7 @@ export default function SplintsPage() {
                 </p>
               </div>
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center gap-2 text-white/70 text-sm font-medium hover:text-white transition-colors group/link"
               >
                 Request a Consultation
@@ -369,7 +369,7 @@ export default function SplintsPage() {
               </ul>
 
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center gap-2 text-white/70 text-sm font-medium hover:text-white transition-colors group/link"
               >
                 Request a Consultation
@@ -439,7 +439,7 @@ export default function SplintsPage() {
           <AnimatedSection delay={300}>
             <div className="mt-12 text-center">
               <p className="text-white/50 mb-4">Still have questions?</p>
-              <Button variant="secondary" size="md" href="#contact">
+              <Button variant="secondary" size="md" href="/contact">
                 Contact Us
               </Button>
             </div>
@@ -467,7 +467,7 @@ export default function SplintsPage() {
             <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
               Don&apos;t let TMJ pain affect your quality of life. Schedule a consultation to learn how a custom splint can help.
             </p>
-            <Button variant="primary" size="lg" href="#contact">
+            <Button variant="primary" size="lg" href="/contact">
               Request Consultation
             </Button>
           </AnimatedSection>

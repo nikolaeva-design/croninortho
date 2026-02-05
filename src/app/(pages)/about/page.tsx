@@ -56,7 +56,7 @@ export default function AboutPage() {
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Button variant="primary" size="lg" href="/#contact" icon="solar:calendar-add-linear">
+              <Button variant="primary" size="lg" href="/contact" icon="solar:calendar-add-linear">
                 Book Consultation
               </Button>
               <Button variant="secondary" size="lg" href="/about/team" icon="solar:users-group-rounded-linear">

@@ -173,7 +173,7 @@ export default function EmergencyPage() {
               <Button variant="primary" size="lg" href={`tel:${CONTACT.phone}`} icon="solar:phone-bold">
                 Call Us Now
               </Button>
-              <Button variant="secondary" size="lg" href="/#contact" icon="solar:calendar-add-linear">
+              <Button variant="secondary" size="lg" href="/contact" icon="solar:calendar-add-linear">
                 Schedule Repair
               </Button>
             </div>

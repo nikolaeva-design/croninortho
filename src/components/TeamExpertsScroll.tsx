@@ -10,6 +10,7 @@ const teamHighlights = [
     description: 'With over 30 years of experience, Dr. Cronin has transformed thousands of smiles with his expertise and compassionate approach.',
     href: '/about/dr-cronin',
     image: '/DR. CRONIN.jpg',
+    imagePosition: 'object-[center_30%]',
   },
   {
     name: 'Dr. M. Sarfraz',
@@ -17,6 +18,7 @@ const teamHighlights = [
     description: 'Dr. Mo brings innovative techniques and a warm personality to every patient interaction.',
     href: '/about/dr-mo',
     image: '/DR. MO.jpg',
+    imagePosition: 'object-top',
   },
   {
     name: 'Our Team',
@@ -24,6 +26,7 @@ const teamHighlights = [
     description: 'Our friendly and skilled team is committed to making your orthodontic journey smooth and enjoyable.',
     href: '/about/team',
     image: null,
+    imagePosition: 'object-center',
   },
 ];
 
@@ -78,12 +81,11 @@ export default function TeamExpertsScroll() {
     const isAnimating = scrollProgress >= cardStart && scrollProgress < animationEnd;
     const isSettled = scrollProgress >= animationEnd;
     
-    // Each card has a unique settled position with slight offset and rotation
-    // This creates a natural "stack of cards" look
+    // Circular cards have different settled offsets - more subtle
     const settledOffsets = [
-      { x: 0, y: 0, rotate: -2 },      // Card 0: slight left tilt
-      { x: 8, y: -4, rotate: 1 },       // Card 1: slight right tilt, offset right
-      { x: -4, y: -8, rotate: -1 },     // Card 2: slight left tilt, offset left
+      { x: 0, y: 0, rotate: 0, scale: 1 },      // Card 0: centered
+      { x: 12, y: -8, rotate: 3, scale: 1 },    // Card 1: slight offset
+      { x: -8, y: -12, rotate: -2, scale: 1 },  // Card 2: opposite offset
     ];
     
     const settled = settledOffsets[cardIndex];
@@ -91,23 +93,27 @@ export default function TeamExpertsScroll() {
     // Card starts below (500px down) and comes UP to position
     let translateY = 500;
     let translateX = 0;
-    let rotate = -10;
+    let rotate = 0;
+    let scale = 0.8;
     
     if (isAnimating) {
       // Animate from below to settled position
       translateY = 500 * (1 - animationProgress) + settled.y * animationProgress;
       translateX = settled.x * animationProgress;
-      rotate = -10 * (1 - animationProgress) + settled.rotate * animationProgress;
+      rotate = settled.rotate * animationProgress;
+      scale = 0.8 + 0.2 * animationProgress;
     } else if (isSettled) {
       translateY = settled.y;
       translateX = settled.x;
       rotate = settled.rotate;
+      scale = settled.scale;
     }
     
     return { 
       translateY,
       translateX, 
-      rotate, 
+      rotate,
+      scale,
       zIndex: 10 + cardIndex * 10, // Later cards on top
       isVisible 
     };
@@ -120,7 +126,7 @@ export default function TeamExpertsScroll() {
       style={{ height: '300vh' }}
     >
       {/* Sticky container */}
-      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
@@ -130,89 +136,120 @@ export default function TeamExpertsScroll() {
             className="object-cover"
             priority
           />
-          {/* Very light overlay */}
-          <div className="absolute inset-0 bg-black/20" />
+          {/* Darker overlay for contrast with dark cards */}
+          <div className="absolute inset-0 bg-black/40" />
           {/* Subtle gradient at edges for blending */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f]/40 via-transparent to-[#0f0f0f]/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-transparent to-[#0a0a0a]/60" />
         </div>
         
-        {/* Centered card stack */}
-        <div className="relative w-full max-w-[340px] lg:max-w-[380px] aspect-[3/4] z-10">
+        {/* Section title - positioned above cards */}
+        <div className="relative z-20 text-center mb-8 mt-20">
+          <p className="text-[#c9a962] text-sm font-medium tracking-wider uppercase mb-2">Meet the Experts</p>
+          <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold">Our Team</h2>
+        </div>
+        
+        {/* Centered rounded square card stack */}
+        <div className="relative w-[320px] h-[420px] sm:w-[380px] sm:h-[500px] lg:w-[420px] lg:h-[540px] z-10">
           {/* Cards */}
           {teamHighlights.map((member, index) => {
-            const { translateY, translateX, rotate, zIndex, isVisible } = getCardState(index);
+            const { translateY, translateX, rotate, scale, zIndex, isVisible } = getCardState(index);
 
             return (
               <a
                 key={member.name}
                 href={member.href}
-                className="group/card absolute inset-0 rounded-3xl overflow-hidden shadow-2xl shadow-black/30"
+                className="group/card absolute inset-0 rounded-[48px] sm:rounded-[56px] overflow-hidden"
                 style={{
-                  transform: `translateX(${translateX}px) translateY(${translateY}px) rotate(${rotate}deg)`,
+                  transform: `translateX(${translateX}px) translateY(${translateY}px) rotate(${rotate}deg) scale(${scale})`,
                   zIndex,
-                  transition: 'transform 0.15s ease-out',
+                  transition: 'transform 0.2s ease-out',
                   visibility: isVisible ? 'visible' : 'hidden',
                   opacity: isVisible ? 1 : 0,
-                  background: 'linear-gradient(180deg, #f8f7f4 0%, #f0efe9 100%)',
                 }}
               >
-                {/* Photo area - Black and White */}
-                <div className="h-[62%] bg-[#e8e6e0] relative overflow-hidden">
-                  {member.image ? (
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover object-top grayscale"
-                      sizes="380px"
+                {/* Outer glow effect */}
+                <div className="absolute -inset-4 bg-[#c9a962]/20 rounded-[60px] blur-[40px] opacity-60 group-hover/card:opacity-100 transition-opacity" />
+                
+                {/* Main card container */}
+                <div 
+                  className="relative w-full h-full rounded-[48px] sm:rounded-[56px] border-[3px] border-[#c9a962]/60 group-hover/card:border-[#c9a962] transition-colors overflow-hidden"
+                  style={{
+                    background: '#0a0a0a',
+                    boxShadow: '0 25px 60px -12px rgba(0,0,0,0.7), 0 0 40px -10px rgba(201,169,98,0.2)',
+                  }}
+                >
+                  {/* Photo area */}
+                  <div className="absolute inset-0 overflow-hidden rounded-[45px] sm:rounded-[53px]">
+                    {member.image ? (
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className={`object-cover ${member.imagePosition} group-hover/card:scale-105 transition-transform duration-500`}
+                        sizes="420px"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]">
+                        <iconify-icon
+                          icon="solar:users-group-rounded-bold"
+                          width="120"
+                          height="120"
+                          className="text-[#c9a962]/40"
+                          aria-hidden="true"
+                        />
+                      </div>
+                    )}
+                    
+                    {/* Clean gradient - only bottom portion where text is */}
+                    <div 
+                      className="absolute inset-x-0 bottom-0 h-[50%]" 
+                      style={{
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0) 100%)',
+                      }}
                     />
-                  ) : (
-                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#e0ded8] to-[#d5d3cc]">
+                  </div>
+
+                  {/* Info area - positioned at bottom */}
+                  <div className="absolute inset-x-0 bottom-0 px-8 pb-10 pt-4 text-center">
+                    <h3 className="text-white text-xl sm:text-2xl font-semibold mb-2">
+                      {member.name}
+                    </h3>
+                    
+                    <p className="text-white/70 text-sm leading-relaxed line-clamp-2 max-w-[300px] mx-auto">
+                      {member.description}
+                    </p>
+                    
+                    {/* Read more indicator */}
+                    <div className="flex items-center justify-center gap-2 mt-4 text-[#c9a962] text-sm font-medium group-hover/card:gap-3 transition-all">
+                      <span>Learn More</span>
                       <iconify-icon
-                        icon="solar:users-group-rounded-bold"
-                        width="80"
-                        height="80"
-                        className="text-[#a09a8c]"
+                        icon="solar:arrow-right-linear"
+                        width="16"
+                        height="16"
+                        className="transition-transform group-hover/card:translate-x-1"
                         aria-hidden="true"
                       />
                     </div>
-                  )}
-                  {/* Gradient overlay at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#f8f7f4] to-transparent" />
-                </div>
-
-                {/* Info area */}
-                <div className="h-[38%] px-6 py-5 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-[#2a2825] text-xl font-semibold mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-[#8b7d5e] text-sm font-medium mb-2">
-                      {member.role}
-                    </p>
-                    <p className="text-[#6b6560] text-sm leading-relaxed line-clamp-2">
-                      {member.description}
-                    </p>
-                  </div>
-                  
-                  {/* Read more button */}
-                  <div className="flex items-center gap-2 text-[#9a8a5c] text-sm font-medium transition-all group-hover/card:text-[#7a6a3c] group-hover/card:gap-3">
-                    <span>Read more</span>
-                    <iconify-icon
-                      icon="solar:arrow-right-linear"
-                      width="16"
-                      height="16"
-                      className="transition-transform group-hover/card:translate-x-1"
-                      aria-hidden="true"
-                    />
                   </div>
                 </div>
-
-                {/* Subtle border */}
-                <div className="absolute inset-0 rounded-3xl border border-[#d5d3cc]/50 pointer-events-none" />
+                
+                {/* Decorative golden ring accent */}
+                <div className="absolute inset-0 rounded-[48px] sm:rounded-[56px] border border-[#c9a962]/20 pointer-events-none scale-[1.02]" />
               </a>
             );
           })}
+        </div>
+        
+        {/* Scroll hint */}
+        <div className="relative z-20 text-center mt-8 mb-16">
+          <p className="text-white/40 text-sm">Scroll to explore</p>
+          <iconify-icon
+            icon="solar:alt-arrow-down-linear"
+            width="20"
+            height="20"
+            className="text-white/40 mt-2 animate-bounce"
+            aria-hidden="true"
+          />
         </div>
       </div>
     </section>

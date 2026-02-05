@@ -12,10 +12,10 @@ const orthodonticsDropdown = [
 ];
 
 const aboutUsDropdown = [
-  { label: 'About Us', href: '/about', description: 'Our story and values' },
   { label: 'Meet Dr. Mo', href: '/about/dr-mo', description: 'Dr. M. Sarfraz' },
   { label: 'Meet Dr. Cronin', href: '/about/dr-cronin', description: 'Dr. D.G. Cronin' },
   { label: 'Meet the Team', href: '/about/team', description: 'Our dedicated staff' },
+  { label: 'About Us', href: '/about', description: 'Our story and values' },
 ];
 
 const otherServicesDropdown = [
@@ -164,7 +164,7 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden xl:block">
-          <Button variant="primary" size="sm" href="#contact">
+          <Button variant="primary" size="sm" href="/contact">
             Book an appointment
           </Button>
         </div>
@@ -194,8 +194,8 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`xl:hidden glass mt-2 mx-4 rounded-2xl overflow-hidden transition-all duration-500 ${
-          mobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+        className={`xl:hidden glass mt-2 mx-4 rounded-2xl transition-all duration-500 ${
+          mobileMenuOpen ? 'max-h-[calc(100vh-100px)] opacity-100 overflow-y-auto' : 'max-h-0 opacity-0 overflow-hidden'
         }`}
         aria-hidden={!mobileMenuOpen}
       >
@@ -263,7 +263,7 @@ export default function Navbar() {
               <Button
                 variant="primary"
                 size="md"
-                href="#contact"
+                href="/contact"
                 className="w-full"
                 onClick={closeMenu}
               >

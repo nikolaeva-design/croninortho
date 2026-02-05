@@ -2,13 +2,14 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { CONTACT } from '@/lib/constants';
 
 const innerPages = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Technology', href: '#gallery' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const utilityPages = [
@@ -53,7 +54,7 @@ export default function Footer() {
             personalized orthodontic care makes.
           </p>
           <a
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white text-sm font-medium rounded-full border border-white/30 hover:bg-white hover:text-[#141414] transition-all duration-300"
           >
             Get Started
@@ -134,12 +135,21 @@ export default function Footer() {
           <p className="text-white/30 text-sm">
             © {new Date().getFullYear()} CroninOrtho. All rights reserved.
           </p>
-          <a
-            href="mailto:contact@croninortho.com"
-            className="text-white/50 text-sm hover:text-white transition-colors"
-          >
-            contact@croninortho.com
-          </a>
+          <div className="flex items-center gap-6">
+            <a
+              href={`tel:${CONTACT.phone}`}
+              className="text-white/50 text-sm hover:text-white transition-colors flex items-center gap-2"
+            >
+              <iconify-icon icon="solar:phone-bold" width="16" height="16" />
+              {CONTACT.phoneDisplay}
+            </a>
+            <a
+              href="mailto:contact@croninortho.com"
+              className="text-white/50 text-sm hover:text-white transition-colors"
+            >
+              contact@croninortho.com
+            </a>
+          </div>
         </div>
       </div>
     </footer>
