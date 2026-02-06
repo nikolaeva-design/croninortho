@@ -381,11 +381,12 @@ export default function DrMoPage() {
             <div className="lg:col-span-4 group h-[400px]">
               <div className="relative h-full rounded-3xl overflow-hidden border border-white/10">
                 <Image
-                  src="/smile-woman.png"
+                  src="/adults-ortho.png"
                   alt="Beautiful orthodontic result"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-[2s]"
                   sizes="(max-width: 1024px) 100vw, 33vw"
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-8 left-6 right-6">

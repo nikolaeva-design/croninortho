@@ -6,6 +6,16 @@ import { Button } from '@/components';
 
 // Team members data - grouped by role type
 const teamMembers = [
+  // Certified Orthodontic Lab Technician
+  {
+    name: 'Tracy',
+    role: 'Certified Orthodontic Lab Technician',
+    years: null,
+    image: '/PHOTO-2026-02-06-20-03-19 2.jpg',
+    bio: 'As a Certified Orthodontic Lab Technician, I craft and maintain the custom appliances that help create beautiful smiles for our patients.',
+    personal: null,
+    featured: false,
+  },
   // Certified Orthodontic Assistants
   {
     name: 'Catherine',
@@ -115,6 +125,25 @@ const teamMembers = [
     years: null,
     image: '/SEHAR.jpg',
     bio: 'I help keep our front desk running smoothly, ensuring patients have a welcoming experience from the moment they arrive.',
+    personal: null,
+    featured: false,
+  },
+  {
+    name: 'Marie',
+    role: 'Admin Assistant',
+    years: null,
+    image: '/PHOTO-2026-02-06-20-03-19.jpg',
+    bio: 'I provide administrative support to keep our office running efficiently, helping patients with scheduling and ensuring a smooth experience.',
+    personal: null,
+    featured: false,
+  },
+  // Office Manager
+  {
+    name: 'Roberta Cronin',
+    role: 'Office Manager',
+    years: null,
+    image: '/IMG_9412.jpg',
+    bio: 'As Office Manager, I oversee the daily operations of our practice, ensuring everything runs smoothly so our team can focus on what matters most—our patients.',
     personal: null,
     featured: false,
   },

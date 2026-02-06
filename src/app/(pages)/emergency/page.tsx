@@ -159,10 +159,7 @@ export default function EmergencyPage() {
             </div>
 
             <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6">
-              Emergency{' '}
-              <span className="text-white/50">
-                Orthodontic Care
-              </span>
+              Emergency <span className="text-white/50">Care</span>
             </h1>
             <p className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg">
               True orthodontic emergencies are rare, but when they occur we are

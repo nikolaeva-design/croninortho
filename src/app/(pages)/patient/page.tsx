@@ -792,8 +792,9 @@ export default function PatientPage() {
                 <div>
                   <div className="text-white/50 text-sm">Address</div>
                   <div className="text-white font-medium">
-                    {CONTACT.address.street}, {CONTACT.address.city},{' '}
-                    {CONTACT.address.state} {CONTACT.address.zip}
+                    {CONTACT.address.street ? `${CONTACT.address.street}, ` : ''}
+                    {CONTACT.address.city}, {CONTACT.address.state}
+                    {CONTACT.address.zip ? ` ${CONTACT.address.zip}` : ''}
                   </div>
                 </div>
               </div>
