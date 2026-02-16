@@ -18,7 +18,7 @@ const treatments = [
     title: 'TMJ-TMD',
     description: 'Temporomandibular Joint Disorder (TMD) affects the jaw joint and surrounding muscles, causing pain, clicking, and limited jaw movement. Our comprehensive approach addresses both the symptoms and underlying causes of jaw dysfunction.',
     details: 'Treatment may include custom splint therapy to reduce joint stress, bite adjustment procedures, coordination with physical therapy, and pain management strategies. Many patients experience significant relief within weeks of starting treatment, with long-term solutions tailored to their specific condition.',
-    image: '/temporomandibular-joints-arthritis-dislocated-articular-260nw-2637862989 копія.jpg',
+    image: '/tmj-diagram.jpg',
   },
   {
     id: 'craniofacial-orthodontics',
@@ -81,7 +81,7 @@ const treatments = [
     title: 'Braces Diagram',
     description: 'Understanding the components of your braces helps you take better care of your orthodontic appliances and communicate effectively with your orthodontic team. Each part plays a specific role in moving your teeth to their ideal positions.',
     details: 'Key components include brackets (attached to each tooth), the archwire (connects brackets and applies pressure), elastic bands or ligatures (hold the wire to brackets), and sometimes rubber bands (correct bite alignment). Regular adjustments ensure continuous progress throughout treatment.',
-    image: '/663a059abb0f869e466c99ee_Bolton Analysis.png',
+    image: '/bolton-analysis.png',
   },
 ];
 
