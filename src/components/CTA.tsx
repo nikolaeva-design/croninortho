@@ -12,7 +12,7 @@ export default function CTA() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/cta-background.png"
+          src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
           alt="Patient receiving orthodontic consultation at CroninOrtho clinic"
           fill
           className="object-cover"
@@ -31,16 +31,16 @@ export default function CTA() {
           id="cta-heading"
           className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-[1.1] mb-6"
         >
-          Focused On Precision, Care,
+          Designed With Precision.
           <br />
-          And Long-Term Results
+          Delivered With Care. Built to Last.
         </h2>
 
         {/* Subtitle */}
         <p className="text-white/70 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-12 lg:mb-16">
-          Our practice is dedicated to providing orthodontic and aesthetic care
-          through thoughtful treatment planning, modern technology, and a
-          patient-centered approach.
+          Thoughtful treatment planning, advanced technology, and a
+          patient-centered approach — all focused on creating results that look
+          natural and stand the test of time.
         </p>
 
         {/* White Card */}
@@ -58,18 +58,19 @@ export default function CTA() {
 
           {/* Card Content */}
           <h3 className="text-[#1d1d1f] text-xl lg:text-2xl font-semibold tracking-tight mb-3">
-            Personalized, Technology-Driven Care
+            Custom, Precision-Engineered Smile Design
           </h3>
           <p className="text-[#1d1d1f]/60 text-sm lg:text-base leading-relaxed">
-            Every patient receives an individualized treatment plan supported by
-            modern technology and focused on long-term stability and results.
+            We use advanced 3D imaging, digital simulations, and treatment
+            planning to design and produce highly personalized smiles — built
+            for accuracy, comfort, and long-term stability.
           </p>
         </div>
 
         {/* CTA Buttons */}
         <div className="mt-12 lg:mt-16 flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="/contact"
+            href="/contact#contact-form"
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1d1d1f] text-sm font-semibold rounded-full hover:bg-white/90 transition-colors duration-200"
           >
             Schedule Free Consultation

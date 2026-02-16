@@ -303,7 +303,7 @@ export default function AestheticsPage() {
         {/* Background with gradient overlay */}
         <div className="absolute inset-0">
           <Image
-            src="/facial-balance-harmony-v2.png"
+            src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
             alt="Aesthetic smile design showcasing facial balance and harmony"
             fill
             className="object-cover object-center"
@@ -314,16 +314,6 @@ export default function AestheticsPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
         </div>
-
-        {/* Subtle grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `linear-gradient(90deg, white 1px, transparent 1px),
-                             linear-gradient(180deg, white 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
-          }}
-        />
 
         {/* Content */}
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40 w-full">
@@ -362,7 +352,7 @@ export default function AestheticsPage() {
               className="flex flex-wrap gap-4 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact#contact-form">
                 Book Consultation
               </Button>
               <Button
@@ -446,17 +436,11 @@ export default function AestheticsPage() {
                 <div 
                   className="relative w-[280px] h-[280px] rounded-full border-[3px] border-[#c9a962]/60"
                   style={{
-                    backgroundImage: 'url(/smile-woman.png)',
+                    backgroundImage: 'url(/Gemini_Generated_Image_g4z48ug4z48ug4z4.png)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center 30%',
                   }}
                 >
-                  {/* Subtle dark overlay for text readability */}
-                  <div className="absolute inset-0 rounded-full bg-black/20" />
-                  {/* Text overlay at bottom */}
-                  <div className="absolute inset-0 flex items-end justify-center pb-8">
-                    <span className="text-[#c9a962] text-base font-medium tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">Your Perfect Smile</span>
-                  </div>
                 </div>
               </div>
 
@@ -549,18 +533,12 @@ export default function AestheticsPage() {
             <AnimatedSection delay={100} className="mb-8">
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-full overflow-hidden border-4 border-[#c9a962]/30 shadow-xl shadow-[#c9a962]/20">
                 <Image
-                  src="/smile-woman.png"
+                  src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
                   alt="Beautiful smile showcasing all components"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                   sizes="250px"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 via-transparent to-transparent" />
-                <div className="absolute inset-0 flex items-end justify-center pb-4">
-                  <div className="px-3 py-1.5 rounded-full bg-[#0a0a0a]/80 backdrop-blur-md border border-[#c9a962]/40">
-                    <span className="text-[#c9a962] text-xs font-medium">Your Perfect Smile</span>
-                  </div>
-                </div>
               </div>
               </AnimatedSection>
 
@@ -585,7 +563,7 @@ export default function AestheticsPage() {
               <p className="text-white/50 mb-6">
                 Ready to discover your perfect smile?
               </p>
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact#contact-form">
                 Start Your Smile Analysis
               </Button>
             </div>
@@ -648,7 +626,7 @@ export default function AestheticsPage() {
           <AnimatedSection delay={400}>
             <div className="mt-12 text-center">
               <p className="text-white/50 mb-4">Still have questions?</p>
-              <Button variant="secondary" size="md" href="/contact">
+              <Button variant="secondary" size="md" href="/contact#contact-form">
                 Contact Us
               </Button>
             </div>

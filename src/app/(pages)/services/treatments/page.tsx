@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components';
 
 // Treatment categories and items with detailed descriptions
@@ -10,66 +11,77 @@ const treatments = [
     title: 'Surgical Orthodontics',
     description: 'Surgical orthodontics, also known as orthognathic surgery, combines orthodontic treatment with corrective jaw surgery. This comprehensive approach is recommended when jaw abnormalities are too severe to be corrected with braces or aligners alone.',
     details: 'The process typically involves pre-surgical orthodontic treatment to align the teeth, followed by surgery to reposition the jaw bones, and post-surgical orthodontics for final refinement. This treatment can dramatically improve facial balance, breathing, and bite function, providing both functional and aesthetic benefits that last a lifetime.',
+    image: '/Gemini_Generated_Image_39qssw39qssw39qs.png',
   },
   {
     id: 'tmj-tmd',
     title: 'TMJ-TMD',
     description: 'Temporomandibular Joint Disorder (TMD) affects the jaw joint and surrounding muscles, causing pain, clicking, and limited jaw movement. Our comprehensive approach addresses both the symptoms and underlying causes of jaw dysfunction.',
     details: 'Treatment may include custom splint therapy to reduce joint stress, bite adjustment procedures, coordination with physical therapy, and pain management strategies. Many patients experience significant relief within weeks of starting treatment, with long-term solutions tailored to their specific condition.',
+    image: '/temporomandibular-joints-arthritis-dislocated-articular-260nw-2637862989 копія.jpg',
   },
   {
     id: 'craniofacial-orthodontics',
     title: 'Craniofacial Orthodontics',
     description: 'Specialized orthodontic care for patients with craniofacial conditions, including cleft lip and palate, requires a multidisciplinary approach. We work closely with surgeons, speech therapists, and other specialists to provide comprehensive care.',
     details: 'Treatment planning begins early in life and continues through adulthood, with orthodontic intervention timed to coincide with growth spurts and surgical procedures. Our goal is to optimize both function and aesthetics while supporting the patient through each stage of their journey.',
+    image: '/Gemini_Generated_Image_m36i52m36i52m36i.png',
   },
   {
     id: 'clear-braces',
     title: 'Clear Braces',
     description: 'Clear ceramic braces offer an excellent aesthetic alternative to traditional metal braces. Made from tooth-colored or translucent materials, they blend naturally with your teeth while providing the same effective treatment as metal brackets.',
     details: 'Modern ceramic brackets are highly durable and resistant to staining. They work with the same mechanics as metal braces, making them suitable for treating a wide range of orthodontic issues. Many adult patients prefer clear braces for their professional appearance during treatment.',
+    image: '/Gemini_Generated_Image_2xvwgw2xvwgw2xvw.png',
   },
   {
     id: 'types-of-appliances',
     title: 'Types of Appliances',
     description: 'Orthodontic appliances are specialized devices used to move teeth, modify jaw growth, or maintain teeth in their corrected positions. Each appliance is custom-made and selected based on the patient\'s specific treatment needs.',
     details: 'Appliances can be fixed (bonded to teeth) or removable, depending on the treatment goals. From expanders that widen the palate to retainers that maintain results, each appliance plays a crucial role in achieving and preserving your perfect smile.',
+    image: '/Gemini_Generated_Image_z33z7kz33z7kz33z.png',
   },
   {
     id: 'palatal-expander',
     title: 'Palatal Expander',
     description: 'A palatal expander is a custom-fitted device that gradually widens the upper jaw to create more space for teeth and improve bite alignment. It works by applying gentle pressure to the palatal bones, which are still flexible in growing children.',
     details: 'Treatment typically takes several months, with daily adjustments made at home using a special key. The expansion creates space for crowded teeth, corrects crossbites, and can even improve breathing by widening the nasal passages. Best results are achieved when treatment begins during childhood.',
+    image: '/Palatal-Expander-RPE-web.jpeg',
   },
   {
     id: 'metal-braces',
     title: 'Metal Braces',
     description: 'Traditional metal braces remain one of the most effective and versatile orthodontic treatments available. Modern metal braces are significantly smaller, more comfortable, and more efficient than those from previous generations.',
     details: 'Metal braces can treat virtually any orthodontic issue, from simple spacing problems to complex bite corrections. Patients can personalize their treatment with colorful elastic bands, making braces a fun way for kids and teens to express their personality while achieving a beautiful smile.',
+    image: '/footer.png',
   },
   {
     id: 'self-ligating-braces',
     title: 'Self-Ligating Braces',
     description: 'Self-ligating braces use a specialized clip mechanism instead of elastic bands to hold the archwire in place. This innovative design reduces friction between the bracket and wire, potentially allowing teeth to move more freely.',
     details: 'Benefits may include shorter appointment times (no elastic bands to change), easier cleaning due to fewer components, and potentially reduced treatment duration. Self-ligating systems are available in both metal and clear ceramic options to suit patient preferences.',
+    image: '/self-ligating-braces.jpg',
   },
   {
     id: 'clear-aligners',
     title: 'Clear Aligners',
     description: 'Clear aligners, such as Invisalign, are a series of custom-made, virtually invisible plastic trays that gradually move teeth into their desired positions. They offer a discreet alternative to traditional braces for many orthodontic cases.',
     details: 'Aligners are removable, allowing you to eat, brush, and floss without restrictions. Each set of aligners is worn for about two weeks before progressing to the next set. Advanced 3D imaging technology allows patients to preview their expected results before treatment begins.',
+    image: '/Clear-Aligners.jpg',
   },
   {
     id: 'tads',
     title: 'TADs',
     description: 'Temporary Anchorage Devices (TADs) are small titanium screws temporarily placed in the jawbone to serve as fixed anchor points for tooth movement. They enable precise control over tooth positioning that was previously difficult or impossible to achieve.',
     details: 'TADs are placed using local anesthesia in a quick, minimally invasive procedure. They allow orthodontists to move specific teeth without affecting others, close extraction spaces efficiently, and correct complex bite issues. Once treatment is complete, TADs are easily removed.',
+    image: '/images (2).jpeg',
   },
   {
     id: 'braces-diagram',
     title: 'Braces Diagram',
     description: 'Understanding the components of your braces helps you take better care of your orthodontic appliances and communicate effectively with your orthodontic team. Each part plays a specific role in moving your teeth to their ideal positions.',
     details: 'Key components include brackets (attached to each tooth), the archwire (connects brackets and applies pressure), elastic bands or ligatures (hold the wire to brackets), and sometimes rubber bands (correct bite alignment). Regular adjustments ensure continuous progress throughout treatment.',
+    image: '/663a059abb0f869e466c99ee_Bolton Analysis.png',
   },
 ];
 
@@ -185,7 +197,7 @@ export default function TreatmentsPage() {
               <Button
                 variant="secondary"
                 size="lg"
-                href="/contact"
+                href="/contact#contact-form"
                 icon="solar:phone-bold"
               >
                 Contact Us
@@ -238,26 +250,34 @@ export default function TreatmentsPage() {
                     id={treatment.id}
                     className="scroll-mt-48 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
                   >
-                    {/* Image Placeholder */}
+                    {/* Image */}
                     <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                       <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/5">
-                        {/* Placeholder content */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-center p-8">
-                            <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-[#c9a962]/10 border border-[#c9a962]/20 flex items-center justify-center">
-                              <iconify-icon
-                                icon="solar:gallery-bold"
-                                width="40"
-                                height="40"
-                                className="text-[#c9a962]/50"
-                              />
+                        {treatment.image ? (
+                          <Image
+                            src={treatment.image}
+                            alt={treatment.title}
+                            fill
+                            className="object-cover"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="text-center p-8">
+                              <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-[#c9a962]/10 border border-[#c9a962]/20 flex items-center justify-center">
+                                <iconify-icon
+                                  icon="solar:gallery-bold"
+                                  width="40"
+                                  height="40"
+                                  className="text-[#c9a962]/50"
+                                />
+                              </div>
+                              <p className="text-white/30 text-sm">Image placeholder</p>
+                              <p className="text-white/20 text-xs mt-1">{treatment.title}</p>
                             </div>
-                            <p className="text-white/30 text-sm">Image placeholder</p>
-                            <p className="text-white/20 text-xs mt-1">{treatment.title}</p>
                           </div>
-                        </div>
+                        )}
                         {/* Decorative gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/50 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/50 to-transparent pointer-events-none" />
                       </div>
                     </div>
 
@@ -308,7 +328,7 @@ export default function TreatmentsPage() {
               Not sure which treatment is right for you? Schedule a consultation and our experts will create a personalized plan for your unique needs.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact#contact-form">
                 Book Consultation
               </Button>
               <Button variant="secondary" size="lg" href="/orthodontics/kids">

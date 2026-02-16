@@ -161,7 +161,7 @@ export default function PatientCarePage() {
               If you need additional guidance or have questions about your treatment, our team is here to help.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button variant="primary" size="lg" href="/contact" icon="solar:chat-round-line-linear">
+              <Button variant="primary" size="lg" href="/contact#contact-form" icon="solar:chat-round-line-linear">
                 Contact Us
               </Button>
               <Button variant="secondary" size="lg" href="/patient#office-visits" icon="solar:calendar-linear">

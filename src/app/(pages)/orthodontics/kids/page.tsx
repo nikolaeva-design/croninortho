@@ -14,19 +14,19 @@ const gold = {
 // Warning signs - grouped for display
 const warningSignsGroups = [
   {
-    title: 'Oral Habits',
-    description: 'Persistent habits that may affect dental development.',
-    signs: ['Thumb sucking past age 5', 'Mouth breathing', 'Tongue thrusting'],
-  },
-  {
     title: 'Bite & Alignment',
-    description: 'Issues with how teeth come together.',
-    signs: ['Crowded or misplaced teeth', 'Difficulty chewing or biting', 'Teeth that don\'t meet properly'],
+    description: 'Small signs today can mean bigger problems later.',
+    signs: ['Teeth look crowded or overlap', 'Your child struggles to bite into food (apples, sandwiches)', 'Teeth don\'t meet evenly when they close', 'Front teeth stick out or don\'t touch'],
   },
   {
     title: 'Jaw & Speech',
-    description: 'Signs related to jaw development and function.',
-    signs: ['Jaws that shift or click', 'Speech difficulties', 'Facial imbalance'],
+    description: 'Subtle signs that your child\'s jaw may not be developing as it should.',
+    signs: ['Jaw clicks or shifts when opening/closing', 'Speech sounds unclear or hard to understand', 'Face looks slightly uneven in photos', 'Child complains of jaw tiredness or soreness'],
+  },
+  {
+    title: 'Oral Habits',
+    description: 'Persistent habits that may affect dental development.',
+    signs: ['Thumb sucking past age 5', 'Mouth breathing', 'Tongue thrusting'],
   },
 ];
 
@@ -34,23 +34,23 @@ const warningSignsGroups = [
 const processSteps = [
   {
     title: 'Consultation',
-    description: 'Meet our team and discuss your child\'s needs in a relaxed, no-pressure environment.',
-    tags: ['30 minutes', 'No obligation', 'Kid-friendly'],
+    description: 'No pressure. Just clarity. Meet our team, let your child get comfortable, and get honest answers about what (if anything) your child needs.',
+    tags: ['Quick', 'No obligation', 'Parent questions welcome'],
   },
   {
     title: 'Comprehensive Evaluation',
-    description: 'CBCT, photos, and thorough examination to understand the full picture.',
-    tags: ['CBCT', 'Photos', 'Full assessment'],
+    description: 'We look at the full picture — not just the teeth. Photos, gentle 3D imaging, and a careful exam help us understand how your child\'s smile and jaw are growing.',
+    tags: ['Clear visuals', 'Kid-friendly', 'No guessing'],
   },
   {
-    title: 'Custom Treatment Plan',
-    description: 'Personalized plan designed specifically for your child\'s unique needs and goals.',
-    tags: ['Tailored approach', 'Clear timeline', 'Cost estimate'],
+    title: 'Custom Plan For Your Child',
+    description: 'One child. One plan. We\'ll walk you through the options, timing, and what works best for your child\'s needs and your family\'s schedule.',
+    tags: ['Tailored approach', 'Clear timeline', 'No surprises'],
   },
   {
-    title: 'Active Treatment',
-    description: 'Fun, comfortable appointments with a team that makes kids feel at ease.',
-    tags: ['Regular visits', 'Progress tracking', 'Gentle care'],
+    title: 'Treatment',
+    description: 'Comfortable visits. Encouraging team. Real progress. We make appointments positive and motivating — so kids leave feeling proud of their progress.',
+    tags: ['Fun visits', 'Progress tracking', 'Ongoing support'],
   },
 ];
 
@@ -123,22 +123,22 @@ const featureSections = [
       'Create space for erupting teeth',
       'Reduce risk of trauma to protruding teeth',
     ],
-    image: '/kids-ortho.png',
+    image: '/Gemini_Generated_Image_6c0htw6c0htw6c0h.png',
     imagePosition: 'right',
   },
   {
     number: '02',
     badge: 'Growth',
     title: 'Jaw Development',
-    subtitle: '& Airway',
-    description: 'Proper jaw development is crucial for your child\'s overall health. We focus on creating balanced facial growth and ensuring optimal airway development for better breathing and sleep.',
+    subtitle: 'and Sleep Apnea',
+    description: 'Proper jaw development is crucial for children\'s overall health and growth. We focus on creating balanced facial growth and ensuring optimal functionality.',
     features: [
       'Improve breathing patterns',
       'Address sleep-related issues',
       'Balance facial symmetry',
       'Prevent TMJ problems',
     ],
-    image: '/Gemini_Generated_Image_oymo7foymo7foymo.png',
+    image: '/Gemini_Generated_Image_b53qsob53qsob53q.png',
     imagePosition: 'left',
   },
   {
@@ -146,14 +146,14 @@ const featureSections = [
     badge: 'Prevention',
     title: 'Setting Up',
     subtitle: 'For Success',
-    description: 'Early treatment often means simpler, shorter treatment as a teenager. By addressing issues now, we can reduce the complexity of future orthodontic care and achieve better long-term results.',
+    description: 'Early treatment sometimes means simpler, and maybe shorter treatment as a teenager.',
     features: [
-      'Shorter Phase 2 treatment time',
+      'Efficient phase 2',
       'Reduced need for extractions',
       'Better long-term stability',
       'Improved self-confidence',
     ],
-    image: '/kids-ortho.png',
+    image: '/Gemini_Generated_Image_8ts3ui8ts3ui8ts3.png',
     imagePosition: 'right',
   },
 ];
@@ -161,15 +161,15 @@ const featureSections = [
 // Testimonials
 const testimonials = [
   {
-    quote: 'I\'ve had an outstanding experience at Dr. Cronin Ortho Clinic, where my 12-year-old son has been receiving orthodontic treatment. Dr. Mohymen Sarfraz has been exceptional—patient, gentle, and incredibly thorough. The whole clinic runs with genuine care, professionalism, and kindness.',
+    quote: 'I\'ve had an outstanding experience at Dr. Cronin Ortho Clinic, where my child has been receiving orthodontic treatment. Dr. Mohymen Sarfraz has been exceptional—patient, gentle, and incredibly thorough. The whole clinic runs with genuine care, professionalism, and kindness.',
     author: 'Samina Jafar',
-    role: 'Parent of 12-year-old son',
+    role: 'Parent',
     avatar: 'S',
   },
   {
     quote: 'Cronin Ortho has been Great!! This is our 3rd kid to go here for braces and they are amazing! Our kids teeth look great! They are easy to work with, helping move appointments if necessary and very accommodating. Professional but fun!',
     author: 'Paul Blackman',
-    role: 'Parent of 3 children',
+    role: 'Parent',
     avatar: 'P',
   },
   {
@@ -179,15 +179,15 @@ const testimonials = [
     avatar: 'M',
   },
   {
-    quote: 'We had a very good experience for my son who needed expanders to prevent crowding. It has brought a good smile to him and we are glad we chose Dr.Mo.',
+    quote: 'We had a very good experience for my child who needed expanders to prevent crowding. It has brought a good smile and we are glad we chose Dr.Mo.',
     author: 'Sajjin M.',
-    role: 'Parent of son',
+    role: 'Parent',
     avatar: 'S',
   },
   {
-    quote: 'I recently visited this orthodontic clinic for my daughter\'s treatment, and I couldn\'t be happier with the experience. The service was exceptional, and the staff were incredibly helpful, friendly, and knowledgeable. Highly recommend this clinic!',
+    quote: 'I recently visited this orthodontic clinic for treatment, and I couldn\'t be happier with the experience. The service was exceptional, and the staff were incredibly helpful, friendly, and knowledgeable. Highly recommend this clinic!',
     author: 'Waseem Mian',
-    role: 'Parent of daughter',
+    role: 'Parent',
     avatar: 'W',
   },
   {
@@ -209,8 +209,8 @@ const faqs = [
     answer: 'Not every child needs early treatment. After evaluation, we\'ll recommend the best timing for your child. Some issues benefit from early intervention, while others are better addressed once all permanent teeth have erupted.',
   },
   {
-    question: 'How long does Phase 1 treatment typically last?',
-    answer: 'Phase 1 treatment usually lasts 12-18 months, followed by a resting period where we monitor growth and development before determining if Phase 2 treatment is needed.',
+    question: 'How long is phase 1?',
+    answer: 'Usually 6-9 months, followed by a resting period where we monitor growth and development before determining if Phase 2 treatment is needed.',
   },
   {
     question: 'Will my child still need braces as a teenager?',
@@ -222,7 +222,7 @@ const faqs = [
   },
   {
     question: 'Is early treatment more expensive than waiting?',
-    answer: 'While Phase 1 treatment is an additional investment, it often reduces the complexity and duration of Phase 2 treatment. We offer flexible payment plans to make treatment accessible for your family.',
+    answer: 'While Phase 1 treatment is an additional investment, it often reduces the complexity and duration of Phase 2 treatment. We offer interest-free flexible payment plans to make treatment accessible for your family.',
   },
 ];
 
@@ -304,8 +304,9 @@ export default function KidsOrthodonticsPage() {
             fill
             className="object-cover object-top"
             priority
-            quality={90}
+            quality={100}
             sizes="100vw"
+            unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
@@ -328,8 +329,8 @@ export default function KidsOrthodonticsPage() {
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
             >
-              <span className="text-white">Kids </span>
-              <span className="text-white/50">Orthodontics</span>
+              <span className="text-white">Kids Orthodontics </span>
+              <span className="text-white/50">(Ages 7–12)</span>
             </h1>
 
             {/* Description */}
@@ -337,15 +338,15 @@ export default function KidsOrthodonticsPage() {
               className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
             >
-              Early orthodontic care focused on growth modification, airway development, and preventing complex issues later in life.
+              Gentle early treatment to guide healthy growth and prevent bigger problems later.
             </p>
 
             {/* CTAs */}
             <div 
-              className="flex flex-wrap gap-4 animate-fade-in-up opacity-0"
+              className="flex items-center gap-3 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact#contact-form">
                 Book Consultation
               </Button>
               <Button variant="secondary" size="lg" href="#info" icon="solar:arrow-down-linear">
@@ -378,45 +379,32 @@ export default function KidsOrthodonticsPage() {
             </h2>
               <div className="space-y-6 mb-10">
                 <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  The American Association of Orthodontists recommends that children have their first orthodontic evaluation by age 7. At this age, we can identify potential issues early and guide jaw growth while your child is still developing.
+                  The American Association of Orthodontists recommends children see an orthodontist by age 7. At this age, we can spot hidden bite and jaw concerns early—often before they&apos;re visible—and guide healthy growth while your child is still developing.
                 </p>
                 <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  Early intervention doesn&apos;t always mean early treatment. Sometimes the best approach is to monitor growth and begin treatment at the optimal time.
+                  Early evaluations don&apos;t always mean early braces. Sometimes, the best care is simply watching growth and stepping in at the perfect time—so treatment can be shorter, easier, and more comfortable later on.
             </p>
           </div>
-              <div className="flex flex-wrap gap-4">
-                <Button variant="primary" size="md" href="/contact">
-                  Schedule Evaluation
+              <div className="flex flex-col gap-2">
+                <Button variant="primary" size="md" href="/contact#contact-form">
+                  Check My Child&apos;s Smile
                 </Button>
-                <Button variant="secondary" size="md" href="#treatments">
-                  View Treatments
-                </Button>
+                <p className="text-white/40 text-sm">Quick records • No commitment • Just expert clarity</p>
               </div>
             </AnimatedSection>
 
-            {/* Right - Image Grid */}
+            {/* Right - Image */}
             <AnimatedSection delay={200}>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative aspect-[3/4] rounded-3xl overflow-hidden">
-                  <Image
-                    src="/kids-ortho.png"
-                    alt="Child smiling with braces"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                </div>
-                <div className="relative aspect-[3/4] rounded-3xl overflow-hidden mt-8">
-                  <Image
-                    src="/Gemini_Generated_Image_oymo7foymo7foymo.png"
-                    alt="Happy child after treatment"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                </div>
+              <div className="relative aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden max-w-md lg:max-w-lg mx-auto">
+                <Image
+                  src="/Gemini_Generated_Image_2mwn2h2mwn2h2mwn.png"
+                  alt="Happy smiling child showing growing teeth"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 400px, 500px"
+                  quality={100}
+                  unoptimized
+                />
               </div>
             </AnimatedSection>
           </div>
@@ -436,8 +424,11 @@ export default function KidsOrthodonticsPage() {
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6">
                 Signs to Watch For
               </h2>
-              <p className="text-white/50 text-lg max-w-2xl">
-                These common signs may indicate your child could benefit from an orthodontic evaluation.
+              <p className="text-white/50 text-lg max-w-2xl mb-2">
+                Does your child do any of these? Most parents notice at least one.
+              </p>
+              <p className="text-white/40 text-base max-w-2xl">
+                These everyday signs can be easy to miss—but they often point to hidden bite or growth issues that are much easier to guide early.
               </p>
             </div>
           </AnimatedSection>
@@ -449,11 +440,12 @@ export default function KidsOrthodonticsPage() {
               <div className="relative h-full min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden group">
                 {/* Background Image */}
                 <Image
-                  src="/kids-ortho.png"
-                  alt="Child orthodontic evaluation"
+                  src="/Gemini_Generated_Image_e4oigce4oigce4oi.png"
+                  alt="Smiling child showing teeth for orthodontic evaluation"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 66vw"
+                  quality={90}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20" />
                 
@@ -534,8 +526,9 @@ export default function KidsOrthodonticsPage() {
           {/* CTA */}
           <AnimatedSection delay={400}>
             <div className="mt-10 text-center lg:text-left">
-              <Button variant="secondary" size="md" href="/contact" icon="solar:arrow-right-linear">
-                Schedule Evaluation
+              <p className="text-white/60 text-base mb-4">Worried this might be your child?</p>
+              <Button variant="secondary" size="md" href="/contact#contact-form" icon="solar:arrow-right-linear">
+                Check Their Smile
               </Button>
             </div>
           </AnimatedSection>
@@ -548,9 +541,9 @@ export default function KidsOrthodonticsPage() {
           {/* Header */}
           <AnimatedSection>
             <div className="text-center mb-16 lg:mb-20">
-              <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6">
-                Your Journey to a
-                <span className="text-white/50 block">Healthy Smile</span>
+              <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6 lg:max-w-[60%]">
+                From First Visit to Confident Smile
+                <span className="text-white/50 block">— Here&apos;s How Easy It Is</span>
               </h2>
               <p className="text-white/50 text-lg max-w-2xl mx-auto">
                 Our simple, stress-free process makes orthodontic care easy for you and fun for your child.
@@ -612,7 +605,7 @@ export default function KidsOrthodonticsPage() {
           {/* CTA */}
           <AnimatedSection delay={500}>
             <div className="text-center mt-16">
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact#contact-form">
                 Start Your Journey
               </Button>
             </div>
@@ -688,15 +681,15 @@ export default function KidsOrthodonticsPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left - Image */}
             <AnimatedSection>
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-black">
                 <Image
-                  src="/Gemini_Generated_Image_oymo7foymo7foymo.png"
-                  alt="Welcoming orthodontic office"
+                  src="/Class-II-skeletal-malocclusion-with-great-value-of-ANB-Go2-and-Yaxis-SN.jpeg"
+                  alt="Cephalometric X-ray analysis for orthodontic evaluation"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={100}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
             </AnimatedSection>
 
@@ -741,7 +734,7 @@ export default function KidsOrthodonticsPage() {
               </div>
 
               <div className="mt-10">
-                <Button variant="primary" size="md" href="/contact">
+                <Button variant="primary" size="md" href="/contact#contact-form">
                   Book Your Visit
                 </Button>
               </div>
@@ -813,7 +806,7 @@ export default function KidsOrthodonticsPage() {
                     ))}
                   </div>
 
-                  <Button variant="secondary" size="md" href="/contact" icon="solar:arrow-right-linear">
+                  <Button variant="secondary" size="md" href="/contact#contact-form" icon="solar:arrow-right-linear">
                     Get Started
                   </Button>
                 </div>

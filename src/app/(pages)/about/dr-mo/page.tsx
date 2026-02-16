@@ -107,13 +107,6 @@ export default function DrMoPage() {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
         {/* Background */}
         <div className="absolute inset-0 bg-[#0a0a0a]" />
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `linear-gradient(90deg, white 1px, transparent 1px),
-                             linear-gradient(180deg, white 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
-          }}
-        />
         
         {/* Content */}
         <div className="relative max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16 py-24 lg:py-32 text-center opacity-0 animate-fade-in-up">
@@ -125,7 +118,7 @@ export default function DrMoPage() {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-white mb-6">
-            Meet Dr. Mohymen Sarfraz
+            Meet Dr. Mo
             <span className="block text-white/50">Reimagining Orthodontics</span>
           </h1>
           
@@ -134,11 +127,11 @@ export default function DrMoPage() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="primary" size="lg" href="/contact">
+            <Button variant="primary" size="lg" href="/contact#contact-form">
               Schedule a Consultation
             </Button>
             <Button variant="secondary" size="lg" href="#about">
-              About Dr. Mo
+              Learn More
             </Button>
           </div>
         </div>
@@ -381,7 +374,7 @@ export default function DrMoPage() {
             <div className="lg:col-span-4 group h-[400px]">
               <div className="relative h-full rounded-3xl overflow-hidden border border-white/10">
                 <Image
-                  src="/adults-ortho.png"
+                  src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
                   alt="Beautiful orthodontic result"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-[2s]"
@@ -399,7 +392,7 @@ export default function DrMoPage() {
 
           {/* Section CTA */}
           <div className="mt-12 lg:mt-16 flex justify-center">
-            <Button variant="secondary" size="lg" href="/contact">
+            <Button variant="secondary" size="lg" href="/contact#contact-form">
               Discuss Your Treatment Options
             </Button>
           </div>

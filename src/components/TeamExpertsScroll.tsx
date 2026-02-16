@@ -5,25 +5,19 @@ import Image from 'next/image';
 
 const teamHighlights = [
   {
-    name: 'Dr. D.G. Cronin',
-    role: 'Lead Orthodontist',
-    description: 'With over 30 years of experience, Dr. Cronin has transformed thousands of smiles with his expertise and compassionate approach.',
+    name: 'Dr. Cronin',
     href: '/about/dr-cronin',
     image: '/DR. CRONIN.jpg',
     imagePosition: 'object-[center_30%]',
   },
   {
-    name: 'Dr. M. Sarfraz',
-    role: 'Orthodontist',
-    description: 'Dr. Mo brings innovative techniques and a warm personality to every patient interaction.',
+    name: 'Dr. Mo',
     href: '/about/dr-mo',
     image: '/DR. MO.jpg',
     imagePosition: 'object-top',
   },
   {
     name: 'Our Team',
-    role: 'Dedicated Staff',
-    description: 'Our friendly and skilled team is committed to making your orthodontic journey smooth and enjoyable.',
     href: '/about/team',
     image: null,
     imagePosition: 'object-center',
@@ -130,7 +124,7 @@ export default function TeamExpertsScroll() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/cta-background.png"
+            src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
             alt=""
             fill
             className="object-cover"
@@ -149,7 +143,7 @@ export default function TeamExpertsScroll() {
         </div>
         
         {/* Centered rounded square card stack */}
-        <div className="relative w-[320px] h-[420px] sm:w-[380px] sm:h-[500px] lg:w-[420px] lg:h-[540px] z-10">
+        <div className="relative w-[320px] h-[420px] sm:w-[380px] sm:h-[500px] lg:w-[420px] lg:h-[540px] xl:w-[480px] xl:h-[620px] 2xl:w-[540px] 2xl:h-[700px] z-10">
           {/* Cards */}
           {teamHighlights.map((member, index) => {
             const { translateY, translateX, rotate, scale, zIndex, isVisible } = getCardState(index);
@@ -158,7 +152,7 @@ export default function TeamExpertsScroll() {
               <a
                 key={member.name}
                 href={member.href}
-                className="group/card absolute inset-0 rounded-[48px] sm:rounded-[56px] overflow-hidden"
+                className="group/card absolute inset-0 rounded-[48px] sm:rounded-[56px] 2xl:rounded-[64px] overflow-hidden"
                 style={{
                   transform: `translateX(${translateX}px) translateY(${translateY}px) rotate(${rotate}deg) scale(${scale})`,
                   zIndex,
@@ -172,21 +166,21 @@ export default function TeamExpertsScroll() {
                 
                 {/* Main card container */}
                 <div 
-                  className="relative w-full h-full rounded-[48px] sm:rounded-[56px] border-[3px] border-[#c9a962]/60 group-hover/card:border-[#c9a962] transition-colors overflow-hidden"
+                  className="relative w-full h-full rounded-[48px] sm:rounded-[56px] 2xl:rounded-[64px] border-[3px] border-[#c9a962]/60 group-hover/card:border-[#c9a962] transition-colors overflow-hidden"
                   style={{
                     background: '#0a0a0a',
                     boxShadow: '0 25px 60px -12px rgba(0,0,0,0.7), 0 0 40px -10px rgba(201,169,98,0.2)',
                   }}
                 >
                   {/* Photo area */}
-                  <div className="absolute inset-0 overflow-hidden rounded-[45px] sm:rounded-[53px]">
+                  <div className="absolute inset-0 overflow-hidden rounded-[45px] sm:rounded-[53px] 2xl:rounded-[61px]">
                     {member.image ? (
                       <Image
                         src={member.image}
                         alt={member.name}
                         fill
                         className={`object-cover ${member.imagePosition} group-hover/card:scale-105 transition-transform duration-500`}
-                        sizes="420px"
+                        sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, (max-width: 1280px) 420px, (max-width: 1536px) 480px, 540px"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]">
@@ -210,17 +204,13 @@ export default function TeamExpertsScroll() {
                   </div>
 
                   {/* Info area - positioned at bottom */}
-                  <div className="absolute inset-x-0 bottom-0 px-8 pb-10 pt-4 text-center">
-                    <h3 className="text-white text-xl sm:text-2xl font-semibold mb-2">
+                  <div className="absolute inset-x-0 bottom-0 px-8 pb-10 pt-4 2xl:px-10 2xl:pb-12 text-center">
+                    <h3 className="text-white text-xl sm:text-2xl 2xl:text-3xl font-semibold mb-4">
                       {member.name}
                     </h3>
                     
-                    <p className="text-white/70 text-sm leading-relaxed line-clamp-2 max-w-[300px] mx-auto">
-                      {member.description}
-                    </p>
-                    
-                    {/* Read more indicator */}
-                    <div className="flex items-center justify-center gap-2 mt-4 text-[#c9a962] text-sm font-medium group-hover/card:gap-3 transition-all">
+                    {/* Learn more button */}
+                    <div className="flex items-center justify-center gap-2 text-[#c9a962] text-sm 2xl:text-base font-medium group-hover/card:gap-3 transition-all">
                       <span>Learn More</span>
                       <iconify-icon
                         icon="solar:arrow-right-linear"
@@ -234,7 +224,7 @@ export default function TeamExpertsScroll() {
                 </div>
                 
                 {/* Decorative golden ring accent */}
-                <div className="absolute inset-0 rounded-[48px] sm:rounded-[56px] border border-[#c9a962]/20 pointer-events-none scale-[1.02]" />
+                <div className="absolute inset-0 rounded-[48px] sm:rounded-[56px] 2xl:rounded-[64px] border border-[#c9a962]/20 pointer-events-none scale-[1.02]" />
               </a>
             );
           })}

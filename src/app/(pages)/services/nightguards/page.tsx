@@ -182,7 +182,7 @@ export default function NightguardsPage() {
               className="flex flex-wrap gap-4 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact#contact-form">
                 Request Consultation
               </Button>
               <Button
@@ -242,7 +242,7 @@ export default function NightguardsPage() {
                 </p>
               </div>
               <a
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center gap-2 text-white/70 text-sm font-medium hover:text-white transition-colors group/link"
               >
                 Request a Consultation
@@ -292,15 +292,21 @@ export default function NightguardsPage() {
             {benefits.map((benefit, index) => (
               <AnimatedSection key={benefit.title} delay={index * 100}>
                 <div className="group h-full text-center">
-                  {/* Image Placeholder */}
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-white/[0.03] border border-white/5">
+                  {/* Icon Display */}
+                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 group-hover:border-[#c9a962]/30 transition-all duration-500">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <iconify-icon
-                        icon="solar:gallery-bold"
-                        width="48"
-                        height="48"
-                        className="text-white/20"
-                      />
+                      {/* Decorative rings */}
+                      <div className="absolute w-32 h-32 rounded-full border border-white/5 group-hover:scale-110 transition-transform duration-700" />
+                      <div className="absolute w-24 h-24 rounded-full border border-white/10 group-hover:scale-125 transition-transform duration-500" />
+                      {/* Icon container */}
+                      <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-[#c9a962]/20 to-[#c9a962]/5 border border-[#c9a962]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <iconify-icon
+                          icon={benefit.icon}
+                          width="40"
+                          height="40"
+                          className="text-[#c9a962]"
+                        />
+                      </div>
                     </div>
                   </div>
 
@@ -369,7 +375,7 @@ export default function NightguardsPage() {
               </ul>
 
               <a
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center gap-2 text-white/70 text-sm font-medium hover:text-white transition-colors group/link"
               >
                 Request a Consultation
@@ -439,7 +445,7 @@ export default function NightguardsPage() {
           <AnimatedSection delay={300}>
             <div className="mt-12 text-center">
               <p className="text-white/50 mb-4">Still have questions?</p>
-              <Button variant="secondary" size="md" href="/contact">
+              <Button variant="secondary" size="md" href="/contact#contact-form">
                 Contact Us
               </Button>
             </div>
@@ -451,7 +457,7 @@ export default function NightguardsPage() {
       <section className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/cta-background.png"
+            src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
             alt=""
             fill
             className="object-cover opacity-30"
@@ -467,7 +473,7 @@ export default function NightguardsPage() {
             <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
               Stop grinding damage before it starts. Schedule a consultation to discuss a custom nightguard that fits your needs.
             </p>
-            <Button variant="primary" size="lg" href="/contact">
+            <Button variant="primary" size="lg" href="/contact#contact-form">
               Request Consultation
             </Button>
           </AnimatedSection>

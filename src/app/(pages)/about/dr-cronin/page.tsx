@@ -102,13 +102,6 @@ export default function DrCroninPage() {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
         {/* Background */}
         <div className="absolute inset-0 bg-[#0a0a0a]" />
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `linear-gradient(90deg, white 1px, transparent 1px),
-                             linear-gradient(180deg, white 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
-          }}
-        />
         
         {/* Content */}
         <div className="relative max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16 py-24 lg:py-32 text-center opacity-0 animate-fade-in-up">
@@ -129,7 +122,7 @@ export default function DrCroninPage() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="primary" size="lg" href="/contact">
+            <Button variant="primary" size="lg" href="/contact#contact-form">
               Schedule a Consultation
             </Button>
             <Button variant="secondary" size="lg" href="#about">
@@ -369,7 +362,7 @@ export default function DrCroninPage() {
 
           {/* Section CTA */}
           <div className="mt-12 lg:mt-16 flex justify-center">
-            <Button variant="secondary" size="lg" href="/contact">
+            <Button variant="secondary" size="lg" href="/contact#contact-form">
               Discuss Your Treatment Options
             </Button>
           </div>

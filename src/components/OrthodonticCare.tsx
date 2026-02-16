@@ -9,10 +9,10 @@ const careTypes = [
     id: 'kids',
     number: '01',
     title: 'Kids',
-    subtitle: 'Orthodontics',
+    subtitle: 'Orthodontics (Ages 7–12)',
     age: 'Ages 7–12',
     description:
-      'Early orthodontic care focused on growth modification, airway development, and preventing complex issues later.',
+      'Gentle early treatment to guide healthy growth and prevent bigger problems later.',
     features: ['Growth Modification', 'Airway Development', 'Prevention'],
     image: '/Gemini_Generated_Image_oymo7foymo7foymo.png',
     imageAlt:
@@ -23,13 +23,13 @@ const careTypes = [
   {
     id: 'teens',
     number: '02',
-    title: 'Teens',
-    subtitle: 'Orthodontics',
+    title: 'Teen',
+    subtitle: 'Orthodontics (Ages 13–19)',
     age: 'Ages 13–19',
     description:
-      'Comprehensive orthodontic solutions designed to align teeth, correct bite issues, and support healthy development.',
+      'Modern treatment options that fit your teen\'s lifestyle — and build lasting confidence.',
     features: ['Teeth Alignment', 'Bite Correction', 'Clear Aligners'],
-    image: '/teens-ortho.jpg',
+    image: '/Gemini_Generated_Image_t552pwt552pwt552.png',
     imageAlt:
       'Teenager showing results of comprehensive orthodontic treatment with advanced alignment system',
     badgeText: 'Advanced Alignment System',
@@ -38,13 +38,13 @@ const careTypes = [
   {
     id: 'adults',
     number: '03',
-    title: 'Adults',
-    subtitle: 'Orthodontics',
+    title: 'Adult',
+    subtitle: 'Orthodontics (Ages 20+)',
     age: 'Ages 20+',
     description:
-      'Modern orthodontic options for adults seeking improved function, aesthetics, and long-term oral health.',
+      'It\'s not too late to love your smile — modern options designed for busy lives.',
     features: ['Invisible Options', 'Flexible Schedule', 'Quick Results'],
-    image: '/Gemini_Generated_Image_ojvtklojvtklojvt.png',
+    image: '/Gemini_Generated_Image_79ly7x79ly7x79ly.png',
     imageAlt:
       'Adult patient with clear aligners demonstrating discreet orthodontic treatment options',
     badgeText: 'Invisible Solution',
@@ -173,8 +173,7 @@ export default function OrthodonticCare() {
                   
                   {/* Title */}
                   <h3 className="text-white text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight">
-                    {care.title}
-                    <span className="text-white/50 block lg:inline lg:ml-3">{care.subtitle}</span>
+                    {care.title} Orthodontics
                   </h3>
                   
                   {/* Age Badge */}

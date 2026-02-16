@@ -8,15 +8,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/about' },
 };
 
-const partners = [
-  'Invisalign',
-  'American Association of Orthodontists',
-  'Canadian Association of Orthodontists',
-  'Damon System',
-  'iTero',
-  '3M Unitek',
-];
-
 export default function AboutPage() {
   return (
     <div className="bg-[#0a0a0a] -mt-20">
@@ -25,7 +16,7 @@ export default function AboutPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/cta-background.png"
+            src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
             alt="About Cronin Orthodontics"
             fill
             className="object-cover object-center"
@@ -56,7 +47,7 @@ export default function AboutPage() {
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Button variant="primary" size="lg" href="/contact" icon="solar:calendar-add-linear">
+              <Button variant="primary" size="lg" href="/contact#contact-form" icon="solar:calendar-add-linear">
                 Book Consultation
               </Button>
               <Button variant="secondary" size="lg" href="/about/team" icon="solar:users-group-rounded-linear">
@@ -139,39 +130,6 @@ export default function AboutPage() {
       {/* Team Highlights - Scroll Animation */}
       <TeamExpertsScroll />
 
-      {/* Partners Marquee */}
-      <section className="py-16 bg-[#0f0f0f] border-y border-white/5 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 mb-10">
-          <p className="text-white/40 text-sm text-center uppercase tracking-wider">
-            Trusted Partners
-          </p>
-        </div>
-        
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0f0f0f] to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0f0f0f] to-transparent z-10" />
-          
-          <div className="flex animate-marquee">
-            {[...partners, ...partners, ...partners].map((partner, idx) => (
-              <div
-                key={`${partner}-${idx}`}
-                className="flex items-center gap-3 px-10 py-4"
-              >
-                <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center">
-                  <iconify-icon
-                    icon="solar:verified-check-bold"
-                    width="20"
-                    height="20"
-                    className="text-white/30"
-                    aria-hidden="true"
-                  />
-                </div>
-                <span className="text-white/50 font-medium whitespace-nowrap">{partner}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
     </div>
   );

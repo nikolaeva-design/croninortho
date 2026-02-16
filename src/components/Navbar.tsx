@@ -9,6 +9,7 @@ const orthodonticsDropdown = [
   { label: 'Kids', href: '/orthodontics/kids', description: 'Early treatment for children' },
   { label: 'Teens', href: '/orthodontics/teens', description: 'Braces & aligners for teenagers' },
   { label: 'Adults', href: '/orthodontics/adults', description: 'Modern solutions for adults' },
+  { label: 'Surgical Orthodontics', href: '/orthodontics/surgical', description: 'Complex jaw corrections' },
 ];
 
 const aboutUsDropdown = [
@@ -28,6 +29,7 @@ const moreDropdown = [
   { label: 'Patient', href: '/patient', description: 'Forms, visits, and helpful resources' },
   { label: 'Patient Care', href: '/patient-care', description: 'Video guides for your treatment' },
   { label: 'Emergency', href: '/emergency', description: 'What to do and who to contact' },
+  { label: 'Common Treatments', href: '/services/treatments', description: 'Overview of treatment options' },
 ];
 
 const navItems = [
@@ -164,7 +166,7 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden xl:block">
-          <Button variant="primary" size="sm" href="/contact">
+          <Button variant="primary" size="sm" href="/contact#contact-form">
             Book an appointment
           </Button>
         </div>
@@ -263,7 +265,7 @@ export default function Navbar() {
               <Button
                 variant="primary"
                 size="md"
-                href="/contact"
+                href="/contact#contact-form"
                 className="w-full"
                 onClick={closeMenu}
               >

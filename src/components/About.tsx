@@ -19,43 +19,42 @@ export default function About() {
               id="about-heading"
               className="text-[#1d1d1f] text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-8"
             >
-              About Our
+              Expert Orthodontics,
               <br />
-              Practice
+              Designed With Precision
             </h2>
 
             <div className="space-y-6 mb-10">
               <p className="text-[#1d1d1f]/70 text-base lg:text-lg leading-relaxed">
-                Our practice is dedicated to providing comprehensive orthodontic
-                and aesthetic care for patients of all ages. We focus on
-                individualized treatment planning, clear communication, and
-                evidence-based approaches to achieve functional, stable, and
-                long-lasting results.
+                We specialize in personalized orthodontic and aesthetic smile
+                design for patients of all ages.
               </p>
               <p className="text-[#1d1d1f]/70 text-base lg:text-lg leading-relaxed">
-                By combining clinical expertise with modern technology, we aim
-                to create a comfortable and supportive experience at every stage
-                of treatment.
+                Every treatment is digitally planned, guided by advanced
+                technology, and refined with clinical experience, so results
+                look natural, function properly, and last long-term.
+              </p>
+              <p className="text-[#1d1d1f]/70 text-base lg:text-lg leading-relaxed">
+                Our approach combines precision, transparency, and patient-first
+                care to create an experience that feels as thoughtful as the
+                results look.
               </p>
             </div>
+
+            {/* Section Title */}
+            <h3 className="text-[#1d1d1f] text-xl font-semibold mb-4">
+              Meet Your Orthodontists
+            </h3>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-3">
               <Button
                 variant="primary"
                 size="md"
-                href="/about/dr-cronin"
+                href="/about"
                 className="!bg-[#1d1d1f] !text-white shadow-none"
               >
-                Meet Dr. Cronin
-              </Button>
-              <Button
-                variant="primary"
-                size="md"
-                href="/about/dr-mo"
-                className="!bg-[#1d1d1f] !text-white shadow-none"
-              >
-                Meet Dr. Mo
+                Our Doctors
               </Button>
               <Button
                 variant="secondary"
@@ -63,7 +62,7 @@ export default function About() {
                 href="/about/team"
                 className="!text-[#1d1d1f] !border-[#1d1d1f]/20 hover:!bg-[#1d1d1f]/5"
               >
-                Meet the Team
+                Our Team
               </Button>
             </div>
           </div>
@@ -71,7 +70,7 @@ export default function About() {
           {/* Right - Balanced Images */}
           <div className="relative h-[500px] lg:h-[600px]">
             {/* Dr. Cronin - Left */}
-            <div className="absolute left-0 top-[5%] w-[55%] lg:w-[55%] h-[75%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-10">
+            <div className="absolute left-0 top-[0%] w-[62%] lg:w-[62%] h-[85%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-10">
               <Image
                 src="/DR. CRONIN.jpg"
                 alt="Dr. Cronin - Orthodontist"
@@ -82,7 +81,7 @@ export default function About() {
             </div>
 
             {/* Dr. Mo - Right */}
-            <div className="absolute right-0 top-[20%] w-[55%] lg:w-[55%] h-[75%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+            <div className="absolute right-0 top-[10%] w-[42%] lg:w-[42%] h-[55%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
               <Image
                 src="/DR. MO.jpg"
                 alt="Dr. Mo - Orthodontist"

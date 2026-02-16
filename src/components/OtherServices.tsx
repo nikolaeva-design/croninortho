@@ -18,7 +18,7 @@ const services = [
     title: 'Nightguards',
     description:
       'Nightguards help protect teeth and reduce stress on the jaw during sleep, particularly for patients who grind or clench their teeth.',
-    image: '/Gemini_Generated_Image_sy8cpxsy8cpxsy8c (1).png',
+    image: '/Gemini_Generated_Image_5jougw5jougw5jou (1).png',
     alt: 'Night guard - reduces grinding and clenching, supports TMJ comfort',
     href: '/services/nightguards',
   },
@@ -27,7 +27,7 @@ const services = [
     title: 'Splints',
     description:
       'Splints are therapeutic appliances used to support jaw alignment and manage bite-related discomfort.',
-    image: '/Gemini_Generated_Image_7lyjnr7lyjnr7lyj (1).png',
+    image: '/Gemini_Generated_Image_8n12zj8n12zj8n12 (1).png',
     alt: 'Therapeutic splint - supports jaw alignment, reduces bite-related discomfort',
     href: '/services/splints',
   },
@@ -81,6 +81,7 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
             sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 450px"
             quality={100}
             priority
+            unoptimized
           />
         </div>
       </div>

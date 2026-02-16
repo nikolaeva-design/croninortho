@@ -7,14 +7,14 @@ import { Button } from '@/components';
 // Common concerns for adults
 const concernGroups = [
   {
-    title: 'Aesthetic Goals',
-    description: 'Common smile concerns adults want to address.',
-    signs: ['Crooked or crowded teeth', 'Gaps between teeth', 'Uneven smile line', 'Missing teeth'],
+    title: 'How Your Smile Looks',
+    description: 'What you notice in photos or the mirror',
+    signs: ['Teeth look crooked or crowded', 'Small gaps that have gotten wider over time', 'Your smile looks uneven in photos', 'A missing tooth or space you\'ve been ignoring'],
   },
   {
-    title: 'Functional Issues',
-    description: 'Problems affecting daily comfort and health.',
-    signs: ['Difficulty cleaning teeth', 'Jaw pain or TMJ', 'Uneven wear on teeth'],
+    title: 'How Your Bite Feels Day-to-Day',
+    description: 'What you feel when you eat, talk, or wake up',
+    signs: ['Harder to keep teeth clean in certain spots', 'Teeth wearing down unevenly', 'Jaw soreness, clicking, or tightness', 'Never had braces you wish you did'],
   },
   {
     title: 'Previous Treatment',
@@ -95,46 +95,46 @@ const featureSections = [
   {
     number: '01',
     badge: 'Discretion',
-    title: 'Treatment That',
-    subtitle: 'Fits Your Life',
-    description: 'We understand that as an adult, you need treatment options that don\'t interrupt your career or lifestyle. Our discreet solutions let you straighten your teeth without anyone knowing.',
+    title: 'Treatment That Fits Your Life',
+    subtitle: '— Not the Other Way Around',
+    description: 'As an adult, your time matters. We offer discreet, modern treatment options that fit around your workdays, family life, and social commitments—so you can improve your smile without anyone at work even noticing.',
     features: [
-      'Nearly invisible options',
-      'No impact on professional image',
-      'Flexible appointment times',
-      'Work around your schedule',
+      'Nearly invisible options for meetings & client calls',
+      'No impact on your professional image',
+      'Flexible appointment times around work & family',
+      'Efficient plans with fewer visits',
     ],
-    image: '/adults-ortho.png',
+    image: '/Gemini_Generated_Image_hg0nushg0nushg0n.png',
     imagePosition: 'right',
   },
   {
     number: '02',
     badge: 'Technology',
-    title: 'Precision',
-    subtitle: 'Results',
-    description: 'Advanced digital technology means more accurate treatment, fewer appointments, and better results. See your transformation before you even start.',
+    title: 'Precision Results —',
+    subtitle: 'With Less Time Out of Your Day',
+    description: 'Modern digital planning means your treatment is more precise, more efficient, and easier to fit into real life. We map out your smile in advance so you know what to expect — and spend less time in the chair along the way.',
     features: [
-      '3D treatment simulation',
-      'Precise tooth movement',
-      'Shorter treatment times',
-      'Predictable outcomes',
+      'Preview your smile in 3D before you start',
+      'More precise tooth movement = fewer adjustments',
+      'Shorter treatment timelines',
+      'Predictable results with fewer surprises',
     ],
-    image: '/Gemini_Generated_Image_ojvtklojvtklojvt.png',
+    image: '/663a059abb0f869e466c99ee_Bolton Analysis.png',
     imagePosition: 'left',
   },
   {
     number: '03',
     badge: 'Health',
-    title: 'Beyond',
-    subtitle: 'Aesthetics',
-    description: 'Straight teeth aren\'t just about looks. Proper alignment improves oral health, makes cleaning easier, and can even help with jaw pain and headaches.',
+    title: 'Beyond Looks —',
+    subtitle: 'Real Health Benefits You Feel Every Day',
+    description: 'Straight teeth don\'t just look better — they\'re easier to keep clean, put less stress on your bite, and can reduce jaw tension and headaches over time. Many adults don\'t realize how much everyday discomfort they\'ve been tolerating until it\'s gone.',
     features: [
-      'Easier to clean teeth',
-      'Reduced wear and damage',
-      'Improved bite function',
-      'Better long-term health',
+      'Easier to clean hard-to-reach areas',
+      'Less wear and tear on your teeth over time',
+      'More comfortable bite when you chew',
+      'Better long-term oral health',
     ],
-    image: '/adults-ortho.png',
+    image: '/Gemini_Generated_Image_d89uaed89uaed89u.png',
     imagePosition: 'right',
   },
 ];
@@ -279,13 +279,14 @@ export default function AdultsOrthodonticsPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/adults-ortho.png"
+            src="/Gemini_Generated_Image_79ly7x79ly7x79ly.png"
             alt="Adult with confident smile showing discreet orthodontic treatment"
             fill
             className="object-cover object-center"
             priority
-            quality={90}
+            quality={100}
             sizes="100vw"
+            unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
@@ -308,28 +309,36 @@ export default function AdultsOrthodonticsPage() {
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
             >
-              <span className="text-white">Adult </span>
-              <span className="text-white/50">Orthodontics</span>
+              <span className="text-white">The Smile You&apos;ve Always Wanted </span>
+              <span className="text-white/50">— Without Disrupting Your Life</span>
             </h1>
+
+            {/* Subtitle */}
+            <p 
+              className="text-white/80 text-base lg:text-lg mb-4 animate-fade-in-up opacity-0"
+              style={{ animationDelay: '0.25s', animationFillMode: 'forwards' }}
+            >
+              Discreet treatment that fits your schedule, your work, and your lifestyle
+            </p>
 
             {/* Description */}
             <p 
-              className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg animate-fade-in-up opacity-0"
+              className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
             >
-              It&apos;s never too late for a beautiful smile. Discover discreet treatment options designed for your lifestyle.
+              More adults than ever are choosing orthodontic treatment — not because they have time to spare, but because modern options finally make it easy. Whether you never had braces, your teeth have shifted over time, or you&apos;re ready to invest in yourself, you can start now without putting your life on pause.
             </p>
 
             {/* CTAs */}
             <div 
-              className="flex flex-wrap gap-4 animate-fade-in-up opacity-0"
+              className="flex items-center gap-3 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact#contact-form">
                 Book Consultation
               </Button>
-              <Button variant="secondary" size="lg" href="#info" icon="solar:arrow-down-linear">
-                Explore Options
+              <Button variant="secondary" size="lg" href="#treatments" icon="solar:arrow-down-linear">
+                Learn More
               </Button>
             </div>
           </div>
@@ -353,50 +362,42 @@ export default function AdultsOrthodonticsPage() {
             {/* Left Content */}
             <AnimatedSection>
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-8">
-                The Smile You&apos;ve
-                <span className="text-white/50 block">Always Wanted</span>
+                Adult Orthodontics
+                <span className="text-white/50 block">(Ages 20+)</span>
             </h2>
               <div className="space-y-6 mb-10">
                 <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  More adults than ever are choosing orthodontic treatment. Whether you never had braces, your teeth have shifted over time, or you&apos;re ready to finally invest in yourself - now is the perfect time.
+                  It&apos;s not too late to love your smile — modern options designed for busy lives.
                 </p>
                 <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  Today&apos;s treatment options are more discreet, comfortable, and efficient than ever. Many of our adult patients complete treatment without their friends or colleagues ever knowing.
+                  We offer discreet, efficient orthodontic treatment to improve alignment, bite, and facial balance — helping you protect your smile as you age, feel more confident, and fit treatment into your schedule.
+                </p>
+                <p className="text-white/60 text-base lg:text-lg leading-relaxed">
+                  Today&apos;s treatments are subtle, comfortable, and efficient. Many of our adult patients complete treatment while working full-time, parenting full-time, and going about life as usual — often without coworkers or friends even noticing.
             </p>
           </div>
+              <p className="text-white/50 text-sm italic mb-6">Most adults tell us: &quot;I wish I hadn&apos;t waited so long — it was easier than I thought.&quot;</p>
               <div className="flex flex-wrap gap-4">
-                <Button variant="primary" size="md" href="/contact">
-                  Get Started
+                <Button variant="primary" size="md" href="/contact#contact-form">
+                  Book My Smile Analysis
                 </Button>
                 <Button variant="secondary" size="md" href="#treatments">
-                  View Options
+                  See Discreet Options
                 </Button>
               </div>
             </AnimatedSection>
 
-            {/* Right - Image Grid */}
+            {/* Right - Image */}
             <AnimatedSection delay={200}>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative aspect-[3/4] rounded-3xl overflow-hidden">
-                  <Image
-                    src="/adults-ortho.png"
-                    alt="Adult with clear aligners"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                </div>
-                <div className="relative aspect-[3/4] rounded-3xl overflow-hidden mt-8">
-                  <Image
-                    src="/Gemini_Generated_Image_ojvtklojvtklojvt.png"
-                    alt="Professional adult smiling"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                </div>
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
+                <Image
+                  src="/Gemini_Generated_Image_bdp7bcbdp7bcbdp7.png"
+                  alt="Adult man smiling with braces"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
             </AnimatedSection>
           </div>
@@ -413,12 +414,13 @@ export default function AdultsOrthodonticsPage() {
                 <iconify-icon icon="solar:eye-bold" width="14" height="14" className="text-[#c9a962]" />
                 Common Concerns
               </div>
-              <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6">
-                Sound Familiar?
+              <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6 lg:max-w-[60%]">
+                Common Smile Concerns Adults Actually Notice
               </h2>
               <p className="text-white/50 text-lg max-w-2xl">
                 These are the most common reasons adults seek orthodontic treatment. If any resonate with you, we can help.
               </p>
+              <p className="text-white/40 text-sm italic mt-4">Most adults say: &quot;I didn&apos;t realize how much this bothered me until I fixed it.&quot;</p>
             </div>
           </AnimatedSection>
 
@@ -429,8 +431,8 @@ export default function AdultsOrthodonticsPage() {
               <div className="relative h-full min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden group">
                 {/* Background Image */}
                 <Image
-                  src="/adults-ortho.png"
-                  alt="Adult orthodontic consultation"
+                  src="/Gemini_Generated_Image_2xvwgw2xvwgw2xvw.png"
+                  alt="Close-up of smile with clear ceramic braces"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 66vw"
@@ -514,7 +516,7 @@ export default function AdultsOrthodonticsPage() {
           {/* CTA */}
           <AnimatedSection delay={400}>
             <div className="mt-10 text-center lg:text-left">
-              <Button variant="secondary" size="md" href="/contact" icon="solar:arrow-right-linear">
+              <Button variant="secondary" size="md" href="/contact#contact-form" icon="solar:arrow-right-linear">
                 Schedule Consultation
               </Button>
             </div>
@@ -592,7 +594,7 @@ export default function AdultsOrthodonticsPage() {
           {/* CTA */}
           <AnimatedSection delay={500}>
             <div className="text-center mt-16">
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact#contact-form">
                 Start Your Journey
               </Button>
             </div>
@@ -648,13 +650,13 @@ export default function AdultsOrthodonticsPage() {
             <AnimatedSection delay={200}>
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
               <Image
-                src="/Gemini_Generated_Image_ojvtklojvtklojvt.png"
-                alt="Adult with Invisalign"
+                src="/Gemini_Generated_Image_bn7h3tbn7h3tbn7h.png"
+                alt="Adult man smiling with discreet braces"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={90}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
             </AnimatedSection>
           </div>
@@ -667,15 +669,15 @@ export default function AdultsOrthodonticsPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left - Image */}
             <AnimatedSection>
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-black">
                 <Image
-                  src="/adults-ortho.png"
-                  alt="Modern orthodontic office"
+                  src="/Class-II-skeletal-malocclusion-with-great-value-of-ANB-Go2-and-Yaxis-SN.jpeg"
+                  alt="Cephalometric X-ray analysis for orthodontic evaluation"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={100}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
             </AnimatedSection>
 
@@ -720,7 +722,7 @@ export default function AdultsOrthodonticsPage() {
               </div>
 
               <div className="mt-10">
-                <Button variant="primary" size="md" href="/contact">
+                <Button variant="primary" size="md" href="/contact#contact-form">
                   Book Consultation
                 </Button>
               </div>
@@ -792,7 +794,7 @@ export default function AdultsOrthodonticsPage() {
                     ))}
                   </div>
 
-                  <Button variant="secondary" size="md" href="/contact" icon="solar:arrow-right-linear">
+                  <Button variant="secondary" size="md" href="/contact#contact-form" icon="solar:arrow-right-linear">
                     Get Started
                   </Button>
                 </div>

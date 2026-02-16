@@ -12,13 +12,14 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/ortho-new.jpg"
+          src="/Gemini_Generated_Image_aw3ur6aw3ur6aw3u.png"
           alt="Close-up of a confident smile with aesthetic orthodontic braces system for precise teeth alignment"
           fill
           className="object-cover object-center"
           priority
-          quality={90}
+          quality={100}
           sizes="100vw"
+          unoptimized
         />
         <div
           className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
@@ -39,19 +40,19 @@ export default function Hero() {
               className="block animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
             >
-              Comprehensive
+              Personalized
             </span>
             <span
               className="block lg:ml-24 xl:ml-32 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
             >
-              Orthodontic Treatment
+              Orthodontic Care
             </span>
             <span
               className="block animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
             >
-              & <span className="text-gradient">Smile Correction</span>
+              & <span className="text-gradient">Aesthetic Smile Design</span>
             </span>
           </h1>
 
@@ -61,23 +62,23 @@ export default function Hero() {
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
             <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
-              Personalized orthodontic and aesthetic treatments for children,
-              teens, and adults — focused on function, health, and confident
-              smiles.
+              Custom treatment plans for children, teens, and adults — combining
+              precision with aesthetic-focused smile design for natural, confident
+              results.
             </p>
 
             <div className="flex flex-row gap-4 flex-shrink-0">
               <a
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center justify-center px-10 py-4 text-base font-medium bg-white text-[#1a2744] rounded-full hover:bg-white/95 hover:scale-[1.02] transition-all duration-300 shadow-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
               >
-                Request a Consultation
+                Book Your Smile Consultation
               </a>
               <a
-                href="#orthodontic-care"
+                href="/contact#contact-form"
                 className="inline-flex items-center justify-center px-10 py-4 text-base font-medium bg-white/10 text-white border border-white/20 rounded-full hover:bg-white/20 hover:border-white/40 hover:scale-[1.02] transition-all duration-300 backdrop-blur-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white/50"
               >
-                Explore Treatments
+                See Your Options
               </a>
             </div>
           </div>

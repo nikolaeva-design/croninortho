@@ -98,16 +98,6 @@ export default function ContactPage() {
           <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#c9a962]/5 rounded-full blur-[120px]" />
         </div>
 
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `linear-gradient(90deg, white 1px, transparent 1px),
-                             linear-gradient(180deg, white 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
-          }}
-        />
-
         {/* Content */}
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-24 lg:py-32 w-full text-center">
           {/* Badge */}
@@ -143,7 +133,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 lg:py-24 bg-[#0a0a0a] relative overflow-hidden">
+      <section id="contact-form" className="py-16 lg:py-24 bg-[#0a0a0a] relative overflow-hidden scroll-mt-24">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Form */}

@@ -182,7 +182,7 @@ export default function PatientPage() {
               <Button variant="primary" size="lg" href="#patient-forms" icon="solar:document-add-linear">
                 Get Patient Forms
               </Button>
-              <Button variant="secondary" size="lg" href="/contact" icon="solar:calendar-add-linear">
+              <Button variant="secondary" size="lg" href="/contact#contact-form" icon="solar:calendar-add-linear">
                 Book a Visit
               </Button>
             </div>
@@ -614,7 +614,7 @@ export default function PatientPage() {
             >
               <div className="aspect-[4/3] relative">
                 <Image
-                  src="/smile-woman.png"
+                  src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
                   alt="Cronin Orthodontics office"
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -800,7 +800,7 @@ export default function PatientPage() {
               </div>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <Button variant="primary" size="md" href="/contact">
+                <Button variant="primary" size="md" href="/contact#contact-form">
                   Book an appointment
                 </Button>
                 <Button variant="secondary" size="md" href="/emergency">

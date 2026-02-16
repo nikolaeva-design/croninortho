@@ -6,33 +6,33 @@ import Image from 'next/image';
 const slides = [
   {
     title: 'Facial Balance',
-    description: 'We assess the relationship between teeth, lips, and facial features to create a naturally balanced look.',
-    image: '/facial-balance-harmony-v2.png',
-    imagePosition: 'object-[25%_center]',
+    description: 'We analyze how your teeth, lips, jaw, and facial structure work together. By aligning your smile with your natural facial proportions, we create results that look balanced, harmonious, and never overdone.',
+    image: '/Gemini_Generated_Image_c7giizc7giizc7gi.png',
+    imagePosition: 'object-center',
   },
   {
     title: 'Tooth Proportion',
-    description: 'The size, shape, and proportions of your teeth are key to creating a natural and beautiful smile.',
+    description: 'The size, shape, and position of each tooth affect how natural your smile looks. We design your tooth proportions using facial and dental measurements to create a smile that looks refined, natural, and uniquely yours.',
     image: '/Gemini_Generated_Image_w534xmw534xmw534.png',
     imagePosition: 'object-[70%_center]',
   },
   {
     title: 'Smile Alignment',
-    description: 'Proper tooth alignment enhances both the appearance of your smile and supports long-term function.',
-    image: '/smile-woman.png',
+    description: 'We precisely align your teeth to improve smile symmetry, balance your facial features, and support long-term comfort and function. Proper alignment also makes your smile easier to clean and maintain over time.',
+    image: '/Gemini_Generated_Image_xt9ynuxt9ynuxt9y.png',
     imagePosition: 'object-center',
   },
   {
     title: 'Gum Aesthetics',
-    description: 'Gum shape, tissue health, and soft tissue contour all play a role in your smile\'s overall character.',
+    description: 'Gum shape and tissue levels frame your teeth and affect how your smile looks. We plan tooth position and gum contours together to create a clean, natural smile line that looks healthy — not artificial.',
     image: '/gum.png',
     imagePosition: 'object-center',
   },
   {
     title: 'Bite Function',
-    description: 'A stable and well-aligned bite is essential for comfort, function, and lasting aesthetic results.',
-    image: '/occlusion-function.png',
-    imagePosition: 'object-[70%_center]',
+    description: 'A stable bite allows your teeth and jaw to work together properly. We correct how your teeth meet to improve comfort, protect your teeth from uneven wear, and support long-term jaw health.',
+    image: '/Gemini_Generated_Image_48490p48490p4849.png',
+    imagePosition: 'object-center',
   },
 ];
 
@@ -74,16 +74,6 @@ export default function AestheticServices() {
       className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden"
       aria-labelledby="aesthetic-services-heading"
     >
-      {/* Subtle Background */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `linear-gradient(90deg, white 1px, transparent 1px),
-                           linear-gradient(180deg, white 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
-        }}
-      />
-
       <div className="relative max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 lg:mb-14">
@@ -95,7 +85,7 @@ export default function AestheticServices() {
               Aesthetic Excellence
             </h2>
             <p className="text-white/50 text-lg max-w-xl">
-              Beyond straight teeth — we design smiles that enhance your natural beauty.
+              More than straight teeth — we design smiles that elevate your entire face.
             </p>
           </div>
           

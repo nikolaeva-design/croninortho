@@ -8,13 +8,13 @@ import { Button } from '@/components';
 const warningSignsGroups = [
   {
     title: 'Alignment Issues',
-    description: 'Common teeth and bite problems in teenagers.',
-    signs: ['Crowded or overlapping teeth', 'Gaps between teeth', 'Crooked smile'],
+    description: 'What parents notice in everyday life',
+    signs: ['Teeth look crowded or overlap', 'Visible gaps between teeth', 'Smile looks uneven in photos'],
   },
   {
     title: 'Bite Problems',
-    description: 'Issues with how upper and lower teeth meet.',
-    signs: ['Overbite or underbite', 'Crossbite', 'Open bite when closing'],
+    description: 'How teeth fit together when they close',
+    signs: ['Front teeth stick out or sit too far back', 'Teeth don\'t line up when biting down', 'Top and bottom teeth don\'t meet evenly'],
   },
   {
     title: 'Functional Concerns',
@@ -81,7 +81,7 @@ const treatmentOptions = [
   {
     title: 'Clear/Ceramic Braces',
     description: 'Tooth-colored brackets that blend with your smile while delivering the same great results.',
-    tags: ['Less visible', 'Less visible', 'Popular choice'],
+    tags: ['Less visible', 'Aesthetic', 'Popular choice'],
   },
   {
     title: 'Invisalign Teen',
@@ -95,47 +95,50 @@ const featureSections = [
   {
     number: '01',
     badge: 'Confidence',
-    title: 'Your Smile',
-    subtitle: 'Your Way',
-    description: 'High school, sports, photos, prom - we get it. That\'s why we offer treatment options that fit your lifestyle and let you feel confident throughout.',
+    title: 'Your Smile. Your Style.',
+    subtitle: 'Your Moment.',
+    description: 'High school, sports, photos, prom — we get it. That\'s why we offer flexible treatment options that fit your lifestyle, stay low-key when you want them to, and help you feel confident every step of the way.',
     features: [
-      'Options for every lifestyle',
-      'Minimal impact on activities',
-      'Results you\'ll love',
-      'Boost your confidence',
+      'Options that fit your style (braces or Invisalign)',
+      'Minimal impact on sports & daily life',
+      'Results you\'ll be proud to show off',
+      'A real confidence boost in photos & social moments',
     ],
     image: '/teens-ortho.jpg',
     imagePosition: 'right',
+    cta: 'Start My Smile Journey →',
   },
   {
     number: '02',
     badge: 'Technology',
-    title: 'Next-Level',
-    subtitle: 'Treatment',
-    description: 'We use the latest technology to make your treatment faster, more comfortable, and more precise. See your future smile before you even start.',
+    title: 'Next-Level Treatment,',
+    subtitle: 'Made for Real Life',
+    description: 'We use modern digital technology to make treatment easier on your schedule and more comfortable for your teen—with clearer results and fewer surprises along the way. Your teen can even preview their future smile before treatment begins.',
     features: [
-      '3D treatment simulation',
-      'Digital scanning',
-      'Faster treatment times',
-      'Fewer office visits',
+      'See your future smile in 3D before you start',
+      'Digital scans (no messy impressions)',
+      'Faster, more efficient treatment timelines',
+      'Fewer office visits = less time away from school & activities',
     ],
-    image: '/Gemini_Generated_Image_ojvtklojvtklojvt.png',
+    image: '/Gemini_Generated_Image_n54yq8n54yq8n54y.png',
     imagePosition: 'left',
+    cta: 'See My Future Smile →',
   },
   {
     number: '03',
     badge: 'Lifestyle',
-    title: 'Life Doesn\'t',
-    subtitle: 'Stop',
-    description: 'Sports, music, social life - we design your treatment to work around what matters to you. Most activities continue without interruption.',
+    title: 'Your Life Doesn\'t',
+    subtitle: 'Pause for Braces',
+    description: 'School, sports, music, photos, hanging with friends — your life keeps moving. We design treatment that fits your routine, stays low-key when you want it to, and doesn\'t get in the way of doing your thing.',
     features: [
-      'Sports-friendly options',
-      'Band & music compatible',
-      'Easy to maintain',
-      'Flexible appointments',
+      'Low-key for school, photos & socials',
+      'Sports-friendly options (yes, mouthguards work)',
+      'Music-friendly (sing, play, perform)',
+      'Flexible appointments around your schedule',
     ],
-    image: '/teens-ortho.jpg',
+    image: '/Gemini_Generated_Image_4rx9cv4rx9cv4rx9.png',
     imagePosition: 'right',
+    cta: 'Start My Smile Journey →',
   },
 ];
 
@@ -144,7 +147,7 @@ const testimonials = [
   {
     quote: 'The overall experience was pretty good. It was fairly straightforward and it got me out of school for a bit. To sum it up, ortho has been a good experience and I would recommend.',
     author: 'Levi N.',
-    role: 'Teen Patient',
+    role: 'Teen',
     avatar: 'L',
   },
   {
@@ -156,7 +159,7 @@ const testimonials = [
   {
     quote: 'Great care of teeth, I have been with them for my braces for 5 months so far. Honestly, great and gentle care of teeth. Lots of progress seen so far.',
     author: 'Terrence',
-    role: 'Teen in Treatment',
+    role: 'Teen',
     avatar: 'T',
   },
   {
@@ -174,7 +177,7 @@ const testimonials = [
   {
     quote: 'Dr. Mo is an amazing orthodontist! He\'s so fun, kind and attentive. The staff are wonderful too, every visit runs smoothly. I look forward to every appointment and can\'t wait to see my smile when the braces come off!',
     author: 'Kuljeet Sandhu',
-    role: 'Teen Patient',
+    role: 'Teen',
     avatar: 'K',
   },
 ];
@@ -280,13 +283,14 @@ export default function TeensOrthodonticsPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/teens-ortho.jpg"
+            src="/Gemini_Generated_Image_t552pwt552pwt552.png"
             alt="Teen with confident smile showing orthodontic treatment results"
             fill
             className="object-cover object-center"
             priority
-            quality={90}
+            quality={100}
             sizes="100vw"
+            unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
@@ -309,8 +313,8 @@ export default function TeensOrthodonticsPage() {
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
             >
-              <span className="text-white">Teen </span>
-              <span className="text-white/50">Orthodontics</span>
+              <span className="text-white">The Perfect Time for a </span>
+              <span className="text-white/50">Confident, Camera-Ready Smile</span>
             </h1>
 
             {/* Description */}
@@ -318,19 +322,19 @@ export default function TeensOrthodonticsPage() {
               className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
             >
-              Modern orthodontic solutions designed for your lifestyle. Braces, clear aligners, and everything in between.
+              The teenage years are one of the best times for orthodontic treatment. Your teen&apos;s jaw is still growing, which often means quicker, more comfortable results than waiting until adulthood.
             </p>
 
             {/* CTAs */}
             <div 
-              className="flex flex-wrap gap-4 animate-fade-in-up opacity-0"
+              className="flex items-center gap-3 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact#contact-form">
                 Book Consultation
               </Button>
-              <Button variant="secondary" size="lg" href="#info" icon="solar:arrow-down-linear">
-                Explore Options
+              <Button variant="secondary" size="lg" href="#treatments" icon="solar:arrow-down-linear">
+                Learn More
               </Button>
             </div>
           </div>
@@ -354,50 +358,39 @@ export default function TeensOrthodonticsPage() {
             {/* Left Content */}
             <AnimatedSection>
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-8">
-                The Perfect Time
-                <span className="text-white/50 block">For a Great Smile</span>
+                Teen Orthodontics
+                <span className="text-white/50 block">(Ages 13–19)</span>
             </h2>
               <div className="space-y-6 mb-10">
                 <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  The teenage years are actually the ideal time for orthodontic treatment. Your jaw is still growing, making it easier to guide teeth into their perfect positions - often with faster results than adult treatment.
+                  Modern treatment options that fit your teen&apos;s lifestyle — and build lasting confidence.
                 </p>
                 <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  Whether you&apos;re looking for traditional braces with fun colored bands or prefer the nearly invisible Invisalign option, we have solutions that fit your style and lifestyle.
+                  We offer customized orthodontic care to straighten teeth, correct bite issues, and improve long-term oral health — with flexible options like braces or clear aligners to suit your teen&apos;s comfort and confidence.
             </p>
           </div>
               <div className="flex flex-wrap gap-4">
-                <Button variant="primary" size="md" href="/contact">
-                  Get Started
+                <Button variant="primary" size="md" href="/contact#contact-form">
+                  Book a Free Teen Smile Check
                 </Button>
                 <Button variant="secondary" size="md" href="#treatments">
-                  View Options
+                  See Braces &amp; Invisalign Options
                 </Button>
               </div>
             </AnimatedSection>
 
-            {/* Right - Image Grid */}
+            {/* Right - Image */}
             <AnimatedSection delay={200}>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative aspect-[3/4] rounded-3xl overflow-hidden">
-                  <Image
-                    src="/teens-ortho.jpg"
-                    alt="Teen with braces smiling"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                </div>
-                <div className="relative aspect-[3/4] rounded-3xl overflow-hidden mt-8">
-                  <Image
-                    src="/Gemini_Generated_Image_ojvtklojvtklojvt.png"
-                    alt="Teen with Invisalign aligners"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                </div>
+              <div className="relative aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden max-w-lg mx-auto">
+                <Image
+                  src="/Gemini_Generated_Image_lq8gv2lq8gv2lq8g.png"
+                  alt="Teen with beautiful confident smile"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={100}
+                  unoptimized
+                />
               </div>
             </AnimatedSection>
           </div>
@@ -430,11 +423,12 @@ export default function TeensOrthodonticsPage() {
               <div className="relative h-full min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden group">
                 {/* Background Image */}
                 <Image
-                  src="/teens-ortho.jpg"
-                  alt="Teen orthodontic evaluation"
+                  src="/Gemini_Generated_Image_1lena51lena51len (1).png"
+                  alt="Teen smiling during orthodontic evaluation"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 66vw"
+                  quality={90}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20" />
                 
@@ -515,7 +509,7 @@ export default function TeensOrthodonticsPage() {
           {/* CTA */}
           <AnimatedSection delay={400}>
             <div className="mt-10 text-center lg:text-left">
-              <Button variant="secondary" size="md" href="/contact" icon="solar:arrow-right-linear">
+              <Button variant="secondary" size="md" href="/contact#contact-form" icon="solar:arrow-right-linear">
                 Schedule Consultation
               </Button>
             </div>
@@ -593,7 +587,7 @@ export default function TeensOrthodonticsPage() {
           {/* CTA */}
           <AnimatedSection delay={500}>
             <div className="text-center mt-16">
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact#contact-form">
                 Start Your Transformation
               </Button>
             </div>
@@ -649,13 +643,13 @@ export default function TeensOrthodonticsPage() {
             <AnimatedSection delay={200}>
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
               <Image
-                src="/Gemini_Generated_Image_ojvtklojvtklojvt.png"
-                alt="Teen with clear aligners"
+                src="/Gemini_Generated_Image_ae38iyae38iyae38.png"
+                alt="Teen girl smiling with braces"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={90}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
             </AnimatedSection>
           </div>
@@ -668,15 +662,15 @@ export default function TeensOrthodonticsPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left - Image */}
             <AnimatedSection>
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-black">
                 <Image
-                  src="/teens-ortho.jpg"
-                  alt="Modern orthodontic office"
+                  src="/Class-II-skeletal-malocclusion-with-great-value-of-ANB-Go2-and-Yaxis-SN.jpeg"
+                  alt="Cephalometric X-ray analysis for orthodontic evaluation"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={100}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
             </AnimatedSection>
 
@@ -721,7 +715,7 @@ export default function TeensOrthodonticsPage() {
               </div>
 
               <div className="mt-10">
-                <Button variant="primary" size="md" href="/contact">
+                <Button variant="primary" size="md" href="/contact#contact-form">
                   Book Your Visit
                 </Button>
               </div>
@@ -793,7 +787,7 @@ export default function TeensOrthodonticsPage() {
                     ))}
                   </div>
 
-                  <Button variant="secondary" size="md" href="/contact" icon="solar:arrow-right-linear">
+                  <Button variant="secondary" size="md" href="/contact#contact-form" icon="solar:arrow-right-linear">
                     Get Started
                   </Button>
                 </div>

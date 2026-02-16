@@ -47,18 +47,22 @@ export default function Footer() {
       <div className="bg-[#141414] py-12 lg:py-16">
         <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
           <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            START YOUR SMILE JOURNEY TODAY
+            Ready for a Smile You&apos;ll Feel Confident In?
           </h2>
-          <p className="text-white/50 text-base lg:text-lg max-w-md mb-8">
-            Schedule your free consultation and discover the difference
-            personalized orthodontic care makes.
+          <p className="text-white/50 text-base lg:text-lg max-w-xl mb-8">
+            Book a complimentary consultation and see how personalized,
+            technology-guided orthodontic care can transform your smile —
+            comfortably, discreetly, and with results built to last.
           </p>
           <a
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white text-sm font-medium rounded-full border border-white/30 hover:bg-white hover:text-[#141414] transition-all duration-300"
+            href="/contact#contact-form"
+            className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#141414] text-sm font-semibold rounded-full hover:bg-white/90 transition-all duration-300 mb-4"
           >
-            Get Started
+            Book Your Free Consultation →
           </a>
+          <p className="text-white/40 text-sm">
+            ✓ Complimentary consultation · ✓ Personalized plan · ✓ No obligation
+          </p>
         </div>
       </div>
 
