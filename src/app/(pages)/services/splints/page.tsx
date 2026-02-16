@@ -135,7 +135,7 @@ export default function SplintsPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_qbip9mqbip9mqbip.png"
+            src="/splint-hero.png"
             alt="Custom dental splint for TMJ and bite therapy"
             fill
             className="object-cover object-[right_75%]"
@@ -260,7 +260,7 @@ export default function SplintsPage() {
             <AnimatedSection delay={200}>
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
                 <Image
-                  src="/Gemini_Generated_Image_z33z7kz33z7kz33z.png"
+                  src="/splint-types.png"
                   alt="Custom dental splint for jaw therapy"
                   fill
                   className="object-cover"
@@ -333,7 +333,7 @@ export default function SplintsPage() {
             <AnimatedSection>
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
                 <Image
-                  src="/Gemini_Generated_Image_z33z7kz33z7kz33z.png"
+                  src="/splint-types.png"
                   alt="Proper splint care and maintenance"
                   fill
                   className="object-cover"
@@ -458,7 +458,7 @@ export default function SplintsPage() {
       <section className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
+            src="/cta-consultation-bg.png"
             alt=""
             fill
             className="object-cover opacity-30"

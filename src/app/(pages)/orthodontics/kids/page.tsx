@@ -123,7 +123,7 @@ const featureSections = [
       'Create space for erupting teeth',
       'Reduce risk of trauma to protruding teeth',
     ],
-    image: '/Gemini_Generated_Image_6c0htw6c0htw6c0h.png',
+    image: '/kids-treatment-1.png',
     imagePosition: 'right',
   },
   {
@@ -138,7 +138,7 @@ const featureSections = [
       'Balance facial symmetry',
       'Prevent TMJ problems',
     ],
-    image: '/Gemini_Generated_Image_b53qsob53qsob53q.png',
+    image: '/kids-treatment-2.png',
     imagePosition: 'left',
   },
   {
@@ -153,7 +153,7 @@ const featureSections = [
       'Better long-term stability',
       'Improved self-confidence',
     ],
-    image: '/Gemini_Generated_Image_8ts3ui8ts3ui8ts3.png',
+    image: '/kids-treatment-3.png',
     imagePosition: 'right',
   },
 ];
@@ -299,7 +299,7 @@ export default function KidsOrthodonticsPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_oymo7foymo7foymo.png"
+            src="/kids-hero-smile.png"
             alt="Child receiving early orthodontic treatment"
             fill
             className="object-cover object-top"
@@ -397,7 +397,7 @@ export default function KidsOrthodonticsPage() {
             <AnimatedSection delay={200}>
               <div className="relative aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden max-w-md lg:max-w-lg mx-auto">
                 <Image
-                  src="/Gemini_Generated_Image_2mwn2h2mwn2h2mwn.png"
+                  src="/kids-early-treatment.png"
                   alt="Happy smiling child showing growing teeth"
                   fill
                   className="object-cover"
@@ -440,7 +440,7 @@ export default function KidsOrthodonticsPage() {
               <div className="relative h-full min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden group">
                 {/* Background Image */}
                 <Image
-                  src="/Gemini_Generated_Image_e4oigce4oigce4oi.png"
+                  src="/kids-appliances.png"
                   alt="Smiling child showing teeth for orthodontic evaluation"
                   fill
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
@@ -541,7 +541,7 @@ export default function KidsOrthodonticsPage() {
           {/* Header */}
           <AnimatedSection>
             <div className="text-center mb-16 lg:mb-20">
-              <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6 lg:max-w-[60%]">
+              <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6 max-w-3xl mx-auto">
                 From First Visit to Confident Smile
                 <span className="text-white/50 block">— Here&apos;s How Easy It Is</span>
               </h2>
@@ -683,7 +683,7 @@ export default function KidsOrthodonticsPage() {
             <AnimatedSection>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-black">
                 <Image
-                  src="/Class-II-skeletal-malocclusion-with-great-value-of-ANB-Go2-and-Yaxis-SN.jpeg"
+                  src="/skeletal-malocclusion.jpeg"
                   alt="Cephalometric X-ray analysis for orthodontic evaluation"
                   fill
                   className="object-cover"

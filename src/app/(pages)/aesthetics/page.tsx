@@ -303,7 +303,7 @@ export default function AestheticsPage() {
         {/* Background with gradient overlay */}
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
+            src="/cta-consultation-bg.png"
             alt="Aesthetic smile design showcasing facial balance and harmony"
             fill
             className="object-cover object-center"
@@ -436,7 +436,7 @@ export default function AestheticsPage() {
                 <div 
                   className="relative w-[280px] h-[280px] rounded-full border-[3px] border-[#c9a962]/60"
                   style={{
-                    backgroundImage: 'url(/Gemini_Generated_Image_g4z48ug4z48ug4z4.png)',
+                    backgroundImage: 'url(/cta-consultation-bg.png)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center 30%',
                   }}
@@ -533,7 +533,7 @@ export default function AestheticsPage() {
             <AnimatedSection delay={100} className="mb-8">
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-full overflow-hidden border-4 border-[#c9a962]/30 shadow-xl shadow-[#c9a962]/20">
                 <Image
-                  src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
+                  src="/cta-consultation-bg.png"
                   alt="Beautiful smile showcasing all components"
                   fill
                   className="object-cover object-center"

@@ -104,7 +104,7 @@ const featureSections = [
       'Flexible appointment times around work & family',
       'Efficient plans with fewer visits',
     ],
-    image: '/Gemini_Generated_Image_hg0nushg0nushg0n.png',
+    image: '/adults-treatment-1.png',
     imagePosition: 'right',
   },
   {
@@ -134,7 +134,7 @@ const featureSections = [
       'More comfortable bite when you chew',
       'Better long-term oral health',
     ],
-    image: '/Gemini_Generated_Image_d89uaed89uaed89u.png',
+    image: '/adults-treatment-2.png',
     imagePosition: 'right',
   },
 ];
@@ -279,7 +279,7 @@ export default function AdultsOrthodonticsPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_79ly7x79ly7x79ly.png"
+            src="/adults-hero-smile.png"
             alt="Adult with confident smile showing discreet orthodontic treatment"
             fill
             className="object-cover object-center"
@@ -391,7 +391,7 @@ export default function AdultsOrthodonticsPage() {
             <AnimatedSection delay={200}>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
                 <Image
-                  src="/Gemini_Generated_Image_bdp7bcbdp7bcbdp7.png"
+                  src="/adults-clear-aligners.png"
                   alt="Adult man smiling with braces"
                   fill
                   className="object-cover"
@@ -431,7 +431,7 @@ export default function AdultsOrthodonticsPage() {
               <div className="relative h-full min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden group">
                 {/* Background Image */}
                 <Image
-                  src="/Gemini_Generated_Image_2xvwgw2xvwgw2xvw.png"
+                  src="/adults-ceramic-braces.png"
                   alt="Close-up of smile with clear ceramic braces"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -650,7 +650,7 @@ export default function AdultsOrthodonticsPage() {
             <AnimatedSection delay={200}>
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
               <Image
-                src="/Gemini_Generated_Image_bn7h3tbn7h3tbn7h.png"
+                src="/adults-treatment-process.png"
                 alt="Adult man smiling with discreet braces"
                 fill
                 className="object-cover"
@@ -671,7 +671,7 @@ export default function AdultsOrthodonticsPage() {
             <AnimatedSection>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-black">
                 <Image
-                  src="/Class-II-skeletal-malocclusion-with-great-value-of-ANB-Go2-and-Yaxis-SN.jpeg"
+                  src="/skeletal-malocclusion.jpeg"
                   alt="Cephalometric X-ray analysis for orthodontic evaluation"
                   fill
                   className="object-cover"

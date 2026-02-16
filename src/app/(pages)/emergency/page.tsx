@@ -138,7 +138,7 @@ export default function EmergencyPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_ojvtklojvtklojvt.png"
+            src="/emergency-hero.png"
             alt="Emergency orthodontic care"
             fill
             className="object-cover object-center"
@@ -265,7 +265,7 @@ export default function EmergencyPage() {
                 {/* Image */}
                 <div className="aspect-[4/3] md:aspect-auto md:min-h-[360px] relative md:[direction:ltr]">
                   <Image
-                    src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
+                    src="/cta-consultation-bg.png"
                     alt={issue.title}
                     fill
                     className="object-cover"

@@ -16,7 +16,7 @@ export default function AboutPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
+            src="/cta-consultation-bg.png"
             alt="About Cronin Orthodontics"
             fill
             className="object-cover object-center"

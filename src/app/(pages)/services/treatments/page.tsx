@@ -11,7 +11,7 @@ const treatments = [
     title: 'Surgical Orthodontics',
     description: 'Surgical orthodontics, also known as orthognathic surgery, combines orthodontic treatment with corrective jaw surgery. This comprehensive approach is recommended when jaw abnormalities are too severe to be corrected with braces or aligners alone.',
     details: 'The process typically involves pre-surgical orthodontic treatment to align the teeth, followed by surgery to reposition the jaw bones, and post-surgical orthodontics for final refinement. This treatment can dramatically improve facial balance, breathing, and bite function, providing both functional and aesthetic benefits that last a lifetime.',
-    image: '/Gemini_Generated_Image_39qssw39qssw39qs.png',
+    image: '/surgical-ortho-hero.png',
   },
   {
     id: 'tmj-tmd',
@@ -25,21 +25,21 @@ const treatments = [
     title: 'Craniofacial Orthodontics',
     description: 'Specialized orthodontic care for patients with craniofacial conditions, including cleft lip and palate, requires a multidisciplinary approach. We work closely with surgeons, speech therapists, and other specialists to provide comprehensive care.',
     details: 'Treatment planning begins early in life and continues through adulthood, with orthodontic intervention timed to coincide with growth spurts and surgical procedures. Our goal is to optimize both function and aesthetics while supporting the patient through each stage of their journey.',
-    image: '/Gemini_Generated_Image_m36i52m36i52m36i.png',
+    image: '/surgical-ortho-procedure.png',
   },
   {
     id: 'clear-braces',
     title: 'Clear Braces',
     description: 'Clear ceramic braces offer an excellent aesthetic alternative to traditional metal braces. Made from tooth-colored or translucent materials, they blend naturally with your teeth while providing the same effective treatment as metal brackets.',
     details: 'Modern ceramic brackets are highly durable and resistant to staining. They work with the same mechanics as metal braces, making them suitable for treating a wide range of orthodontic issues. Many adult patients prefer clear braces for their professional appearance during treatment.',
-    image: '/Gemini_Generated_Image_2xvwgw2xvwgw2xvw.png',
+    image: '/adults-ceramic-braces.png',
   },
   {
     id: 'types-of-appliances',
     title: 'Types of Appliances',
     description: 'Orthodontic appliances are specialized devices used to move teeth, modify jaw growth, or maintain teeth in their corrected positions. Each appliance is custom-made and selected based on the patient\'s specific treatment needs.',
     details: 'Appliances can be fixed (bonded to teeth) or removable, depending on the treatment goals. From expanders that widen the palate to retainers that maintain results, each appliance plays a crucial role in achieving and preserving your perfect smile.',
-    image: '/Gemini_Generated_Image_z33z7kz33z7kz33z.png',
+    image: '/splint-types.png',
   },
   {
     id: 'palatal-expander',
@@ -74,7 +74,7 @@ const treatments = [
     title: 'TADs',
     description: 'Temporary Anchorage Devices (TADs) are small titanium screws temporarily placed in the jawbone to serve as fixed anchor points for tooth movement. They enable precise control over tooth positioning that was previously difficult or impossible to achieve.',
     details: 'TADs are placed using local anesthesia in a quick, minimally invasive procedure. They allow orthodontists to move specific teeth without affecting others, close extraction spaces efficiently, and correct complex bite issues. Once treatment is complete, TADs are easily removed.',
-    image: '/images (2).jpeg',
+    image: '/treatment-image.jpeg',
   },
   {
     id: 'braces-diagram',

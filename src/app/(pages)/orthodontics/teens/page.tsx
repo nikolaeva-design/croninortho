@@ -120,7 +120,7 @@ const featureSections = [
       'Faster, more efficient treatment timelines',
       'Fewer office visits = less time away from school & activities',
     ],
-    image: '/Gemini_Generated_Image_n54yq8n54yq8n54y.png',
+    image: '/teens-treatment-1.png',
     imagePosition: 'left',
     cta: 'See My Future Smile →',
   },
@@ -136,7 +136,7 @@ const featureSections = [
       'Music-friendly (sing, play, perform)',
       'Flexible appointments around your schedule',
     ],
-    image: '/Gemini_Generated_Image_4rx9cv4rx9cv4rx9.png',
+    image: '/teens-treatment-2.png',
     imagePosition: 'right',
     cta: 'Start My Smile Journey →',
   },
@@ -283,7 +283,7 @@ export default function TeensOrthodonticsPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_t552pwt552pwt552.png"
+            src="/teens-hero-smile.png"
             alt="Teen with confident smile showing orthodontic treatment results"
             fill
             className="object-cover object-center"
@@ -383,7 +383,7 @@ export default function TeensOrthodonticsPage() {
             <AnimatedSection delay={200}>
               <div className="relative aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden max-w-lg mx-auto">
                 <Image
-                  src="/Gemini_Generated_Image_lq8gv2lq8gv2lq8g.png"
+                  src="/teens-braces-options.png"
                   alt="Teen with beautiful confident smile"
                   fill
                   className="object-cover"
@@ -423,7 +423,7 @@ export default function TeensOrthodonticsPage() {
               <div className="relative h-full min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden group">
                 {/* Background Image */}
                 <Image
-                  src="/Gemini_Generated_Image_1lena51lena51len (1).png"
+                  src="/teens-clear-aligners.png"
                   alt="Teen smiling during orthodontic evaluation"
                   fill
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
@@ -643,7 +643,7 @@ export default function TeensOrthodonticsPage() {
             <AnimatedSection delay={200}>
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
               <Image
-                src="/Gemini_Generated_Image_ae38iyae38iyae38.png"
+                src="/teens-treatment-results.png"
                 alt="Teen girl smiling with braces"
                 fill
                 className="object-cover"
@@ -664,7 +664,7 @@ export default function TeensOrthodonticsPage() {
             <AnimatedSection>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-black">
                 <Image
-                  src="/Class-II-skeletal-malocclusion-with-great-value-of-ANB-Go2-and-Yaxis-SN.jpeg"
+                  src="/skeletal-malocclusion.jpeg"
                   alt="Cephalometric X-ray analysis for orthodontic evaluation"
                   fill
                   className="object-cover"

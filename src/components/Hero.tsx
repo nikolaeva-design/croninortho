@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/Gemini_Generated_Image_aw3ur6aw3ur6aw3u.png"
+          src="/hero-smile-braces.png"
           alt="Close-up of a confident smile with aesthetic orthodontic braces system for precise teeth alignment"
           fill
           className="object-cover object-center"

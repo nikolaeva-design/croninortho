@@ -614,7 +614,7 @@ export default function PatientPage() {
             >
               <div className="aspect-[4/3] relative">
                 <Image
-                  src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
+                  src="/cta-consultation-bg.png"
                   alt="Cronin Orthodontics office"
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"

@@ -14,7 +14,7 @@ const careTypes = [
     description:
       'Gentle early treatment to guide healthy growth and prevent bigger problems later.',
     features: ['Growth Modification', 'Airway Development', 'Prevention'],
-    image: '/Gemini_Generated_Image_oymo7foymo7foymo.png',
+    image: '/kids-hero-smile.png',
     imageAlt:
       'Child receiving early orthodontic treatment with ceramic braces for growth modification and bite correction',
     badgeText: 'Faster Orthodontic System',
@@ -29,7 +29,7 @@ const careTypes = [
     description:
       'Modern treatment options that fit your teen\'s lifestyle — and build lasting confidence.',
     features: ['Teeth Alignment', 'Bite Correction', 'Clear Aligners'],
-    image: '/Gemini_Generated_Image_t552pwt552pwt552.png',
+    image: '/teens-hero-smile.png',
     imageAlt:
       'Teenager showing results of comprehensive orthodontic treatment with advanced alignment system',
     badgeText: 'Advanced Alignment System',
@@ -44,7 +44,7 @@ const careTypes = [
     description:
       'It\'s not too late to love your smile — modern options designed for busy lives.',
     features: ['Invisible Options', 'Flexible Schedule', 'Quick Results'],
-    image: '/Gemini_Generated_Image_79ly7x79ly7x79ly.png',
+    image: '/adults-hero-smile.png',
     imageAlt:
       'Adult patient with clear aligners demonstrating discreet orthodontic treatment options',
     badgeText: 'Invisible Solution',

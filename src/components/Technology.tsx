@@ -80,7 +80,7 @@ export default function Technology() {
         <div className="relative w-[80%] max-w-2xl mx-auto aspect-square rounded-2xl overflow-hidden">
           {/* Base Image - Normal (always visible) */}
           <Image
-            src="/687e18641b1e78d39b89f1b6_vecteezy_a-red-dental-model-with-teeth-missing_51059213 1 (1).png"
+            src="/dental-model-3d.png"
             alt="Natural teeth view"
             fill
             className="object-contain"
@@ -97,7 +97,7 @@ export default function Technology() {
             }}
           >
             <Image
-              src="/687e18641b1e78d39b89f1b6_vecteezy_a-red-dental-model-with-teeth-missing_51059213 1 (1).png"
+              src="/dental-model-3d.png"
               alt="3D digital scan view"
               fill
               className="object-contain"

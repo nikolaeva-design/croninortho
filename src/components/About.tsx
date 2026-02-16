@@ -72,7 +72,7 @@ export default function About() {
             {/* Dr. Cronin - Left */}
             <div className="absolute left-0 top-[0%] w-[62%] lg:w-[62%] h-[85%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-10">
               <Image
-                src="/DR. CRONIN.jpg"
+                src="/dr-cronin.jpg"
                 alt="Dr. Cronin - Orthodontist"
                 fill
                 className="object-cover object-top"
@@ -83,7 +83,7 @@ export default function About() {
             {/* Dr. Mo - Right */}
             <div className="absolute right-0 top-[10%] w-[42%] lg:w-[42%] h-[55%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
               <Image
-                src="/DR. MO.jpg"
+                src="/dr-mo.jpg"
                 alt="Dr. Mo - Orthodontist"
                 fill
                 className="object-cover object-top"

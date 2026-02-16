@@ -104,7 +104,7 @@ export default function SurgicalOrthodonticsPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_39qssw39qssw39qs.png"
+            src="/surgical-ortho-hero.png"
             alt="Perfect smile after surgical orthodontics treatment"
             fill
             className="object-cover object-center"
@@ -185,7 +185,7 @@ export default function SurgicalOrthodonticsPage() {
             <AnimatedSection delay={200}>
               <div className="relative aspect-[4/5] max-h-[500px] lg:max-h-[600px] rounded-3xl overflow-hidden">
                 <Image
-                  src="/Gemini_Generated_Image_m36i52m36i52m36i.png"
+                  src="/surgical-ortho-procedure.png"
                   alt="Woman with beautiful smile after surgical orthodontics"
                   fill
                   className="object-cover"

@@ -7,19 +7,19 @@ const slides = [
   {
     title: 'Facial Balance',
     description: 'We analyze how your teeth, lips, jaw, and facial structure work together. By aligning your smile with your natural facial proportions, we create results that look balanced, harmonious, and never overdone.',
-    image: '/Gemini_Generated_Image_c7giizc7giizc7gi.png',
+    image: '/aesthetic-service-1.png',
     imagePosition: 'object-center',
   },
   {
     title: 'Tooth Proportion',
     description: 'The size, shape, and position of each tooth affect how natural your smile looks. We design your tooth proportions using facial and dental measurements to create a smile that looks refined, natural, and uniquely yours.',
-    image: '/Gemini_Generated_Image_w534xmw534xmw534.png',
+    image: '/aesthetic-service-2.png',
     imagePosition: 'object-[70%_center]',
   },
   {
     title: 'Smile Alignment',
     description: 'We precisely align your teeth to improve smile symmetry, balance your facial features, and support long-term comfort and function. Proper alignment also makes your smile easier to clean and maintain over time.',
-    image: '/Gemini_Generated_Image_xt9ynuxt9ynuxt9y.png',
+    image: '/aesthetic-service-3.png',
     imagePosition: 'object-center',
   },
   {
@@ -31,7 +31,7 @@ const slides = [
   {
     title: 'Bite Function',
     description: 'A stable bite allows your teeth and jaw to work together properly. We correct how your teeth meet to improve comfort, protect your teeth from uneven wear, and support long-term jaw health.',
-    image: '/Gemini_Generated_Image_48490p48490p4849.png',
+    image: '/aesthetic-service-4.png',
     imagePosition: 'object-center',
   },
 ];

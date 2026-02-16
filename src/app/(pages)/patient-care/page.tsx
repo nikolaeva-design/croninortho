@@ -49,7 +49,7 @@ export default function PatientCarePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_qad8rqad8rqad8rq.png"
+            src="/patient-care-hero.png"
             alt="Patient care videos"
             fill
             className="object-cover object-center"

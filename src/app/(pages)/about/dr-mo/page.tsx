@@ -184,7 +184,7 @@ export default function DrMoPage() {
             <div className="relative opacity-0 animate-fade-in-right" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-white border border-white/10 group shadow-2xl">
                 <Image 
-                  src="/IMG_3797 (1).jpeg"
+                  src="/dr-mo-portrait.jpeg"
                   alt="Dr. Mohymen Sarfraz (Dr. Mo)"
                   fill
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
@@ -374,7 +374,7 @@ export default function DrMoPage() {
             <div className="lg:col-span-4 group h-[400px]">
               <div className="relative h-full rounded-3xl overflow-hidden border border-white/10">
                 <Image
-                  src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
+                  src="/cta-consultation-bg.png"
                   alt="Beautiful orthodontic result"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-[2s]"

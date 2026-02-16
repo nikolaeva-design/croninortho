@@ -179,7 +179,7 @@ export default function DrCroninPage() {
             <div className="relative opacity-0 animate-fade-in-right" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-white border border-white/10 group shadow-2xl">
                 <Image 
-                  src="/DR. CRONIN.jpg"
+                  src="/dr-cronin.jpg"
                   alt="Dr. D.G. Cronin"
                   fill
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-700"

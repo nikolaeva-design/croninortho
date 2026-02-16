@@ -12,7 +12,7 @@ export default function CTA() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
+          src="/cta-consultation-bg.png"
           alt="Patient receiving orthodontic consultation at CroninOrtho clinic"
           fill
           className="object-cover"

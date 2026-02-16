@@ -130,7 +130,7 @@ export default function RetainersPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_57ow9i57ow9i57ow.png"
+            src="/retainer-hero.png"
             alt="Clear orthodontic retainer for maintaining your perfect smile"
             fill
             className="object-cover object-center"
@@ -254,7 +254,7 @@ export default function RetainersPage() {
             <AnimatedSection delay={200}>
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
                 <Image
-                  src="/Gemini_Generated_Image_m7ynpmm7ynpmm7yn.png"
+                  src="/retainer-types.png"
                   alt="Clear retainer maintaining teeth alignment"
                   fill
                   className="object-cover"
@@ -324,7 +324,7 @@ export default function RetainersPage() {
             <AnimatedSection>
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
                 <Image
-                  src="/Gemini_Generated_Image_m7ynpmm7ynpmm7yn.png"
+                  src="/retainer-types.png"
                   alt="Proper retainer care and maintenance"
                   fill
                   className="object-cover"
@@ -449,7 +449,7 @@ export default function RetainersPage() {
       <section className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
+            src="/cta-consultation-bg.png"
             alt=""
             fill
             className="object-cover opacity-30"

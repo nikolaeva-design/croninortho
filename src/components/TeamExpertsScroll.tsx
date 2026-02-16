@@ -7,13 +7,13 @@ const teamHighlights = [
   {
     name: 'Dr. Cronin',
     href: '/about/dr-cronin',
-    image: '/DR. CRONIN.jpg',
+    image: '/dr-cronin.jpg',
     imagePosition: 'object-[center_30%]',
   },
   {
     name: 'Dr. Mo',
     href: '/about/dr-mo',
-    image: '/DR. MO.jpg',
+    image: '/dr-mo.jpg',
     imagePosition: 'object-top',
   },
   {
@@ -124,7 +124,7 @@ export default function TeamExpertsScroll() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
+            src="/cta-consultation-bg.png"
             alt=""
             fill
             className="object-cover"

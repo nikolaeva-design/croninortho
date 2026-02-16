@@ -135,7 +135,7 @@ export default function NightguardsPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_iby1f0iby1f0iby1.png"
+            src="/nightguard-hero.png"
             alt="Custom nightguard for protecting teeth during sleep"
             fill
             className="object-cover object-center"
@@ -259,7 +259,7 @@ export default function NightguardsPage() {
             <AnimatedSection delay={200}>
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
                 <Image
-                  src="/Gemini_Generated_Image_iby1f0iby1f0iby1.png"
+                  src="/nightguard-hero.png"
                   alt="Custom nightguard protecting teeth"
                   fill
                   className="object-cover"
@@ -332,7 +332,7 @@ export default function NightguardsPage() {
             <AnimatedSection>
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
                 <Image
-                  src="/Gemini_Generated_Image_iby1f0iby1f0iby1.png"
+                  src="/nightguard-hero.png"
                   alt="Proper nightguard care and storage"
                   fill
                   className="object-cover"
@@ -457,7 +457,7 @@ export default function NightguardsPage() {
       <section className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/Gemini_Generated_Image_g4z48ug4z48ug4z4.png"
+            src="/cta-consultation-bg.png"
             alt=""
             fill
             className="object-cover opacity-30"
