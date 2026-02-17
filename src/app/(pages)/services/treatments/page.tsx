@@ -46,14 +46,14 @@ const treatments = [
     title: 'Palatal Expander',
     description: 'A palatal expander is a custom-fitted device that gradually widens the upper jaw to create more space for teeth and improve bite alignment. It works by applying gentle pressure to the palatal bones, which are still flexible in growing children.',
     details: 'Treatment typically takes several months, with daily adjustments made at home using a special key. The expansion creates space for crowded teeth, corrects crossbites, and can even improve breathing by widening the nasal passages. Best results are achieved when treatment begins during childhood.',
-    image: '/istockphoto-1367325938-1024x1024 (1).jpg',
+    image: '/Gemini_Generated_Image_z10gufz10gufz10g.png',
   },
   {
     id: 'metal-braces',
     title: 'Metal Braces',
     description: 'Traditional metal braces remain one of the most effective and versatile orthodontic treatments available. Modern metal braces are significantly smaller, more comfortable, and more efficient than those from previous generations.',
     details: 'Metal braces can treat virtually any orthodontic issue, from simple spacing problems to complex bite corrections. Patients can personalize their treatment with colorful elastic bands, making braces a fun way for kids and teens to express their personality while achieving a beautiful smile.',
-    image: '/footer.png',
+    image: '/Gemini_Generated_Image_fzol1hfzol1hfzol.png',
   },
   {
     id: 'self-ligating-braces',
@@ -74,14 +74,14 @@ const treatments = [
     title: 'TADs',
     description: 'Temporary Anchorage Devices (TADs) are small titanium screws temporarily placed in the jawbone to serve as fixed anchor points for tooth movement. They enable precise control over tooth positioning that was previously difficult or impossible to achieve.',
     details: 'TADs are placed using local anesthesia in a quick, minimally invasive procedure. They allow orthodontists to move specific teeth without affecting others, close extraction spaces efficiently, and correct complex bite issues. Once treatment is complete, TADs are easily removed.',
-    image: '/treatment-image.jpeg',
+    image: '/Gemini_Generated_Image_ktmc7dktmc7dktmc.png',
   },
   {
     id: 'braces-diagram',
     title: 'Braces Diagram',
     description: 'Understanding the components of your braces helps you take better care of your orthodontic appliances and communicate effectively with your orthodontic team. Each part plays a specific role in moving your teeth to their ideal positions.',
     details: 'Key components include brackets (attached to each tooth), the archwire (connects brackets and applies pressure), elastic bands or ligatures (hold the wire to brackets), and sometimes rubber bands (correct bite alignment). Regular adjustments ensure continuous progress throughout treatment.',
-    image: '/bolton-analysis.png',
+    image: '/Gemini_Generated_Image_miqdg5miqdg5miqd.png',
   },
 ];
 
