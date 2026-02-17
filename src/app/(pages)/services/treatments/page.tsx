@@ -39,7 +39,7 @@ const treatments = [
     title: 'Types of Appliances',
     description: 'Orthodontic appliances are specialized devices used to move teeth, modify jaw growth, or maintain teeth in their corrected positions. Each appliance is custom-made and selected based on the patient\'s specific treatment needs.',
     details: 'Appliances can be fixed (bonded to teeth) or removable, depending on the treatment goals. From expanders that widen the palate to retainers that maintain results, each appliance plays a crucial role in achieving and preserving your perfect smile.',
-    image: '/splint-types.png',
+    image: '/Gemini_Generated_Image_ik7l6qik7l6qik7l.png',
   },
   {
     id: 'palatal-expander',
