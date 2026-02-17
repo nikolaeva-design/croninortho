@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { Button, TeamExpertsScroll } from '@/components';
 
 export const metadata: Metadata = {
@@ -12,48 +11,57 @@ export default function AboutPage() {
   return (
     <div className="bg-[#0a0a0a] -mt-20">
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-20">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/cta-consultation-bg.png"
-            alt="About Cronin Orthodontics"
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
-        </div>
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden pt-20">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f] to-[#0a0a0a]" />
         
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-24 lg:py-32 w-full">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8">
-              <span className="w-2 h-2 rounded-full bg-[#c9a962]" />
-              <span className="text-white/90 text-sm font-medium">
-                About Cronin Orthodontics
-              </span>
-            </div>
+        {/* Decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#c9a962]/5 rounded-full blur-[150px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#c9a962]/5 rounded-full blur-[120px]" />
+        </div>
 
-            <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6">
-              Transforming{' '}
-              <span className="text-white/50">
-                Lives
-              </span>
-            </h1>
-            <p className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg">
-              One person at a time! At Cronin Ortho, Dr. Don Cronin and our team treat patients with respect, professionalism, and sensitivity to unique needs.
-            </p>
+        {/* Content */}
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40 w-full text-center">
+          {/* Badge */}
+          <div
+            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8 animate-fade-in-up opacity-0"
+            style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
+          >
+            <span className="w-2 h-2 rounded-full bg-[#c9a962] animate-pulse-glow" />
+            <span className="text-white/90 text-sm font-medium">
+              About Cronin Orthodontics
+            </span>
+          </div>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <Button variant="primary" size="lg" href="/contact#contact-form" icon="solar:calendar-add-linear">
-                Book Consultation
-              </Button>
-              <Button variant="secondary" size="lg" href="/about/team" icon="solar:users-group-rounded-linear">
-                Meet the Team
-              </Button>
-            </div>
+          {/* Title */}
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6 animate-fade-in-up opacity-0"
+            style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
+          >
+            <span className="text-white">Transforming </span>
+            <span className="text-white/50">Lives</span>
+          </h1>
+
+          {/* Description */}
+          <p
+            className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-2xl mx-auto animate-fade-in-up opacity-0"
+            style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
+          >
+            One person at a time! At Cronin Ortho, Dr. Don Cronin and our team treat patients with respect, professionalism, and sensitivity to unique needs.
+          </p>
+
+          {/* CTA */}
+          <div
+            className="flex flex-wrap justify-center gap-4 animate-fade-in-up opacity-0"
+            style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
+          >
+            <Button variant="primary" size="lg" href="/contact#contact-form" icon="solar:calendar-add-linear">
+              Book Consultation
+            </Button>
+            <Button variant="secondary" size="lg" href="/about/team" icon="solar:users-group-rounded-linear">
+              Meet the Team
+            </Button>
           </div>
         </div>
       </section>

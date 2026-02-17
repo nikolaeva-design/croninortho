@@ -820,7 +820,7 @@ export default function TeensOrthodonticsPage() {
             {testimonials.map((testimonial, idx) => (
               <div
                 key={`first-${idx}`}
-                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[280px]"
+                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[360px]"
               >
                 {/* Rating */}
                 <div className="flex gap-1 mb-4">
@@ -830,7 +830,7 @@ export default function TeensOrthodonticsPage() {
                 </div>
                 
                 {/* Quote */}
-                <p className="text-white/70 text-sm leading-relaxed flex-1">
+                <p className="text-white/70 text-sm leading-relaxed flex-1 overflow-hidden">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 
@@ -850,7 +850,7 @@ export default function TeensOrthodonticsPage() {
             {testimonials.map((testimonial, idx) => (
               <div
                 key={`second-${idx}`}
-                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[280px]"
+                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[360px]"
               >
                 {/* Rating */}
                 <div className="flex gap-1 mb-4">
@@ -860,7 +860,7 @@ export default function TeensOrthodonticsPage() {
                 </div>
                 
                 {/* Quote */}
-                <p className="text-white/70 text-sm leading-relaxed flex-1">
+                <p className="text-white/70 text-sm leading-relaxed flex-1 overflow-hidden">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 

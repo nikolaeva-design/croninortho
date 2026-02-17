@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { CONTACT } from '@/lib/constants';
 
 const innerPages = [
@@ -21,6 +22,9 @@ const utilityPages = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  // Hide CTA section on About page
+  const hideCTA = pathname === '/about';
   return (
     <footer
       id="contact"
@@ -28,43 +32,47 @@ export default function Footer() {
       role="contentinfo"
     >
       {/* Top Image Section */}
-      <div className="relative h-[280px] sm:h-[350px] lg:h-[420px] overflow-hidden">
-        <Image
-          src="/adults-ortho.png"
-          alt="Close-up of a confident smile with clear braces at CroninOrtho"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        {/* Bottom gradient - blends with footer */}
-        <div
-          className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#141414] to-transparent"
-          aria-hidden="true"
-        />
-      </div>
+      {!hideCTA && (
+        <div className="relative h-[280px] sm:h-[350px] lg:h-[420px] overflow-hidden">
+          <Image
+            src="/Gemini_Generated_Image_dbdv8ddbdv8ddbdv.png"
+            alt="Close-up of a confident smile with clear braces at CroninOrtho"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          {/* Bottom gradient - blends with footer */}
+          <div
+            className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#141414] to-transparent"
+            aria-hidden="true"
+          />
+        </div>
+      )}
 
       {/* CTA Section */}
-      <div className="bg-[#141414] py-12 lg:py-16">
-        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
-          <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            Ready for a Smile You&apos;ll Feel Confident In?
-          </h2>
-          <p className="text-white/50 text-base lg:text-lg max-w-xl mb-8">
-            Book a complimentary consultation and see how personalized,
-            technology-guided orthodontic care can transform your smile —
-            comfortably, discreetly, and with results built to last.
-          </p>
-          <a
-            href="/contact#contact-form"
-            className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#141414] text-sm font-semibold rounded-full hover:bg-white/90 transition-all duration-300 mb-4"
-          >
-            Book Your Free Consultation →
-          </a>
-          <p className="text-white/40 text-sm">
-            ✓ Complimentary consultation · ✓ Personalized plan · ✓ No obligation
-          </p>
+      {!hideCTA && (
+        <div className="bg-[#141414] py-12 lg:py-16">
+          <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
+            <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+              Ready for a Smile You&apos;ll Feel Confident In?
+            </h2>
+            <p className="text-white/50 text-base lg:text-lg max-w-xl mb-8">
+              Book a complimentary consultation and see how personalized,
+              technology-guided orthodontic care can transform your smile —
+              comfortably, discreetly, and with results built to last.
+            </p>
+            <a
+              href="/contact#contact-form"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#141414] text-sm font-semibold rounded-full hover:bg-white/90 transition-all duration-300 mb-4"
+            >
+              Book Your Free Consultation →
+            </a>
+            <p className="text-white/40 text-sm">
+              ✓ Complimentary consultation · ✓ Personalized plan · ✓ No obligation
+            </p>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Main Footer */}
       <div className="bg-[#141414] border-t border-white/5 py-16 lg:py-20">

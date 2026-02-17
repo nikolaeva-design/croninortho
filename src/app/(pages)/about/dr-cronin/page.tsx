@@ -99,29 +99,49 @@ export default function DrCroninPage() {
   return (
     <div className="bg-[#0a0a0a] -mt-20">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden pt-20">
         {/* Background */}
-        <div className="absolute inset-0 bg-[#0a0a0a]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f] to-[#0a0a0a]" />
+        
+        {/* Decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#c9a962]/5 rounded-full blur-[150px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#c9a962]/5 rounded-full blur-[120px]" />
+        </div>
         
         {/* Content */}
-        <div className="relative max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16 py-24 lg:py-32 text-center opacity-0 animate-fade-in-up">
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40 w-full text-center">
+          {/* Badge */}
           <div 
-            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8"
+            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8 animate-fade-in-up opacity-0"
+            style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
           >
-            <span className="w-2 h-2 rounded-full bg-[#c9a962]" />
+            <span className="w-2 h-2 rounded-full bg-[#c9a962] animate-pulse-glow" />
             <span className="text-white/90 text-sm font-medium">Specialist Orthodontist</span>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-white mb-6">
-            Meet Dr. D.G. Cronin
-            <span className="block text-white/50">Transforming Smiles for 30+ Years</span>
+          {/* Title */}
+          <h1 
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6 animate-fade-in-up opacity-0"
+            style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
+          >
+            <span className="text-white">Meet Dr. D.G. Cronin </span>
+            <span className="text-white/50">Transforming Smiles for 30+ Years</span>
           </h1>
           
-          <p className="text-white/60 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+          {/* Description */}
+          <p 
+            className="text-white/60 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed mb-10 animate-fade-in-up opacity-0"
+            style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
+          >
             Dedicated to achieving most optimal functional and stable result.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4">
+          {/* CTA */}
+          <div 
+            className="flex flex-wrap justify-center gap-4 animate-fade-in-up opacity-0"
+            style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
+          >
             <Button variant="primary" size="lg" href="/contact#contact-form">
               Schedule a Consultation
             </Button>

@@ -68,7 +68,7 @@ const emergencyIssues = [
     icon: 'solar:sad-circle-bold',
     title: 'General Soreness',
     description: 'When you get your braces on, you may feel general soreness in your mouth, and teeth may be tender to biting pressures for 3-5 days.',
-    image: '/general-soreness.jpg',
+    image: '/Gemini_Generated_Image_pjpu0gpjpu0gpjpu.png',
     tips: [
       'Stick to a soft diet until teeth are no longer tender',
       'Rinse with warm salt water (1 tsp salt in 8 oz warm water)',
@@ -80,7 +80,7 @@ const emergencyIssues = [
     icon: 'solar:magnet-bold',
     title: 'Headgear Issues',
     description: 'Discomfort is often caused by not wearing the headgear as instructed. The headgear should hurt less the more it\'s worn.',
-    image: '/headgear.jpg',
+    image: '/Gemini_Generated_Image_wgjyynwgjyynwgjy.png',
     tips: [
       'Follow your orthodontist\'s wearing instructions',
       'Call the office if the facebow (metal piece) is bent',
@@ -92,7 +92,7 @@ const emergencyIssues = [
     icon: 'solar:link-broken-minimalistic-bold',
     title: 'Loose Appliance',
     description: 'If your appliance is poking you, there are simple steps you can take for temporary relief.',
-    image: '/loose-appliance.jpg',
+    image: '/Gemini_Generated_Image_ayzys2ayzys2ayzy.png',
     tips: [
       'Place wax on the offending part',
       'Call the office to schedule a repair appointment',
@@ -103,7 +103,8 @@ const emergencyIssues = [
     icon: 'solar:widget-bold',
     title: 'Loose Bracket',
     description: 'If your bracket or band is still attached to the wire, leave it in place. If it can be easily removed, save it for your next appointment.',
-    image: '/loose-bracket.jpg',
+    image: '/Gemini_Generated_Image_udla76udla76udla.png',
+    smallImage: true,
     tips: [
       'Leave attached brackets in place',
       'Put wax on it if needed for comfort',
@@ -115,7 +116,8 @@ const emergencyIssues = [
     icon: 'solar:ruler-cross-pen-bold',
     title: 'Loose Wire',
     description: 'Using tweezers or needle-nosed pliers, try to put your wire back into place. You can use floss to tie the wire in place if needed.',
-    image: '/loose-wire.jpg',
+    image: '/Gemini_Generated_Image_j927lvj927lvj927.png',
+    smallImage: true,
     tips: [
       'Try to reposition wire with tweezers or pliers',
       'Tie floss around the bracket to hold wire',
@@ -127,7 +129,8 @@ const emergencyIssues = [
     icon: 'solar:danger-triangle-bold',
     title: 'Poking Wire',
     description: 'A wire that\'s poking can be uncomfortable but is usually easy to fix temporarily at home.',
-    image: '/poking-wire.jpg',
+    image: '/Gemini_Generated_Image_oe98yoe98yoe98yo.png',
+    smallImage: true,
     tips: [
       'Use a pencil eraser to push the wire down',
       'Place wax on the poking area',
@@ -269,14 +272,26 @@ export default function EmergencyPage() {
             >
               <div className={`grid md:grid-cols-2 ${idx % 2 === 1 ? 'md:[direction:rtl]' : ''}`}>
                 {/* Image */}
-                <div className="aspect-[4/3] md:aspect-auto md:min-h-[360px] relative md:[direction:ltr] bg-[#e8f4fc] flex items-center justify-center">
-                  <Image
-                    src={issue.image}
-                    alt={issue.title}
-                    fill
-                    className="object-contain p-8"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
+                <div className="aspect-[4/3] md:aspect-auto md:min-h-[360px] relative md:[direction:ltr] bg-[#0a0a0a] flex items-center justify-center p-6">
+                  {'smallImage' in issue && issue.smallImage ? (
+                    <Image
+                      src={issue.image}
+                      alt={issue.title}
+                      width={320}
+                      height={240}
+                      className="rounded-2xl object-cover max-w-[320px] max-h-[240px]"
+                    />
+                  ) : (
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                      <Image
+                        src={issue.image}
+                        alt={issue.title}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </div>
+                  )}
                 </div>
                 
                 {/* Content */}

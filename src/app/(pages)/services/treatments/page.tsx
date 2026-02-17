@@ -46,7 +46,7 @@ const treatments = [
     title: 'Palatal Expander',
     description: 'A palatal expander is a custom-fitted device that gradually widens the upper jaw to create more space for teeth and improve bite alignment. It works by applying gentle pressure to the palatal bones, which are still flexible in growing children.',
     details: 'Treatment typically takes several months, with daily adjustments made at home using a special key. The expansion creates space for crowded teeth, corrects crossbites, and can even improve breathing by widening the nasal passages. Best results are achieved when treatment begins during childhood.',
-    image: '/Palatal-Expander-RPE-web.jpeg',
+    image: '/istockphoto-1367325938-1024x1024 (1).jpg',
   },
   {
     id: 'metal-braces',
@@ -148,61 +148,62 @@ export default function TreatmentsPage() {
   return (
     <div className="bg-[#0a0a0a] -mt-20">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-20">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden pt-20">
         {/* Background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#c9a962]/10 via-[#0a0a0a] to-[#0a0a0a]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(201,169,98,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f] to-[#0a0a0a]" />
+        
+        {/* Decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#c9a962]/5 rounded-full blur-[150px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#c9a962]/5 rounded-full blur-[120px]" />
         </div>
 
         {/* Content */}
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40 w-full">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <div
-              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8 animate-fade-in-up opacity-0"
-              style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
-            >
-              <span className="w-2 h-2 rounded-full bg-[#c9a962] animate-pulse-glow" />
-              <span className="text-white/90 text-sm font-medium">
-                Comprehensive Care
-              </span>
-            </div>
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40 w-full text-center">
+          {/* Badge */}
+          <div
+            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8 animate-fade-in-up opacity-0"
+            style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
+          >
+            <span className="w-2 h-2 rounded-full bg-[#c9a962] animate-pulse-glow" />
+            <span className="text-white/90 text-sm font-medium">
+              Comprehensive Care
+            </span>
+          </div>
 
-            {/* Title */}
-            <h1
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6 animate-fade-in-up opacity-0"
-              style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
-            >
-              <span className="text-white">Common </span>
-              <span className="text-white/50">Treatments</span>
-            </h1>
+          {/* Title */}
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6 animate-fade-in-up opacity-0"
+            style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
+          >
+            <span className="text-white">Common </span>
+            <span className="text-white/50">Treatments</span>
+          </h1>
 
-            {/* Description */}
-            <p
-              className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-2xl animate-fade-in-up opacity-0"
-              style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
-            >
-              Explore our comprehensive range of orthodontic treatments. From traditional braces to advanced surgical options, we offer solutions for every smile.
-            </p>
+          {/* Description */}
+          <p
+            className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-2xl mx-auto animate-fade-in-up opacity-0"
+            style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
+          >
+            Explore our comprehensive range of orthodontic treatments. From traditional braces to advanced surgical options, we offer solutions for every smile.
+          </p>
 
-            {/* CTAs */}
-            <div
-              className="flex flex-wrap gap-4 animate-fade-in-up opacity-0"
-              style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
+          {/* CTAs */}
+          <div
+            className="flex flex-wrap justify-center gap-4 animate-fade-in-up opacity-0"
+            style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
+          >
+            <Button variant="primary" size="lg" href="#treatments">
+              Explore Treatments
+            </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              href="/contact#contact-form"
+              icon="solar:phone-bold"
             >
-              <Button variant="primary" size="lg" href="#treatments">
-                Explore Treatments
-              </Button>
-              <Button
-                variant="secondary"
-                size="lg"
-                href="/contact#contact-form"
-                icon="solar:phone-bold"
-              >
-                Contact Us
-              </Button>
-            </div>
+              Contact Us
+            </Button>
           </div>
         </div>
       </section>
