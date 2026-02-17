@@ -658,22 +658,23 @@ export default function PatientPage() {
             ].map((testimonial, idx) => (
               <div
                 key={`first-${idx}`}
-                className="shrink-0 w-[320px] rounded-2xl p-6 bg-white/[0.02] border border-white/10"
+                className="shrink-0 w-[320px] rounded-2xl p-6 bg-white/[0.02] border border-white/10 flex flex-col h-[260px]"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium bg-white/[0.06] border border-white/10 text-white/60">
+                {/* Stars */}
+                <div className="flex items-center gap-0.5 text-[#c9a962] mb-4">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <iconify-icon key={i} icon="solar:star-bold" width="14" height="14" aria-hidden="true" />
+                  ))}
+                </div>
+                {/* Quote */}
+                <p className="text-white/55 text-sm leading-relaxed flex-1">"{testimonial.quote}"</p>
+                {/* Author - Always at bottom */}
+                <div className="flex items-center gap-3 mt-auto pt-4 border-t border-white/5">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium bg-gradient-to-br from-[#c9a962] to-[#d4b978] text-[#0a0a0a]">
                     {testimonial.initial}
                   </div>
-                  <div>
-                    <div className="text-white/90 text-sm font-medium">{testimonial.name}</div>
-                    <div className="flex items-center gap-0.5 text-[#c9a962]">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <iconify-icon key={i} icon="solar:star-bold" width="12" height="12" aria-hidden="true" />
-                      ))}
-                    </div>
-                  </div>
+                  <div className="text-white/90 text-sm font-medium">{testimonial.name}</div>
                 </div>
-                <p className="text-white/55 text-sm leading-relaxed">"{testimonial.quote}"</p>
               </div>
             ))}
             {/* Duplicate set for seamless loop */}
@@ -687,22 +688,23 @@ export default function PatientPage() {
             ].map((testimonial, idx) => (
               <div
                 key={`second-${idx}`}
-                className="shrink-0 w-[320px] rounded-2xl p-6 bg-white/[0.02] border border-white/10"
+                className="shrink-0 w-[320px] rounded-2xl p-6 bg-white/[0.02] border border-white/10 flex flex-col h-[260px]"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium bg-white/[0.06] border border-white/10 text-white/60">
+                {/* Stars */}
+                <div className="flex items-center gap-0.5 text-[#c9a962] mb-4">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <iconify-icon key={i} icon="solar:star-bold" width="14" height="14" aria-hidden="true" />
+                  ))}
+                </div>
+                {/* Quote */}
+                <p className="text-white/55 text-sm leading-relaxed flex-1">"{testimonial.quote}"</p>
+                {/* Author - Always at bottom */}
+                <div className="flex items-center gap-3 mt-auto pt-4 border-t border-white/5">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium bg-gradient-to-br from-[#c9a962] to-[#d4b978] text-[#0a0a0a]">
                     {testimonial.initial}
                   </div>
-                  <div>
-                    <div className="text-white/90 text-sm font-medium">{testimonial.name}</div>
-                    <div className="flex items-center gap-0.5 text-[#c9a962]">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <iconify-icon key={i} icon="solar:star-bold" width="12" height="12" aria-hidden="true" />
-                      ))}
-                    </div>
-                  </div>
+                  <div className="text-white/90 text-sm font-medium">{testimonial.name}</div>
                 </div>
-                <p className="text-white/55 text-sm leading-relaxed">"{testimonial.quote}"</p>
               </div>
             ))}
           </div>

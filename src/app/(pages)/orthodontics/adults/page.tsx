@@ -827,7 +827,7 @@ export default function AdultsOrthodonticsPage() {
             {testimonials.map((testimonial, idx) => (
               <div
                 key={`first-${idx}`}
-                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5"
+                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[280px]"
               >
                 {/* Rating */}
                 <div className="flex gap-1 mb-4">
@@ -837,12 +837,12 @@ export default function AdultsOrthodonticsPage() {
                 </div>
                 
                 {/* Quote */}
-                <p className="text-white/70 text-sm leading-relaxed mb-6">
+                <p className="text-white/70 text-sm leading-relaxed flex-1">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 
-                {/* Author */}
-                <div className="flex items-center gap-3">
+                {/* Author - Always at bottom */}
+                <div className="flex items-center gap-3 mt-auto pt-6 border-t border-white/5">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white text-sm font-semibold">
                     {testimonial.avatar}
                   </div>
@@ -857,7 +857,7 @@ export default function AdultsOrthodonticsPage() {
             {testimonials.map((testimonial, idx) => (
               <div
                 key={`second-${idx}`}
-                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5"
+                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[280px]"
               >
                 {/* Rating */}
                 <div className="flex gap-1 mb-4">
@@ -867,12 +867,12 @@ export default function AdultsOrthodonticsPage() {
                 </div>
                 
                 {/* Quote */}
-                <p className="text-white/70 text-sm leading-relaxed mb-6">
+                <p className="text-white/70 text-sm leading-relaxed flex-1">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 
-                {/* Author */}
-                <div className="flex items-center gap-3">
+                {/* Author - Always at bottom */}
+                <div className="flex items-center gap-3 mt-auto pt-6 border-t border-white/5">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white text-sm font-semibold">
                     {testimonial.avatar}
                   </div>
