@@ -119,7 +119,7 @@ const featureSections = [
       'Shorter treatment timelines',
       'Predictable results with fewer surprises',
     ],
-    image: '/663a059abb0f869e466c99ee_Bolton Analysis.png',
+    image: '/Clear-Aligners.jpg',
     imagePosition: 'left',
   },
   {
