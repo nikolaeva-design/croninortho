@@ -231,7 +231,6 @@ export default function TreatmentsPage() {
               variant="secondary"
               size="lg"
               href="/contact#contact-form"
-              icon="solar:phone-bold"
             >
               Contact Us
             </Button>
