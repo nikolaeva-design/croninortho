@@ -35,11 +35,13 @@ const treatments = [
     image: '/adults-ceramic-braces.png',
   },
   {
-    id: 'types-of-appliances',
-    title: 'Types of Appliances',
-    description: 'Orthodontic appliances are specialized devices used to move teeth, modify jaw growth, or maintain teeth in their corrected positions. Each appliance is custom-made and selected based on the patient\'s specific treatment needs.',
-    details: 'Appliances can be fixed (bonded to teeth) or removable, depending on the treatment goals. From expanders that widen the palate to retainers that maintain results, each appliance plays a crucial role in achieving and preserving your perfect smile.',
-    image: '/Gemini_Generated_Image_ik7l6qik7l6qik7l.png',
+    id: 'elastic-forces',
+    title: 'Elastic Rubber Band',
+    description:
+      'Wearing elastics (or rubber bands) improves the fit of your upper and lower teeth.',
+    details:
+      "Wear rubber bands as instructed, and remember that the rubber bands work far more efficiently if they're worn as prescribed.",
+    image: '/Gemini_Generated_Image_6tvw8j6tvw8j6tvw.png',
   },
   {
     id: 'palatal-expander',
@@ -77,11 +79,40 @@ const treatments = [
     image: '/Gemini_Generated_Image_ktmc7dktmc7dktmc.png',
   },
   {
-    id: 'braces-diagram',
-    title: 'Braces Diagram',
-    description: 'Understanding the components of your braces helps you take better care of your orthodontic appliances and communicate effectively with your orthodontic team. Each part plays a specific role in moving your teeth to their ideal positions.',
-    details: 'Key components include brackets (attached to each tooth), the archwire (connects brackets and applies pressure), elastic bands or ligatures (hold the wire to brackets), and sometimes rubber bands (correct bite alignment). Regular adjustments ensure continuous progress throughout treatment.',
-    image: '/Gemini_Generated_Image_miqdg5miqdg5miqd.png',
+    id: 'forsus',
+    title: 'Forsus™',
+    description:
+      'The Forsus Fatigue Resistant Device is an alternative to headgear that promotes growth in adolescents.',
+    details:
+      'It helps eliminate excessive overbites, improve the fit of teeth, and may help prevent the need for jaw surgery.',
+    image: '/Gemini_Generated_Image_eu65zweu65zweu65.png',
+  },
+  {
+    id: 'headgear',
+    title: 'Headgear',
+    description:
+      'Headgear is used to treat overbites (upper jaw forward) or underbites (lower jaw forward).',
+    details:
+      'Headgear gently “pulls” on your teeth to restrict further forward growth of your upper teeth and jaw, helping improve bite alignment.',
+    image: '/Gemini_Generated_Image_e90h9e90h9e90h9e-Photoroom.png',
+  },
+  {
+    id: 'retainers',
+    title: 'Retainers',
+    description:
+      'Retainers may be removable or fixed. They hold your teeth in their new, correct positions after treatment.',
+    details:
+      'Your orthodontist will instruct you on how to care for your retainer and how long to wear it. Wearing your retainer as directed is crucial to prevent regression.',
+    image: '/Gemini_Generated_Image_ik7l6qik7l6qik7l.png',
+  },
+  {
+    id: 'separator',
+    title: 'Separators or Spacers',
+    description:
+      'Separators are little rubber doughnuts placed between teeth to create space for orthodontic bands.',
+    details:
+      'They gently push teeth apart so bands can be placed at your next appointment, then are removed before band placement. Avoid sticky foods, toothpicks, and floss while separators are in.',
+    image: '/Gemini_Generated_Image_xjru7vxjru7vxjru.png',
   },
 ];
 
@@ -212,7 +243,7 @@ export default function TreatmentsPage() {
       <section className="py-8 bg-[#0f0f0f] border-y border-white/5 sticky top-16 z-40">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="flex flex-wrap gap-2 justify-center">
-            {treatments.slice(0, 11).map((treatment) => (
+            {treatments.map((treatment) => (
               <button
                 key={treatment.id}
                 onClick={() => scrollToTreatment(treatment.id)}
@@ -381,7 +412,7 @@ export default function TreatmentsPage() {
                 </a>
 
                 <a
-                  href="mailto:info@croninortho.com"
+                  href="mailto:info@ronianortho.com"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#c9a962]/30 transition-all group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -393,7 +424,7 @@ export default function TreatmentsPage() {
                     />
                   </div>
                   <div>
-                    <div className="text-white font-medium">info@croninortho.com</div>
+                    <div className="text-white font-medium">info@ronianortho.com</div>
                     <div className="text-white/50 text-sm">Email us anytime</div>
                   </div>
                 </a>
@@ -408,7 +439,7 @@ export default function TreatmentsPage() {
                     />
                   </div>
                   <div>
-                    <div className="text-white font-medium">Mon-Fri: 9am - 6pm</div>
+                    <div className="text-white font-medium">Mon-Thu: 8am - 5pm</div>
                     <div className="text-white/50 text-sm">Office hours</div>
                   </div>
                 </div>

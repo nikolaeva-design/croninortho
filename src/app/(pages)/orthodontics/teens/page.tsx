@@ -104,7 +104,7 @@ const featureSections = [
       'Results you\'ll be proud to show off',
       'A real confidence boost in photos & social moments',
     ],
-    image: '/teens-ortho.jpg',
+    image: '/teens-hero-smile.png',
     imagePosition: 'right',
     cta: 'Start My Smile Journey →',
   },
@@ -256,6 +256,9 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 
 export default function TeensOrthodonticsPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [cephImageSrc, setCephImageSrc] = useState(
+    '/12911_2024_2664_Fig1_HTML.webp'
+  );
   const [formData, setFormData] = useState({
     teenName: '',
     parentName: '',
@@ -298,7 +301,7 @@ export default function TeensOrthodonticsPage() {
 
         {/* Content */}
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40 w-full">
-          <div className="max-w-2xl">
+          <div className="w-full lg:w-[70%] max-w-none">
             {/* Badge */}
             <div 
               className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8 animate-fade-in-up opacity-0"
@@ -314,15 +317,17 @@ export default function TeensOrthodonticsPage() {
               style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
             >
               <span className="text-white">The Perfect Time for a </span>
-              <span className="text-white/50">Confident, Camera-Ready Smile</span>
+              <span className="text-white/50">Camera-Ready Smile</span>
             </h1>
 
             {/* Description */}
             <p 
-              className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg animate-fade-in-up opacity-0"
+              className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 w-full lg:w-[60%] max-w-none animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
             >
-              The teenage years are one of the best times for orthodontic treatment. Your teen&apos;s jaw is still growing, which often means quicker, more comfortable results than waiting until adulthood.
+              <span style={{ textWrap: 'balance' }}>
+                Your teen&apos;s jaw is still growing, which often means quicker, more comfortable results than waiting until adulthood. The teenage years are one of the best times to start orthodontic care.
+              </span>
             </p>
 
             {/* CTAs */}
@@ -333,8 +338,8 @@ export default function TeensOrthodonticsPage() {
               <Button variant="primary" size="lg" href="/contact#contact-form">
                 Book Consultation
               </Button>
-              <Button variant="secondary" size="lg" href="#treatments" icon="solar:arrow-down-linear">
-                Learn More
+              <Button variant="secondary" size="lg" href="#treatments">
+                See options
               </Button>
             </div>
           </div>
@@ -371,10 +376,10 @@ export default function TeensOrthodonticsPage() {
           </div>
               <div className="flex flex-wrap gap-4">
                 <Button variant="primary" size="md" href="/contact#contact-form">
-                  Book a Free Teen Smile Check
+                  Book Consultation
                 </Button>
                 <Button variant="secondary" size="md" href="#treatments">
-                  See Braces &amp; Invisalign Options
+                  See options
                 </Button>
               </div>
             </AnimatedSection>
@@ -509,7 +514,7 @@ export default function TeensOrthodonticsPage() {
           {/* CTA */}
           <AnimatedSection delay={400}>
             <div className="mt-10 text-center lg:text-left">
-              <Button variant="secondary" size="md" href="/contact#contact-form" icon="solar:arrow-right-linear">
+              <Button variant="secondary" size="md" href="/contact#contact-form">
                 Schedule Consultation
               </Button>
             </div>
@@ -664,12 +669,19 @@ export default function TeensOrthodonticsPage() {
             <AnimatedSection>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-black">
                 <Image
-                  src="/skeletal-malocclusion.jpeg"
+                  src={cephImageSrc}
                   alt="Cephalometric X-ray analysis for orthodontic evaluation"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   quality={100}
+                  onError={() =>
+                    setCephImageSrc((current) =>
+                      current === '/skeletal-malocclusion.jpeg'
+                        ? current
+                        : '/skeletal-malocclusion.jpeg'
+                    )
+                  }
                 />
               </div>
             </AnimatedSection>
@@ -787,7 +799,7 @@ export default function TeensOrthodonticsPage() {
                     ))}
                   </div>
 
-                  <Button variant="secondary" size="md" href="/contact#contact-form" icon="solar:arrow-right-linear">
+                  <Button variant="secondary" size="md" href="/contact#contact-form">
                     Get Started
                   </Button>
                 </div>
@@ -960,7 +972,7 @@ export default function TeensOrthodonticsPage() {
                     <iconify-icon icon="solar:clock-circle-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">Mon-Fri: 9am - 6pm</div>
+                    <div className="text-white font-medium">Mon-Thu: 8am - 5pm</div>
                     <div className="text-white/50 text-sm">After-school appointments available</div>
                   </div>
                 </div>

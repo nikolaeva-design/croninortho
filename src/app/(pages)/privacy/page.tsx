@@ -61,10 +61,10 @@ export default function PrivacyPolicyPage() {
               If you have any questions about this Privacy Policy, please
               contact us at{' '}
               <a
-                href="mailto:contact@croninortho.com"
+                href="mailto:info@ronianortho.com"
                 className="text-accent hover:underline"
               >
-                contact@croninortho.com
+                info@ronianortho.com
               </a>
               .
             </p>

@@ -4,6 +4,34 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
 
+const faqs = [
+  {
+    question: 'When might surgical orthodontics be needed?',
+    answer:
+      'Surgical orthodontics may be recommended for adults with improper bites or significant aesthetic and functional concerns that can’t be corrected with orthodontics alone. Because jaw growth must be complete before orthognathic surgery, it’s typically considered after growth has finished (often around age 16 for females and 18 for males). When the jaws don’t line up correctly, surgery can align the jaw so braces can place the teeth into an ideal bite.',
+  },
+  {
+    question: 'How do I know if I need orthognathic surgery?',
+    answer:
+      'Your orthodontist can tell you whether orthognathic surgery is needed as part of your treatment. Based on your bite, jaw position, facial balance, and 3D imaging, we’ll recommend whether braces alone can achieve your goals or if surgery would provide the best result.',
+  },
+  {
+    question: 'How does orthognathic surgery work?',
+    answer:
+      'An oral and maxillofacial surgeon performs orthognathic surgery in a hospital setting. Surgery can take several hours depending on the case, followed by a typical recovery period of about two weeks. After healing, your orthodontist “fine-tunes” your bite with braces. In many cases, braces are removed within 6–12 months after surgery, and a retainer helps maintain your results long-term.',
+  },
+  {
+    question: 'What are the risks associated with orthognathic surgery?',
+    answer:
+      'As with any major surgery, there are risks, but orthognathic surgery is a well-established procedure performed for many years. We’ll review your case carefully, coordinate with your surgeon, and answer any questions so you feel informed and comfortable throughout the process.',
+  },
+  {
+    question: 'What are the rewards of orthognathic surgery?',
+    answer:
+      'For many patients, the biggest reward is a healthier, more stable bite and a smile that looks and feels better for life. Whether you’re correcting a bad bite, malocclusion, or jaw imbalance, surgery can improve function, facial balance, and long-term comfort.',
+  },
+];
+
 // When surgical orthodontics may be needed
 const indications = [
   {
@@ -97,6 +125,26 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 }
 
 export default function SurgicalOrthodonticsPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [diagramImageFailed, setDiagramImageFailed] = useState(false);
+  const [diagramAttempt, setDiagramAttempt] = useState(0);
+
+  // If the image previously failed (often due to missing asset or dev Fast Refresh preserving state),
+  // automatically retry a couple times with a cache-busting query param.
+  useEffect(() => {
+    if (!diagramImageFailed) return;
+    if (diagramAttempt >= 2) return;
+
+    const t = setTimeout(() => {
+      setDiagramImageFailed(false);
+      setDiagramAttempt((a) => a + 1);
+    }, 350);
+
+    return () => clearTimeout(t);
+  }, [diagramImageFailed, diagramAttempt]);
+
+  const diagramSrc = `/surgical-orthodontics-diagram.jpg?v=${diagramAttempt}`;
+
   return (
     <div className="bg-[#0a0a0a] -mt-20">
       {/* Hero Section */}
@@ -160,39 +208,64 @@ export default function SurgicalOrthodonticsPage() {
 
       {/* What is Surgical Orthodontics Section */}
       <section className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#c9a962]/6 rounded-full blur-[150px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-white/[0.03] rounded-full blur-[140px]" />
+        </div>
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
             {/* Left Content */}
             <AnimatedSection>
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-8">
                 What is Surgical
                 <span className="text-white/50 block">Orthodontics?</span>
               </h2>
+
               <div className="space-y-6 mb-10">
                 <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  Surgical orthodontics (orthognathic surgery) treats severe cases involving bad bites, jaw bone abnormalities, and malocclusion. When the jaws don&apos;t align correctly and braces alone can&apos;t achieve proper bite, surgery helps reposition the jaw while orthodontics moves the teeth into place.
+                  Surgical orthodontics, also known as orthognathic surgery, is used to correct severe cases such as improper bites, jaw bone abnormalities, and malocclusion. When the jaws don&apos;t line up correctly and a proper bite can&apos;t be achieved with orthodontic treatment alone, surgery helps reposition the jaw while braces move the teeth into their ideal positions.
                 </p>
                 <p className="text-white/60 text-base lg:text-lg leading-relaxed">
-                  Your orthodontist works with an oral and maxillofacial surgeon to ensure the best possible results. Surgery is typically performed after jaw growth is complete—around age 16 for females and 18 for males.
+                  Oral and maxillofacial surgery is a recognized dental specialty focused on complex craniofacial cases involving the mouth, jaw, face, and skull. If you need surgical orthodontics, your orthodontist works closely with an oral and maxillofacial surgeon so you receive coordinated, expert care from start to finish.
+                </p>
+                <p className="text-white/60 text-base lg:text-lg leading-relaxed">
+                  Because the jaw must be done growing before orthognathic surgery, it&apos;s typically considered after growth is complete (often around age 16 for females and 18 for males). During your evaluation, we&apos;ll review your bite, jaw alignment, and goals to determine whether surgery is recommended.
                 </p>
               </div>
-              <Button variant="primary" size="md" href="/contact#contact-form">
-                Schedule Evaluation
-              </Button>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Button variant="primary" size="md" href="/contact#contact-form">
+                  Schedule Evaluation
+                </Button>
+              </div>
             </AnimatedSection>
 
             {/* Right - Image */}
             <AnimatedSection delay={200}>
-              <div className="relative aspect-[4/5] max-h-[500px] lg:max-h-[600px] rounded-3xl overflow-hidden">
-                <Image
-                  src="/surgical-ortho-procedure.png"
-                  alt="Woman with beautiful smile after surgical orthodontics"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                  quality={100}
-                  unoptimized
-                />
+              <div className="relative aspect-[4096/3614] rounded-3xl overflow-hidden">
+                {!diagramImageFailed ? (
+                  <Image
+                    key={diagramSrc}
+                    src={diagramSrc}
+                    alt="Illustration showing jaw alignment and braces as part of surgical orthodontics"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    quality={100}
+                    unoptimized
+                    onError={() => setDiagramImageFailed(true)}
+                  />
+                ) : (
+                  <div className="absolute inset-0 grid place-items-center p-6">
+                    <div className="text-center">
+                      <div className="text-white/70 font-semibold">Illustration coming soon</div>
+                      <div className="mt-1 text-sm text-white/45">
+                        Add <span className="text-white/60 font-medium">public/surgical-orthodontics-diagram.jpg</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </AnimatedSection>
           </div>
@@ -297,6 +370,55 @@ export default function SurgicalOrthodonticsPage() {
                 </AnimatedSection>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
+        <div className="max-w-[900px] mx-auto px-6 lg:px-12">
+          <AnimatedSection>
+            <div className="text-center mb-12 lg:mb-16">
+              <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-6">
+                Surgical Orthodontics
+                <span className="text-white/50 block">FAQs</span>
+              </h2>
+              <p className="text-white/50 text-lg">
+                Clear answers about timing, surgery, recovery, and what to expect.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AnimatedSection key={faq.question} delay={index * 50}>
+                <div className="rounded-2xl bg-white/[0.03] border border-white/5 hover:border-white/10 transition-all overflow-hidden">
+                  <button
+                    className="w-full flex items-center justify-between p-6 text-left"
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  >
+                    <span className="text-white font-medium pr-4">{faq.question}</span>
+                    <iconify-icon
+                      icon="solar:alt-arrow-down-linear"
+                      width="20"
+                      height="20"
+                      className={`text-white/50 transition-transform duration-300 flex-shrink-0 ${
+                        openFaq === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      openFaq === index ? 'max-h-96' : 'max-h-0'
+                    }`}
+                  >
+                    <p className="px-6 pb-6 text-white/50 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>

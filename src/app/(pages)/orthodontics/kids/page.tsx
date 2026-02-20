@@ -4,13 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
 
-// Gold color from logo
-const gold = {
-  base: '#c9a962',
-  light: '#d4b978',
-  dark: '#b8975f',
-};
-
 // Warning signs - grouped for display
 const warningSignsGroups = [
   {
@@ -85,17 +78,15 @@ const treatmentOptions = [
     description: 'Early intervention to address developing problems while permanent teeth are still coming in.',
     tags: [
       { name: 'Palatal expanders', id: 'palatal-expander' },
-      { name: 'Space maintainers', id: 'types-of-appliances' },
-      { name: 'Habit appliances', id: 'types-of-appliances' },
+      { name: 'Separator', id: 'separator' },
     ],
   },
   {
     title: 'Growth Appliances',
     description: 'Custom devices that guide jaw growth and create space for permanent teeth.',
     tags: [
-      { name: 'Headgear', id: 'types-of-appliances' },
-      { name: 'Functional appliances', id: 'types-of-appliances' },
       { name: 'Jaw repositioning', id: 'tmj-tmd' },
+      { name: 'Elastic forces', id: 'elastic-forces' },
     ],
   },
   {
@@ -104,7 +95,6 @@ const treatmentOptions = [
     tags: [
       { name: 'Partial braces', id: 'metal-braces' },
       { name: 'Clear aligners', id: 'clear-aligners' },
-      { name: 'Removable appliances', id: 'types-of-appliances' },
     ],
   },
 ];
@@ -272,6 +262,9 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 
 export default function KidsOrthodonticsPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [cephImageSrc, setCephImageSrc] = useState(
+    '/12911_2024_2664_Fig1_HTML.webp'
+  );
   const [formData, setFormData] = useState({
     parentName: '',
     childName: '',
@@ -349,7 +342,7 @@ export default function KidsOrthodonticsPage() {
               <Button variant="primary" size="lg" href="/contact#contact-form">
                 Book Consultation
               </Button>
-              <Button variant="secondary" size="lg" href="#info" icon="solar:arrow-down-linear">
+              <Button variant="secondary" size="lg" href="#info">
                 Learn More
               </Button>
             </div>
@@ -385,8 +378,8 @@ export default function KidsOrthodonticsPage() {
                   Early evaluations don&apos;t always mean early braces. Sometimes, the best care is simply watching growth and stepping in at the perfect time—so treatment can be shorter, easier, and more comfortable later on.
             </p>
           </div>
-              <div className="flex flex-col gap-2">
-                <Button variant="primary" size="md" href="/contact#contact-form">
+              <div className="flex flex-col items-start gap-2">
+                <Button variant="primary" size="sm" href="/contact#contact-form" className="w-fit">
                   Check My Child&apos;s Smile
                 </Button>
                 <p className="text-white/40 text-sm">Quick records • No commitment • Just expert clarity</p>
@@ -527,7 +520,7 @@ export default function KidsOrthodonticsPage() {
           <AnimatedSection delay={400}>
             <div className="mt-10 text-center lg:text-left">
               <p className="text-white/60 text-base mb-4">Worried this might be your child?</p>
-              <Button variant="secondary" size="md" href="/contact#contact-form" icon="solar:arrow-right-linear">
+              <Button variant="secondary" size="md" href="/contact#contact-form">
                 Check Their Smile
               </Button>
             </div>
@@ -683,12 +676,19 @@ export default function KidsOrthodonticsPage() {
             <AnimatedSection>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-black">
                 <Image
-                  src="/skeletal-malocclusion.jpeg"
+                  src={cephImageSrc}
                   alt="Cephalometric X-ray analysis for orthodontic evaluation"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   quality={100}
+                  onError={() =>
+                    setCephImageSrc((current) =>
+                      current === '/skeletal-malocclusion.jpeg'
+                        ? current
+                        : '/skeletal-malocclusion.jpeg'
+                    )
+                  }
                 />
               </div>
             </AnimatedSection>
@@ -806,7 +806,7 @@ export default function KidsOrthodonticsPage() {
                     ))}
                   </div>
 
-                  <Button variant="secondary" size="md" href="/contact#contact-form" icon="solar:arrow-right-linear">
+                  <Button variant="secondary" size="md" href="/contact#contact-form">
                     Get Started
                   </Button>
                 </div>
@@ -960,7 +960,7 @@ export default function KidsOrthodonticsPage() {
                 <span className="text-white/50 block">We&apos;re Here to Help</span>
               </h2>
               <p className="text-white/60 text-lg leading-relaxed mb-8">
-                Schedule your child&apos;s free consultation today. We&apos;ll evaluate their orthodontic needs and create a personalized plan for their healthiest smile.
+                Schedule your child&apos;s consultation today. We&apos;ll evaluate their orthodontic needs and create a personalized plan for their healthiest smile.
               </p>
 
               {/* Contact Info */}
@@ -979,7 +979,7 @@ export default function KidsOrthodonticsPage() {
                     <iconify-icon icon="solar:clock-circle-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">Mon-Fri: 9am - 6pm</div>
+                    <div className="text-white font-medium">Mon-Thu: 8am - 5pm</div>
                     <div className="text-white/50 text-sm">Office hours</div>
                   </div>
                 </div>

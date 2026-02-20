@@ -8,36 +8,49 @@ export const metadata: Metadata = {
   alternates: { canonical: '/patient-care' },
 };
 
+// Helper function to convert YouTube watch URL to embed URL
+function getYouTubeEmbedUrl(url: string): string {
+  if (!url) return '';
+  const videoId = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1];
+  return videoId ? `https://www.youtube.com/embed/${videoId}` : '';
+}
+
 const videos = [
-  {
-    title: 'How to Brush with Braces',
-    description: 'Learn the proper technique for brushing your teeth while wearing braces to maintain optimal oral hygiene.',
-    duration: '3:45',
-  },
   {
     title: 'Flossing with Braces',
     description: 'Step-by-step guide on how to effectively floss around brackets and wires.',
     duration: '4:20',
+    url: 'https://www.youtube.com/watch?v=kMWxevSctIU',
   },
   {
     title: 'Using Orthodontic Wax',
     description: 'How to apply wax to brackets and wires to prevent irritation and sore spots.',
     duration: '2:15',
+    url: 'https://www.youtube.com/watch?v=tURq-O83JBM',
   },
   {
     title: 'Caring for Your Aligners',
     description: 'Best practices for cleaning and maintaining your clear aligners for optimal results.',
     duration: '3:30',
+    url: 'https://www.youtube.com/watch?v=xqXu3tJ3ZLk',
+  },
+  {
+    title: 'How to Brush with Braces',
+    description: 'Learn the proper technique for brushing your teeth while wearing braces to maintain optimal oral hygiene.',
+    duration: '3:45',
+    url: '',
   },
   {
     title: 'Foods to Avoid',
     description: 'Learn which foods can damage your braces and what to eat instead.',
     duration: '4:00',
+    url: '',
   },
   {
     title: 'Handling Orthodontic Emergencies',
     description: 'What to do if a bracket comes loose, a wire pokes, or you experience discomfort.',
     duration: '5:10',
+    url: '',
   },
 ];
 
@@ -80,10 +93,10 @@ export default function PatientCarePage() {
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Button variant="primary" size="lg" href="/patient" icon="solar:document-text-linear">
+              <Button variant="primary" size="lg" href="/patient">
                 Patient Resources
               </Button>
-              <Button variant="secondary" size="lg" href="/emergency" icon="solar:shield-warning-linear">
+              <Button variant="secondary" size="lg" href="/emergency">
                 Emergency Care
               </Button>
             </div>
@@ -95,48 +108,66 @@ export default function PatientCarePage() {
       <section className="py-20 lg:py-28 bg-[#0f0f0f]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {videos.map((video, idx) => (
-              <div
-                key={video.title}
-                className="group rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden transition-all duration-200 hover:border-[#c9a962]/50 hover:bg-[#c9a962]/[0.08] hover:shadow-lg hover:shadow-[#c9a962]/10"
-              >
-                {/* Video Placeholder */}
-                <div className="aspect-video bg-white/[0.03] relative flex items-center justify-center">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#c9a962]/5 to-transparent" />
-                  
-                  {/* Play Button */}
-                  <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all duration-200 group-hover:bg-[#c9a962] group-hover:border-[#c9a962] group-hover:scale-110">
-                    <iconify-icon
-                      icon="solar:play-bold"
-                      width="28"
-                      height="28"
-                      className="text-white/80 ml-1 transition-colors duration-200 group-hover:text-white"
-                      aria-hidden="true"
-                    />
+            {videos.map((video, idx) => {
+              const embedUrl = getYouTubeEmbedUrl(video.url);
+
+              return (
+                <div
+                  key={video.title}
+                  className="group rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden transition-all duration-200 hover:border-[#c9a962]/50 hover:bg-[#c9a962]/[0.08] hover:shadow-lg hover:shadow-[#c9a962]/10"
+                >
+                  {/* Video Embed or Placeholder */}
+                  <div className="aspect-video bg-white/[0.03] relative overflow-hidden">
+                    {embedUrl ? (
+                      <iframe
+                        src={embedUrl}
+                        title={video.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        className="w-full h-full"
+                      />
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#c9a962]/5 to-transparent" />
+                        
+                        {/* Play Button */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all duration-200 group-hover:bg-[#c9a962] group-hover:border-[#c9a962] group-hover:scale-110">
+                            <iconify-icon
+                              icon="solar:play-bold"
+                              width="28"
+                              height="28"
+                              className="text-white/80 ml-1 transition-colors duration-200 group-hover:text-white"
+                              aria-hidden="true"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Duration Badge */}
+                        <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-sm text-white/80 text-xs font-medium">
+                          {video.duration}
+                        </div>
+                      </>
+                    )}
+
+                    {/* Video Number */}
+                    <div className="absolute top-3 left-3 w-8 h-8 rounded-lg bg-black/40 backdrop-blur-sm flex items-center justify-center text-white/60 text-sm font-medium z-10">
+                      {idx + 1}
+                    </div>
                   </div>
 
-                  {/* Duration Badge */}
-                  <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-sm text-white/80 text-xs font-medium">
-                    {video.duration}
-                  </div>
-
-                  {/* Video Number */}
-                  <div className="absolute top-3 left-3 w-8 h-8 rounded-lg bg-black/40 backdrop-blur-sm flex items-center justify-center text-white/60 text-sm font-medium">
-                    {idx + 1}
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-white text-lg font-semibold mb-2 transition-colors duration-200 group-hover:text-[#c9a962]">
+                      {video.title}
+                    </h3>
+                    <p className="text-white/50 text-sm leading-relaxed transition-colors duration-200 group-hover:text-white/65">
+                      {video.description}
+                    </p>
                   </div>
                 </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-white text-lg font-semibold mb-2 transition-colors duration-200 group-hover:text-[#c9a962]">
-                    {video.title}
-                  </h3>
-                  <p className="text-white/50 text-sm leading-relaxed transition-colors duration-200 group-hover:text-white/65">
-                    {video.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -161,10 +192,10 @@ export default function PatientCarePage() {
               If you need additional guidance or have questions about your treatment, our team is here to help.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button variant="primary" size="lg" href="/contact#contact-form" icon="solar:chat-round-line-linear">
+              <Button variant="primary" size="lg" href="/contact#contact-form">
                 Contact Us
               </Button>
-              <Button variant="secondary" size="lg" href="/patient#office-visits" icon="solar:calendar-linear">
+              <Button variant="secondary" size="lg" href="/patient#office-visits">
                 Schedule a Visit
               </Button>
             </div>

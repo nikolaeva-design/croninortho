@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Button from './Button';
@@ -53,8 +54,6 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    // Reset to top state on route change, then check actual position
-    setScrolled(false);
     // Use requestAnimationFrame to check after browser has settled
     requestAnimationFrame(() => {
       handleScroll();
@@ -94,7 +93,7 @@ export default function Navbar() {
         aria-label="Main navigation"
       >
         {/* Logo Image */}
-        <a
+        <Link
           href="/"
           className="flex items-center group focus:outline-none"
           aria-label="CroninOrtho - Go to homepage"
@@ -107,7 +106,7 @@ export default function Navbar() {
             className="h-8 lg:h-9 w-auto object-contain"
             priority
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <ul className="hidden xl:flex items-center gap-6" role="list">
@@ -118,12 +117,14 @@ export default function Navbar() {
               onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.label)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <a
-                href={item.hasDropdown ? undefined : item.href}
-                className="flex items-center gap-1 text-sm text-white/80 hover:text-white transition-all duration-300 uppercase tracking-wide group hover:-translate-y-0.5 focus:outline-none focus:text-white cursor-pointer"
-              >
-                {item.label}
-                {item.hasDropdown && (
+              {item.hasDropdown ? (
+                <button
+                  type="button"
+                  className="flex items-center gap-1 text-sm text-white/80 hover:text-white transition-all duration-300 uppercase tracking-wide group hover:-translate-y-0.5 focus:outline-none focus:text-white cursor-pointer"
+                  aria-haspopup="menu"
+                  aria-expanded={activeDropdown === item.label}
+                >
+                  {item.label}
                   <iconify-icon
                     icon="solar:alt-arrow-down-linear"
                     width="14"
@@ -131,8 +132,22 @@ export default function Navbar() {
                     className={`transform transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180' : ''}`}
                     aria-hidden="true"
                   />
-                )}
-              </a>
+                </button>
+              ) : item.href.startsWith('/') ? (
+                <Link
+                  href={item.href}
+                  className="flex items-center gap-1 text-sm text-white/80 hover:text-white transition-all duration-300 uppercase tracking-wide group hover:-translate-y-0.5 focus:outline-none focus:text-white cursor-pointer"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  href={item.href}
+                  className="flex items-center gap-1 text-sm text-white/80 hover:text-white transition-all duration-300 uppercase tracking-wide group hover:-translate-y-0.5 focus:outline-none focus:text-white cursor-pointer"
+                >
+                  {item.label}
+                </a>
+              )}
               {/* Dropdown Menu */}
               {item.hasDropdown && item.dropdownItems && (
                 <div
@@ -144,7 +159,7 @@ export default function Navbar() {
                 >
                   <div className="bg-[#1a1a1a]/95 backdrop-blur-xl rounded-2xl border border-white/10 p-2 min-w-[280px] shadow-2xl">
                     {item.dropdownItems.map((dropdownItem) => (
-                      <a
+                      <Link
                         key={dropdownItem.label}
                         href={dropdownItem.href}
                         className="flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-white/10 transition-colors group whitespace-nowrap"
@@ -155,7 +170,7 @@ export default function Navbar() {
                         <span className="text-white/40 text-sm">
                           — {dropdownItem.description}
                         </span>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -230,7 +245,7 @@ export default function Navbar() {
                     >
                       <div className="py-2 pl-4 space-y-1">
                         {item.dropdownItems.map((dropdownItem) => (
-                          <a
+                          <Link
                             key={dropdownItem.label}
                             href={dropdownItem.href}
                             className="flex flex-col gap-0.5 py-2 px-3 rounded-lg hover:bg-white/10 transition-colors"
@@ -243,21 +258,33 @@ export default function Navbar() {
                             <span className="text-white/50 text-xs">
                               {dropdownItem.description}
                             </span>
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
                   </div>
                 ) : (
-                  <a
-                    href={item.href}
-                    className="flex items-center justify-between text-white/80 hover:text-white py-3 border-b border-white/10 hover:translate-x-2 transition-all duration-300 focus:outline-none focus:text-white"
-                    style={{ transitionDelay: `${index * 50}ms` }}
-                    onClick={closeMenu}
-                    tabIndex={mobileMenuOpen ? 0 : -1}
-                  >
-                    {item.label}
-                  </a>
+                  item.href.startsWith('/') ? (
+                    <Link
+                      href={item.href}
+                      className="flex items-center justify-between text-white/80 hover:text-white py-3 border-b border-white/10 hover:translate-x-2 transition-all duration-300 focus:outline-none focus:text-white"
+                      style={{ transitionDelay: `${index * 50}ms` }}
+                      onClick={closeMenu}
+                      tabIndex={mobileMenuOpen ? 0 : -1}
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className="flex items-center justify-between text-white/80 hover:text-white py-3 border-b border-white/10 hover:translate-x-2 transition-all duration-300 focus:outline-none focus:text-white"
+                      style={{ transitionDelay: `${index * 50}ms` }}
+                      onClick={closeMenu}
+                      tabIndex={mobileMenuOpen ? 0 : -1}
+                    >
+                      {item.label}
+                    </a>
+                  )
                 )}
               </li>
             ))}

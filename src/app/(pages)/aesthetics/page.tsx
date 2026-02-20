@@ -359,7 +359,6 @@ export default function AestheticsPage() {
                 variant="secondary"
                 size="lg"
                 href="#smile-components"
-                icon="solar:arrow-down-linear"
               >
                 Discover More
               </Button>
@@ -433,14 +432,14 @@ export default function AestheticsPage() {
                 <div className="absolute -inset-8 bg-[#c9a962]/20 rounded-full blur-[60px]" />
                 
                 {/* Golden ring with image */}
-                <div 
-                  className="relative w-[280px] h-[280px] rounded-full border-[3px] border-[#c9a962]/60"
-                  style={{
-                    backgroundImage: 'url(/cta-consultation-bg.png)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center 30%',
-                  }}
-                >
+                <div className="relative w-[280px] h-[280px] rounded-full border-[3px] border-[#c9a962]/60 overflow-hidden">
+                  <Image
+                    src="/Gemini_Generated_Image_g4z48ug4z48ug4z4-copy-2.png"
+                    alt="Beautiful smile showcasing all components"
+                    fill
+                    className="object-cover object-[center_55%] scale-110"
+                    sizes="280px"
+                  />
                 </div>
               </div>
 
@@ -533,10 +532,10 @@ export default function AestheticsPage() {
             <AnimatedSection delay={100} className="mb-8">
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-full overflow-hidden border-4 border-[#c9a962]/30 shadow-xl shadow-[#c9a962]/20">
                 <Image
-                  src="/cta-consultation-bg.png"
+                  src="/Gemini_Generated_Image_g4z48ug4z48ug4z4-copy-2.png"
                   alt="Beautiful smile showcasing all components"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-[center_55%] scale-110"
                   sizes="250px"
                 />
               </div>
@@ -655,7 +654,7 @@ export default function AestheticsPage() {
               {/* Contact Info */}
               <div className="space-y-4 mb-8">
                 <a
-                  href="mailto:info@croninortho.com"
+                  href="mailto:info@ronianortho.com"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#c9a962]/30 transition-all group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -669,7 +668,7 @@ export default function AestheticsPage() {
                   <div>
                     <div className="text-white/50 text-sm">Email</div>
                     <div className="text-white font-medium">
-                      info@croninortho.com
+                      info@ronianortho.com
                     </div>
                   </div>
                 </a>

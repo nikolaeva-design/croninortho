@@ -485,7 +485,7 @@ export default function DrCroninPage() {
                 <span className="text-white/50 block">We&apos;re Here to Help</span>
               </h2>
               <p className="text-white/60 text-lg leading-relaxed mb-8">
-                Schedule your free consultation today. We&apos;ll evaluate your orthodontic needs and create a personalized plan for your healthiest smile.
+                Schedule your consultation today. We&apos;ll evaluate your orthodontic needs and create a personalized plan for your healthiest smile.
               </p>
 
               {/* Contact Info */}
@@ -504,7 +504,7 @@ export default function DrCroninPage() {
                     <iconify-icon icon="solar:clock-circle-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">Mon-Fri: 9am - 5pm</div>
+                    <div className="text-white font-medium">Mon-Thu: 8am - 5pm</div>
                     <div className="text-white/50 text-sm">Office hours</div>
                   </div>
                 </div>

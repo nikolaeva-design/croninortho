@@ -261,24 +261,9 @@ export default function ContactPage() {
                       className="w-full py-4 rounded-xl bg-[#c9a962] hover:bg-[#d4b872] text-[#0a0a0a] font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                     >
                       {isSubmitting ? (
-                        <>
-                          <iconify-icon
-                            icon="solar:spinner-bold"
-                            width="20"
-                            height="20"
-                            className="animate-spin"
-                          />
-                          Sending...
-                        </>
+                        'Sending...'
                       ) : (
-                        <>
-                          Send Message
-                          <iconify-icon
-                            icon="solar:arrow-right-linear"
-                            width="20"
-                            height="20"
-                          />
-                        </>
+                        'Send Message'
                       )}
                     </button>
                   </form>
@@ -410,7 +395,6 @@ export default function ContactPage() {
               variant="primary"
               size="lg"
               href={`tel:${CONTACT.phone}`}
-              icon="solar:phone-bold"
             >
               Call {CONTACT.phoneDisplay}
             </Button>

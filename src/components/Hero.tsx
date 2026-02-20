@@ -40,19 +40,19 @@ export default function Hero() {
               className="block animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
             >
-              Personalized
+              Comprehensive
             </span>
             <span
               className="block lg:ml-24 xl:ml-32 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
             >
-              Orthodontic Care
+              Orthodontic Treatment
             </span>
             <span
               className="block animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
             >
-              & <span className="text-gradient">Aesthetic Smile Design</span>
+              & <span className="text-gradient">Smile Correction</span>
             </span>
           </h1>
 
@@ -61,10 +61,12 @@ export default function Hero() {
             className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
-            <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
-              Custom treatment plans for children, teens, and adults — combining
-              precision with aesthetic-focused smile design for natural, confident
-              results.
+            <p
+              className="text-lg text-white/80 max-w-2xl leading-relaxed"
+              style={{ textWrap: 'balance' }}
+            >
+              Custom plans for kids, teens, and adults — precision orthodontics
+              and smile design for natural-looking results.
             </p>
 
             <div className="flex flex-row gap-4 flex-shrink-0">

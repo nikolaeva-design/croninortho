@@ -238,11 +238,11 @@ export default function DrMoPage() {
               <div className="space-y-8">
                 <div className="relative pl-8 border-l border-[#c9a962]/30">
                   <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-[#c9a962]" />
-                  <h3 className="text-white text-xl font-medium mb-2">Bachelor's Degree in Dentistry</h3>
+                  <h3 className="text-white text-xl font-medium mb-2">Bachelor&apos;s Degree in Dentistry</h3>
                 </div>
                 <div className="relative pl-8 border-l border-[#c9a962]/30">
                   <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-[#c9a962]" />
-                  <h3 className="text-white text-xl font-medium mb-2">Master's in Oral and Maxillofacial Pathology</h3>
+                  <h3 className="text-white text-xl font-medium mb-2">Master&apos;s in Oral and Maxillofacial Pathology</h3>
                 </div>
                 <div className="relative pl-8 border-l border-[#c9a962]/30">
                   <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-[#c9a962]" />
@@ -279,11 +279,11 @@ export default function DrMoPage() {
                 <h3 className="text-white text-xl font-semibold mb-4">Questions or want to connect?</h3>
                 <p className="text-white/60 mb-6">Reach out to Dr. Mo directly at:</p>
                 <a 
-                  href="mailto:drmo@croninortho.com" 
+                  href="mailto:frontes@croninortho.com" 
                   className="inline-flex items-center gap-3 text-[#c9a962] text-xl font-semibold hover:text-white transition-colors"
                 >
                   <iconify-icon icon="solar:letter-bold" width="24" height="24" />
-                  drmo@croninortho.com
+                  frontes@croninortho.com
                 </a>
               </div>
             </div>
@@ -515,7 +515,7 @@ export default function DrMoPage() {
                 <span className="text-white/50 block">We&apos;re Here to Help</span>
               </h2>
               <p className="text-white/60 text-lg leading-relaxed mb-8">
-                Schedule your free consultation today. We&apos;ll evaluate your orthodontic needs and create a personalized plan for your healthiest smile.
+                Schedule your consultation today. We&apos;ll evaluate your orthodontic needs and create a personalized plan for your healthiest smile.
               </p>
 
               {/* Contact Info */}
@@ -534,7 +534,7 @@ export default function DrMoPage() {
                     <iconify-icon icon="solar:clock-circle-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">Mon-Fri: 9am - 5pm</div>
+                    <div className="text-white font-medium">Mon-Thu: 8am - 5pm</div>
                     <div className="text-white/50 text-sm">Office hours</div>
                   </div>
                 </div>

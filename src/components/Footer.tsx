@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { CONTACT } from '@/lib/constants';
 
@@ -61,12 +62,12 @@ export default function Footer() {
               technology-guided orthodontic care can transform your smile —
               comfortably, discreetly, and with results built to last.
             </p>
-            <a
+            <Link
               href="/contact#contact-form"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#141414] text-sm font-semibold rounded-full hover:bg-white/90 transition-all duration-300 mb-4"
             >
               Book Your Free Consultation →
-            </a>
+            </Link>
             <p className="text-white/40 text-sm">
               ✓ Complimentary consultation · ✓ Personalized plan · ✓ No obligation
             </p>
@@ -80,7 +81,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
             {/* Logo & Description */}
             <div className="lg:col-span-4">
-              <a
+              <Link
                 href="/"
                 className="inline-block mb-4"
                 aria-label="CroninOrtho - Go to homepage"
@@ -92,7 +93,7 @@ export default function Footer() {
                   height={36}
                   className="h-10 lg:h-12 w-auto object-contain"
                 />
-              </a>
+              </Link>
               <p className="text-white/40 text-sm leading-relaxed max-w-sm">
                 CroninOrtho provides comprehensive orthodontic and aesthetic
                 care with personalized treatment planning, modern technology,
@@ -108,12 +109,21 @@ export default function Footer() {
               <ul className="space-y-3" role="list">
                 {innerPages.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-white/50 text-sm hover:text-white transition-colors"
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith('/') ? (
+                      <Link
+                        href={link.href}
+                        className="text-white/50 text-sm hover:text-white transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-white/50 text-sm hover:text-white transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -127,12 +137,21 @@ export default function Footer() {
               <ul className="space-y-3" role="list">
                 {utilityPages.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-white/50 text-sm hover:text-white transition-colors"
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith('/') ? (
+                      <Link
+                        href={link.href}
+                        className="text-white/50 text-sm hover:text-white transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-white/50 text-sm hover:text-white transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -156,10 +175,10 @@ export default function Footer() {
               {CONTACT.phoneDisplay}
             </a>
             <a
-              href="mailto:contact@croninortho.com"
+              href={`mailto:${CONTACT.email}`}
               className="text-white/50 text-sm hover:text-white transition-colors"
             >
-              contact@croninortho.com
+              {CONTACT.email}
             </a>
           </div>
         </div>

@@ -12,7 +12,7 @@ export const SITE_URL = 'https://croninortho.com';
 export const CONTACT = {
   phone: '+16045331151',
   phoneDisplay: '(604) 533-1151',
-  email: 'contact@croninortho.com',
+  email: 'info@ronianortho.com',
   address: {
     street: '',
     city: 'Langley',
@@ -32,11 +32,11 @@ export const SOCIAL_LINKS = {
 
 // Office Hours
 export const OFFICE_HOURS = {
-  monday: '9:00 AM - 5:00 PM',
-  tuesday: '9:00 AM - 5:00 PM',
-  wednesday: '9:00 AM - 5:00 PM',
-  thursday: '9:00 AM - 5:00 PM',
-  friday: '9:00 AM - 4:00 PM',
+  monday: '8:00 AM - 5:00 PM',
+  tuesday: '8:00 AM - 5:00 PM',
+  wednesday: '8:00 AM - 5:00 PM',
+  thursday: '8:00 AM - 5:00 PM',
+  friday: 'Closed',
   saturday: 'Closed',
   sunday: 'Closed',
 } as const;

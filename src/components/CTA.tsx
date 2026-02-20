@@ -80,12 +80,6 @@ export default function CTA() {
             className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white text-sm font-medium rounded-full border border-white/30 hover:bg-white/10 transition-colors duration-200"
             aria-label="Call us at (604) 533-1151"
           >
-            <iconify-icon
-              icon="solar:phone-linear"
-              width="18"
-              height="18"
-              aria-hidden="true"
-            />
             Call (604) 533-1151
           </a>
         </div>

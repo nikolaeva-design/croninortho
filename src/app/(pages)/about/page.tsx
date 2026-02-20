@@ -56,10 +56,10 @@ export default function AboutPage() {
             className="flex flex-wrap justify-center gap-4 animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
-            <Button variant="primary" size="lg" href="/contact#contact-form" icon="solar:calendar-add-linear">
+            <Button variant="primary" size="lg" href="/contact#contact-form">
               Book Consultation
             </Button>
-            <Button variant="secondary" size="lg" href="/about/team" icon="solar:users-group-rounded-linear">
+            <Button variant="secondary" size="lg" href="/about/team">
               Meet the Team
             </Button>
           </div>
@@ -74,8 +74,8 @@ export default function AboutPage() {
             <div>
               <p className="text-[#c9a962] text-sm font-medium tracking-wider uppercase mb-4">Our Philosophy</p>
               <h2 className="text-white text-3xl lg:text-4xl font-semibold mb-8">
-                What's Different at Cronin Ortho?
-            </h2>
+                What&apos;s Different at Cronin Ortho?
+              </h2>
               
               <div className="space-y-5">
                 <div className="flex items-start gap-4">

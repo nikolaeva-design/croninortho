@@ -176,10 +176,10 @@ export default function EmergencyPage() {
             </p>
 
             <div className="flex flex-wrap items-center gap-4 mb-6">
-              <Button variant="primary" size="lg" href={`tel:${CONTACT.phone}`} icon="solar:phone-bold">
+              <Button variant="primary" size="lg" href={`tel:${CONTACT.phone}`}>
                 Call Us Now
               </Button>
-              <Button variant="secondary" size="lg" href="/contact#contact-form" icon="solar:calendar-add-linear">
+              <Button variant="secondary" size="lg" href="/contact#contact-form">
                 Schedule Repair
               </Button>
             </div>
@@ -238,9 +238,9 @@ export default function EmergencyPage() {
                 aria-hidden="true"
               />
             </div>
-            <h3 className="text-white text-xl font-semibold mb-3">Don't Wait Too Long</h3>
+            <h3 className="text-white text-xl font-semibold mb-3">Don&apos;t Wait Too Long</h3>
             <p className="text-white/60 leading-relaxed mb-5">
-              After alleviating your discomfort, it's very important that you
+              After alleviating your discomfort, it&apos;s very important that you
               still call our office as soon as possible.
             </p>
             <div className="rounded-2xl bg-red-500/10 border border-red-500/20 p-4">
@@ -363,7 +363,7 @@ export default function EmergencyPage() {
             </div>
             <h3 className="text-white font-semibold mb-2">Wax is Your Friend</h3>
             <p className="text-white/50 text-sm">
-              Put soft wax on any piece that's sticking out or poking you.
+              Put soft wax on any piece that&apos;s sticking out or poking you.
             </p>
           </div>
           <div className="rounded-2xl bg-white/[0.02] border border-white/10 p-6 text-center">
@@ -401,10 +401,10 @@ export default function EmergencyPage() {
         {/* CTA */}
         <div className="mt-12 text-center">
           <p className="text-white/50 text-sm mb-6">
-            Need help now? We're here for you.
+            Need help now? We&apos;re here for you.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button variant="primary" size="lg" href={`tel:${CONTACT.phone}`} icon="solar:phone-bold">
+            <Button variant="primary" size="lg" href={`tel:${CONTACT.phone}`}>
               Call {CONTACT.phoneDisplay}
             </Button>
             <Button variant="secondary" size="lg" href="/patient">

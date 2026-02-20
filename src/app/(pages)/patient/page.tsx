@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/patient' },
 };
 
+const PATIENT_PORTAL_URL =
+  'https://patient-portal-prd-cluster-2.sesamecommunications.com/dcronin/index.html';
+
 const toc = [
   {
     label: 'Financial Information',
@@ -119,25 +122,6 @@ function SectionShell({
   );
 }
 
-function PlaceholderBox({ label }: { label: string }) {
-  return (
-    <div className="rounded-3xl bg-white/[0.03] border border-white/10 overflow-hidden">
-      <div className="aspect-[16/10] flex items-center justify-center">
-        <div className="text-center px-6">
-          <iconify-icon
-            icon="solar:gallery-bold"
-            width="34"
-            height="34"
-            className="text-white/20 mb-2"
-            aria-hidden="true"
-          />
-          <p className="text-white/35 text-sm">{label}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function PatientPage() {
   return (
     <div className="bg-[#0a0a0a] -mt-20">
@@ -179,10 +163,10 @@ export default function PatientPage() {
             </p>
 
             <div className="flex flex-wrap items-center gap-4 mb-6">
-              <Button variant="primary" size="lg" href="#patient-forms" icon="solar:document-add-linear">
+              <Button variant="primary" size="lg" href="#patient-forms">
                 Get Patient Forms
               </Button>
-              <Button variant="secondary" size="lg" href="/contact#contact-form" icon="solar:calendar-add-linear">
+              <Button variant="secondary" size="lg" href="/contact#contact-form">
                 Book a Visit
               </Button>
             </div>
@@ -283,8 +267,8 @@ export default function PatientPage() {
               <p className="text-white/55 leading-relaxed mb-5">
                 Your smile is yours forever, and we want to make it as easy as
                 possible for you to receive the best orthodontic care whenever
-                you need it. We'll work with you to create a payment plan that
-                fits your budget — you'll know what to expect before beginning
+                you need it. We&apos;ll work with you to create a payment plan that
+                fits your budget — you&apos;ll know what to expect before beginning
                 treatment.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -363,14 +347,26 @@ export default function PatientPage() {
 
             <div className="mt-auto pt-8 border-t border-white/10">
               <p className="text-white/45 text-sm mb-4">
-                Don't have an account yet? Sign up to view your information
+                Don&apos;t have an account yet? Sign up to view your information
                 online.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Button variant="primary" size="md" href="#" icon="solar:login-3-linear">
+                <Button
+                  variant="primary"
+                  size="md"
+                  href={PATIENT_PORTAL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Patient Login
                 </Button>
-                <Button variant="secondary" size="md" href="#">
+                <Button
+                  variant="secondary"
+                  size="md"
+                  href={PATIENT_PORTAL_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Create Account
               </Button>
             </div>
@@ -393,7 +389,7 @@ export default function PatientPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {[
             { icon: 'solar:star-shine-bold', step: '01', title: 'Initial Consultation', items: ['Meet our team', 'Complete oral exam & X-rays', 'Review treatment options', 'Discuss costs & payment plans'] },
-            { icon: 'solar:camera-bold', step: '02', title: 'Records & Planning', items: ['Photos & X-rays taken', 'Digital study models', 'Dr. Cronin analyzes data', '~1 hour appointment'] },
+            { icon: 'solar:camera-bold', step: '02', title: 'Records & Planning', items: ['Photos & X-rays taken', 'Digital study models', 'The doctors analyze data', '~1 hour appointment'] },
             { icon: 'solar:calendar-bold', step: '03', title: 'Regular Appointments', items: ['Every 4–8 weeks', 'Flexible scheduling', 'Easy rescheduling', 'Progress check-ins'] },
             { icon: 'solar:health-bold', step: '04', title: 'Dental Checkups', items: ['Continue dentist visits', 'Cleanings every 6 months', 'We coordinate care', 'Routine checkups'] },
           ].map((card) => (
@@ -432,7 +428,7 @@ export default function PatientPage() {
 
         {/* CTA */}
         <div className="mt-8 text-center">
-          <Button variant="primary" size="lg" href="#patient-contact" icon="solar:calendar-add-linear">
+          <Button variant="primary" size="lg" href="#patient-contact">
             Schedule Your Consultation
           </Button>
         </div>
@@ -495,10 +491,22 @@ export default function PatientPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-3 shrink-0">
-              <Button variant="primary" size="lg" href="#" icon="solar:login-3-linear">
+              <Button
+                variant="primary"
+                size="lg"
+                href={PATIENT_PORTAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Patient Login
               </Button>
-              <Button variant="secondary" size="lg" href="#">
+              <Button
+                variant="secondary"
+                size="lg"
+                href={PATIENT_PORTAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Create Account
               </Button>
             </div>
@@ -551,7 +559,9 @@ export default function PatientPage() {
 
           {/* Printable Referral Form */}
           <a
-            href="#"
+            href="/CroninOrtho-Pads-proof.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group rounded-3xl bg-white/[0.03] border border-white/10 hover:border-white/25 transition-all p-7 lg:p-8 text-left"
           >
             <div className="w-14 h-14 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
@@ -586,7 +596,7 @@ export default function PatientPage() {
         <p className="text-white/40 text-sm text-center mt-8">
           Unable to open PDF files?{' '}
           <a
-            href="https://get.adobe.com/reader/"
+            href="https://get.adobe.com/ru/reader/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/55 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white/40 transition-colors"
@@ -667,7 +677,7 @@ export default function PatientPage() {
                   ))}
                 </div>
                 {/* Quote */}
-                <p className="text-white/55 text-sm leading-relaxed flex-1">"{testimonial.quote}"</p>
+                <p className="text-white/55 text-sm leading-relaxed flex-1">“{testimonial.quote}”</p>
                 {/* Author - Always at bottom */}
                 <div className="flex items-center gap-3 mt-auto pt-4 border-t border-white/5">
                   <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium bg-gradient-to-br from-[#c9a962] to-[#d4b978] text-[#0a0a0a]">
@@ -697,7 +707,7 @@ export default function PatientPage() {
                   ))}
                 </div>
                 {/* Quote */}
-                <p className="text-white/55 text-sm leading-relaxed flex-1">"{testimonial.quote}"</p>
+                <p className="text-white/55 text-sm leading-relaxed flex-1">“{testimonial.quote}”</p>
                 {/* Author - Always at bottom */}
                 <div className="flex items-center gap-3 mt-auto pt-4 border-t border-white/5">
                   <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium bg-gradient-to-br from-[#c9a962] to-[#d4b978] text-[#0a0a0a]">

@@ -69,10 +69,10 @@ export default function TermsOfServicePage() {
               If you have any questions about these Terms of Service, please
               contact us at{' '}
               <a
-                href="mailto:contact@croninortho.com"
+                href="mailto:info@ronianortho.com"
                 className="text-accent hover:underline"
               >
-                contact@croninortho.com
+                info@ronianortho.com
               </a>
               .
             </p>

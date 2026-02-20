@@ -6,31 +6,36 @@ import Image from 'next/image';
 const slides = [
   {
     title: 'Facial Balance',
-    description: 'We analyze how your teeth, lips, jaw, and facial structure work together. By aligning your smile with your natural facial proportions, we create results that look balanced, harmonious, and never overdone.',
+    description:
+      'We analyze how your teeth, lips, jaw, and facial structure work together to design a balanced smile that fits your face.',
     image: '/aesthetic-service-1.png',
     imagePosition: 'object-center',
   },
   {
     title: 'Tooth Proportion',
-    description: 'The size, shape, and position of each tooth affect how natural your smile looks. We design your tooth proportions using facial and dental measurements to create a smile that looks refined, natural, and uniquely yours.',
+    description:
+      "We refine tooth size, shape, and position using facial and dental measurements so your smile looks natural, proportional, and uniquely yours.",
     image: '/aesthetic-service-2.png',
     imagePosition: 'object-[70%_center]',
   },
   {
     title: 'Smile Alignment',
-    description: 'We precisely align your teeth to improve smile symmetry, balance your facial features, and support long-term comfort and function. Proper alignment also makes your smile easier to clean and maintain over time.',
+    description:
+      'We align teeth for better symmetry and a healthier bite, improving comfort, function, and long-term maintenance.',
     image: '/aesthetic-service-3.png',
     imagePosition: 'object-center',
   },
   {
     title: 'Gum Aesthetics',
-    description: 'Gum shape and tissue levels frame your teeth and affect how your smile looks. We plan tooth position and gum contours together to create a clean, natural smile line that looks healthy — not artificial.',
+    description:
+      'We shape tooth position and gum contours together to create a clean, natural smile line that looks healthy — not artificial.',
     image: '/gum.png',
     imagePosition: 'object-center',
   },
   {
     title: 'Bite Function',
-    description: 'A stable bite allows your teeth and jaw to work together properly. We correct how your teeth meet to improve comfort, protect your teeth from uneven wear, and support long-term jaw health.',
+    description:
+      'We stabilize how your teeth meet to improve comfort, protect against uneven wear, and support long-term jaw health.',
     image: '/aesthetic-service-4.png',
     imagePosition: 'object-center',
   },
@@ -159,7 +164,15 @@ export default function AestheticServices() {
                   <h3 className="text-white text-2xl lg:text-3xl font-semibold tracking-tight leading-[1.1] mb-3">
                     {slide.title}
                   </h3>
-                  <p className="text-white/60 text-sm lg:text-base leading-relaxed mb-5 max-w-sm">
+                  <p
+                    className="text-white/60 text-sm lg:text-base leading-relaxed mb-5 max-w-sm"
+                    style={{
+                      display: '-webkit-box',
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: 'vertical',
+                      overflow: 'hidden',
+                    }}
+                  >
                     {slide.description}
                   </p>
                   <a 

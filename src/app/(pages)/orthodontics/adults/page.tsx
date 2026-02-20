@@ -96,7 +96,7 @@ const featureSections = [
     number: '01',
     badge: 'Discretion',
     title: 'Treatment That Fits Your Life',
-    subtitle: '— Not the Other Way Around',
+    subtitle: '',
     description: 'As an adult, your time matters. We offer discreet, modern treatment options that fit around your workdays, family life, and social commitments—so you can improve your smile without anyone at work even noticing.',
     features: [
       'Nearly invisible options for meetings & client calls',
@@ -253,6 +253,9 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 
 export default function AdultsOrthodonticsPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [cephImageSrc, setCephImageSrc] = useState(
+    '/12911_2024_2664_Fig1_HTML.webp'
+  );
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -294,7 +297,7 @@ export default function AdultsOrthodonticsPage() {
 
         {/* Content */}
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40 w-full">
-          <div className="max-w-2xl">
+          <div className="w-full lg:w-[70%] max-w-none">
             {/* Badge */}
             <div 
               className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8 animate-fade-in-up opacity-0"
@@ -309,8 +312,7 @@ export default function AdultsOrthodonticsPage() {
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
             >
-              <span className="text-white">The Smile You&apos;ve Always Wanted </span>
-              <span className="text-white/50">— Without Disrupting Your Life</span>
+              <span className="text-white">The Smile You&apos;ve Wanted</span>
             </h1>
 
             {/* Subtitle */}
@@ -323,10 +325,10 @@ export default function AdultsOrthodonticsPage() {
 
             {/* Description */}
             <p 
-              className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl animate-fade-in-up opacity-0"
+              className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 w-full lg:w-[60%] max-w-none animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
             >
-              More adults than ever are choosing orthodontic treatment — not because they have time to spare, but because modern options finally make it easy. Whether you never had braces, your teeth have shifted over time, or you&apos;re ready to invest in yourself, you can start now without putting your life on pause.
+              Modern orthodontics fits your schedule with discreet options. Start now with a plan built around your life.
             </p>
 
             {/* CTAs */}
@@ -337,7 +339,7 @@ export default function AdultsOrthodonticsPage() {
               <Button variant="primary" size="lg" href="/contact#contact-form">
                 Book Consultation
               </Button>
-              <Button variant="secondary" size="lg" href="#treatments" icon="solar:arrow-down-linear">
+              <Button variant="secondary" size="lg" href="#treatments">
                 Learn More
               </Button>
             </div>
@@ -516,7 +518,7 @@ export default function AdultsOrthodonticsPage() {
           {/* CTA */}
           <AnimatedSection delay={400}>
             <div className="mt-10 text-center lg:text-left">
-              <Button variant="secondary" size="md" href="/contact#contact-form" icon="solar:arrow-right-linear">
+              <Button variant="secondary" size="md" href="/contact#contact-form">
                 Schedule Consultation
               </Button>
             </div>
@@ -671,12 +673,19 @@ export default function AdultsOrthodonticsPage() {
             <AnimatedSection>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-black">
                 <Image
-                  src="/skeletal-malocclusion.jpeg"
+                  src={cephImageSrc}
                   alt="Cephalometric X-ray analysis for orthodontic evaluation"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   quality={100}
+                  onError={() =>
+                    setCephImageSrc((current) =>
+                      current === '/skeletal-malocclusion.jpeg'
+                        ? current
+                        : '/skeletal-malocclusion.jpeg'
+                    )
+                  }
                 />
               </div>
             </AnimatedSection>
@@ -685,7 +694,7 @@ export default function AdultsOrthodonticsPage() {
             <AnimatedSection delay={200}>
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6">
                 What to Expect at
-                <span className="text-white/50 block">Your Consultation</span>
+                <span className="text-white/50 block">Your First Visit</span>
               </h2>
               <p className="text-white/50 text-lg mb-12">
                 A relaxed, informative conversation about your goals and options - no pressure, no commitments.
@@ -794,7 +803,7 @@ export default function AdultsOrthodonticsPage() {
                     ))}
                   </div>
 
-                  <Button variant="secondary" size="md" href="/contact#contact-form" icon="solar:arrow-right-linear">
+                  <Button variant="secondary" size="md" href="/contact#contact-form">
                     Get Started
                   </Button>
                 </div>
@@ -967,7 +976,7 @@ export default function AdultsOrthodonticsPage() {
                     <iconify-icon icon="solar:clock-circle-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">Mon-Fri: 9am - 6pm</div>
+                    <div className="text-white font-medium">Mon-Thu: 8am - 5pm</div>
                     <div className="text-white/50 text-sm">Early & late appointments available</div>
                   </div>
                 </div>

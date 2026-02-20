@@ -3,13 +3,13 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 
-// Partner brand logos with image files - arranged in a circle
+// Partner brand logos with image files - arranged in a circle (7 logos total)
 const partnerLogos = [
-  { id: 'sinclair', name: 'Sinclair Orthodontics', image: '/logo-sinclair.png', startX: -30, startY: -22 },
-  { id: '3shape', name: '3Shape', image: '/logo-3shape.png', startX: 0, startY: -28 },
-  { id: 'american-ortho', name: 'American Orthodontics', image: '/logo-american-ortho.png', startX: 30, startY: -22 },
-  { id: 'ivoclar', name: 'Ivoclar', image: '/logo-ivoclar.png', startX: -38, startY: 5 },
-  { id: 'invisalign', name: 'Invisalign', image: '/logo-invisalign.png', startX: 38, startY: 5 },
+  { id: 'ivoclar', name: 'Ivoclar', image: '/logo-ivoclar.png', startX: -30, startY: -22 },
+  { id: 'invisalign', name: 'Invisalign', image: '/logo-american-ortho.png', startX: 0, startY: -28 },
+  { id: '3shape', name: '3Shape', image: '/logo-3shape.png', startX: 30, startY: -22 },
+  { id: 'american-ortho', name: 'American Orthodontics', image: '/logo-ao.png', startX: -38, startY: 5 },
+  { id: 'sinclair-dental', name: 'Sinclair Dental', image: '/sinclair-logo.png', startX: 38, startY: 5 },
   { id: 'itero', name: 'iTero', image: '/terro.png', startX: -25, startY: 25 },
   { id: 'henry-schein', name: 'Henry Schein', image: '/logo-henry-schein.png', startX: 25, startY: 25 },
 ];

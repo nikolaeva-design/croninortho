@@ -190,7 +190,6 @@ export default function SplintsPage() {
                 variant="secondary"
                 size="lg"
                 href="#info"
-                icon="solar:arrow-down-linear"
               >
                 Learn More
               </Button>
@@ -247,12 +246,6 @@ export default function SplintsPage() {
                 className="inline-flex items-center gap-2 text-white/70 text-sm font-medium hover:text-white transition-colors group/link"
               >
                 Request a Consultation
-                <iconify-icon
-                  icon="solar:arrow-right-linear"
-                  width="16"
-                  height="16"
-                  className="transition-transform group-hover/link:translate-x-1"
-                />
               </a>
             </AnimatedSection>
 
@@ -380,12 +373,6 @@ export default function SplintsPage() {
                 className="inline-flex items-center gap-2 text-white/70 text-sm font-medium hover:text-white transition-colors group/link"
               >
                 Request a Consultation
-                <iconify-icon
-                  icon="solar:arrow-right-linear"
-                  width="16"
-                  height="16"
-                  className="transition-transform group-hover/link:translate-x-1"
-                />
               </a>
             </AnimatedSection>
           </div>
@@ -503,7 +490,7 @@ export default function SplintsPage() {
               {/* Contact Info */}
               <div className="space-y-4 mb-8">
                 <a
-                  href="mailto:info@croninortho.com"
+                  href="mailto:info@ronianortho.com"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#c9a962]/30 transition-all group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -517,7 +504,7 @@ export default function SplintsPage() {
                   <div>
                     <div className="text-white/50 text-sm">Email</div>
                     <div className="text-white font-medium">
-                      info@croninortho.com
+                      info@ronianortho.com
                     </div>
                   </div>
                 </a>
