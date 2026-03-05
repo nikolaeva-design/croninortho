@@ -445,12 +445,9 @@ export default function SplintsPage() {
             <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-6">
               Support Jaw Comfort and Function
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
+            <p className="text-white/60 text-lg max-w-2xl mx-auto">
               Don&apos;t let TMJ pain affect your quality of life. Schedule a consultation to learn how a custom splint can help.
             </p>
-            <Button variant="primary" size="lg" href="/contact#contact-form">
-              Request Consultation
-            </Button>
           </AnimatedSection>
         </div>
       </section>

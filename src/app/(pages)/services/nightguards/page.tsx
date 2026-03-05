@@ -444,12 +444,9 @@ export default function NightguardsPage() {
             <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-6">
               Protect Your Teeth While You Sleep
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
+            <p className="text-white/60 text-lg max-w-2xl mx-auto">
               Stop grinding damage before it starts. Schedule a consultation to discuss a custom nightguard that fits your needs.
             </p>
-            <Button variant="primary" size="lg" href="/contact#contact-form">
-              Request Consultation
-            </Button>
           </AnimatedSection>
         </div>
       </section>

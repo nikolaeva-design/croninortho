@@ -436,12 +436,9 @@ export default function RetainersPage() {
             <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-6">
               Protect Your Orthodontic Results
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
+            <p className="text-white/60 text-lg max-w-2xl mx-auto">
               Don&apos;t let your investment go to waste. Schedule a consultation to discuss the best retainer option for maintaining your beautiful smile.
             </p>
-            <Button variant="primary" size="lg" href="/contact#contact-form">
-              Request Consultation
-            </Button>
           </AnimatedSection>
         </div>
       </section>
