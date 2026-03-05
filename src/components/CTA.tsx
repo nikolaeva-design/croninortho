@@ -1,6 +1,3 @@
-'use client';
-
-import React from 'react';
 import Image from 'next/image';
 
 export default function CTA() {
@@ -17,8 +14,8 @@ export default function CTA() {
           fill
           className="object-cover"
           sizes="100vw"
-          quality={85}
-          priority={false}
+          quality={75}
+          loading="lazy"
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/70 sm:bg-black/60" aria-hidden="true" />
@@ -53,6 +50,8 @@ export default function CTA() {
               fill
               className="object-cover"
               sizes="(max-width: 768px) 90vw, 500px"
+              loading="lazy"
+              quality={80}
             />
           </div>
 

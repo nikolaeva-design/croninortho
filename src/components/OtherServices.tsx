@@ -79,9 +79,8 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
             fill
             className="object-contain"
             sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 450px"
-            quality={100}
-            priority
-            unoptimized
+            quality={85}
+            loading="lazy"
           />
         </div>
       </div>

@@ -77,6 +77,8 @@ export default function About() {
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 640px) 60vw, (max-width: 1024px) 55vw, 35vw"
+                loading="lazy"
+                quality={80}
               />
             </div>
 
@@ -88,6 +90,8 @@ export default function About() {
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 640px) 44vw, (max-width: 1024px) 42vw, 35vw"
+                loading="lazy"
+                quality={80}
               />
             </div>
           </div>

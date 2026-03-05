@@ -1,6 +1,3 @@
-'use client';
-
-import React from 'react';
 import Image from 'next/image';
 
 export default function Gallery() {
@@ -26,6 +23,8 @@ export default function Gallery() {
                 fill
                 className="object-contain"
                 sizes="(max-width: 1280px) 100vw, 1280px"
+                loading="lazy"
+                quality={80}
               />
             </div>
           </div>

@@ -90,6 +90,7 @@ export default function LogoSection() {
                     fill
                     className="object-contain"
                     sizes="180px"
+                    loading="lazy"
                   />
                 </div>
               </div>

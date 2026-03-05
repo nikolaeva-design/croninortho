@@ -85,8 +85,8 @@ export default function Technology() {
             fill
             className="object-contain"
             sizes="(max-width: 1024px) 100vw, 768px"
-            priority
-            unoptimized
+            loading="lazy"
+            quality={85}
           />
 
           {/* Inverted Image Overlay - Width controlled by scroll */}
@@ -103,8 +103,8 @@ export default function Technology() {
               className="object-contain"
               style={{ filter: 'invert(1)' }}
               sizes="(max-width: 1024px) 100vw, 768px"
-              priority
-              unoptimized
+              loading="lazy"
+              quality={85}
             />
           </div>
 

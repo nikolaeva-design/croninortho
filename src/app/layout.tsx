@@ -5,9 +5,10 @@ import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
   display: "swap",
+  preload: true,
 });
 
 export const viewport: Viewport = {
@@ -93,10 +94,12 @@ export default function RootLayout({
       <head>
         <Script
           src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"
-          strategy="beforeInteractive"
+          strategy="lazyOnload"
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="preconnect" href="https://code.iconify.design" />
+        <link rel="dns-prefetch" href="https://code.iconify.design" />
       </head>
       <body
         className={`${poppins.variable} font-poppins antialiased bg-background text-foreground`}

@@ -42,6 +42,8 @@ export default function Footer() {
             fill
             className="object-cover object-center"
             sizes="100vw"
+            loading="lazy"
+            quality={80}
           />
           {/* Bottom gradient - blends with footer */}
           <div

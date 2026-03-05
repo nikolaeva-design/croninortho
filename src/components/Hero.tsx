@@ -17,9 +17,8 @@ export default function Hero() {
           fill
           className="object-cover object-center"
           priority
-          quality={100}
+          quality={85}
           sizes="100vw"
-          unoptimized
         />
         <div
           className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"

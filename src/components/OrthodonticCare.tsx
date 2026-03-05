@@ -98,6 +98,8 @@ export default function OrthodonticCare() {
                   fill
                   className={`object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${isActive ? 'scale-100' : 'scale-110'}`}
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
+                  quality={80}
                 />
                 
                 {/* Gradient Overlays */}

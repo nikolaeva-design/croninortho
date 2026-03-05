@@ -153,7 +153,8 @@ export default function AestheticServices() {
                     src={slide.image}
                     alt={slide.title}
                     fill
-                    quality={90}
+                    quality={80}
+                    loading="lazy"
                     className={`object-cover ${slide.imagePosition} brightness-75`}
                     sizes="(max-width: 640px) 85vw, (max-width: 1024px) 70vw, 45vw"
                   />
