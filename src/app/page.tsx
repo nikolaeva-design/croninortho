@@ -6,6 +6,7 @@ import OtherServices from '@/components/OtherServices';
 import CTA from '@/components/CTA';
 import About from '@/components/About';
 import Technology from '@/components/Technology';
+import Location from '@/components/Location';
 import LogoSection from '@/components/LogoSection';
 import Footer from '@/components/Footer';
 

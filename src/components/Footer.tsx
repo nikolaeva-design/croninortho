@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { CONTACT } from '@/lib/constants';
+import Location from './Location';
 
 const innerPages = [
   { label: 'Home', href: '/' },
@@ -66,7 +67,7 @@ export default function Footer() {
               href="/contact#contact-form"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#141414] text-sm font-semibold rounded-full hover:bg-white/90 transition-all duration-300 mb-4"
             >
-              Book Your Free Consultation →
+              Book Free Consultation →
             </Link>
             <p className="text-white/40 text-sm">
               ✓ Complimentary consultation · ✓ Personalized plan · ✓ No obligation
@@ -75,12 +76,15 @@ export default function Footer() {
         </div>
       )}
 
+      {/* Location Section */}
+      {!hideCTA && <Location />}
+
       {/* Main Footer */}
-      <div className="bg-[#141414] border-t border-white/5 py-16 lg:py-20">
+      <div className="bg-[#141414] border-t border-white/5 py-12 sm:py-16 lg:py-20">
         <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8">
             {/* Logo & Description */}
-            <div className="lg:col-span-4">
+            <div className="col-span-2 sm:col-span-2 lg:col-span-4">
               <Link
                 href="/"
                 className="inline-block mb-4"
@@ -91,10 +95,34 @@ export default function Footer() {
                   alt="CroninOrtho Logo"
                   width={180}
                   height={36}
-                  className="h-10 lg:h-12 w-auto object-contain"
+                  className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
                 />
               </Link>
-              <p className="text-white/40 text-sm leading-relaxed max-w-sm">
+              
+              {/* Address */}
+              <div className="mb-3">
+                <div className="flex items-start gap-2">
+                  <iconify-icon icon="solar:map-point-bold" width="14" height="14" className="text-[#c9a962] mt-0.5" />
+                  <p className="text-white/60 text-xs sm:text-sm leading-relaxed">
+                    {CONTACT.address.street}
+                    <br />
+                    {CONTACT.address.city}, {CONTACT.address.state} {CONTACT.address.zip}, {CONTACT.address.country}
+                  </p>
+                </div>
+              </div>
+              
+              {/* Phone */}
+              <div className="mb-4">
+                <a
+                  href={`tel:${CONTACT.phone}`}
+                  className="text-white/60 text-xs sm:text-sm hover:text-white transition-colors flex items-center gap-2"
+                >
+                  <iconify-icon icon="solar:phone-bold" width="14" height="14" className="text-[#c9a962]" />
+                  {CONTACT.phoneDisplay}
+                </a>
+              </div>
+              
+              <p className="text-white/40 text-xs sm:text-sm leading-relaxed max-w-sm">
                 CroninOrtho provides comprehensive orthodontic and aesthetic
                 care with personalized treatment planning, modern technology,
                 and a patient-centered approach.
@@ -102,24 +130,24 @@ export default function Footer() {
             </div>
 
             {/* Inner Pages */}
-            <nav className="lg:col-span-2 lg:col-start-7" aria-label="Main navigation">
-              <h3 className="text-white text-sm font-semibold mb-6">
+            <nav className="col-span-1 lg:col-span-2 lg:col-start-7" aria-label="Main navigation">
+              <h3 className="text-white text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
                 Inner Pages
               </h3>
-              <ul className="space-y-3" role="list">
+              <ul className="space-y-2 sm:space-y-3" role="list">
                 {innerPages.map((link) => (
                   <li key={link.label}>
                     {link.href.startsWith('/') ? (
                       <Link
                         href={link.href}
-                        className="text-white/50 text-sm hover:text-white transition-colors"
+                        className="text-white/50 text-xs sm:text-sm hover:text-white transition-colors"
                       >
                         {link.label}
                       </Link>
                     ) : (
                       <a
                         href={link.href}
-                        className="text-white/50 text-sm hover:text-white transition-colors"
+                        className="text-white/50 text-xs sm:text-sm hover:text-white transition-colors"
                       >
                         {link.label}
                       </a>
@@ -130,24 +158,24 @@ export default function Footer() {
             </nav>
 
             {/* Utility Pages */}
-            <nav className="lg:col-span-3 lg:col-start-10" aria-label="Utility pages">
-              <h3 className="text-white text-sm font-semibold mb-6">
+            <nav className="col-span-1 lg:col-span-3 lg:col-start-10" aria-label="Utility pages">
+              <h3 className="text-white text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
                 Utility Pages
               </h3>
-              <ul className="space-y-3" role="list">
+              <ul className="space-y-2 sm:space-y-3" role="list">
                 {utilityPages.map((link) => (
                   <li key={link.label}>
                     {link.href.startsWith('/') ? (
                       <Link
                         href={link.href}
-                        className="text-white/50 text-sm hover:text-white transition-colors"
+                        className="text-white/50 text-xs sm:text-sm hover:text-white transition-colors"
                       >
                         {link.label}
                       </Link>
                     ) : (
                       <a
                         href={link.href}
-                        className="text-white/50 text-sm hover:text-white transition-colors"
+                        className="text-white/50 text-xs sm:text-sm hover:text-white transition-colors"
                       >
                         {link.label}
                       </a>
@@ -161,22 +189,22 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-[#141414] border-t border-white/5 py-6">
-        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/30 text-sm">
+      <div className="bg-[#141414] border-t border-white/5 py-4 sm:py-6">
+        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+          <p className="text-white/30 text-xs sm:text-sm text-center sm:text-left">
             © {new Date().getFullYear()} CroninOrtho. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
             <a
               href={`tel:${CONTACT.phone}`}
-              className="text-white/50 text-sm hover:text-white transition-colors flex items-center gap-2"
+              className="text-white/50 text-xs sm:text-sm hover:text-white transition-colors flex items-center gap-2"
             >
-              <iconify-icon icon="solar:phone-bold" width="16" height="16" />
+              <iconify-icon icon="solar:phone-bold" width="14" height="14" className="sm:w-4 sm:h-4" />
               {CONTACT.phoneDisplay}
             </a>
             <a
               href={`mailto:${CONTACT.email}`}
-              className="text-white/50 text-sm hover:text-white transition-colors"
+              className="text-white/50 text-xs sm:text-sm hover:text-white transition-colors"
             >
               {CONTACT.email}
             </a>

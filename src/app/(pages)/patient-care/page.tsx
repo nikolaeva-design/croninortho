@@ -20,19 +20,19 @@ const videos = [
     title: 'Flossing with Braces',
     description: 'Step-by-step guide on how to effectively floss around brackets and wires.',
     duration: '4:20',
-    url: 'https://www.youtube.com/watch?v=kMWxevSctIU',
+    url: 'https://www.youtube.com/watch?v=cXTbw223zSg',
   },
   {
     title: 'Using Orthodontic Wax',
     description: 'How to apply wax to brackets and wires to prevent irritation and sore spots.',
     duration: '2:15',
-    url: 'https://www.youtube.com/watch?v=tURq-O83JBM',
+    url: 'https://www.youtube.com/watch?v=TbCQ2YGgE4A',
   },
   {
     title: 'Caring for Your Aligners',
     description: 'Best practices for cleaning and maintaining your clear aligners for optimal results.',
     duration: '3:30',
-    url: 'https://www.youtube.com/watch?v=xqXu3tJ3ZLk',
+    url: 'https://www.youtube.com/watch?v=05wKK5MrEs8',
   },
   {
     title: 'How to Brush with Braces',
@@ -108,7 +108,7 @@ export default function PatientCarePage() {
       <section className="py-20 lg:py-28 bg-[#0f0f0f]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {videos.map((video, idx) => {
+            {videos.slice(0, 3).map((video, idx) => {
               const embedUrl = getYouTubeEmbedUrl(video.url);
 
               return (

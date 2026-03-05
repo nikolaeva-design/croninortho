@@ -9,7 +9,7 @@ const credentials = [
   { label: 'Education', value: 'BDS, MSc' },
   { label: 'Training', value: 'UBC Ortho' },
   { label: 'Specialty', value: 'Orthodontics' },
-  { label: 'Location', value: 'Langley, BC' },
+  { label: 'Location', value: 'Langley Twp, BC' },
 ];
 
 // Memberships
@@ -147,11 +147,8 @@ export default function DrMoPage() {
             className="flex flex-wrap justify-center gap-4 animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
-            <Button variant="primary" size="lg" href="/contact#contact-form">
-              Schedule a Consultation
-            </Button>
-            <Button variant="secondary" size="lg" href="#about">
-              Learn More
+            <Button variant="secondary" size="lg" href="/about/team">
+              Meet the Team
             </Button>
           </div>
         </div>
@@ -279,11 +276,11 @@ export default function DrMoPage() {
                 <h3 className="text-white text-xl font-semibold mb-4">Questions or want to connect?</h3>
                 <p className="text-white/60 mb-6">Reach out to Dr. Mo directly at:</p>
                 <a 
-                  href="mailto:frontes@croninortho.com" 
+                  href="mailto:Drmo@croninortho.com" 
                   className="inline-flex items-center gap-3 text-[#c9a962] text-xl font-semibold hover:text-white transition-colors"
                 >
                   <iconify-icon icon="solar:letter-bold" width="24" height="24" />
-                  frontes@croninortho.com
+                  Drmo@croninortho.com
                 </a>
               </div>
             </div>
@@ -408,13 +405,6 @@ export default function DrMoPage() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Section CTA */}
-          <div className="mt-12 lg:mt-16 flex justify-center">
-            <Button variant="secondary" size="lg" href="/contact#contact-form">
-              Discuss Your Treatment Options
-            </Button>
           </div>
         </div>
       </section>
@@ -543,8 +533,7 @@ export default function DrMoPage() {
                     <iconify-icon icon="solar:map-point-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">Langley, BC</div>
-                    <div className="text-white/50 text-sm">Canada</div>
+                    <div className="text-white font-medium">6351 197 St #101, Langley Twp, BC V2Y 1X8, Canada</div>
                   </div>
                 </div>
               </div>

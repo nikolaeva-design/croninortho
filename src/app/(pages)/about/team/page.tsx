@@ -319,7 +319,7 @@ export default function TeamPage() {
               Our team is here to welcome you and provide the personalized, caring orthodontic experience you deserve. Schedule your consultation today!
             </p>
             <Button variant="primary" size="lg" href="/contact#contact-form">
-              Schedule a Consultation
+              Book Free Consultation
             </Button>
           </div>
         </div>

@@ -299,7 +299,7 @@ export default function AestheticsPage() {
   return (
     <div className="bg-[#0a0a0a] -mt-20">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+      <section className="relative min-h-[80vh] sm:min-h-screen flex items-center overflow-hidden pt-20">
         {/* Background with gradient overlay */}
         <div className="absolute inset-0">
           <Image
@@ -311,27 +311,27 @@ export default function AestheticsPage() {
             quality={90}
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 sm:from-black/80 via-black/70 sm:via-black/60 to-black/40 sm:to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
         </div>
 
         {/* Content */}
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40 w-full">
+        <div className="relative max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 py-20 sm:py-32 lg:py-40 w-full">
           <div className="max-w-2xl">
             {/* Badge */}
             <div
-              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8 animate-fade-in-up opacity-0"
+              className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-6 sm:mb-8 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
             >
               <span className="w-2 h-2 rounded-full bg-[#c9a962] animate-pulse-glow" />
-              <span className="text-white/90 text-sm font-medium">
+              <span className="text-white/90 text-xs sm:text-sm font-medium">
                 Aesthetic Excellence
               </span>
             </div>
 
             {/* Title */}
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6 animate-fade-in-up opacity-0"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-4 sm:mb-6 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
             >
               <span className="text-white">Aesthetic </span>
@@ -340,7 +340,7 @@ export default function AestheticsPage() {
 
             {/* Description */}
             <p
-              className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg animate-fade-in-up opacity-0"
+              className="text-white/60 text-base sm:text-lg lg:text-xl leading-relaxed mb-8 sm:mb-10 max-w-lg animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
             >
               More than just straight teeth — a comprehensive approach to smile
@@ -349,11 +349,11 @@ export default function AestheticsPage() {
 
             {/* CTAs */}
             <div
-              className="flex flex-wrap gap-4 animate-fade-in-up opacity-0"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
               <Button variant="primary" size="lg" href="/contact#contact-form">
-                Book Consultation
+                Book Free Consultation
               </Button>
               <Button
                 variant="secondary"
@@ -368,7 +368,7 @@ export default function AestheticsPage() {
 
         {/* Scroll Indicator */}
         <button
-          className="absolute bottom-8 left-0 right-0 mx-auto w-fit z-10 scroll-indicator p-3 rounded-full hover:bg-white/10 transition-colors"
+          className="absolute bottom-4 sm:bottom-8 left-0 right-0 mx-auto w-fit z-10 scroll-indicator p-2 sm:p-3 rounded-full hover:bg-white/10 transition-colors"
           onClick={() =>
             document
               .getElementById('smile-components')
@@ -378,9 +378,9 @@ export default function AestheticsPage() {
         >
           <iconify-icon
             icon="solar:alt-arrow-down-linear"
-            width="24"
-            height="24"
-            className="text-white/50"
+            width="20"
+            height="20"
+            className="text-white/50 sm:w-6 sm:h-6"
           />
         </button>
       </section>
@@ -654,7 +654,7 @@ export default function AestheticsPage() {
               {/* Contact Info */}
               <div className="space-y-4 mb-8">
                 <a
-                  href="mailto:info@ronianortho.com"
+                  href="mailto:info@croninortho.com"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#c9a962]/30 transition-all group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -668,7 +668,7 @@ export default function AestheticsPage() {
                   <div>
                     <div className="text-white/50 text-sm">Email</div>
                     <div className="text-white font-medium">
-                      info@ronianortho.com
+                      info@croninortho.com
                     </div>
                   </div>
                 </a>
@@ -703,7 +703,7 @@ export default function AestheticsPage() {
                   <div>
                     <div className="text-white/50 text-sm">Address</div>
                     <div className="text-white font-medium">
-                      Langley, BC, Canada
+                      6351 197 St #101, Langley Twp, BC V2Y 1X8, Canada
                     </div>
                   </div>
                 </div>

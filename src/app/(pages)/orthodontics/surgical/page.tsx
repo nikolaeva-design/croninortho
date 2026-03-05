@@ -199,7 +199,7 @@ export default function SurgicalOrthodonticsPage() {
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
               <Button variant="primary" size="lg" href="/contact#contact-form">
-                Book Consultation
+                Book Free Consultation
               </Button>
             </div>
           </div>
@@ -236,7 +236,7 @@ export default function SurgicalOrthodonticsPage() {
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button variant="primary" size="md" href="/contact#contact-form">
-                  Schedule Evaluation
+                  Book Free Consultation
                 </Button>
               </div>
             </AnimatedSection>
@@ -434,7 +434,7 @@ export default function SurgicalOrthodonticsPage() {
               Schedule a consultation to find out if surgical orthodontics is right for you.
             </p>
             <Button variant="primary" size="lg" href="/contact#contact-form">
-              Book Consultation
+              Book Free Consultation
             </Button>
           </AnimatedSection>
         </div>

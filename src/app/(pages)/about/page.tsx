@@ -48,7 +48,7 @@ export default function AboutPage() {
             className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-2xl mx-auto animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
           >
-            One person at a time! At Cronin Ortho, Dr. Don Cronin and our team treat patients with respect, professionalism, and sensitivity to unique needs.
+            One person at a time! At Cronin Ortho, Dr. Cronin, Dr. Mo, and our team treat patients with respect, professionalism, and sensitivity to unique needs.
           </p>
 
           {/* CTA */}
@@ -57,7 +57,7 @@ export default function AboutPage() {
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
             <Button variant="primary" size="lg" href="/contact#contact-form">
-              Book Consultation
+              Book Free Consultation
             </Button>
             <Button variant="secondary" size="lg" href="/about/team">
               Meet the Team
@@ -76,6 +76,9 @@ export default function AboutPage() {
               <h2 className="text-white text-3xl lg:text-4xl font-semibold mb-8">
                 What&apos;s Different at Cronin Ortho?
               </h2>
+              <p className="text-white/70 text-lg mb-6 leading-relaxed">
+                Dr. Cronin, Dr. Mo, and our dedicated team work together to provide exceptional orthodontic care.
+              </p>
               
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
@@ -128,7 +131,7 @@ export default function AboutPage() {
                 Advanced Orthodontics with a Personal Touch
                     </h3>
               <p className="text-white/55 leading-relaxed">
-                We focus on oral health and facial aesthetics, but never forget you—the person who owns the smile. Treatment tailored to your concerns, focused on comfort and results.
+                Dr. Cronin, Dr. Mo, and our team focus on oral health and facial aesthetics, but never forget you—the person who owns the smile. Treatment tailored to your concerns, focused on comfort and results.
                     </p>
                   </div>
           </div>

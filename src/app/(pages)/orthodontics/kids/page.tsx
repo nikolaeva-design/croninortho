@@ -288,7 +288,7 @@ export default function KidsOrthodonticsPage() {
   return (
     <div className="bg-[#0a0a0a] -mt-20">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+      <section className="relative min-h-[80vh] sm:min-h-screen flex items-center overflow-hidden pt-20">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -301,34 +301,34 @@ export default function KidsOrthodonticsPage() {
             sizes="100vw"
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 sm:from-black/70 via-black/50 sm:via-black/40 to-black/30 sm:to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
         </div>
 
         {/* Content */}
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40 w-full">
+        <div className="relative max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 py-20 sm:py-32 lg:py-40 w-full">
           <div className="max-w-2xl">
             {/* Badge */}
             <div 
-              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8 animate-fade-in-up opacity-0"
+              className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-6 sm:mb-8 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
             >
               <span className="w-2 h-2 rounded-full bg-[#c9a962] animate-pulse-glow" />
-              <span className="text-white/90 text-sm font-medium">Ages 7–12 • Early Intervention</span>
+              <span className="text-white/90 text-xs sm:text-sm font-medium">Ages 7–12 • Early Intervention</span>
             </div>
 
             {/* Title */}
             <h1 
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6 animate-fade-in-up opacity-0"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-4 sm:mb-6 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
             >
               <span className="text-white">Kids Orthodontics </span>
-              <span className="text-white/50">(Ages 7–12)</span>
+              <span className="text-white/50 block sm:inline">(Ages 7–12)</span>
             </h1>
 
             {/* Description */}
             <p 
-              className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg animate-fade-in-up opacity-0"
+              className="text-white/60 text-base sm:text-lg lg:text-xl leading-relaxed mb-8 sm:mb-10 max-w-lg animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
             >
               Gentle early treatment to guide healthy growth and prevent bigger problems later.
@@ -336,11 +336,11 @@ export default function KidsOrthodonticsPage() {
 
             {/* CTAs */}
             <div 
-              className="flex items-center gap-3 animate-fade-in-up opacity-0"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
               <Button variant="primary" size="lg" href="/contact#contact-form">
-                Book Consultation
+                Book Free Consultation
               </Button>
               <Button variant="secondary" size="lg" href="#info">
                 Learn More
@@ -351,11 +351,11 @@ export default function KidsOrthodonticsPage() {
 
         {/* Scroll Indicator */}
         <button
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator p-3 rounded-full hover:bg-white/10 transition-colors"
+          className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator p-2 sm:p-3 rounded-full hover:bg-white/10 transition-colors"
           onClick={() => document.getElementById('info')?.scrollIntoView({ behavior: 'smooth' })}
           aria-label="Scroll down"
         >
-          <iconify-icon icon="solar:alt-arrow-down-linear" width="24" height="24" className="text-white/50" />
+          <iconify-icon icon="solar:alt-arrow-down-linear" width="20" height="20" className="text-white/50 sm:w-6 sm:h-6" />
         </button>
       </section>
 
@@ -378,12 +378,6 @@ export default function KidsOrthodonticsPage() {
                   Early evaluations don&apos;t always mean early braces. Sometimes, the best care is simply watching growth and stepping in at the perfect time—so treatment can be shorter, easier, and more comfortable later on.
             </p>
           </div>
-              <div className="flex flex-col items-start gap-2">
-                <Button variant="primary" size="sm" href="/contact#contact-form" className="w-fit">
-                  Check My Child&apos;s Smile
-                </Button>
-                <p className="text-white/40 text-sm">Quick records • No commitment • Just expert clarity</p>
-              </div>
             </AnimatedSection>
 
             {/* Right - Image */}
@@ -515,16 +509,6 @@ export default function KidsOrthodonticsPage() {
               </div>
             </AnimatedSection>
           </div>
-
-          {/* CTA */}
-          <AnimatedSection delay={400}>
-            <div className="mt-10 text-center lg:text-left">
-              <p className="text-white/60 text-base mb-4">Worried this might be your child?</p>
-              <Button variant="secondary" size="md" href="/contact#contact-form">
-                Check Their Smile
-              </Button>
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 
@@ -735,7 +719,7 @@ export default function KidsOrthodonticsPage() {
 
               <div className="mt-10">
                 <Button variant="primary" size="md" href="/contact#contact-form">
-                  Book Your Visit
+                  Book Free Consultation
                 </Button>
               </div>
             </AnimatedSection>
@@ -805,10 +789,6 @@ export default function KidsOrthodonticsPage() {
                       </span>
                     ))}
                   </div>
-
-                  <Button variant="secondary" size="md" href="/contact#contact-form">
-                    Get Started
-                  </Button>
                 </div>
               </AnimatedSection>
             </div>
@@ -817,15 +797,15 @@ export default function KidsOrthodonticsPage() {
       ))}
 
       {/* Testimonials Section */}
-      <section className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-16 sm:py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12">
           <AnimatedSection>
-            <div className="text-center mb-12 lg:mb-16">
-              <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-4">
+            <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+              <h2 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-3 sm:mb-4">
                 What Parents
                 <span className="text-white/50 block">Are Saying</span>
               </h2>
-              <p className="text-white/50 text-lg max-w-2xl mx-auto">
+              <p className="text-white/50 text-sm sm:text-lg max-w-2xl mx-auto">
                 Don&apos;t just take our word for it — hear from families who&apos;ve experienced the difference.
               </p>
             </div>
@@ -834,33 +814,33 @@ export default function KidsOrthodonticsPage() {
 
         {/* Infinite Marquee */}
         <div className="overflow-hidden">
-          <div className="flex animate-marquee gap-6">
+          <div className="flex animate-marquee gap-4 sm:gap-6">
             {/* First set of testimonials */}
             {testimonials.map((testimonial, idx) => (
               <div
                 key={`first-${idx}`}
-                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[360px]"
+                className="shrink-0 w-[300px] sm:w-[400px] p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[300px] sm:h-[360px]"
               >
                 {/* Rating */}
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-1 mb-3 sm:mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <iconify-icon key={i} icon="solar:star-bold" width="18" height="18" className="text-[#c9a962]" />
+                    <iconify-icon key={i} icon="solar:star-bold" width="16" height="16" className="text-[#c9a962] sm:w-[18px] sm:h-[18px]" />
                   ))}
                 </div>
                 
                 {/* Quote */}
-                <p className="text-white/70 text-sm leading-relaxed flex-1 overflow-hidden">
+                <p className="text-white/70 text-xs sm:text-sm leading-relaxed flex-1 overflow-hidden">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 
                 {/* Author - Always at bottom */}
-                <div className="flex items-center gap-3 mt-auto pt-6 border-t border-white/5">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white text-sm font-semibold">
+                <div className="flex items-center gap-2 sm:gap-3 mt-auto pt-4 sm:pt-6 border-t border-white/5">
+                  <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white text-xs sm:text-sm font-semibold">
                     {testimonial.avatar}
                   </div>
                   <div>
-                    <div className="text-white font-medium text-sm">{testimonial.author}</div>
-                    <div className="text-white/50 text-xs">{testimonial.role}</div>
+                    <div className="text-white font-medium text-xs sm:text-sm">{testimonial.author}</div>
+                    <div className="text-white/50 text-[10px] sm:text-xs">{testimonial.role}</div>
                   </div>
                 </div>
               </div>
@@ -869,28 +849,28 @@ export default function KidsOrthodonticsPage() {
             {testimonials.map((testimonial, idx) => (
               <div
                 key={`second-${idx}`}
-                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[360px]"
+                className="shrink-0 w-[300px] sm:w-[400px] p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[300px] sm:h-[360px]"
               >
                 {/* Rating */}
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-1 mb-3 sm:mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <iconify-icon key={i} icon="solar:star-bold" width="18" height="18" className="text-[#c9a962]" />
+                    <iconify-icon key={i} icon="solar:star-bold" width="16" height="16" className="text-[#c9a962] sm:w-[18px] sm:h-[18px]" />
                   ))}
                 </div>
                 
                 {/* Quote */}
-                <p className="text-white/70 text-sm leading-relaxed flex-1 overflow-hidden">
+                <p className="text-white/70 text-xs sm:text-sm leading-relaxed flex-1 overflow-hidden">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 
                 {/* Author - Always at bottom */}
-                <div className="flex items-center gap-3 mt-auto pt-6 border-t border-white/5">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white text-sm font-semibold">
+                <div className="flex items-center gap-2 sm:gap-3 mt-auto pt-4 sm:pt-6 border-t border-white/5">
+                  <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white text-xs sm:text-sm font-semibold">
                     {testimonial.avatar}
                   </div>
                   <div>
-                    <div className="text-white font-medium text-sm">{testimonial.author}</div>
-                    <div className="text-white/50 text-xs">{testimonial.role}</div>
+                    <div className="text-white font-medium text-xs sm:text-sm">{testimonial.author}</div>
+                    <div className="text-white/50 text-[10px] sm:text-xs">{testimonial.role}</div>
                   </div>
                 </div>
               </div>
@@ -988,8 +968,7 @@ export default function KidsOrthodonticsPage() {
                     <iconify-icon icon="solar:map-point-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">Langley, BC</div>
-                    <div className="text-white/50 text-sm">Canada</div>
+                    <div className="text-white font-medium">6351 197 St #101, Langley Twp, BC V2Y 1X8, Canada</div>
                   </div>
                 </div>
               </div>
@@ -1045,6 +1024,7 @@ export default function KidsOrthodonticsPage() {
                       {[...Array(6)].map((_, i) => (
                         <option key={i + 7} value={i + 7} className="bg-[#1a1a1a]">{i + 7} years old</option>
                       ))}
+                      <option value="other" className="bg-[#1a1a1a]">Other</option>
                     </select>
                   </div>
                   <div>
@@ -1085,9 +1065,9 @@ export default function KidsOrthodonticsPage() {
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#c9a962] transition-colors"
                   >
                     <option value="" className="bg-[#1a1a1a]">Select preferred time</option>
-                    <option value="morning" className="bg-[#1a1a1a]">Morning (9am - 12pm)</option>
+                    <option value="morning" className="bg-[#1a1a1a]">Morning (8am - 12pm)</option>
                     <option value="afternoon" className="bg-[#1a1a1a]">Afternoon (12pm - 3pm)</option>
-                    <option value="evening" className="bg-[#1a1a1a]">Late Afternoon (3pm - 6pm)</option>
+                    <option value="late-afternoon" className="bg-[#1a1a1a]">Late Afternoon (3pm - 5pm)</option>
                   </select>
                 </div>
 

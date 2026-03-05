@@ -77,7 +77,7 @@ export default function OrthodonticCare() {
         </div>
 
         {/* Accordion Cards */}
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-5 h-auto lg:h-[550px]">
+        <div className="flex flex-col lg:flex-row gap-3 lg:gap-5 h-auto lg:h-[550px]">
           {careTypes.map((care) => {
             const isActive = activeId === care.id;
             
@@ -85,11 +85,11 @@ export default function OrthodonticCare() {
               <div
                 key={care.id}
                 onClick={() => setActiveId(care.id)}
-                className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-[800ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[flex] ${
+                className={`relative rounded-2xl lg:rounded-3xl overflow-hidden cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[flex,height] ${
                   isActive 
                     ? 'lg:flex-[3] flex-1' 
                     : 'lg:flex-[0.8] flex-none lg:hover:flex-[1]'
-                } ${!isActive ? 'h-24 lg:h-auto' : 'h-auto min-h-[450px] lg:min-h-0'}`}
+                } ${!isActive ? 'h-20 sm:h-24 lg:h-auto' : 'h-auto min-h-[420px] sm:min-h-[450px] lg:min-h-0'}`}
               >
                 {/* Background Image */}
                 <Image
@@ -115,13 +115,13 @@ export default function OrthodonticCare() {
                   isActive ? 'opacity-0 scale-95 pointer-events-none' : 'opacity-100 scale-100 delay-200'
                 }`}>
                   {/* Mobile: Horizontal layout */}
-                  <div className="lg:hidden flex items-center gap-4 px-6">
-                    <span className="text-white/50 text-2xl font-light">{care.number}</span>
-                    <div>
-                      <h3 className="text-white text-lg font-bold">{care.title}</h3>
-                      <p className="text-white/50 text-sm">{care.subtitle}</p>
+                  <div className="lg:hidden flex items-center gap-3 sm:gap-4 px-4 sm:px-6 w-full">
+                    <span className="text-white/50 text-xl sm:text-2xl font-light shrink-0">{care.number}</span>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-white text-base sm:text-lg font-bold truncate">{care.title}</h3>
+                      <p className="text-white/50 text-xs sm:text-sm truncate">{care.subtitle}</p>
                     </div>
-                    <iconify-icon icon="solar:alt-arrow-down-linear" width="24" height="24" className="text-white/50 ml-auto" />
+                    <iconify-icon icon="solar:alt-arrow-down-linear" width="20" height="20" className="text-white/50 shrink-0" />
                   </div>
                   
                   {/* Desktop: Horizontal title */}
@@ -133,7 +133,7 @@ export default function OrthodonticCare() {
                 </div>
 
                 {/* Expanded State - Full Content */}
-                <div className={`absolute inset-0 flex flex-col justify-end p-8 lg:p-10 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                <div className={`absolute inset-0 flex flex-col justify-end p-5 sm:p-8 lg:p-10 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                   isActive ? 'opacity-100 translate-y-0 delay-150' : 'opacity-0 translate-y-6 pointer-events-none'
                 }`}>
                   {/* Hero-style Badge Overlay */}
@@ -167,32 +167,32 @@ export default function OrthodonticCare() {
                   </div>
 
                   {/* Number (Mobile or default) */}
-                  <span className={`text-white/40 text-5xl lg:text-6xl font-light mb-4 ${isActive ? 'md:hidden' : ''}`}>
+                  <span className={`text-white/40 text-4xl sm:text-5xl lg:text-6xl font-light mb-3 sm:mb-4 ${isActive ? 'md:hidden' : ''}`}>
                     {care.number}
                   </span>
                   
                   {/* Title */}
-                  <h3 className="text-white text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight">
+                  <h3 className="text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight">
                     {care.title} Orthodontics
                   </h3>
                   
                   {/* Age Badge */}
-                  <div className="inline-flex items-center gap-2 mt-4 mb-6">
+                  <div className="inline-flex items-center gap-2 mt-3 sm:mt-4 mb-4 sm:mb-6">
                     <div className="w-2 h-2 rounded-full bg-accent" />
-                    <span className="text-white/60 text-sm font-medium">{care.age}</span>
+                    <span className="text-white/60 text-xs sm:text-sm font-medium">{care.age}</span>
                   </div>
                   
                   {/* Description */}
-                  <p className="text-white/60 text-base lg:text-lg leading-relaxed max-w-md mb-6">
+                  <p className="text-white/60 text-sm sm:text-base lg:text-lg leading-relaxed max-w-md mb-4 sm:mb-6">
                     {care.description}
                   </p>
                   
                   {/* Features */}
-                  <div className="flex flex-wrap gap-2 mb-8">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
                     {care.features.map((feature) => (
                       <span
                         key={feature}
-                        className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white/80 text-sm"
+                        className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white/80 text-xs sm:text-sm"
                       >
                         {feature}
                       </span>

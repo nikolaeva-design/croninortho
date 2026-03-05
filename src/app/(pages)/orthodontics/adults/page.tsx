@@ -304,7 +304,7 @@ export default function AdultsOrthodonticsPage() {
               style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
             >
               <span className="w-2 h-2 rounded-full bg-[#c9a962] animate-pulse-glow" />
-              <span className="text-white/90 text-sm font-medium">Ages 20+ • Discreet Solutions</span>
+              <span className="text-white/90 text-sm font-medium">Ages 20+ • Ideal Solutions</span>
             </div>
 
             {/* Title */}
@@ -337,7 +337,7 @@ export default function AdultsOrthodonticsPage() {
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
               <Button variant="primary" size="lg" href="/contact#contact-form">
-                Book Consultation
+                Book Free Consultation
               </Button>
               <Button variant="secondary" size="lg" href="#treatments">
                 Learn More
@@ -379,14 +379,6 @@ export default function AdultsOrthodonticsPage() {
             </p>
           </div>
               <p className="text-white/50 text-sm italic mb-6">Most adults tell us: &quot;I wish I hadn&apos;t waited so long — it was easier than I thought.&quot;</p>
-              <div className="flex flex-wrap gap-4">
-                <Button variant="primary" size="md" href="/contact#contact-form">
-                  Book My Smile Analysis
-                </Button>
-                <Button variant="secondary" size="md" href="#treatments">
-                  See Discreet Options
-                </Button>
-              </div>
             </AnimatedSection>
 
             {/* Right - Image */}
@@ -515,14 +507,6 @@ export default function AdultsOrthodonticsPage() {
             </AnimatedSection>
           </div>
 
-          {/* CTA */}
-          <AnimatedSection delay={400}>
-            <div className="mt-10 text-center lg:text-left">
-              <Button variant="secondary" size="md" href="/contact#contact-form">
-                Schedule Consultation
-              </Button>
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 
@@ -611,7 +595,7 @@ export default function AdultsOrthodonticsPage() {
             {/* Left Content */}
             <AnimatedSection>
               <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-6">
-                Discreet Options
+                Treatment Options
               </h2>
               <p className="text-white/50 text-lg mb-12">
                 Modern orthodontics offers solutions that fit seamlessly into your professional and personal life.
@@ -732,7 +716,7 @@ export default function AdultsOrthodonticsPage() {
 
               <div className="mt-10">
                 <Button variant="primary" size="md" href="/contact#contact-form">
-                  Book Consultation
+                  Book Free Consultation
                 </Button>
               </div>
             </AnimatedSection>
@@ -802,10 +786,6 @@ export default function AdultsOrthodonticsPage() {
                       </span>
                     ))}
                   </div>
-
-                  <Button variant="secondary" size="md" href="/contact#contact-form">
-                    Get Started
-                  </Button>
                 </div>
               </AnimatedSection>
             </div>
@@ -985,8 +965,7 @@ export default function AdultsOrthodonticsPage() {
                     <iconify-icon icon="solar:map-point-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">Langley, BC</div>
-                    <div className="text-white/50 text-sm">Canada</div>
+                    <div className="text-white font-medium">6351 197 St #101, Langley Twp, BC V2Y 1X8, Canada</div>
                   </div>
                 </div>
               </div>
@@ -1054,7 +1033,6 @@ export default function AdultsOrthodonticsPage() {
                       <option value="" className="bg-[#1a1a1a]">Select option</option>
                       <option value="invisalign" className="bg-[#1a1a1a]">Invisalign</option>
                       <option value="clear-braces" className="bg-[#1a1a1a]">Clear/Ceramic Braces</option>
-                      <option value="lingual" className="bg-[#1a1a1a]">Lingual Braces</option>
                       <option value="not-sure" className="bg-[#1a1a1a]">Not Sure - Need Guidance</option>
                     </select>
                   </div>
@@ -1068,10 +1046,9 @@ export default function AdultsOrthodonticsPage() {
                       className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#c9a962] transition-colors"
                     >
                       <option value="" className="bg-[#1a1a1a]">Select preferred time</option>
-                      <option value="early" className="bg-[#1a1a1a]">Early Morning (8am - 10am)</option>
+                      <option value="morning" className="bg-[#1a1a1a]">Morning (8am - 11am)</option>
                       <option value="midday" className="bg-[#1a1a1a]">Midday (11am - 2pm)</option>
                       <option value="afternoon" className="bg-[#1a1a1a]">Afternoon (2pm - 5pm)</option>
-                      <option value="evening" className="bg-[#1a1a1a]">Evening (5pm - 6pm)</option>
                     </select>
                   </div>
                 </div>

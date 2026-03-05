@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-smile-braces.png"
+          src="/main-hero-image.png"
           alt="Close-up of a confident smile with aesthetic orthodontic braces system for precise teeth alignment"
           fill
           className="object-cover object-center"
@@ -69,16 +69,16 @@ export default function Hero() {
               and smile design for natural-looking results.
             </p>
 
-            <div className="flex flex-row gap-4 flex-shrink-0">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 flex-shrink-0">
               <a
                 href="/contact#contact-form"
-                className="inline-flex items-center justify-center px-10 py-4 text-base font-medium bg-white text-[#1a2744] rounded-full hover:bg-white/95 hover:scale-[1.02] transition-all duration-300 shadow-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
+                className="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base font-medium bg-white text-[#1a2744] rounded-full hover:bg-white/95 hover:scale-[1.02] transition-all duration-300 shadow-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
               >
-                Book Your Smile Consultation
+                Book Free Consultation
               </a>
               <a
                 href="/contact#contact-form"
-                className="inline-flex items-center justify-center px-10 py-4 text-base font-medium bg-white/10 text-white border border-white/20 rounded-full hover:bg-white/20 hover:border-white/40 hover:scale-[1.02] transition-all duration-300 backdrop-blur-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white/50"
+                className="inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base font-medium bg-white/10 text-white border border-white/20 rounded-full hover:bg-white/20 hover:border-white/40 hover:scale-[1.02] transition-all duration-300 backdrop-blur-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white/50"
               >
                 See Your Options
               </a>

@@ -152,9 +152,10 @@ function GalleryCard({
   return (
     <AnimatedSection delay={index * 50}>
       <div
-        className="group relative rounded-2xl overflow-hidden bg-white/[0.02] border border-white/5 hover:border-[#c9a962]/30 transition-all duration-500"
+        className="group relative rounded-xl sm:rounded-2xl overflow-hidden bg-white/[0.02] border border-white/5 hover:border-[#c9a962]/30 transition-all duration-500"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onClick={() => setIsHovered(!isHovered)}
       >
         {/* Before/After Container */}
         <div className="relative aspect-[4/3]">
@@ -165,8 +166,8 @@ function GalleryCard({
             }`}
           >
             <PlaceholderImage label="Before" />
-            <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/10">
-              <span className="text-white/80 text-xs font-medium">Before</span>
+            <div className="absolute top-3 sm:top-4 left-3 sm:left-4 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/10">
+              <span className="text-white/80 text-[10px] sm:text-xs font-medium">Before</span>
             </div>
           </div>
 
@@ -177,32 +178,33 @@ function GalleryCard({
             }`}
           >
             <PlaceholderImage label="After" />
-            <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-[#c9a962]/80 backdrop-blur-sm">
-              <span className="text-[#0a0a0a] text-xs font-medium">After</span>
+            <div className="absolute top-3 sm:top-4 left-3 sm:left-4 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-[#c9a962]/80 backdrop-blur-sm">
+              <span className="text-[#0a0a0a] text-[10px] sm:text-xs font-medium">After</span>
             </div>
           </div>
 
-          {/* Hover indicator */}
-          <div className="absolute bottom-4 right-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/10">
+          {/* Hover/Tap indicator */}
+          <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/10">
             <iconify-icon
               icon="solar:cursor-bold"
-              width="14"
-              height="14"
-              className="text-white/60"
+              width="12"
+              height="12"
+              className="text-white/60 sm:w-3.5 sm:h-3.5"
             />
-            <span className="text-white/60 text-xs">Hover to see result</span>
+            <span className="text-white/60 text-[10px] sm:text-xs hidden sm:inline">Hover to see result</span>
+            <span className="text-white/60 text-[10px] sm:hidden">Tap to see result</span>
           </div>
         </div>
 
         {/* Info */}
-        <div className="p-5">
-          <div className="flex items-center justify-between mb-3">
-            <span className="px-3 py-1 rounded-full bg-[#c9a962]/10 border border-[#c9a962]/20 text-[#c9a962] text-xs font-medium">
+        <div className="p-4 sm:p-5">
+          <div className="flex items-center justify-between mb-2 sm:mb-3">
+            <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#c9a962]/10 border border-[#c9a962]/20 text-[#c9a962] text-[10px] sm:text-xs font-medium">
               {item.treatment}
             </span>
-            <span className="text-white/40 text-xs">{item.duration}</span>
+            <span className="text-white/40 text-[10px] sm:text-xs">{item.duration}</span>
           </div>
-          <p className="text-white/60 text-sm">{item.description}</p>
+          <p className="text-white/60 text-xs sm:text-sm">{item.description}</p>
         </div>
       </div>
     </AnimatedSection>
@@ -213,32 +215,32 @@ export default function GalleryPage() {
   return (
     <div className="bg-[#0a0a0a] -mt-20">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden pt-20">
+      <section className="relative min-h-[50vh] sm:min-h-[60vh] flex items-center overflow-hidden pt-20">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f] to-[#0a0a0a]" />
         
         {/* Decorative elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#c9a962]/5 rounded-full blur-[150px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#c9a962]/5 rounded-full blur-[120px]" />
+          <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-[#c9a962]/5 rounded-full blur-[100px] sm:blur-[150px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-[#c9a962]/5 rounded-full blur-[80px] sm:blur-[120px]" />
         </div>
 
         {/* Content */}
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40 w-full text-center">
+        <div className="relative max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 py-20 sm:py-32 lg:py-40 w-full text-center">
           {/* Badge */}
           <div
-            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8 animate-fade-in-up opacity-0"
+            className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-6 sm:mb-8 animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
           >
             <span className="w-2 h-2 rounded-full bg-[#c9a962] animate-pulse-glow" />
-            <span className="text-white/90 text-sm font-medium">
+            <span className="text-white/90 text-xs sm:text-sm font-medium">
               Smile Transformations
             </span>
           </div>
 
           {/* Title */}
           <h1
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6 animate-fade-in-up opacity-0"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-4 sm:mb-6 animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
           >
             <span className="text-white">Our </span>
@@ -247,7 +249,7 @@ export default function GalleryPage() {
 
           {/* Description */}
           <p
-            className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-2xl mx-auto animate-fade-in-up opacity-0"
+            className="text-white/60 text-sm sm:text-lg lg:text-xl leading-relaxed mb-8 sm:mb-10 max-w-2xl mx-auto animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
           >
             Explore real smile transformations from our patients. Hover over each case to see the before and after results.
@@ -266,10 +268,10 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section id="gallery" className="py-16 sm:py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12">
           {/* Gallery Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {galleryItems.map((item, index) => (
               <GalleryCard key={item.id} item={item} index={index} />
             ))}
@@ -277,47 +279,21 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <AnimatedSection>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-              <div className="text-center">
-                <div className="text-[#c9a962] text-5xl lg:text-6xl font-bold mb-2">30k</div>
-                <p className="text-white/50 text-sm lg:text-base">Happy Patients</p>
-              </div>
-              <div className="text-center">
-                <div className="text-[#c9a962] text-5xl lg:text-6xl font-bold mb-2">35+</div>
-                <p className="text-white/50 text-sm lg:text-base">Years Experience</p>
-              </div>
-              <div className="text-center">
-                <div className="text-[#c9a962] text-5xl lg:text-6xl font-bold mb-2">99%</div>
-                <p className="text-white/50 text-sm lg:text-base">Success Rate</p>
-              </div>
-              <div className="text-center">
-                <div className="text-[#c9a962] text-5xl lg:text-6xl font-bold mb-2">30k+</div>
-                <p className="text-white/50 text-sm lg:text-base">Smile Transformations</p>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
+      <section className="py-16 sm:py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 text-center">
           <AnimatedSection>
-            <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-6">
+            <h2 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-4 sm:mb-6">
               Ready for Your Transformation?
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
+            <p className="text-white/60 text-sm sm:text-lg max-w-2xl mx-auto mb-8 sm:mb-10">
               Join our community of happy patients and start your smile journey today. Book a consultation to discuss your goals.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <Button variant="primary" size="lg" href="/contact#contact-form">
-                Book Consultation
+                Book Free Consultation
               </Button>
-              <Button variant="secondary" size="lg" href="/orthodontics/adults">
+              <Button variant="secondary" size="lg" href="/#orthodontic-care">
                 Explore Treatments
               </Button>
             </div>

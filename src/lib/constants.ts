@@ -12,12 +12,12 @@ export const SITE_URL = 'https://croninortho.com';
 export const CONTACT = {
   phone: '+16045331151',
   phoneDisplay: '(604) 533-1151',
-  email: 'info@ronianortho.com',
+  email: 'info@croninortho.com',
   address: {
-    street: '',
-    city: 'Langley',
+    street: '6351 197 St #101',
+    city: 'Langley Twp',
     state: 'BC',
-    zip: '',
+    zip: 'V2Y 1X8',
     country: 'Canada',
   },
 } as const;

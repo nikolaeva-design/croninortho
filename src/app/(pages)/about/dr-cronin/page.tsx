@@ -9,7 +9,7 @@ const credentials = [
   { label: 'Experience', value: '30+ Years' },
   { label: 'Education', value: 'DDS, UWO Ortho' },
   { label: 'Specialty', value: 'Orthodontics' },
-  { label: 'Location', value: 'Langley, BC' },
+  { label: 'Location', value: 'Langley Twp, BC' },
 ];
 
 // Memberships
@@ -142,11 +142,8 @@ export default function DrCroninPage() {
             className="flex flex-wrap justify-center gap-4 animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
-            <Button variant="primary" size="lg" href="/contact#contact-form">
-              Schedule a Consultation
-            </Button>
-            <Button variant="secondary" size="lg" href="#about">
-              About Dr. Cronin
+            <Button variant="secondary" size="lg" href="/about/team">
+              Meet the Team
             </Button>
           </div>
         </div>
@@ -379,13 +376,6 @@ export default function DrCroninPage() {
               </div>
             </div>
           </div>
-
-          {/* Section CTA */}
-          <div className="mt-12 lg:mt-16 flex justify-center">
-            <Button variant="secondary" size="lg" href="/contact#contact-form">
-              Discuss Your Treatment Options
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -513,8 +503,7 @@ export default function DrCroninPage() {
                     <iconify-icon icon="solar:map-point-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">Langley, BC</div>
-                    <div className="text-white/50 text-sm">Canada</div>
+                    <div className="text-white font-medium">6351 197 St #101, Langley Twp, BC V2Y 1X8, Canada</div>
                   </div>
                 </div>
               </div>

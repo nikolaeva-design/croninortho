@@ -11,14 +11,7 @@ const treatments = [
     title: 'Surgical Orthodontics',
     description: 'Surgical orthodontics, also known as orthognathic surgery, combines orthodontic treatment with corrective jaw surgery. This comprehensive approach is recommended when jaw abnormalities are too severe to be corrected with braces or aligners alone.',
     details: 'The process typically involves pre-surgical orthodontic treatment to align the teeth, followed by surgery to reposition the jaw bones, and post-surgical orthodontics for final refinement. This treatment can dramatically improve facial balance, breathing, and bite function, providing both functional and aesthetic benefits that last a lifetime.',
-    image: '/surgical-ortho-hero.png',
-  },
-  {
-    id: 'tmj-tmd',
-    title: 'TMJ-TMD',
-    description: 'Temporomandibular Joint Disorder (TMD) affects the jaw joint and surrounding muscles, causing pain, clicking, and limited jaw movement. Our comprehensive approach addresses both the symptoms and underlying causes of jaw dysfunction.',
-    details: 'Treatment may include custom splint therapy to reduce joint stress, bite adjustment procedures, coordination with physical therapy, and pain management strategies. Many patients experience significant relief within weeks of starting treatment, with long-term solutions tailored to their specific condition.',
-    image: '/tmj-diagram.jpg',
+    image: '/surgical-orthodontics-diagram.jpg',
   },
   {
     id: 'craniofacial-orthodontics',
@@ -48,7 +41,7 @@ const treatments = [
     title: 'Palatal Expander',
     description: 'A palatal expander is a custom-fitted device that gradually widens the upper jaw to create more space for teeth and improve bite alignment. It works by applying gentle pressure to the palatal bones, which are still flexible in growing children.',
     details: 'Treatment typically takes several months, with daily adjustments made at home using a special key. The expansion creates space for crowded teeth, corrects crossbites, and can even improve breathing by widening the nasal passages. Best results are achieved when treatment begins during childhood.',
-    image: '/Gemini_Generated_Image_z10gufz10gufz10g.png',
+    image: '/palatal-expander.png',
   },
   {
     id: 'metal-braces',
@@ -76,16 +69,16 @@ const treatments = [
     title: 'TADs',
     description: 'Temporary Anchorage Devices (TADs) are small titanium screws temporarily placed in the jawbone to serve as fixed anchor points for tooth movement. They enable precise control over tooth positioning that was previously difficult or impossible to achieve.',
     details: 'TADs are placed using local anesthesia in a quick, minimally invasive procedure. They allow orthodontists to move specific teeth without affecting others, close extraction spaces efficiently, and correct complex bite issues. Once treatment is complete, TADs are easily removed.',
-    image: '/Gemini_Generated_Image_ktmc7dktmc7dktmc.png',
+    image: '/TAD-1 (1).webp',
   },
   {
-    id: 'forsus',
-    title: 'Forsus™',
+    id: 'powerscope',
+    title: 'Powerscope™',
     description:
-      'The Forsus Fatigue Resistant Device is an alternative to headgear that promotes growth in adolescents.',
+      'The Powerscope Class II Corrector is an alternative to headgear that promotes jaw growth and corrects overbites in adolescents.',
     details:
-      'It helps eliminate excessive overbites, improve the fit of teeth, and may help prevent the need for jaw surgery.',
-    image: '/Gemini_Generated_Image_eu65zweu65zweu65.png',
+      'It helps eliminate excessive overbites, improve the fit of teeth, and may help prevent the need for jaw surgery. The device works with your braces to move the lower jaw forward.',
+    image: '/ao-powerscope-03.jpg',
   },
   {
     id: 'headgear',
@@ -224,7 +217,7 @@ export default function TreatmentsPage() {
             className="flex flex-wrap justify-center gap-4 animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
-            <Button variant="primary" size="lg" href="#treatments">
+            <Button variant="primary" size="lg" href="/#orthodontic-care">
               Explore Treatments
             </Button>
             <Button
@@ -360,10 +353,7 @@ export default function TreatmentsPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="primary" size="lg" href="/contact#contact-form">
-                Book Consultation
-              </Button>
-              <Button variant="secondary" size="lg" href="/orthodontics/kids">
-                Kids Orthodontics
+                Book Free Consultation
               </Button>
             </div>
           </AnimatedSection>
@@ -411,7 +401,7 @@ export default function TreatmentsPage() {
                 </a>
 
                 <a
-                  href="mailto:info@ronianortho.com"
+                  href="mailto:info@croninortho.com"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#c9a962]/30 transition-all group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -423,7 +413,7 @@ export default function TreatmentsPage() {
                     />
                   </div>
                   <div>
-                    <div className="text-white font-medium">info@ronianortho.com</div>
+                    <div className="text-white font-medium">info@croninortho.com</div>
                     <div className="text-white/50 text-sm">Email us anytime</div>
                   </div>
                 </a>
@@ -445,23 +435,16 @@ export default function TreatmentsPage() {
               </div>
             </AnimatedSection>
 
-            {/* Right - Image/Decoration */}
+            {/* Right - Map */}
             <AnimatedSection delay={200}>
-              <div className="relative aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-[#c9a962]/20 to-[#c9a962]/5 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <iconify-icon
-                    icon="solar:health-bold"
-                    width="80"
-                    height="80"
-                    className="text-[#c9a962]/50 mb-6"
-                  />
-                  <h3 className="text-white text-2xl font-semibold mb-4">
-                    Expert Orthodontic Care
-                  </h3>
-                  <p className="text-white/50 text-sm max-w-xs mx-auto">
-                    Our experienced team is dedicated to helping you achieve your best smile with personalized treatment plans.
-                  </p>
-                </div>
+              <div className="relative aspect-square rounded-3xl overflow-hidden bg-white/[0.03] border border-white/5">
+                <Image
+                  src="/map-clinic.png"
+                  alt="Map showing Cronin Ortho location at 6351 197 St #101, Langley Twp, BC"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
             </AnimatedSection>
           </div>

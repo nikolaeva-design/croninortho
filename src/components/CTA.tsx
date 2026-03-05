@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function CTA() {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[80vh] sm:min-h-screen flex items-center justify-center overflow-hidden"
       aria-labelledby="cta-heading"
     >
       {/* Background Image */}
@@ -21,15 +21,15 @@ export default function CTA() {
           priority={false}
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
+        <div className="absolute inset-0 bg-black/70 sm:bg-black/60" aria-hidden="true" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1200px] 2xl:max-w-[1400px] mx-auto px-6 2xl:px-12 py-24 lg:py-32 text-center">
+      <div className="relative z-10 max-w-[1200px] 2xl:max-w-[1400px] mx-auto px-5 sm:px-6 2xl:px-12 py-16 sm:py-24 lg:py-32 text-center">
         {/* Headline */}
         <h2
           id="cta-heading"
-          className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-[1.1] mb-6"
+          className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-[1.1] mb-4 sm:mb-6"
         >
           Designed With Precision.
           <br />
@@ -37,16 +37,16 @@ export default function CTA() {
         </h2>
 
         {/* Subtitle */}
-        <p className="text-white/70 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-12 lg:mb-16">
+        <p className="text-white/70 text-sm sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-12 lg:mb-16">
           Thoughtful treatment planning, advanced technology, and a
           patient-centered approach — all focused on creating results that look
           natural and stand the test of time.
         </p>
 
         {/* White Card */}
-        <div className="inline-block bg-white rounded-3xl p-6 lg:p-8 shadow-2xl max-w-xl mx-auto">
+        <div className="inline-block bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl max-w-xl mx-auto">
           {/* Card Image */}
-          <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6 bg-[#0a0a0a]">
+          <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-6 bg-[#0a0a0a]">
             <Image
               src="/cta-small.png"
               alt="Golden ratio smile analysis demonstrating precise aesthetic planning"
@@ -57,10 +57,10 @@ export default function CTA() {
           </div>
 
           {/* Card Content */}
-          <h3 className="text-[#1d1d1f] text-xl lg:text-2xl font-semibold tracking-tight mb-3">
+          <h3 className="text-[#1d1d1f] text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight mb-2 sm:mb-3">
             Custom, Precision-Engineered Smile Design
           </h3>
-          <p className="text-[#1d1d1f]/60 text-sm lg:text-base leading-relaxed">
+          <p className="text-[#1d1d1f]/60 text-xs sm:text-sm lg:text-base leading-relaxed">
             We use advanced 3D imaging, digital simulations, and treatment
             planning to design and produce highly personalized smiles — built
             for accuracy, comfort, and long-term stability.
@@ -68,19 +68,19 @@ export default function CTA() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="mt-12 lg:mt-16 flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="mt-8 sm:mt-12 lg:mt-16 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <a
             href="/contact#contact-form"
-            className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1d1d1f] text-sm font-semibold rounded-full hover:bg-white/90 transition-colors duration-200"
+            className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-[#1d1d1f] text-sm font-semibold rounded-full hover:bg-white/90 transition-colors duration-200"
           >
             Schedule Free Consultation
           </a>
           <a
             href="tel:+16045331151"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white text-sm font-medium rounded-full border border-white/30 hover:bg-white/10 transition-colors duration-200"
+            className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 text-white text-sm font-medium rounded-full border border-white/30 hover:bg-white/10 transition-colors duration-200"
             aria-label="Call us at (604) 533-1151"
           >
-            Call (604) 533-1151
+            Call us (604) 533-1151
           </a>
         </div>
       </div>

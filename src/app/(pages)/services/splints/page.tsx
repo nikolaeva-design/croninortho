@@ -241,12 +241,9 @@ export default function SplintsPage() {
                   Each splint is custom-made to ensure comfort, proper fit, and effective support.
                 </p>
               </div>
-              <a
-                href="/contact#contact-form"
-                className="inline-flex items-center gap-2 text-white/70 text-sm font-medium hover:text-white transition-colors group/link"
-              >
+              <Button variant="primary" size="md" href="/contact#contact-form">
                 Request a Consultation
-              </a>
+              </Button>
             </AnimatedSection>
 
             {/* Right - Image */}
@@ -368,12 +365,9 @@ export default function SplintsPage() {
                 ))}
               </ul>
 
-              <a
-                href="/contact#contact-form"
-                className="inline-flex items-center gap-2 text-white/70 text-sm font-medium hover:text-white transition-colors group/link"
-              >
+              <Button variant="primary" size="md" href="/contact#contact-form">
                 Request a Consultation
-              </a>
+              </Button>
             </AnimatedSection>
           </div>
         </div>
@@ -490,7 +484,7 @@ export default function SplintsPage() {
               {/* Contact Info */}
               <div className="space-y-4 mb-8">
                 <a
-                  href="mailto:info@ronianortho.com"
+                  href="mailto:info@croninortho.com"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#c9a962]/30 transition-all group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -504,7 +498,7 @@ export default function SplintsPage() {
                   <div>
                     <div className="text-white/50 text-sm">Email</div>
                     <div className="text-white font-medium">
-                      info@ronianortho.com
+                      info@croninortho.com
                     </div>
                   </div>
                 </a>
@@ -539,25 +533,21 @@ export default function SplintsPage() {
                   <div>
                     <div className="text-white/50 text-sm">Address</div>
                     <div className="text-white font-medium">
-                      Langley, BC, Canada
+                      6351 197 St #101, Langley Twp, BC V2Y 1X8, Canada
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Map Placeholder */}
+              {/* Map */}
               <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-white/[0.03] border border-white/5">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <iconify-icon
-                      icon="solar:map-point-bold"
-                      width="48"
-                      height="48"
-                      className="text-[#c9a962]/50 mb-2"
-                    />
-                    <p className="text-white/30 text-sm">Map location</p>
-                  </div>
-                </div>
+                <Image
+                  src="/map-clinic.png"
+                  alt="Map showing Cronin Ortho location at 6351 197 St #101, Langley Twp, BC"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
             </AnimatedSection>
 

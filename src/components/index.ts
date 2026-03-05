@@ -12,6 +12,7 @@ export { default as Button } from './Button';
 
 // Section components
 export { default as Hero } from './Hero';
+export { default as Location } from './Location';
 export { default as OrthodonticCare } from './OrthodonticCare';
 export { default as AestheticServices } from './AestheticServices';
 export { default as OtherServices } from './OtherServices';

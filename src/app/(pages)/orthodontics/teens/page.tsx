@@ -336,7 +336,7 @@ export default function TeensOrthodonticsPage() {
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
               <Button variant="primary" size="lg" href="/contact#contact-form">
-                Book Consultation
+                Book Free Consultation
               </Button>
               <Button variant="secondary" size="lg" href="#treatments">
                 See options
@@ -374,14 +374,6 @@ export default function TeensOrthodonticsPage() {
                   We offer customized orthodontic care to straighten teeth, correct bite issues, and improve long-term oral health — with flexible options like braces or clear aligners to suit your teen&apos;s comfort and confidence.
             </p>
           </div>
-              <div className="flex flex-wrap gap-4">
-                <Button variant="primary" size="md" href="/contact#contact-form">
-                  Book Consultation
-                </Button>
-                <Button variant="secondary" size="md" href="#treatments">
-                  See options
-                </Button>
-              </div>
             </AnimatedSection>
 
             {/* Right - Image */}
@@ -512,13 +504,6 @@ export default function TeensOrthodonticsPage() {
           </div>
 
           {/* CTA */}
-          <AnimatedSection delay={400}>
-            <div className="mt-10 text-center lg:text-left">
-              <Button variant="secondary" size="md" href="/contact#contact-form">
-                Schedule Consultation
-              </Button>
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 
@@ -728,7 +713,7 @@ export default function TeensOrthodonticsPage() {
 
               <div className="mt-10">
                 <Button variant="primary" size="md" href="/contact#contact-form">
-                  Book Your Visit
+                  Book Free Consultation
                 </Button>
               </div>
             </AnimatedSection>
@@ -798,10 +783,6 @@ export default function TeensOrthodonticsPage() {
                       </span>
                     ))}
                   </div>
-
-                  <Button variant="secondary" size="md" href="/contact#contact-form">
-                    Get Started
-                  </Button>
                 </div>
               </AnimatedSection>
             </div>
@@ -953,7 +934,7 @@ export default function TeensOrthodonticsPage() {
                 <span className="text-white/50 block">Best Smile?</span>
               </h2>
               <p className="text-white/60 text-lg leading-relaxed mb-8">
-                Take the first step toward the smile you deserve. Book your consultation and discover which treatment option is perfect for you.
+                Take the first step toward the smile you deserve. Book a free consultation and discover which treatment option is perfect for you.
               </p>
 
               {/* Contact Info */}
@@ -981,8 +962,7 @@ export default function TeensOrthodonticsPage() {
                     <iconify-icon icon="solar:map-point-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">Langley, BC</div>
-                    <div className="text-white/50 text-sm">Canada</div>
+                    <div className="text-white font-medium">6351 197 St #101, Langley Twp, BC V2Y 1X8, Canada</div>
                   </div>
                 </div>
               </div>
@@ -1037,6 +1017,7 @@ export default function TeensOrthodonticsPage() {
                       {[...Array(7)].map((_, i) => (
                         <option key={i + 13} value={i + 13} className="bg-[#1a1a1a]">{i + 13} years old</option>
                       ))}
+                      <option value="other" className="bg-[#1a1a1a]">Other</option>
                     </select>
                   </div>
                   <div>
@@ -1077,9 +1058,8 @@ export default function TeensOrthodonticsPage() {
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#c9a962] transition-colors"
                   >
                     <option value="" className="bg-[#1a1a1a]">Select preferred time</option>
-                    <option value="morning" className="bg-[#1a1a1a]">Morning (9am - 12pm)</option>
+                    <option value="morning" className="bg-[#1a1a1a]">Morning (8am - 12pm)</option>
                     <option value="afternoon" className="bg-[#1a1a1a]">After School (3pm - 5pm)</option>
-                    <option value="evening" className="bg-[#1a1a1a]">Late Afternoon (5pm - 6pm)</option>
                   </select>
                 </div>
 

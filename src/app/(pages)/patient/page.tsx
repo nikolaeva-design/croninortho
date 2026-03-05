@@ -14,6 +14,9 @@ export const metadata: Metadata = {
 const PATIENT_PORTAL_URL =
   'https://patient-portal-prd-cluster-2.sesamecommunications.com/dcronin/index.html';
 
+const NEW_PATIENT_FORM_URL =
+  'https://patient-portal-prd-cluster-2.sesamecommunications.com/dcronin/ohhf';
+
 const toc = [
   {
     label: 'Financial Information',
@@ -83,32 +86,32 @@ function SectionShell({
   return (
     <section
       id={id}
-      className={`relative scroll-mt-28 py-20 lg:py-28 ${
+      className={`relative scroll-mt-28 py-14 sm:py-20 lg:py-28 ${
         overflowVisible ? 'overflow-x-clip overflow-y-visible' : 'overflow-hidden'
       } ${tone === 'darker' ? 'bg-[#0a0a0a]' : 'bg-[#0f0f0f]'}`}
     >
       {withOrbs && (
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute -top-24 -left-24 w-[420px] h-[420px] bg-[#c9a962]/6 rounded-full blur-[120px]" />
-          <div className="absolute -bottom-28 -right-24 w-[520px] h-[520px] bg-white/[0.03] rounded-full blur-[140px]" />
+          <div className="absolute -top-24 -left-24 w-[300px] sm:w-[420px] h-[300px] sm:h-[420px] bg-[#c9a962]/6 rounded-full blur-[80px] sm:blur-[120px]" />
+          <div className="absolute -bottom-28 -right-24 w-[350px] sm:w-[520px] h-[350px] sm:h-[520px] bg-white/[0.03] rounded-full blur-[100px] sm:blur-[140px]" />
         </div>
       )}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className={`mb-10 lg:mb-14 ${align === 'center' ? 'text-center' : ''}`}>
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12">
+        <div className={`mb-8 sm:mb-10 lg:mb-14 ${align === 'center' ? 'text-center' : ''}`}>
           {eyebrow && (
-            <div className={`mb-6 ${align === 'center' ? 'flex justify-center' : ''}`}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/10 text-white/70 text-xs font-medium">
+            <div className={`mb-4 sm:mb-6 ${align === 'center' ? 'flex justify-center' : ''}`}>
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/[0.06] border border-white/10 text-white/70 text-[10px] sm:text-xs font-medium">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#c9a962]" />
                 {eyebrow}
               </div>
             </div>
           )}
-          <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
+          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
             {title}
           </h2>
           {subtitle && (
             <p
-              className={`text-white/55 text-lg leading-relaxed mt-4 max-w-3xl ${
+              className={`text-white/55 text-sm sm:text-base lg:text-lg leading-relaxed mt-3 sm:mt-4 max-w-3xl ${
                 align === 'center' ? 'mx-auto' : ''
               }`}
             >
@@ -126,7 +129,7 @@ export default function PatientPage() {
   return (
     <div className="bg-[#0a0a0a] -mt-20">
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-20">
+      <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center overflow-hidden pt-20">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -137,32 +140,32 @@ export default function PatientPage() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 sm:from-black/80 via-black/60 sm:via-black/50 to-black/40 sm:to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
         </div>
 
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12 py-20 lg:py-32 w-full">
+        <div className="relative max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 py-16 sm:py-20 lg:py-32 w-full">
           {/* Hero Content - Left Aligned */}
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-8">
+            <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 mb-6 sm:mb-8">
               <span className="w-2 h-2 rounded-full bg-[#c9a962]" />
-              <span className="text-white/90 text-sm font-medium">
+              <span className="text-white/90 text-xs sm:text-sm font-medium">
                 Patient Resources
               </span>
             </div>
 
-            <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6">
+            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-4 sm:mb-6">
               Patient{' '}
               <span className="text-white/50">
                 Information
               </span>
             </h1>
-            <p className="text-white/60 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg">
+            <p className="text-white/60 text-base sm:text-lg lg:text-xl leading-relaxed mb-8 sm:mb-10 max-w-lg">
               Forms, visit prep, and quick answers — everything you need to
               feel ready and informed before your appointment.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
               <Button variant="primary" size="lg" href="#patient-forms">
                 Get Patient Forms
               </Button>
@@ -171,12 +174,12 @@ export default function PatientPage() {
               </Button>
             </div>
 
-            <div className="flex items-center gap-6 text-sm">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm">
               <a
                 href={`tel:${CONTACT.phone}`}
                 className="flex items-center gap-2 text-white/50 hover:text-white transition-colors"
               >
-                <iconify-icon icon="solar:phone-bold" width="16" height="16" className="text-[#c9a962]" />
+                <iconify-icon icon="solar:phone-bold" width="14" height="14" className="text-[#c9a962] sm:w-4 sm:h-4" />
                 {CONTACT.phoneDisplay}
               </a>
               <span className="w-1 h-1 rounded-full bg-white/20" />
@@ -190,14 +193,14 @@ export default function PatientPage() {
           </div>
 
           {/* TOC */}
-          <div className="mt-12 lg:mt-16 rounded-3xl bg-white/[0.03] border border-white/10 p-6 lg:p-8">
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-              <p className="text-white/80 text-base font-semibold">Quick links</p>
-              <p className="text-white/45 text-sm">
+          <div className="mt-10 sm:mt-12 lg:mt-16 rounded-2xl sm:rounded-3xl bg-white/[0.03] border border-white/10 p-4 sm:p-6 lg:p-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 mb-4 sm:mb-6">
+              <p className="text-white/80 text-sm sm:text-base font-semibold">Quick links</p>
+              <p className="text-white/45 text-xs sm:text-sm">
                 Jump straight to the section you need
               </p>
             </div>
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {toc.map((item) => (
                 <li key={item.href}>
                   <a
@@ -518,7 +521,7 @@ export default function PatientPage() {
       <SectionShell
         id="patient-forms"
         eyebrow="Before your visit"
-        title="Patient Forms"
+        title="Forms"
         subtitle="Please take a minute to fill out the patient information form before your first appointment."
         tone="dark"
         align="center"
@@ -527,7 +530,9 @@ export default function PatientPage() {
         <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {/* Online New Patient Form */}
           <a
-            href="#"
+            href={NEW_PATIENT_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group rounded-3xl bg-gradient-to-br from-[#c9a962]/10 via-transparent to-transparent border border-[#c9a962]/20 hover:border-[#c9a962]/40 transition-all p-7 lg:p-8 text-left"
           >
             <div className="w-14 h-14 rounded-2xl bg-[#c9a962]/15 border border-[#c9a962]/25 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
@@ -559,7 +564,7 @@ export default function PatientPage() {
 
           {/* Printable Referral Form */}
           <a
-            href="/CroninOrtho-Pads-proof.pdf"
+            href="/64596%20Cronin%20Ortho-Dr.%20Cronin_Patient%20Referal%20Pad.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="group rounded-3xl bg-white/[0.03] border border-white/10 hover:border-white/25 transition-all p-7 lg:p-8 text-left"
@@ -574,7 +579,7 @@ export default function PatientPage() {
               />
             </div>
             <h3 className="text-white text-xl font-semibold mb-2 group-hover:text-white/90 transition-colors">
-              Printable Referral Form
+              Printable Referral Form for Dentist
             </h3>
             <p className="text-white/55 text-sm leading-relaxed mb-4">
               Download the referral form as a PDF to print and fill out by hand.
@@ -617,15 +622,52 @@ export default function PatientPage() {
         align="center"
       >
         <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-webkit-overflow-scrolling:touch]">
-          {Array.from({ length: 5 }).map((_, idx) => (
+          {[
+            {
+              src: '/2024-10-29.webp',
+              alt: 'Cronin Orthodontics office interior with diplomas and computer workstation',
+            },
+            {
+              src: '/2024-10-29 (1).webp',
+              alt: 'Reception area with wooden desk and comfortable seating',
+            },
+            {
+              src: '/2024-10-29 (2).webp',
+              alt: 'Waiting area with brown leather sofas and natural lighting',
+            },
+            {
+              src: '/2024-10-29 (3).webp',
+              alt: 'Spacious waiting room with modern furniture and plants',
+            },
+            {
+              src: '/2024-10-29 (4).webp',
+              alt: 'Reception area with TV and welcoming atmosphere',
+            },
+            {
+              src: '/2024-10-29 (5).webp',
+              alt: 'Modern treatment room with dental chairs and equipment',
+            },
+            {
+              src: '/2024-10-29 (6).webp',
+              alt: 'Dental laboratory with professional equipment',
+            },
+            {
+              src: '/2024-12-05.webp',
+              alt: 'Cronin Orthodontics clinic interior view',
+            },
+            {
+              src: '/2024-12-05 (1).webp',
+              alt: 'Additional view of Cronin Orthodontics office space',
+            },
+          ].map((image, idx) => (
             <div
               key={idx}
               className="group snap-start shrink-0 w-[280px] sm:w-[320px] md:w-[360px] rounded-3xl bg-white/[0.03] border border-white/10 overflow-hidden transition-all duration-200 hover:border-[#c9a962]/40 hover:shadow-lg hover:shadow-[#c9a962]/10"
             >
               <div className="aspect-[4/3] relative">
                 <Image
-                  src="/cta-consultation-bg.png"
-                  alt="Cronin Orthodontics office"
+                  src={image.src}
+                  alt={image.alt}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                   sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 360px"
@@ -804,9 +846,7 @@ export default function PatientPage() {
                 <div>
                   <div className="text-white/50 text-sm">Address</div>
                   <div className="text-white font-medium">
-                    {CONTACT.address.street ? `${CONTACT.address.street}, ` : ''}
-                    {CONTACT.address.city}, {CONTACT.address.state}
-                    {CONTACT.address.zip ? ` ${CONTACT.address.zip}` : ''}
+                    {CONTACT.address.street}, {CONTACT.address.city}, {CONTACT.address.state} {CONTACT.address.zip}, {CONTACT.address.country}
                   </div>
                 </div>
               </div>
@@ -822,19 +862,14 @@ export default function PatientPage() {
             </div>
 
             <div className="rounded-3xl bg-white/[0.03] border border-white/10 overflow-hidden">
-              <div className="aspect-[16/10] flex items-center justify-center">
-                <div className="text-center px-6">
-                  <iconify-icon
-                    icon="solar:map-point-bold"
-                    width="36"
-                    height="36"
-                    className="text-white/20 mb-2"
-                    aria-hidden="true"
-                  />
-                  <p className="text-white/35 text-sm">
-                    Map embed / screenshot placeholder
-                  </p>
-                </div>
+              <div className="relative aspect-[16/10]">
+                <Image
+                  src="/map-clinic.png"
+                  alt="Map showing Cronin Ortho location at 6351 197 St #101, Langley Twp, BC"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
