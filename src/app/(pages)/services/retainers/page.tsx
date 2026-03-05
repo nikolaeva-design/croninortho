@@ -529,17 +529,6 @@ export default function RetainersPage() {
                   </div>
                 </div>
               </div>
-
-              {/* Map */}
-              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-white/[0.03] border border-white/5">
-                <Image
-                  src="/map-clinic.png"
-                  alt="Map showing Cronin Ortho location at 6351 197 St #101, Langley Twp, BC"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
             </AnimatedSection>
 
             {/* Right - Form */}

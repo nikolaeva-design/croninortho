@@ -366,8 +366,7 @@ export default function TreatmentsPage() {
         className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden"
       >
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Left Content */}
+          <div className="max-w-2xl mx-auto">
             <AnimatedSection>
               <span className="text-[#c9a962] text-sm font-semibold tracking-wider uppercase mb-4 block">
                 Get Started
@@ -432,19 +431,6 @@ export default function TreatmentsPage() {
                     <div className="text-white/50 text-sm">Office hours</div>
                   </div>
                 </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Right - Map */}
-            <AnimatedSection delay={200}>
-              <div className="relative aspect-square rounded-3xl overflow-hidden bg-white/[0.03] border border-white/5">
-                <Image
-                  src="/map-clinic.png"
-                  alt="Map showing Cronin Ortho location at 6351 197 St #101, Langley Twp, BC"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
               </div>
             </AnimatedSection>
           </div>
