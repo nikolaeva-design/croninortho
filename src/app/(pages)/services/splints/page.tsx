@@ -241,9 +241,6 @@ export default function SplintsPage() {
                   Each splint is custom-made to ensure comfort, proper fit, and effective support.
                 </p>
               </div>
-              <Button variant="primary" size="md" href="/contact#contact-form">
-                Request a Consultation
-              </Button>
             </AnimatedSection>
 
             {/* Right - Image */}
@@ -364,10 +361,6 @@ export default function SplintsPage() {
                   </li>
                 ))}
               </ul>
-
-              <Button variant="primary" size="md" href="/contact#contact-form">
-                Request a Consultation
-              </Button>
             </AnimatedSection>
           </div>
         </div>

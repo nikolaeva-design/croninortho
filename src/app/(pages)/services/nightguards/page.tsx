@@ -240,9 +240,6 @@ export default function NightguardsPage() {
                   Each nightguard is custom-made to fit comfortably and support long-term oral health.
                 </p>
               </div>
-              <Button variant="primary" size="md" href="/contact#contact-form">
-                Request a Consultation
-              </Button>
             </AnimatedSection>
 
             {/* Right - Image */}
@@ -363,10 +360,6 @@ export default function NightguardsPage() {
                   </li>
                 ))}
               </ul>
-
-              <Button variant="primary" size="md" href="/contact#contact-form">
-                Request a Consultation
-              </Button>
             </AnimatedSection>
           </div>
         </div>

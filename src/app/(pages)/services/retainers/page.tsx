@@ -235,9 +235,6 @@ export default function RetainersPage() {
                   Wearing retainers as prescribed is essential for maintaining long-term alignment, function, and stability.
                 </p>
               </div>
-              <Button variant="primary" size="md" href="/contact#contact-form">
-                Request a Consultation
-              </Button>
             </AnimatedSection>
 
             {/* Right - Image */}
@@ -355,10 +352,6 @@ export default function RetainersPage() {
                   </li>
                 ))}
               </ul>
-
-              <Button variant="primary" size="md" href="/contact#contact-form">
-                Request a Consultation
-              </Button>
             </AnimatedSection>
           </div>
         </div>
