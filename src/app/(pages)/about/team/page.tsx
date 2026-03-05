@@ -206,34 +206,6 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Decorative Divider */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-      {/* Quote Section */}
-      <section className="py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
-        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <iconify-icon icon="solar:quote-up-square-bold" width="48" height="48" className="text-[#c9a962]/40 mb-8" />
-            
-            <p className="text-white/80 text-xl lg:text-2xl leading-relaxed mb-6">
-              Our team is truly incredible and, in many ways, is the reason behind the success of this practice and the smiles on our patients&apos; faces!
-            </p>
-            
-            <p className="text-white/60 text-lg lg:text-xl leading-relaxed mb-6">
-              Our team members are skilled and experienced people who love what they do and value our patients, always putting each patient&apos;s health, comfort, and wellbeing at the forefront. They are a team that supports and encourages one another and cares deeply about the quality of work that is provided.
-            </p>
-            
-            <p className="text-white/80 text-xl lg:text-2xl leading-relaxed italic mb-8">
-              We could not be prouder to work alongside these amazingly talented and caring individuals!
-            </p>
-            
-            <p className="text-[#c9a962] text-lg font-semibold">
-              ~ Drs. Cronin and Mo
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Team Grid Section */}
       <section id="team" className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
         {/* Subtle background accent */}
