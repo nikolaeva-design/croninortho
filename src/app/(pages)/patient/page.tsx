@@ -851,14 +851,6 @@ export default function PatientPage() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-3 pt-2">
-                <Button variant="primary" size="md" href="/contact#contact-form">
-                  Book an appointment
-                </Button>
-                <Button variant="secondary" size="md" href="/emergency">
-                  Emergency info
-                </Button>
-              </div>
             </div>
 
             <div className="rounded-3xl bg-white/[0.03] border border-white/10 overflow-hidden">
