@@ -282,7 +282,7 @@ export default function TreatmentsPage() {
                             src={treatment.image}
                             alt={treatment.title}
                             fill
-                            className="object-cover"
+                            className={`object-cover ${treatment.id === 'powerscope' ? 'scale-125' : ''}`}
                           />
                         ) : (
                           <div className="absolute inset-0 flex items-center justify-center">
