@@ -76,8 +76,8 @@ export default function Footer() {
         </div>
       )}
 
-      {/* Location Section */}
-      {!hideCTA && <Location />}
+      {/* Location Section - Only on homepage */}
+      {pathname === '/' && <Location />}
 
       {/* Main Footer */}
       <div className="bg-[#141414] border-t border-white/5 py-12 sm:py-16 lg:py-20">
