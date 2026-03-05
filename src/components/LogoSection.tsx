@@ -79,7 +79,7 @@ export default function LogoSection() {
                 key={logo.id}
                 className="absolute top-1/2 left-1/2 transition-none pointer-events-none"
                 style={{
-                  transform: `translate(-50%, -50%) translate(${x}vw, ${y}vh) scale(${scale})`,
+                  transform: `translate(-50%, -50%) translate(${x}vw, calc(${y}vh + 1rem)) scale(${scale})`,
                   opacity: opacity,
                 }}
               >
