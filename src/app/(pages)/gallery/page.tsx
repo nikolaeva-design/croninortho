@@ -214,8 +214,8 @@ function GalleryCard({
 export default function GalleryPage() {
   return (
     <div className="bg-[#0a0a0a] -mt-20">
-      {/* Hero Section */}
-      <section className="relative min-h-[50vh] sm:min-h-[60vh] flex items-center overflow-hidden pt-20">
+      {/* Hero & Coming Soon Section */}
+      <section id="gallery" className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center overflow-hidden pt-20">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f] to-[#0a0a0a]" />
         
@@ -240,37 +240,43 @@ export default function GalleryPage() {
 
           {/* Title */}
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-4 sm:mb-6 animate-fade-in-up opacity-0"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-6 sm:mb-8 animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
           >
             <span className="text-white">Our </span>
             <span className="text-white/50">Gallery</span>
           </h1>
 
-          {/* Description */}
-          <p
-            className="text-white/60 text-sm sm:text-lg lg:text-xl leading-relaxed mb-8 sm:mb-10 max-w-2xl mx-auto animate-fade-in-up opacity-0"
+          {/* Gallery Icon */}
+          <div
+            className="mb-8 sm:mb-10 flex justify-center animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
           >
-            Explore real smile transformations from our patients. Hover over each case to see the before and after results.
-          </p>
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#c9a962]/10 border border-[#c9a962]/20 flex items-center justify-center">
+              <iconify-icon
+                icon="solar:gallery-bold"
+                width="40"
+                height="40"
+                className="text-[#c9a962]"
+              />
+            </div>
+          </div>
 
-          {/* CTA */}
-          <div
-            className="animate-fade-in-up opacity-0"
+          {/* Description */}
+          <p
+            className="text-white/60 text-sm sm:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
-            <Button variant="primary" size="lg" href="#gallery">
-              View Transformations
-            </Button>
-          </div>
+            We're preparing an amazing collection of before and after smile transformations. 
+            Check back soon to see the incredible results our patients have achieved!
+          </p>
         </div>
       </section>
 
-      {/* Gallery Section */}
+      {/* Gallery Section - HIDDEN FOR NOW (images not ready) */}
+      {/* 
       <section id="gallery" className="py-16 sm:py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12">
-          {/* Gallery Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {galleryItems.map((item, index) => (
               <GalleryCard key={item.id} item={item} index={index} />
@@ -278,28 +284,8 @@ export default function GalleryPage() {
           </div>
         </div>
       </section>
+      */}
 
-      {/* CTA Section */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-[#0a0a0a] relative overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 text-center">
-          <AnimatedSection>
-            <h2 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-4 sm:mb-6">
-              Ready for Your Transformation?
-            </h2>
-            <p className="text-white/60 text-sm sm:text-lg max-w-2xl mx-auto mb-8 sm:mb-10">
-              Join our community of happy patients and start your smile journey today. Book a consultation to discuss your goals.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-              <Button variant="primary" size="lg" href="/contact#contact-form">
-                Book Free Consultation
-              </Button>
-              <Button variant="secondary" size="lg" href="/#orthodontic-care">
-                Explore Treatments
-              </Button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
     </div>
   );
 }

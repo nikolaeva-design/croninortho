@@ -19,7 +19,7 @@ const teamHighlights = [
   {
     name: 'Our Team',
     href: '/about/team',
-    image: null,
+    image: '/CroninOrtho6098 2.png',
     imagePosition: 'object-center',
   },
 ];

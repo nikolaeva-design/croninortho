@@ -643,8 +643,7 @@ export default function AestheticsPage() {
             {/* Left - Info */}
             <AnimatedSection>
               <h2 className="text-white text-4xl sm:text-5xl font-semibold tracking-tight leading-tight mb-6">
-                Ready for Your
-                <span className="text-[#c9a962] block">Perfect Smile?</span>
+                Ready for Your Perfect Smile?
               </h2>
               <p className="text-white/60 text-lg leading-relaxed mb-8">
                 Book your aesthetic consultation today and discover how we can

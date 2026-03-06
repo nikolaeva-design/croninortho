@@ -284,8 +284,7 @@ export default function TeamPage() {
         <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.1] mb-6">
-              Ready to Start Your
-              <span className="text-[#c9a962]"> Smile Journey?</span>
+              Ready to Start Your Smile Journey?
             </h2>
             <p className="text-white/60 text-lg leading-relaxed mb-10">
               Our team is here to welcome you and provide the personalized, caring orthodontic experience you deserve. Schedule your consultation today!

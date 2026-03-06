@@ -214,16 +214,17 @@ export default function TreatmentsPage() {
 
           {/* CTAs */}
           <div
-            className="flex flex-wrap justify-center gap-4 animate-fade-in-up opacity-0"
+            className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
-            <Button variant="primary" size="lg" href="/#orthodontic-care">
+            <Button variant="primary" size="lg" href="/#orthodontic-care" className="w-full sm:w-auto">
               Explore Treatments
             </Button>
             <Button
               variant="secondary"
               size="lg"
               href="/contact#contact-form"
+              className="w-full sm:w-auto"
             >
               Contact Us
             </Button>
@@ -232,7 +233,7 @@ export default function TreatmentsPage() {
       </section>
 
       {/* Quick Navigation */}
-      <section className="py-8 bg-[#0f0f0f] border-y border-white/5 sticky top-16 z-40">
+      <section className="py-8 bg-[#0f0f0f] border-y border-white/5 lg:sticky lg:top-16 z-40">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="flex flex-wrap gap-2 justify-center">
             {treatments.map((treatment) => (
@@ -352,7 +353,7 @@ export default function TreatmentsPage() {
               Not sure which treatment is right for you? Schedule a consultation and our experts will create a personalized plan for your unique needs.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="primary" size="lg" href="/contact#contact-form">
+              <Button variant="primary" size="lg" href="/contact#contact-form" className="w-full sm:w-auto">
                 Book Free Consultation
               </Button>
             </div>

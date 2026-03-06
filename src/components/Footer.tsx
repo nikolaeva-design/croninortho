@@ -9,18 +9,16 @@ import Location from './Location';
 
 const innerPages = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Technology', href: '#gallery' },
+  { label: 'About', href: '/about' },
+  { label: 'Aesthetics', href: '/aesthetics' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Contact', href: '/contact' },
 ];
 
 const utilityPages = [
-  { label: 'FAQs', href: '/faqs' },
   { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Terms of Service', href: '/terms' },
   { label: 'Sitemap', href: '/sitemap.xml' },
-  { label: 'Accessibility', href: '/accessibility' },
 ];
 
 export default function Footer() {
@@ -124,11 +122,20 @@ export default function Footer() {
                 </a>
               </div>
               
-              <p className="text-white/40 text-xs sm:text-sm leading-relaxed max-w-sm">
-                CroninOrtho provides comprehensive orthodontic and aesthetic
-                care with personalized treatment planning, modern technology,
-                and a patient-centered approach.
+              <p className="text-white/40 text-xs sm:text-sm leading-relaxed max-w-sm mb-6">
+                Comprehensive orthodontic and aesthetic care with personalized treatment planning and modern technology.
               </p>
+              
+              {/* Award Badge */}
+              <div className="flex items-start">
+                <Image
+                  src="/TopChoiceAwards_logo_year_2026_Colour_page-0001.png"
+                  alt="Top Choice Award 2026 - Mark of Excellence"
+                  width={100}
+                  height={100}
+                  className="w-20 h-20 sm:w-24 sm:h-24 object-contain"
+                />
+              </div>
             </div>
 
             {/* Inner Pages */}
