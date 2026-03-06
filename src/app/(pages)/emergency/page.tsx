@@ -214,7 +214,7 @@ export default function EmergencyPage() {
               you can get to our office.
             </p>
             <ul className="space-y-1.5 sm:space-y-2">
-              {['Put loose pieces in a plastic bag', 'Use wax on poking wires', 'Reposition wires with tweezers'].map((tip) => (
+              {['Put loose pieces in an envelope', 'Use wax on poking wires', 'Reposition wires with tweezers'].map((tip) => (
                 <li key={tip} className="flex items-center gap-2 text-white/55 text-xs sm:text-sm transition-colors duration-200 group-hover:text-white/70">
                   <span className="w-1.5 h-1.5 rounded-full bg-white/30 shrink-0 transition-colors duration-200 group-hover:bg-[#c9a962]" />
                   {tip}
@@ -275,6 +275,8 @@ export default function EmergencyPage() {
                       alt={issue.title}
                       width={320}
                       height={240}
+                      loading="lazy"
+                      sizes="(max-width: 640px) 280px, 320px"
                       className="rounded-xl sm:rounded-2xl object-cover max-w-[280px] sm:max-w-[320px] max-h-[200px] sm:max-h-[240px]"
                     />
                   ) : (
@@ -283,6 +285,7 @@ export default function EmergencyPage() {
                         src={issue.image}
                         alt={issue.title}
                         fill
+                        loading="lazy"
                         className="object-contain"
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
@@ -366,7 +369,7 @@ export default function EmergencyPage() {
           <div className="rounded-xl sm:rounded-2xl bg-white/[0.02] border border-white/10 p-4 sm:p-6 text-center">
             <div className="w-11 sm:w-14 h-11 sm:h-14 rounded-xl sm:rounded-2xl bg-[#c9a962]/10 border border-[#c9a962]/20 flex items-center justify-center mx-auto mb-3 sm:mb-4">
               <iconify-icon
-                icon="solar:bag-bold"
+                icon="solar:letter-bold"
                 width="22"
                 height="22"
                 className="text-[#c9a962] sm:w-7 sm:h-7"
@@ -375,7 +378,7 @@ export default function EmergencyPage() {
             </div>
             <h3 className="text-white text-sm sm:text-base font-semibold mb-1.5 sm:mb-2">Save Loose Pieces</h3>
             <p className="text-white/50 text-xs sm:text-sm">
-              Put loose pieces in a bag or envelope and bring them to your appointment.
+              Put loose pieces in an envelope or container and bring them to your appointment.
             </p>
           </div>
           <div className="rounded-xl sm:rounded-2xl bg-white/[0.02] border border-white/10 p-4 sm:p-6 text-center">

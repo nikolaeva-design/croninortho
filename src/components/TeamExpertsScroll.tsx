@@ -179,6 +179,7 @@ export default function TeamExpertsScroll() {
                         src={member.image}
                         alt={member.name}
                         fill
+                        loading="lazy"
                         className={`object-cover ${member.imagePosition} group-hover/card:scale-105 transition-transform duration-500`}
                         sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, (max-width: 1280px) 420px, (max-width: 1536px) 480px, 540px"
                       />

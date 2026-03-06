@@ -387,6 +387,7 @@ export default function KidsOrthodonticsPage() {
                   src="/kids-early-treatment.png"
                   alt="Happy smiling child showing growing teeth"
                   fill
+                  loading="lazy"
                   className="object-cover"
                   sizes="(max-width: 1024px) 400px, 500px"
                   quality={100}
@@ -430,6 +431,7 @@ export default function KidsOrthodonticsPage() {
                   src="/kids-appliances.png"
                   alt="Smiling child showing teeth for orthodontic evaluation"
                   fill
+                  loading="lazy"
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 66vw"
                   quality={90}
@@ -642,6 +644,7 @@ export default function KidsOrthodonticsPage() {
                 src="/kids-ortho.png"
                 alt="Child with orthodontic appliance"
                 fill
+                loading="lazy"
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
@@ -663,6 +666,7 @@ export default function KidsOrthodonticsPage() {
                   src={cephImageSrc}
                   alt="Cephalometric X-ray analysis for orthodontic evaluation"
                   fill
+                  loading="lazy"
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   quality={100}
@@ -743,6 +747,7 @@ export default function KidsOrthodonticsPage() {
                       src={section.image}
                       alt={section.title}
                       fill
+                      loading="lazy"
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />

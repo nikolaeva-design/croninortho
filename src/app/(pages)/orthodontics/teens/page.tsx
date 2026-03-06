@@ -383,6 +383,7 @@ export default function TeensOrthodonticsPage() {
                   src="/teens-braces-options.png"
                   alt="Teen with beautiful confident smile"
                   fill
+                  loading="lazy"
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   quality={100}
@@ -423,6 +424,7 @@ export default function TeensOrthodonticsPage() {
                   src="/teens-clear-aligners.png"
                   alt="Teen smiling during orthodontic evaluation"
                   fill
+                  loading="lazy"
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 66vw"
                   quality={90}
@@ -636,6 +638,7 @@ export default function TeensOrthodonticsPage() {
                 src="/teens-treatment-results.png"
                 alt="Teen girl smiling with braces"
                 fill
+                loading="lazy"
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 quality={90}
@@ -657,6 +660,7 @@ export default function TeensOrthodonticsPage() {
                   src={cephImageSrc}
                   alt="Cephalometric X-ray analysis for orthodontic evaluation"
                   fill
+                  loading="lazy"
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   quality={100}
@@ -737,6 +741,7 @@ export default function TeensOrthodonticsPage() {
                       src={section.image}
                       alt={section.title}
                       fill
+                      loading="lazy"
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />

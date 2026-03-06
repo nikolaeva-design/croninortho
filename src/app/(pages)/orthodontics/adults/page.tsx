@@ -388,6 +388,7 @@ export default function AdultsOrthodonticsPage() {
                   src="/adults-clear-aligners.png"
                   alt="Adult man smiling with braces"
                   fill
+                  loading="lazy"
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
@@ -428,6 +429,7 @@ export default function AdultsOrthodonticsPage() {
                   src="/adults-ceramic-braces.png"
                   alt="Close-up of smile with clear ceramic braces"
                   fill
+                  loading="lazy"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 66vw"
                 />
@@ -639,6 +641,7 @@ export default function AdultsOrthodonticsPage() {
                 src="/adults-treatment-process.png"
                 alt="Adult man smiling with discreet braces"
                 fill
+                loading="lazy"
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 quality={90}
@@ -660,6 +663,7 @@ export default function AdultsOrthodonticsPage() {
                   src={cephImageSrc}
                   alt="Cephalometric X-ray analysis for orthodontic evaluation"
                   fill
+                  loading="lazy"
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   quality={100}
@@ -740,6 +744,7 @@ export default function AdultsOrthodonticsPage() {
                       src={section.image}
                       alt={section.title}
                       fill
+                      loading="lazy"
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />

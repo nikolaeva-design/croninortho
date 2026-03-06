@@ -283,6 +283,8 @@ export default function TreatmentsPage() {
                             src={treatment.image}
                             alt={treatment.title}
                             fill
+                            loading="lazy"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
                             className={`object-cover ${treatment.id === 'powerscope' ? 'scale-125' : ''}`}
                           />
                         ) : (

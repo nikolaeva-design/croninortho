@@ -99,7 +99,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="preconnect" href="https://code.iconify.design" />
+        <link rel="preconnect" href="https://api.iconify.design" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://code.iconify.design" />
+        <link rel="dns-prefetch" href="https://api.iconify.design" />
       </head>
       <body
         className={`${poppins.variable} font-poppins antialiased bg-background text-foreground`}

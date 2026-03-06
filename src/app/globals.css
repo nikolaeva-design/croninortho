@@ -43,6 +43,34 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ==========================================
+   PERFORMANCE OPTIMIZATIONS
+   ========================================== */
+
+/* GPU-accelerated sections for smoother scrolling */
+section {
+  contain: layout style;
+}
+
+/* Optimize will-change for scroll-heavy elements */
+.sticky {
+  will-change: transform;
+}
+
+/* Reduce paint operations for fixed/absolute positioned elements */
+[class*="absolute"],
+[class*="fixed"] {
+  will-change: auto;
+}
+
+/* Content-visibility for off-screen sections */
+@supports (content-visibility: auto) {
+  section:not(:first-of-type) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
