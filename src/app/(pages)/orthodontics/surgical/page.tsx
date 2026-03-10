@@ -143,7 +143,7 @@ export default function SurgicalOrthodonticsPage() {
     return () => clearTimeout(t);
   }, [diagramImageFailed, diagramAttempt]);
 
-  const diagramSrc = `/surgical-orthodontics-diagram.jpg?v=${diagramAttempt}`;
+  const diagramSrc = `/SURGICAL PHOTO.JPG?v=${diagramAttempt}`;
 
   return (
     <div className="bg-[#0a0a0a] -mt-20">
@@ -250,7 +250,7 @@ export default function SurgicalOrthodonticsPage() {
                     src={diagramSrc}
                     alt="Illustration showing jaw alignment and braces as part of surgical orthodontics"
                     fill
-                    className="object-contain"
+                    className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     quality={100}
                     unoptimized
@@ -261,7 +261,7 @@ export default function SurgicalOrthodonticsPage() {
                     <div className="text-center">
                       <div className="text-white/70 font-semibold">Illustration coming soon</div>
                       <div className="mt-1 text-sm text-white/45">
-                        Add <span className="text-white/60 font-medium">public/surgical-orthodontics-diagram.jpg</span>
+                        Add <span className="text-white/60 font-medium">public/SURGICAL PHOTO.JPG</span>
                       </div>
                     </div>
                   </div>

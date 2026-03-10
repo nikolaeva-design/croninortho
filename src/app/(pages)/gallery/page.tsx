@@ -267,7 +267,7 @@ export default function GalleryPage() {
             className="text-white/60 text-sm sm:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
-            We're preparing an amazing collection of before and after smile transformations. 
+            We&apos;re preparing an amazing collection of before and after smile transformations. 
             Check back soon to see the incredible results our patients have achieved!
           </p>
         </div>

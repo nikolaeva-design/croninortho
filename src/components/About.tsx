@@ -69,27 +69,27 @@ export default function About() {
 
           {/* Right - Balanced Images */}
           <div className="relative h-[350px] sm:h-[450px] lg:h-[600px] mt-4 lg:mt-0">
-            {/* Dr. Cronin - Left */}
-            <div className="absolute left-0 top-[0%] w-[60%] sm:w-[62%] h-[80%] sm:h-[85%] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white z-10">
+            {/* Dr. Cronin - Left (smaller) */}
+            <div className="absolute left-0 top-[0%] w-[52%] sm:w-[54%] h-[70%] sm:h-[75%] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white z-10">
               <Image
                 src="/dr-cronin.jpg"
                 alt="Dr. Cronin - Orthodontist"
                 fill
                 className="object-cover object-top"
-                sizes="(max-width: 640px) 60vw, (max-width: 1024px) 55vw, 35vw"
+                sizes="(max-width: 640px) 52vw, (max-width: 1024px) 54vw, 35vw"
                 loading="lazy"
                 quality={80}
               />
             </div>
 
             {/* Dr. Mo - Right */}
-            <div className="absolute right-0 top-[10%] w-[44%] sm:w-[42%] h-[50%] sm:h-[55%] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white">
+            <div className="absolute right-0 top-[8%] w-[46%] sm:w-[45%] h-[58%] sm:h-[62%] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white">
               <Image
                 src="/dr-mo.jpg"
                 alt="Dr. Mo - Orthodontist"
                 fill
                 className="object-cover object-top"
-                sizes="(max-width: 640px) 44vw, (max-width: 1024px) 42vw, 35vw"
+                sizes="(max-width: 640px) 46vw, (max-width: 1024px) 45vw, 35vw"
                 loading="lazy"
                 quality={80}
               />

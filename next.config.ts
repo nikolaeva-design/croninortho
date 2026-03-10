@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000,
     // Next Image Optimization doesn't run on GitHub Pages static hosting.
     unoptimized: true,
-    qualities: [75, 85, 90, 100],
+    qualities: [75, 80, 85, 90, 100],
   },
 
   // Performance optimizations

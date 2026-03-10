@@ -26,7 +26,7 @@ const otherServicesDropdown = [
   { label: 'Splints', href: '/services/splints', description: 'TMJ & bite therapy solutions' },
 ];
 
-const moreDropdown = [
+const patientsDropdown = [
   { label: 'Patient', href: '/patient', description: 'Forms, visits, and helpful resources' },
   { label: 'Patient Care', href: '/patient-care', description: 'Video guides for your treatment' },
   { label: 'Emergency', href: '/emergency', description: 'What to do and who to contact' },
@@ -38,8 +38,8 @@ const navItems = [
   { label: 'About Us', href: '#about', hasDropdown: true, dropdownItems: aboutUsDropdown },
   { label: 'Aesthetics', href: '/aesthetics', hasDropdown: false },
   { label: 'Gallery', href: '/gallery', hasDropdown: false },
+  { label: 'Patients', href: '#patients', hasDropdown: true, dropdownItems: patientsDropdown },
   { label: 'Other Services', href: '#services', hasDropdown: true, dropdownItems: otherServicesDropdown },
-  { label: 'More', href: '#more', hasDropdown: true, dropdownItems: moreDropdown },
 ];
 
 export default function Navbar() {

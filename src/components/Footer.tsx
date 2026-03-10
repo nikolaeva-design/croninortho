@@ -12,12 +12,13 @@ const innerPages = [
   { label: 'About', href: '/about' },
   { label: 'Aesthetics', href: '/aesthetics' },
   { label: 'Gallery', href: '/gallery' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ];
 
 const utilityPages = [
   { label: 'Privacy Policy', href: '/privacy' },
-  { label: 'Terms of Service', href: '/terms' },
+  { label: 'Terms and Conditions', href: '/terms' },
   { label: 'Sitemap', href: '/sitemap.xml' },
 ];
 

@@ -20,7 +20,7 @@ const teamHighlights = [
     name: 'Our Team',
     href: '/about/team',
     image: '/CroninOrtho6098 2.png',
-    imagePosition: 'object-center',
+    imagePosition: 'object-[center_35%]', // Position to show more of the team
   },
 ];
 
@@ -142,8 +142,8 @@ export default function TeamExpertsScroll() {
           <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold">Our Team</h2>
         </div>
         
-        {/* Centered rounded square card stack */}
-        <div className="relative w-[320px] h-[420px] sm:w-[380px] sm:h-[500px] lg:w-[420px] lg:h-[540px] xl:w-[480px] xl:h-[620px] 2xl:w-[540px] 2xl:h-[700px] z-10">
+        {/* Centered rounded square card stack - height based on viewport to prevent distortion on tablets */}
+        <div className="relative h-[55vh] sm:h-[58vh] md:h-[50vh] lg:h-[60vh] xl:h-[65vh] 2xl:h-[70vh] aspect-[3/4] z-10">
           {/* Cards */}
           {teamHighlights.map((member, index) => {
             const { translateY, translateX, rotate, scale, zIndex, isVisible } = getCardState(index);

@@ -11,7 +11,7 @@ const treatments = [
     title: 'Surgical Orthodontics',
     description: 'Surgical orthodontics, also known as orthognathic surgery, combines orthodontic treatment with corrective jaw surgery. This comprehensive approach is recommended when jaw abnormalities are too severe to be corrected with braces or aligners alone.',
     details: 'The process typically involves pre-surgical orthodontic treatment to align the teeth, followed by surgery to reposition the jaw bones, and post-surgical orthodontics for final refinement. This treatment can dramatically improve facial balance, breathing, and bite function, providing both functional and aesthetic benefits that last a lifetime.',
-    image: '/surgical-orthodontics-diagram.jpg',
+    image: '/SURGICAL PHOTO.JPG',
   },
   {
     id: 'craniofacial-orthodontics',
@@ -69,7 +69,7 @@ const treatments = [
     title: 'TADs',
     description: 'Temporary Anchorage Devices (TADs) are small titanium screws temporarily placed in the jawbone to serve as fixed anchor points for tooth movement. They enable precise control over tooth positioning that was previously difficult or impossible to achieve.',
     details: 'TADs are placed using local anesthesia in a quick, minimally invasive procedure. They allow orthodontists to move specific teeth without affecting others, close extraction spaces efficiently, and correct complex bite issues. Once treatment is complete, TADs are easily removed.',
-    image: '/TAD-1 (1).webp',
+    image: '/TADs.jpg',
   },
   {
     id: 'powerscope',

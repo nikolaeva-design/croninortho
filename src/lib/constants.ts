@@ -57,14 +57,13 @@ export const FOOTER_LINKS = {
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
     { label: 'Technology', href: '#gallery' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact#contact-form' },
   ],
   utilityPages: [
-    { label: 'FAQs', href: '/faqs' },
     { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Terms of Service', href: '/terms' },
     { label: 'Sitemap', href: '/sitemap.xml' },
-    { label: 'Accessibility', href: '/accessibility' },
   ],
 } as const;
 
