@@ -71,6 +71,45 @@ section {
   }
 }
 
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Disable expensive animations on low-power devices */
+@media (prefers-reduced-motion: reduce), (update: slow) {
+  .animate-marquee,
+  .icon-3d,
+  .icon-spin-3d,
+  .teeth-model,
+  .orbit-ring,
+  .cube,
+  .dna-strand {
+    animation: none !important;
+  }
+}
+
+/* Hardware acceleration for animations */
+.animate-fade-in-up,
+.animate-fade-in-left,
+.animate-fade-in-right {
+  will-change: transform, opacity;
+}
+
+/* Auto-remove will-change after animation completes */
+.animate-fade-in-up[style*="forwards"],
+.animate-fade-in-left[style*="forwards"],
+.animate-fade-in-right[style*="forwards"] {
+  will-change: auto;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

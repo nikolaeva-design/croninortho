@@ -2,30 +2,35 @@ import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 
-// Dynamic imports for below-the-fold components
+// Skeleton loader for consistent loading states with subtle animation
+const SectionSkeleton = ({ height = '600px', bg = '#0a0a0a' }: { height?: string; bg?: string }) => (
+  <div className="animate-pulse" style={{ minHeight: height, background: bg }} />
+);
+
+// Dynamic imports for below-the-fold components (code splitting for faster initial load)
 const OrthodonticCare = dynamic(() => import('@/components/OrthodonticCare'), {
-  loading: () => <div className="min-h-[600px] bg-[#0a0a0a]" />,
+  loading: () => <SectionSkeleton height="600px" />,
 });
 const AestheticServices = dynamic(() => import('@/components/AestheticServices'), {
-  loading: () => <div className="min-h-[600px] bg-[#0a0a0a]" />,
+  loading: () => <SectionSkeleton height="600px" />,
 });
 const OtherServices = dynamic(() => import('@/components/OtherServices'), {
-  loading: () => <div className="min-h-[600px] bg-[#0a0a0a]" />,
+  loading: () => <SectionSkeleton height="600px" />,
 });
 const CTA = dynamic(() => import('@/components/CTA'), {
-  loading: () => <div className="min-h-[80vh] bg-[#0a0a0a]" />,
+  loading: () => <SectionSkeleton height="80vh" />,
 });
 const About = dynamic(() => import('@/components/About'), {
-  loading: () => <div className="min-h-[600px] bg-[#e8e8e8]" />,
+  loading: () => <SectionSkeleton height="600px" bg="#e8e8e8" />,
 });
 const Technology = dynamic(() => import('@/components/Technology'), {
-  loading: () => <div className="min-h-[400px] bg-black" />,
+  loading: () => <SectionSkeleton height="400px" bg="black" />,
 });
 const LogoSection = dynamic(() => import('@/components/LogoSection'), {
-  loading: () => <div className="min-h-screen bg-white" />,
+  loading: () => <SectionSkeleton height="100vh" bg="white" />,
 });
 const Footer = dynamic(() => import('@/components/Footer'), {
-  loading: () => <div className="min-h-[400px] bg-[#141414]" />,
+  loading: () => <SectionSkeleton height="400px" bg="#141414" />,
 });
 
 export default function Home() {

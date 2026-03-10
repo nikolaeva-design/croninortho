@@ -19,6 +19,8 @@ export default function Hero() {
           priority
           quality={85}
           sizes="100vw"
+          fetchPriority="high"
+          loading="eager"
         />
         <div
           className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"

@@ -31,6 +31,11 @@ const nextConfig: NextConfig = {
 
   // Strict mode for better development
   reactStrictMode: true,
+
+  // Experimental performance features
+  experimental: {
+    optimizePackageImports: ['@/components', '@/lib'],
+  },
 };
 
 export default nextConfig;

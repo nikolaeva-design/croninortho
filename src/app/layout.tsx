@@ -9,6 +9,8 @@ const poppins = Poppins({
   variable: "--font-poppins",
   display: "swap",
   preload: true,
+  fallback: ['system-ui', '-apple-system', 'sans-serif'],
+  adjustFontFallback: true,
 });
 
 export const viewport: Viewport = {
@@ -92,16 +94,37 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <Script
-          src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"
-          strategy="lazyOnload"
-        />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* Critical resource hints */}
         <link rel="preconnect" href="https://code.iconify.design" />
         <link rel="preconnect" href="https://api.iconify.design" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://code.iconify.design" />
         <link rel="dns-prefetch" href="https://api.iconify.design" />
+        
+        {/* Preload critical hero image */}
+        <link 
+          rel="preload" 
+          href="/main-hero-image.png" 
+          as="image" 
+          type="image/png"
+          fetchPriority="high"
+        />
+        
+        {/* Preload logo */}
+        <link 
+          rel="preload" 
+          href="/logo.svg" 
+          as="image" 
+          type="image/svg+xml"
+        />
+        
+        {/* Icons - load after first paint */}
+        <Script
+          src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"
+          strategy="afterInteractive"
+        />
+        
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body
         className={`${poppins.variable} font-poppins antialiased bg-background text-foreground`}
