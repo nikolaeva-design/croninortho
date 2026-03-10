@@ -193,7 +193,7 @@ export default function TeamPage() {
           
           {/* CTA */}
           <div 
-            className="flex flex-wrap justify-center gap-4 animate-fade-in-up opacity-0"
+            className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
             <Button variant="primary" size="lg" href="/about/dr-cronin">

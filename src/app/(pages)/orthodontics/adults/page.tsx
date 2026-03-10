@@ -333,7 +333,7 @@ export default function AdultsOrthodonticsPage() {
 
             {/* CTAs */}
             <div 
-              className="flex items-center gap-3 animate-fade-in-up opacity-0"
+              className="flex flex-col sm:flex-row gap-3 animate-fade-in-up opacity-0"
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
             >
               <Button variant="primary" size="lg" href="/contact#contact-form">

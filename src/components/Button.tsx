@@ -36,6 +36,7 @@ export default function Button({
     inline-flex items-center justify-center gap-2 
     font-medium transition-all duration-300 ease-out
     rounded-full cursor-pointer
+    w-full sm:w-auto
     focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background
     disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
   `;

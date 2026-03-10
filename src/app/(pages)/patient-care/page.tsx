@@ -92,7 +92,7 @@ export default function PatientCarePage() {
               Helpful video tutorials to guide you through caring for your braces, aligners, and maintaining excellent oral hygiene during treatment.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button variant="primary" size="lg" href="/patient">
                 Patient Resources
               </Button>
@@ -191,7 +191,7 @@ export default function PatientCarePage() {
             <p className="text-white/60 leading-relaxed mb-8 max-w-xl mx-auto">
               If you need additional guidance or have questions about your treatment, our team is here to help.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto">
               <Button variant="primary" size="lg" href="/contact#contact-form">
                 Contact Us
               </Button>
