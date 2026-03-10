@@ -36,10 +36,10 @@ const Footer = dynamic(() => import('@/components/Footer'), {
 export default function Home() {
   return (
     <>
-      {/* Skip to main content link for accessibility */}
+      {/* Skip to main content link for accessibility - visually hidden until focused */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+        className="absolute -top-full left-4 z-[100] px-4 py-2 bg-white text-black rounded-lg outline-none ring-2 ring-accent focus:top-4 transition-all"
       >
         Skip to main content
       </a>
