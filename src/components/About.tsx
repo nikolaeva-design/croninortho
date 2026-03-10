@@ -47,7 +47,7 @@ export default function About() {
             </h3>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-2 sm:gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 variant="primary"
                 size="md"
