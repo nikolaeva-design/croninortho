@@ -17,6 +17,7 @@ const partnerLogos = [
 export default function LogoSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     let animationFrame: number;
@@ -35,14 +36,28 @@ export default function LogoSection() {
       const rect = sectionRef.current.getBoundingClientRect();
       const sectionHeight = rect.height;
       const scrollableHeight = sectionHeight - window.innerHeight;
-      
+
       const scrolled = -rect.top;
-      
+
       let prog = scrolled / scrollableHeight;
       prog = Math.max(0, Math.min(1, prog));
-      
+
       targetProgress = prog;
     };
+
+    // Intersection Observer to only animate when visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: 0, rootMargin: '100px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
     animationFrame = requestAnimationFrame(animate);
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -51,11 +66,12 @@ export default function LogoSection() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
       cancelAnimationFrame(animationFrame);
+      observer.disconnect();
     };
   }, []);
 
   return (
-    <div 
+    <div
       ref={sectionRef}
       className="relative"
       style={{ height: '300vh' }}
@@ -63,21 +79,21 @@ export default function LogoSection() {
       {/* Sticky container - white background to match logo screenshots */}
       <div className="sticky top-0 h-screen bg-white flex items-center justify-center overflow-hidden">
         <div className="relative w-full h-full">
-          
-          {/* Floating Partner Logos */}
-          {partnerLogos.map((logo) => {
-            const easeProgress = progress < 0.5 
-              ? 2 * progress * progress 
+
+          {/* Floating Partner Logos - Only render when visible */}
+          {isVisible && partnerLogos.map((logo) => {
+            const easeProgress = progress < 0.5
+              ? 2 * progress * progress
               : 1 - Math.pow(-2 * progress + 2, 2) / 2;
             const x = logo.startX * (1 - easeProgress);
             const y = logo.startY * (1 - easeProgress);
             const scale = 1 - (easeProgress * 0.6);
             const opacity = 0.9 * (1 - easeProgress);
-            
+
             return (
               <div
                 key={logo.id}
-                className="absolute top-1/2 left-1/2 transition-none pointer-events-none"
+                className="absolute top-1/2 left-1/2 transition-none pointer-events-none will-change-transform"
                 style={{
                   transform: `translate(-50%, -50%) translate(${x}vw, calc(${y}vh + 1rem)) scale(${scale})`,
                   opacity: opacity,
@@ -91,6 +107,8 @@ export default function LogoSection() {
                     className="object-contain"
                     sizes="180px"
                     loading="lazy"
+                    decoding="async"
+                    quality={75}
                   />
                 </div>
               </div>
@@ -98,7 +116,7 @@ export default function LogoSection() {
           })}
 
           {/* Center - Main Logo (always visible, grows slightly) */}
-          <div 
+          <div
             className="absolute inset-0 flex flex-col items-center justify-center z-10"
           >
             <div
@@ -113,12 +131,14 @@ export default function LogoSection() {
                 height={192}
                 className="h-48 lg:h-60 xl:h-72 w-auto object-contain"
                 priority
+                decoding="async"
+                quality={80}
               />
             </div>
           </div>
 
           {/* Subtle radial glow when logos converge */}
-          <div 
+          <div
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full pointer-events-none transition-opacity duration-500"
             style={{
               background: 'radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%)',

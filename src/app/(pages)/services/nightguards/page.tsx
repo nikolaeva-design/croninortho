@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
+import { CONTACT } from '@/lib/constants';
 
 // Benefits of nightguards
 const benefits = [
@@ -510,8 +511,13 @@ export default function NightguardsPage() {
                   </div>
                 </a>
 
-                <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
-                  <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center">
+                <a
+                  href={CONTACT.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#c9a962]/30 transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <iconify-icon
                       icon="solar:map-point-bold"
                       width="24"
@@ -522,10 +528,11 @@ export default function NightguardsPage() {
                   <div>
                     <div className="text-white/50 text-sm">Address</div>
                     <div className="text-white font-medium">
-                      6351 197 St #101, Langley Twp, BC V2Y 1X8, Canada
+                      {CONTACT.address.street}, {CONTACT.address.city}, {CONTACT.address.state} {CONTACT.address.zip}, {CONTACT.address.country}
                     </div>
+                    <div className="text-white/50 text-sm mt-0.5">Click to open in Google Maps</div>
                   </div>
-                </div>
+                </a>
               </div>
             </AnimatedSection>
 

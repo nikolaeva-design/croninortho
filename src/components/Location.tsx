@@ -28,8 +28,13 @@ export default function Location() {
 
             {/* Contact Info */}
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
-                <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center">
+              <a
+                href={CONTACT.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#c9a962]/30 transition-all group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <iconify-icon
                     icon="solar:map-point-bold"
                     width="24"
@@ -44,9 +49,9 @@ export default function Location() {
                     <br />
                     {CONTACT.address.city}, {CONTACT.address.state} {CONTACT.address.zip}, {CONTACT.address.country}
                   </div>
-                  <div className="text-white/50 text-sm">Address</div>
+                  <div className="text-white/50 text-sm">Click to open in Google Maps</div>
                 </div>
-              </div>
+              </a>
 
               <a
                 href={`tel:${CONTACT.phone}`}

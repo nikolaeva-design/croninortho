@@ -61,28 +61,51 @@ export default function ContactPage() {
     firstName: '',
     lastName: '',
     email: '',
+    phone: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setError('');
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          formType: 'Contact Page',
+        }),
+      });
 
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ firstName: '', lastName: '', email: '', message: '' });
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setSubmitted(true);
+      setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -234,6 +257,25 @@ export default function ContactPage() {
                       />
                     </div>
 
+                    {/* Phone */}
+                    <div>
+                      <label
+                        htmlFor="phone"
+                        className="block text-white/70 text-sm font-medium mb-2"
+                      >
+                        Phone Number <span className="text-white/30">(optional)</span>
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962]/50 focus:ring-1 focus:ring-[#c9a962]/50 transition-all"
+                        placeholder="(604) 123-4567"
+                      />
+                    </div>
+
                     {/* Message */}
                     <div>
                       <label
@@ -254,6 +296,13 @@ export default function ContactPage() {
                       />
                     </div>
 
+                    {/* Error Message */}
+                    {error && (
+                      <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                        {error}
+                      </div>
+                    )}
+
                     {/* Submit Button */}
                     <button
                       type="submit"
@@ -261,7 +310,10 @@ export default function ContactPage() {
                       className="w-full py-4 rounded-xl bg-[#c9a962] hover:bg-[#d4b872] text-[#0a0a0a] font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                     >
                       {isSubmitting ? (
-                        'Sending...'
+                        <>
+                          <iconify-icon icon="solar:spinner-bold" className="animate-spin" width="20" height="20" />
+                          Sending...
+                        </>
                       ) : (
                         'Send Message'
                       )}

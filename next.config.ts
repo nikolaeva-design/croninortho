@@ -14,23 +14,58 @@ const nextConfig: NextConfig = {
   basePath,
   assetPrefix: basePath,
 
-  // Image optimization
+  // Image optimization - disabled for static export but configured for best practices
   images: {
-    formats: ["image/avif", "image/webp"],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512],
+    formats: ['image/webp', 'image/avif'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000,
     // Next Image Optimization doesn't run on GitHub Pages static hosting.
     unoptimized: true,
-    qualities: [75, 80, 85, 90, 100],
+    qualities: [75, 80, 85],
   },
 
   // Performance optimizations
   poweredByHeader: false,
   compress: true,
+  productionBrowserSourceMaps: false,
+
+  // Experimental optimizations
+  experimental: {
+    optimizePackageImports: ['lucide-react', '@iconify/react'],
+  },
 
   // Strict mode for better development
   reactStrictMode: true,
+
+  // Turbopack configuration (silences warning when using webpack config)
+  turbopack: {},
+
+  // Webpack optimizations
+  webpack: (config, { isServer }) => {
+    // Optimize bundle size
+    if (!isServer) {
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+            },
+            common: {
+              minChunks: 2,
+              chunks: 'all',
+              enforce: true,
+            },
+          },
+        },
+      };
+    }
+    return config;
+  },
 };
 
 export default nextConfig;

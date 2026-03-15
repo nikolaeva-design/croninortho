@@ -94,45 +94,55 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        {/* Critical resource hints */}
-        <link rel="preconnect" href="https://code.iconify.design" />
-        <link rel="preconnect" href="https://api.iconify.design" crossOrigin="anonymous" />
+        {/* Critical resource hints - DNS prefetch and preconnect */}
         <link rel="dns-prefetch" href="https://code.iconify.design" />
         <link rel="dns-prefetch" href="https://api.iconify.design" />
-        
-        {/* Preload critical hero image */}
-        <link 
-          rel="preload" 
-          href="/main-hero-image.png" 
-          as="image" 
-          type="image/png"
+        <link rel="preconnect" href="https://code.iconify.design" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://api.iconify.design" crossOrigin="anonymous" />
+
+        {/* Preload critical hero image with high priority */}
+        <link
+          rel="preload"
+          href="/main-hero-image (1).webp"
+          as="image"
+          type="image/webp"
           fetchPriority="high"
         />
-        
+
         {/* Preload logo */}
-        <link 
-          rel="preload" 
-          href="/logo.svg" 
-          as="image" 
+        <link
+          rel="preload"
+          href="/logo.svg"
+          as="image"
           type="image/svg+xml"
         />
-        
-        {/* Icons - load after first paint */}
+
+        {/* Preload critical font */}
+        <link
+          rel="preload"
+          href="https://fonts.gstatic.com/s/poppins/v21/pxiEyp8kv8JHgFVrFjfZc3t8.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+
+        {/* Icons - load lazily to not block render */}
         <Script
           src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        
+
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body
         className={`${poppins.variable} font-poppins antialiased bg-background text-foreground`}
       >
-        {/* JSON-LD Structured Data */}
+        {/* JSON-LD Structured Data - loaded with lazyOnload */}
         <Script
           id="json-ld-organization"
           type="application/ld+json"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",

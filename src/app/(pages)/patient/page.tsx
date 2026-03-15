@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
 import { CONTACT } from '@/lib/constants';
+import TestimonialsSlider from '@/components/TestimonialsSlider';
 
 export const metadata: Metadata = {
   title: 'Patient Information',
@@ -686,87 +687,28 @@ export default function PatientPage() {
       </SectionShell>
 
       {/* Testimonials */}
-      <SectionShell
+      <section
         id="testimonials"
-        eyebrow="Patient stories"
-        title="Testimonials"
-        subtitle="Hear from patients about their experience and results."
-        tone="dark"
-        align="center"
-        withOrbs
-        overflowVisible
+        className="relative scroll-mt-28 py-14 sm:py-20 lg:py-28 overflow-x-clip overflow-y-visible bg-[#0f0f0f]"
       >
-        {/* Infinite Marquee */}
-        <div className="overflow-hidden -mx-6 lg:-mx-12 px-6 lg:px-12">
-          <div className="flex animate-marquee gap-5">
-            {/* First set of testimonials */}
-            {[
-              { name: 'M Prins', initial: 'M', quote: "The best orthodontic and patient care! They treated myself and my three daughters with some tricky situations over the last 6 years, and have given us royal treatment the entire time. The team at reception are exceptional!" },
-              { name: 'Scott Drummond', initial: 'S', quote: 'We now have our third child going through with Cronin Ortho. The service has never wavered over the years and the end results are fantastic. All of the staff are so friendly and very accommodating.' },
-              { name: 'Melissa Ketel', initial: 'M', quote: "Cronin Ortho is fantastic! Both Dr. Mo and Dr. Cronin are attentive and caring, they take care of children's comfort, understand exactly what's happening, and are always ready to help." },
-              { name: 'Daine DOK', initial: 'D', quote: 'Great place to get Ortho treatment for yourself or your kids. Staff are knowledgeable and friendly. They happily answer questions or address your concerns, giving you a stress free experience.' },
-              { name: 'Tiffany Froese', initial: 'T', quote: 'Absolutely amazing ortho office! The staff is friendly, gentle, and always on time. They made the whole process so easy and stress-free. Highly recommend!' },
-              { name: 'Yuliya Davidovsky', initial: 'Y', quote: 'We had a great experience at the orthodontic clinic Cronin. The staff was friendly, professional, and very patient. Everything was explained clearly, and the treatment was done with care.' },
-            ].map((testimonial, idx) => (
-              <div
-                key={`first-${idx}`}
-                className="shrink-0 w-[320px] rounded-2xl p-6 bg-white/[0.02] border border-white/10 flex flex-col h-[260px]"
-              >
-                {/* Stars */}
-                <div className="flex items-center gap-0.5 text-[#c9a962] mb-4">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <iconify-icon key={i} icon="solar:star-bold" width="14" height="14" aria-hidden="true" />
-                  ))}
-                </div>
-                {/* Quote */}
-                <p className="text-white/55 text-sm leading-relaxed flex-1">“{testimonial.quote}”</p>
-                {/* Author - Always at bottom */}
-                <div className="flex items-center gap-3 mt-auto pt-4 border-t border-white/5">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium bg-gradient-to-br from-[#c9a962] to-[#d4b978] text-[#0a0a0a]">
-                    {testimonial.initial}
-                  </div>
-                  <div className="text-white/90 text-sm font-medium">{testimonial.name}</div>
-                </div>
-              </div>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {[
-              { name: 'M Prins', initial: 'M', quote: "The best orthodontic and patient care! They treated myself and my three daughters with some tricky situations over the last 6 years, and have given us royal treatment the entire time. The team at reception are exceptional!" },
-              { name: 'Scott Drummond', initial: 'S', quote: 'We now have our third child going through with Cronin Ortho. The service has never wavered over the years and the end results are fantastic. All of the staff are so friendly and very accommodating.' },
-              { name: 'Melissa Ketel', initial: 'M', quote: "Cronin Ortho is fantastic! Both Dr. Mo and Dr. Cronin are attentive and caring, they take care of children's comfort, understand exactly what's happening, and are always ready to help." },
-              { name: 'Daine DOK', initial: 'D', quote: 'Great place to get Ortho treatment for yourself or your kids. Staff are knowledgeable and friendly. They happily answer questions or address your concerns, giving you a stress free experience.' },
-              { name: 'Tiffany Froese', initial: 'T', quote: 'Absolutely amazing ortho office! The staff is friendly, gentle, and always on time. They made the whole process so easy and stress-free. Highly recommend!' },
-              { name: 'Yuliya Davidovsky', initial: 'Y', quote: 'We had a great experience at the orthodontic clinic Cronin. The staff was friendly, professional, and very patient. Everything was explained clearly, and the treatment was done with care.' },
-            ].map((testimonial, idx) => (
-              <div
-                key={`second-${idx}`}
-                className="shrink-0 w-[320px] rounded-2xl p-6 bg-white/[0.02] border border-white/10 flex flex-col h-[260px]"
-              >
-                {/* Stars */}
-                <div className="flex items-center gap-0.5 text-[#c9a962] mb-4">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <iconify-icon key={i} icon="solar:star-bold" width="14" height="14" aria-hidden="true" />
-                  ))}
-                </div>
-                {/* Quote */}
-                <p className="text-white/55 text-sm leading-relaxed flex-1">“{testimonial.quote}”</p>
-                {/* Author - Always at bottom */}
-                <div className="flex items-center gap-3 mt-auto pt-4 border-t border-white/5">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium bg-gradient-to-br from-[#c9a962] to-[#d4b978] text-[#0a0a0a]">
-                    {testimonial.initial}
-                  </div>
-                  <div className="text-white/90 text-sm font-medium">{testimonial.name}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Orbs */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute -top-24 -left-24 w-[300px] sm:w-[420px] h-[300px] sm:h-[420px] bg-[#c9a962]/6 rounded-full blur-[80px] sm:blur-[120px]" />
+          <div className="absolute -bottom-28 -right-24 w-[350px] sm:w-[520px] h-[350px] sm:h-[520px] bg-white/[0.03] rounded-full blur-[100px] sm:blur-[140px]" />
         </div>
 
+        <div className="max-w-[1400px] mx-auto">
+          <TestimonialsSlider 
+            title={<>Patient Stories <span className="text-white/50">Testimonials</span></>}
+            subtitle="Hear from patients about their experience and results."
+          />
+
         {/* Share Your Experience */}
-        <p className="text-white/45 text-sm text-center mt-8">
+          <p className="text-white/45 text-sm text-center mt-8 px-6 lg:px-12">
           Want to share your experience? Ask our front desk for a comment card at your next visit.
         </p>
-      </SectionShell>
+        </div>
+      </section>
 
       {/* Contact Us (matches wireframe intent; keep footer's #contact untouched) */}
       <section id="patient-contact" className="relative overflow-hidden py-20 lg:py-28 bg-[#0f0f0f]">

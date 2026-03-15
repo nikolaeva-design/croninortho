@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
+import TestimonialsSlider from '@/components/TestimonialsSlider';
+import { CONTACT } from '@/lib/constants';
 
 // Credentials and achievements
 const credentials = [
@@ -80,20 +82,52 @@ const testimonials = [
 
 export default function DrCroninPage() {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     phone: '',
     email: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    setError('');
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          formType: 'Dr. Cronin Profile Page',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setSubmitted(true);
+      setFormData({ firstName: '', lastName: '', phone: '', email: '', message: '' });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -381,85 +415,13 @@ export default function DrCroninPage() {
 
       {/* Testimonials Section */}
       <section className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
-        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-16">
-          {/* Section Header */}
-          <div className="text-center mb-12 lg:mb-16">
-            <span className="text-[#c9a962] text-sm font-medium uppercase tracking-wider mb-4 block">
-              Patient Stories
-            </span>
-            <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-4">
-              What Patients Say
-            </h2>
-            <p className="text-white/50 text-lg max-w-2xl mx-auto">
-              Real stories from real patients who trusted Dr. Cronin with their smiles.
-            </p>
-          </div>
-        </div>
-
-        {/* Infinite Marquee */}
-        <div className="overflow-hidden">
-          <div className="flex animate-marquee gap-6">
-            {/* First set of testimonials */}
-            {testimonials.map((testimonial, idx) => (
-              <div
-                key={`first-${idx}`}
-                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[280px]"
-              >
-                {/* Rating */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <iconify-icon key={i} icon="solar:star-bold" width="18" height="18" className="text-[#c9a962]" />
-                  ))}
-                </div>
-                
-                {/* Quote */}
-                <p className="text-white/70 text-sm leading-relaxed flex-1">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
-                
-                {/* Author - Always at bottom */}
-                <div className="flex items-center gap-3 mt-auto pt-6 border-t border-white/5">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-[#0a0a0a] text-sm font-semibold">
-                    {testimonial.author.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="text-white font-medium text-sm">{testimonial.author}</div>
-                    <div className="text-white/50 text-xs">{testimonial.treatment}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {testimonials.map((testimonial, idx) => (
-              <div
-                key={`second-${idx}`}
-                className="shrink-0 w-[400px] p-8 rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[280px]"
-              >
-                {/* Rating */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <iconify-icon key={i} icon="solar:star-bold" width="18" height="18" className="text-[#c9a962]" />
-                  ))}
-                </div>
-                
-                {/* Quote */}
-                <p className="text-white/70 text-sm leading-relaxed flex-1">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
-                
-                {/* Author - Always at bottom */}
-                <div className="flex items-center gap-3 mt-auto pt-6 border-t border-white/5">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-[#0a0a0a] text-sm font-semibold">
-                    {testimonial.author.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="text-white font-medium text-sm">{testimonial.author}</div>
-                    <div className="text-white/50 text-xs">{testimonial.treatment}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto">
+          <TestimonialsSlider 
+            testimonials={testimonials} 
+            cardHeight="h-[280px]"
+            title="What Patients Say"
+            subtitle="Real stories from real patients who trusted Dr. Cronin with their smiles."
+          />
         </div>
       </section>
 
@@ -498,14 +460,20 @@ export default function DrCroninPage() {
                     <div className="text-white/50 text-sm">Office hours</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
-                  <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center">
+                <a
+                  href={CONTACT.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#c9a962]/30 transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <iconify-icon icon="solar:map-point-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">6351 197 St #101, Langley Twp, BC V2Y 1X8, Canada</div>
+                    <div className="text-white font-medium">{CONTACT.address.street}, {CONTACT.address.city}, {CONTACT.address.state} {CONTACT.address.zip}, {CONTACT.address.country}</div>
+                    <div className="text-white/50 text-sm">Click to open in Google Maps</div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 
@@ -513,71 +481,120 @@ export default function DrCroninPage() {
             <div>
               <form onSubmit={handleSubmit} className="p-8 rounded-3xl bg-white/[0.03] border border-white/5">
                 <h3 className="text-white text-2xl font-semibold mb-6">Request Consultation</h3>
-                
-                <div className="mb-4">
-                  <label htmlFor="name" className="block text-white/70 text-sm mb-2">Full Name *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
-                    placeholder="Your name"
-                  />
-                </div>
 
-                <div className="grid sm:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label htmlFor="phone" className="block text-white/70 text-sm mb-2">Phone Number *</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
-                      placeholder="(604) 533-1151"
-                    />
+                {submitted ? (
+                  <div className="text-center py-8">
+                    <div className="w-16 h-16 rounded-full bg-[#c9a962]/10 border border-[#c9a962]/20 flex items-center justify-center mx-auto mb-4">
+                      <iconify-icon icon="solar:check-circle-bold" width="32" height="32" className="text-[#c9a962]" />
+                    </div>
+                    <h4 className="text-white text-lg font-semibold mb-2">Message Sent!</h4>
+                    <p className="text-white/50 text-sm mb-4">Thank you for reaching out. We&apos;ll be in touch soon.</p>
+                    <button
+                      type="button"
+                      onClick={() => setSubmitted(false)}
+                      className="text-[#c9a962] hover:text-[#d4b872] transition-colors text-sm font-medium"
+                    >
+                      Send another message
+                    </button>
                   </div>
-                  <div>
-                    <label htmlFor="email" className="block text-white/70 text-sm mb-2">Email Address</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
+                ) : (
+                  <>
+                    <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                      <div>
+                        <label htmlFor="firstName" className="block text-white/70 text-sm mb-2">First Name *</label>
+                        <input
+                          type="text"
+                          id="firstName"
+                          name="firstName"
+                          value={formData.firstName}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
+                          placeholder="First name"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="lastName" className="block text-white/70 text-sm mb-2">Last Name *</label>
+                        <input
+                          type="text"
+                          id="lastName"
+                          name="lastName"
+                          value={formData.lastName}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
+                          placeholder="Last name"
+                        />
+                      </div>
+                    </div>
 
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-white/70 text-sm mb-2">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors resize-none"
-                    placeholder="Any concerns or questions..."
-                  />
-                </div>
+                    <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                      <div>
+                        <label htmlFor="phone" className="block text-white/70 text-sm mb-2">Phone Number *</label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
+                          placeholder="(604) 533-1151"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-white/70 text-sm mb-2">Email Address</label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors"
+                          placeholder="your@email.com"
+                        />
+                      </div>
+                    </div>
 
-                <button
-                  type="submit"
-                  className="w-full px-8 py-4 bg-white text-[#0a0a0a] font-semibold rounded-full hover:bg-white/90 transition-colors"
-                >
-                  Request Consultation
-                </button>
+                    <div className="mb-4">
+                      <label htmlFor="message" className="block text-white/70 text-sm mb-2">Message</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        rows={4}
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors resize-none"
+                        placeholder="Any concerns or questions..."
+                      />
+                    </div>
 
-                <p className="text-white/40 text-xs text-center mt-4">
-                  By submitting this form, you agree to our privacy policy. We&apos;ll contact you within 24 hours.
+                    {error && (
+                      <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                        {error}
+                      </div>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full px-8 py-4 bg-white text-[#0a0a0a] font-semibold rounded-full hover:bg-white/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <iconify-icon icon="solar:spinner-bold" className="animate-spin" width="18" height="18" />
+                          Sending...
+                        </>
+                      ) : (
+                        'Request Consultation'
+                      )}
+                    </button>
+
+                    <p className="text-white/40 text-xs text-center mt-4">
+                      By submitting this form, you agree to our privacy policy. We&apos;ll contact you within 24 hours.
+                    </p>
+                  </>
+                )}
                 </p>
               </form>
             </div>

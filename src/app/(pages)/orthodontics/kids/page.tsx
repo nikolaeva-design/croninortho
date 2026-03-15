@@ -3,6 +3,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
+import TestimonialsSlider from '@/components/TestimonialsSlider';
+import { CONTACT } from '@/lib/constants';
 
 // Warning signs - grouped for display
 const warningSignsGroups = [
@@ -803,84 +805,13 @@ export default function KidsOrthodonticsPage() {
 
       {/* Testimonials Section */}
       <section className="py-16 sm:py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12">
-          <AnimatedSection>
-            <div className="text-center mb-10 sm:mb-12 lg:mb-16">
-              <h2 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-3 sm:mb-4">
-                What Parents
-                <span className="text-white/50 block">Are Saying</span>
-              </h2>
-              <p className="text-white/50 text-sm sm:text-lg max-w-2xl mx-auto">
-                Don&apos;t just take our word for it — hear from families who&apos;ve experienced the difference.
-              </p>
-            </div>
-          </AnimatedSection>
-        </div>
-
-        {/* Infinite Marquee */}
-        <div className="overflow-hidden">
-          <div className="flex animate-marquee gap-4 sm:gap-6">
-            {/* First set of testimonials */}
-            {testimonials.map((testimonial, idx) => (
-              <div
-                key={`first-${idx}`}
-                className="shrink-0 w-[300px] sm:w-[400px] p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[300px] sm:h-[360px]"
-              >
-                {/* Rating */}
-                <div className="flex gap-1 mb-3 sm:mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <iconify-icon key={i} icon="solar:star-bold" width="16" height="16" className="text-[#c9a962] sm:w-[18px] sm:h-[18px]" />
-                  ))}
-                </div>
-                
-                {/* Quote */}
-                <p className="text-white/70 text-xs sm:text-sm leading-relaxed flex-1 overflow-hidden">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
-                
-                {/* Author - Always at bottom */}
-                <div className="flex items-center gap-2 sm:gap-3 mt-auto pt-4 sm:pt-6 border-t border-white/5">
-                  <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white text-xs sm:text-sm font-semibold">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <div className="text-white font-medium text-xs sm:text-sm">{testimonial.author}</div>
-                    <div className="text-white/50 text-[10px] sm:text-xs">{testimonial.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {testimonials.map((testimonial, idx) => (
-              <div
-                key={`second-${idx}`}
-                className="shrink-0 w-[300px] sm:w-[400px] p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white/[0.03] border border-white/5 flex flex-col h-[300px] sm:h-[360px]"
-              >
-                {/* Rating */}
-                <div className="flex gap-1 mb-3 sm:mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <iconify-icon key={i} icon="solar:star-bold" width="16" height="16" className="text-[#c9a962] sm:w-[18px] sm:h-[18px]" />
-                  ))}
-                </div>
-                
-                {/* Quote */}
-                <p className="text-white/70 text-xs sm:text-sm leading-relaxed flex-1 overflow-hidden">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
-                
-                {/* Author - Always at bottom */}
-                <div className="flex items-center gap-2 sm:gap-3 mt-auto pt-4 sm:pt-6 border-t border-white/5">
-                  <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-gradient-to-br from-[#c9a962] to-[#d4b978] flex items-center justify-center text-white text-xs sm:text-sm font-semibold">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <div className="text-white font-medium text-xs sm:text-sm">{testimonial.author}</div>
-                    <div className="text-white/50 text-[10px] sm:text-xs">{testimonial.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="max-w-[1400px] mx-auto">
+          <TestimonialsSlider 
+            testimonials={testimonials} 
+            cardHeight="h-[320px]" 
+            title={<>What Parents <span className="text-white/50">Are Saying</span></>}
+            subtitle="Don't just take our word for it — hear from families who've experienced the difference."
+          />
         </div>
       </section>
 
@@ -968,14 +899,20 @@ export default function KidsOrthodonticsPage() {
                     <div className="text-white/50 text-sm">Office hours</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
-                  <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center">
+                <a
+                  href={CONTACT.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#c9a962]/30 transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <iconify-icon icon="solar:map-point-bold" width="24" height="24" className="text-[#c9a962]" />
                   </div>
                   <div>
-                    <div className="text-white font-medium">6351 197 St #101, Langley Twp, BC V2Y 1X8, Canada</div>
+                    <div className="text-white font-medium">{CONTACT.address.street}, {CONTACT.address.city}, {CONTACT.address.state} {CONTACT.address.zip}, {CONTACT.address.country}</div>
+                    <div className="text-white/50 text-sm">Click to open in Google Maps</div>
                   </div>
-                </div>
+                </a>
               </div>
 
             </AnimatedSection>

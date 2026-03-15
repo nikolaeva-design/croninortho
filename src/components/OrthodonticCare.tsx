@@ -190,7 +190,7 @@ export default function OrthodonticCare() {
                   </p>
                   
                   {/* Features */}
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
+                  <div className="flex flex-wrap justify-start gap-1.5 sm:gap-2 mb-6 sm:mb-8">
                     {care.features.map((feature) => (
                       <span
                         key={feature}

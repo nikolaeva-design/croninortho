@@ -126,24 +126,6 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 
 export default function SurgicalOrthodonticsPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [diagramImageFailed, setDiagramImageFailed] = useState(false);
-  const [diagramAttempt, setDiagramAttempt] = useState(0);
-
-  // If the image previously failed (often due to missing asset or dev Fast Refresh preserving state),
-  // automatically retry a couple times with a cache-busting query param.
-  useEffect(() => {
-    if (!diagramImageFailed) return;
-    if (diagramAttempt >= 2) return;
-
-    const t = setTimeout(() => {
-      setDiagramImageFailed(false);
-      setDiagramAttempt((a) => a + 1);
-    }, 350);
-
-    return () => clearTimeout(t);
-  }, [diagramImageFailed, diagramAttempt]);
-
-  const diagramSrc = `/SURGICAL PHOTO.JPG?v=${diagramAttempt}`;
 
   return (
     <div className="bg-[#0a0a0a] -mt-20">
@@ -243,29 +225,18 @@ export default function SurgicalOrthodonticsPage() {
 
             {/* Right - Image */}
             <AnimatedSection delay={200}>
-              <div className="relative aspect-[4096/3614] rounded-3xl overflow-hidden">
-                {!diagramImageFailed ? (
-                  <Image
-                    key={diagramSrc}
-                    src={diagramSrc}
-                    alt="Illustration showing jaw alignment and braces as part of surgical orthodontics"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    quality={100}
-                    unoptimized
-                    onError={() => setDiagramImageFailed(true)}
-                  />
-                ) : (
-                  <div className="absolute inset-0 grid place-items-center p-6">
-                    <div className="text-center">
-                      <div className="text-white/70 font-semibold">Illustration coming soon</div>
-                      <div className="mt-1 text-sm text-white/45">
-                        Add <span className="text-white/60 font-medium">public/SURGICAL PHOTO.JPG</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
+              <div className="relative w-full rounded-3xl overflow-hidden bg-white/5 flex items-center justify-center">
+                <Image
+                  src="/Gemini_Generated_Image_ae0oq2ae0oq2ae0o.png"
+                  alt="Illustration showing jaw alignment and braces as part of surgical orthodontics"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto max-w-full object-contain"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={100}
+                  unoptimized
+                  priority
+                />
               </div>
             </AnimatedSection>
           </div>

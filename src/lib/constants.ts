@@ -20,6 +20,7 @@ export const CONTACT = {
     zip: 'V2Y 1X8',
     country: 'Canada',
   },
+  googleMapsUrl: 'https://maps.google.com/?q=6351+197+St+%23101,+Langley+Twp,+BC+V2Y+1X8,+Canada',
 } as const;
 
 // Social Media Links (update with real values)

@@ -4,74 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
 
-// Team members data - grouped by role type
+// Team members data - ordered as requested
 const teamMembers = [
-  // Certified Orthodontic Assistants
-  {
-    name: 'Catherine',
-    role: 'Certified Orthodontic Assistant',
-    years: 'Since 1985',
-    image: '/team-catherine.jpg',
-    bio: 'I assist with a variety of orthodontic procedures, from taking impressions and X-rays to helping with braces adjustments and ensuring every patient feels comfortable during their visit. I enjoy being part of a team that transforms smiles and makes a real difference in people\'s lives. Whether it\'s working with kids getting braces for the first time or adults completing their treatment journey, I strive to provide a positive and supportive experience every step of the way.',
-    personal: 'When I\'m not in the office, I enjoy walking with my Bernese Mountain Dog, Bella, and spending time with family & friends.',
-    featured: false,
-  },
-  {
-    name: 'Crystal',
-    role: 'Certified Orthodontic Assistant',
-    years: 'Since 1996',
-    image: '/team-crystal.jpg',
-    bio: 'I have experience as a receptionist and chairside assistant, having started in the field in 1996. In 2000 I joined this great group of hardworking, loyal ladies and amazing doctors who love what they do. I assist Dr.\'s Cronin & Mo, provide patient care, and maintain communication with referring doctors, too. I love seeing patients\' confidence grow throughout treatment and seeing their excitement when we tell them they\'re getting their braces off!',
-    personal: 'I spend much of my time with my family: spouse & three kids. I love watching my kids play sports & any activities that get us outside.',
-    featured: false,
-  },
-  {
-    name: 'Cheryl',
-    role: 'Certified Orthodontic Assistant',
-    years: 'Since 1996',
-    image: '/team-cheryl.jpg',
-    bio: 'I joined Cronin Orthodontics in 2018 as an Ortho CDA. In my role, I enjoy assisting our amazing doctors in the clinic while also working independently with both traditional braces and Invisalign treatments. I\'m passionate about creating a positive experience for our patients and love helping them feel comfortable, relaxed, and confident during their visits—it\'s truly the highlight of my day. Being part of each patient\'s smile journey and seeing their confidence grow makes my work incredibly rewarding.',
-    personal: 'Outside of the clinic, I\'m a married mom of three sport-obsessed boys and one very spoiled fur baby.',
-    featured: false,
-  },
-  {
-    name: 'Michelle',
-    role: 'Certified Orthodontic Assistant',
-    years: 'Since 1998',
-    image: '/team-michelle.jpg',
-    bio: 'I started in the oral healthcare field in 1998 and was welcomed to the Cronin Ortho team in 2019. Dr. Cronin & Dr. Sarfraz (Mo) are incredible orthodontists, and my coworkers are truly great people. Everyone pulls together to make sure our patients are comfortable and we do our best to keep everyone smiling while changing their smile! As an orthodontic CDA, I work in the clinic, assisting Dr. Cronin & Dr. Sarfraz (Mo) with patient care. I try to help our patients stay motivated with their home care routines.',
-    personal: null,
-    featured: false,
-  },
-  {
-    name: 'Vicky',
-    role: 'Certified Orthodontic Assistant',
-    years: null,
-    image: '/team-vicky.jpg',
-    bio: 'In my role, I assist with a variety of orthodontic procedures and help ensure each patient\'s treatment journey runs smoothly. I take comprehensive orthodontic records, including photos, scans, and other diagnostic information that help the orthodontist create a personalized treatment plan. During appointments, I assist with bonding procedures, place archwires, & help with the safe and efficient removal of brackets when treatment is complete. A big part of my role is also supporting patients throughout their orthodontic journey. Each patient\'s journey is unique, and it\'s incredibly fulfilling to watch their confidence grow as their smile improves.',
-    personal: null,
-    featured: false,
-  },
-  {
-    name: 'Nasim',
-    role: 'Certified Orthodontic Assistant',
-    years: null,
-    image: '/team-nasim.jpg',
-    bio: 'I provide skilled chairside assistance and patient care, helping ensure that each appointment is both comfortable and efficient for our patients. Working closely with the orthodontist, I assist during a variety of procedures and appointments, helping to keep everything organized and running smoothly throughout the visit. I focus on creating a welcoming and supportive environment, so patients feel at ease during their time in the clinic. Whether preparing instruments, assisting with treatment, or helping patients understand the next steps in their care, I strive to make each visit a positive experience.',
-    personal: null,
-    featured: false,
-  },
-  // Certified Dental Assistant
-  {
-    name: 'Chelsey',
-    role: 'Certified Dental Assistant',
-    years: null,
-    image: '/team-chelsey.jpg',
-    bio: 'In my role, I take comprehensive orthodontic records, including photos and scans, to help track each patient\'s progress throughout their treatment. I also assist the orthodontist during appointments, including Invisalign checks and retention visits, ensuring everything runs smoothly and efficiently. A key part of my job is providing clear patient instructions, helping patients understand how to care for their aligners or retainers and maintain good oral hygiene during treatment. I enjoy supporting patients throughout their orthodontic journey and helping them feel comfortable, informed, and confident as they work toward achieving their best smile.',
-    personal: null,
-    featured: false,
-  },
-  // Treatment Coordinators
   {
     name: 'Jodie',
     role: 'CDA & Treatment Coordinator',
@@ -90,7 +24,6 @@ const teamMembers = [
     personal: 'Outside of work, I value spending quality time with friends and family while maintaining a healthy balance between work and fun.',
     featured: false,
   },
-  // Administrative Assistants
   {
     name: 'Natasha',
     role: 'Administrative Assistant',
@@ -101,12 +34,21 @@ const teamMembers = [
     featured: false,
   },
   {
-    name: 'Shel',
+    name: 'Marie',
     role: 'Administrative Assistant',
-    years: 'Since 2021',
-    image: '/team-shel.jpg',
-    bio: 'I started my dental career here at Cronin Ortho in 2021. I schedule appointments for our patients, help with insurance, along with many other administrative duties. I enjoy jumping in wherever possible to help in different areas of the office. My favourite part of the job is seeing the patients\' smile when their braces come off.',
-    personal: 'Outside of the office, I enjoy camping, hiking, playing games with my partner and friends, and spending time with my family. I have 2 wonderful pets, a dog named Zeus and a cat named Nyx!',
+    years: 'Since 2004',
+    image: '/team-marie.jpg',
+    bio: 'I\'ve been working in the dental field since 2004 as a dental receptionist, and I truly love welcoming patients and helping them feel cared for and comfortable. Working in orthodontics is especially meaningful to me because we get to build real connections with our patients and share their smile journeys with them.',
+    personal: 'Outside of work, I love traveling and spending time with my family. I\'m a busy mom of three, and our new Morkie puppy keeps life extra fun and full of love!',
+    featured: false,
+  },
+  {
+    name: 'Robby',
+    role: 'Admin',
+    years: '25+ Years',
+    image: '/team-roberta.jpg',
+    bio: 'I have been with Cronin Ortho for more than 25 years and appreciate the positive energy of Dr. Cronin and our team. We all strive to ensure our patients receive the high-quality, personalized care they deserve and finish with a smile they love! As our practice administrator, I handle a little bit of everything, working to ensure we\'re organized and on top of the day, so things flow smoothly and our patients enjoy their visits!',
+    personal: 'My free time is spent with my husband and family. We have four children and four grandchildren!',
     featured: false,
   },
   {
@@ -119,25 +61,77 @@ const teamMembers = [
     featured: false,
   },
   {
-    name: 'Marie',
+    name: 'Shel',
     role: 'Administrative Assistant',
-    years: 'Since 2004',
-    image: '/team-marie.jpg',
-    bio: 'I\'ve been working in the dental field since 2004 as a dental receptionist, and I truly love welcoming patients and helping them feel cared for and comfortable. Working in orthodontics is especially meaningful to me because we get to build real connections with our patients and share their smile journeys with them.',
-    personal: 'Outside of work, I love traveling and spending time with my family. I\'m a busy mom of three, and our new Morkie puppy keeps life extra fun and full of love!',
+    years: 'Since 2021',
+    image: '/team-shel.jpg',
+    bio: 'I started my dental career here at Cronin Ortho in 2021. I schedule appointments for our patients, help with insurance, along with many other administrative duties. I enjoy jumping in wherever possible to help in different areas of the office. My favourite part of the job is seeing the patients\' smile when their braces come off.',
+    personal: 'Outside of the office, I enjoy camping, hiking, playing games with my partner and friends, and spending time with my family. I have 2 wonderful pets, a dog named Zeus and a cat named Nyx!',
     featured: false,
   },
-  // Office Manager
   {
-    name: 'Robby',
-    role: 'Admin',
-    years: '25+ Years',
-    image: '/team-roberta.jpg',
-    bio: 'I have been with Cronin Ortho for more than 25 years and appreciate the positive energy of Dr. Cronin and our team. We all strive to ensure our patients receive the high-quality, personalized care they deserve and finish with a smile they love! As our practice administrator, I handle a little bit of everything, working to ensure we\'re organized and on top of the day, so things flow smoothly and our patients enjoy their visits!',
-    personal: 'My free time is spent with my husband and family. We have four children and four grandchildren!',
+    name: 'Michelle',
+    role: 'Certified Orthodontic Assistant',
+    years: 'Since 1998',
+    image: '/team-michelle.jpg',
+    bio: 'I started in the oral healthcare field in 1998 and was welcomed to the Cronin Ortho team in 2019. Dr. Cronin & Dr. Sarfraz (Mo) are incredible orthodontists, and my coworkers are truly great people. Everyone pulls together to make sure our patients are comfortable and we do our best to keep everyone smiling while changing their smile! As an orthodontic CDA, I work in the clinic, assisting Dr. Cronin & Dr. Sarfraz (Mo) with patient care. I try to help our patients stay motivated with their home care routines.',
+    personal: null,
     featured: false,
   },
-  // Certified Orthodontic Lab Technician
+  {
+    name: 'Catherine',
+    role: 'Certified Orthodontic Assistant',
+    years: 'Since 1985',
+    image: '/team-catherine.jpg',
+    bio: 'I assist with a variety of orthodontic procedures, from taking impressions and X-rays to helping with braces adjustments and ensuring every patient feels comfortable during their visit. I enjoy being part of a team that transforms smiles and makes a real difference in people\'s lives. Whether it\'s working with kids getting braces for the first time or adults completing their treatment journey, I strive to provide a positive and supportive experience every step of the way.',
+    personal: 'When I\'m not in the office, I enjoy walking with my Bernese Mountain Dog, Bella, and spending time with family & friends.',
+    featured: false,
+  },
+  {
+    name: 'Vicky',
+    role: 'Certified Orthodontic Assistant',
+    years: null,
+    image: '/team-vicky.jpg',
+    bio: 'In my role, I assist with a variety of orthodontic procedures and help ensure each patient\'s treatment journey runs smoothly. I take comprehensive orthodontic records, including photos, scans, and other diagnostic information that help the orthodontist create a personalized treatment plan. During appointments, I assist with bonding procedures, place archwires, & help with the safe and efficient removal of brackets when treatment is complete. A big part of my role is also supporting patients throughout their orthodontic journey. Each patient\'s journey is unique, and it\'s incredibly fulfilling to watch their confidence grow as their smile improves.',
+    personal: null,
+    featured: false,
+  },
+  {
+    name: 'Cheryl',
+    role: 'Certified Orthodontic Assistant',
+    years: 'Since 1996',
+    image: '/team-cheryl.jpg',
+    bio: 'I joined Cronin Orthodontics in 2018 as an Ortho CDA. In my role, I enjoy assisting our amazing doctors in the clinic while also working independently with both traditional braces and Invisalign treatments. I\'m passionate about creating a positive experience for our patients and love helping them feel comfortable, relaxed, and confident during their visits—it\'s truly the highlight of my day. Being part of each patient\'s smile journey and seeing their confidence grow makes my work incredibly rewarding.',
+    personal: 'Outside of the clinic, I\'m a married mom of three sport-obsessed boys and one very spoiled fur baby.',
+    featured: false,
+  },
+  {
+    name: 'Crystal',
+    role: 'Certified Orthodontic Assistant',
+    years: 'Since 1996',
+    image: '/team-crystal.jpg',
+    bio: 'I have experience as a receptionist and chairside assistant, having started in the field in 1996. In 2000 I joined this great group of hardworking, loyal ladies and amazing doctors who love what they do. I assist Dr.\'s Cronin & Mo, provide patient care, and maintain communication with referring doctors, too. I love seeing patients\' confidence grow throughout treatment and seeing their excitement when we tell them they\'re getting their braces off!',
+    personal: 'I spend much of my time with my family: spouse & three kids. I love watching my kids play sports & any activities that get us outside.',
+    featured: false,
+  },
+  {
+    name: 'Chelsey',
+    role: 'Certified Dental Assistant',
+    years: null,
+    image: '/team-chelsey.jpg',
+    bio: 'In my role, I take comprehensive orthodontic records, including photos and scans, to help track each patient\'s progress throughout their treatment. I also assist the orthodontist during appointments, including Invisalign checks and retention visits, ensuring everything runs smoothly and efficiently. A key part of my job is providing clear patient instructions, helping patients understand how to care for their aligners or retainers and maintain good oral hygiene during treatment. I enjoy supporting patients throughout their orthodontic journey and helping them feel comfortable, informed, and confident as they work toward achieving their best smile.',
+    personal: null,
+    featured: false,
+  },
+  {
+    name: 'Nasim',
+    role: 'Certified Orthodontic Assistant',
+    years: null,
+    image: '/team-nasim.jpg',
+    bio: 'I provide skilled chairside assistance and patient care, helping ensure that each appointment is both comfortable and efficient for our patients. Working closely with the orthodontist, I assist during a variety of procedures and appointments, helping to keep everything organized and running smoothly throughout the visit. I focus on creating a welcoming and supportive environment, so patients feel at ease during their time in the clinic. Whether preparing instruments, assisting with treatment, or helping patients understand the next steps in their care, I strive to make each visit a positive experience.',
+    personal: null,
+    featured: false,
+  },
   {
     name: 'Tracy',
     role: 'Certified Orthodontic Lab Technician',
@@ -202,6 +196,27 @@ export default function TeamPage() {
             <Button variant="secondary" size="lg" href="/about/dr-mo">
               Meet Dr. Mo
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Group Photo Section */}
+      <section className="py-8 lg:py-12 bg-[#0a0a0a] relative overflow-hidden">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+          <div 
+            className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl animate-fade-in-up opacity-0"
+            style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}
+          >
+            <Image
+              src="/CroninOrtho6098 2 (3).webp"
+              alt="Cronin Orthodontics Team"
+              width={1200}
+              height={800}
+              className="w-full h-auto object-cover"
+              priority
+            />
+            {/* Subtle gradient overlay at bottom */}
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0a0a0a]/60 to-transparent" />
           </div>
         </div>
       </section>

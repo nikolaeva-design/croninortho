@@ -11,7 +11,7 @@ const treatments = [
     title: 'Surgical Orthodontics',
     description: 'Surgical orthodontics, also known as orthognathic surgery, combines orthodontic treatment with corrective jaw surgery. This comprehensive approach is recommended when jaw abnormalities are too severe to be corrected with braces or aligners alone.',
     details: 'The process typically involves pre-surgical orthodontic treatment to align the teeth, followed by surgery to reposition the jaw bones, and post-surgical orthodontics for final refinement. This treatment can dramatically improve facial balance, breathing, and bite function, providing both functional and aesthetic benefits that last a lifetime.',
-    image: '/SURGICAL PHOTO.JPG',
+    image: '/Gemini_Generated_Image_ae0oq2ae0oq2ae0o.png',
   },
   {
     id: 'craniofacial-orthodontics',

@@ -9,18 +9,19 @@ export default function Hero() {
       className="relative min-h-screen flex items-end overflow-hidden"
       aria-label="Welcome to CroninOrtho"
     >
-      {/* Background Image */}
+      {/* Background Image - Optimized for LCP */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/main-hero-image.png"
+          src="/main-hero-image (1).webp"
           alt="Close-up of a confident smile with aesthetic orthodontic braces system for precise teeth alignment"
           fill
           className="object-cover object-center"
           priority
-          quality={85}
+          quality={75}
           sizes="100vw"
           fetchPriority="high"
           loading="eager"
+          decoding="async"
         />
         <div
           className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
@@ -88,9 +89,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Hidden on mobile and tablet, visible on desktop */}
       <button
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 scroll-indicator p-2 rounded-full hover:bg-white/10 transition-colors"
+        className="hidden lg:block absolute bottom-4 left-1/2 -translate-x-1/2 z-10 scroll-indicator p-2 rounded-full hover:bg-white/10 transition-colors"
         onClick={() =>
           document
             .getElementById('orthodontic-care')
