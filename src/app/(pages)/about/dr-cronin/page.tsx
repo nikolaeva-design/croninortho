@@ -595,7 +595,6 @@ export default function DrCroninPage() {
                     </p>
                   </>
                 )}
-                </p>
               </form>
             </div>
           </div>
