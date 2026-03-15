@@ -373,7 +373,12 @@ export default function ContactPage() {
                 </div>
 
                 {/* Location */}
-                <div className="group rounded-xl sm:rounded-2xl bg-white/[0.02] border border-white/10 p-4 sm:p-6 transition-all duration-200 hover:border-[#c9a962]/30 hover:bg-[#c9a962]/[0.05]">
+                <a
+                  href={CONTACT.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group rounded-xl sm:rounded-2xl bg-white/[0.02] border border-white/10 p-4 sm:p-6 transition-all duration-200 hover:border-[#c9a962]/30 hover:bg-[#c9a962]/[0.05] block"
+                >
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-[#c9a962]/10 border border-[#c9a962]/20 flex items-center justify-center shrink-0">
                       <iconify-icon
@@ -385,12 +390,12 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-white font-semibold text-sm sm:text-base mb-1">Location</h3>
-                      <p className="text-white/60 text-sm sm:text-base">
+                      <p className="text-white/60 text-sm sm:text-base group-hover:text-white/80 transition-colors">
                         {CONTACT.address.street}, {CONTACT.address.city}, {CONTACT.address.state} {CONTACT.address.zip}, {CONTACT.address.country}
                       </p>
                     </div>
                   </div>
-                </div>
+                </a>
 
                 {/* Office Hours */}
                 <div className="rounded-xl sm:rounded-2xl bg-white/[0.02] border border-white/10 p-4 sm:p-6">

@@ -775,8 +775,13 @@ export default function PatientPage() {
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 p-5 rounded-3xl bg-white/[0.03] border border-white/10">
-                <div className="w-12 h-12 rounded-2xl bg-[#c9a962]/10 flex items-center justify-center">
+              <a
+                href={CONTACT.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-5 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#c9a962]/30 transition-all group"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-[#c9a962]/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <iconify-icon
                     icon="solar:map-point-bold"
                     width="22"
@@ -790,8 +795,9 @@ export default function PatientPage() {
                   <div className="text-white font-medium">
                     {CONTACT.address.street}, {CONTACT.address.city}, {CONTACT.address.state} {CONTACT.address.zip}, {CONTACT.address.country}
                   </div>
+                  <div className="text-white/50 text-sm mt-0.5">Click to open in Google Maps</div>
                 </div>
-              </div>
+              </a>
 
             </div>
 

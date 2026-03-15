@@ -102,14 +102,19 @@ export default function Footer() {
               
               {/* Address */}
               <div className="mb-3">
-                <div className="flex items-start gap-2">
+                <a
+                  href={CONTACT.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 group"
+                >
                   <iconify-icon icon="solar:map-point-bold" width="14" height="14" className="text-[#c9a962] mt-0.5" />
-                  <p className="text-white/60 text-xs sm:text-sm leading-relaxed">
+                  <p className="text-white/60 text-xs sm:text-sm leading-relaxed group-hover:text-white transition-colors">
                     {CONTACT.address.street}
                     <br />
                     {CONTACT.address.city}, {CONTACT.address.state} {CONTACT.address.zip}, {CONTACT.address.country}
                   </p>
-                </div>
+                </a>
               </div>
               
               {/* Phone */}
