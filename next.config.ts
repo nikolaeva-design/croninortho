@@ -7,9 +7,12 @@ const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1];
 const isUserOrOrgPages = !!repoName && repoName.endsWith('.github.io');
 const basePath = isGithubActions && repoName && !isUserOrOrgPages ? `/${repoName}` : '';
 
+// Vercel (and similar) set VERCEL during build — use a full Next.js build so Route Handlers (/api/*) work.
+// GitHub Pages workflow has no VERCEL → static export (no server; forms need NEXT_PUBLIC_CONTACT_API_URL).
+const isVercel = Boolean(process.env.VERCEL);
+
 const nextConfig: NextConfig = {
-  // Static export for GitHub Pages
-  output: 'export',
+  output: isVercel ? undefined : 'export',
   trailingSlash: true,
   basePath,
   assetPrefix: basePath,

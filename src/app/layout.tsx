@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import { buildSiteJsonLdGraph } from "@/lib/site-jsonld";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://croninortho.com"),
   title: {
-    default: "CroninOrtho | Expert Orthodontic Treatment in [City]",
+    default: "CroninOrtho | Expert Orthodontic Treatment in Langley, BC",
     template: "%s | CroninOrtho",
   },
   description:
@@ -140,50 +141,13 @@ export default function RootLayout({
       >
         {/* JSON-LD Structured Data - loaded with lazyOnload */}
         <Script
-          id="json-ld-organization"
+          id="json-ld-site-graph"
           type="application/ld+json"
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Dentist",
-              name: "CroninOrtho",
-              description:
-                "Expert orthodontic treatment and smile correction by Dr. D.G. Cronin & Dr. M. Sarfraz",
-              url: "https://croninortho.com",
-              logo: "https://croninortho.com/logo.png",
-              image: "https://croninortho.com/hero-image.png",
-              priceRange: "$$",
-              medicalSpecialty: "Orthodontics",
-              availableService: [
-                {
-                  "@type": "MedicalProcedure",
-                  name: "Orthodontic Treatment",
-                  description: "Comprehensive orthodontic care for all ages",
-                },
-                {
-                  "@type": "MedicalProcedure",
-                  name: "Invisalign",
-                  description: "Clear aligner therapy for discreet teeth straightening",
-                },
-                {
-                  "@type": "MedicalProcedure",
-                  name: "Braces",
-                  description: "Traditional and ceramic braces for teeth alignment",
-                },
-              ],
-              employee: [
-                {
-                  "@type": "Dentist",
-                  name: "Dr. D.G. Cronin",
-                  jobTitle: "Orthodontist",
-                },
-                {
-                  "@type": "Dentist",
-                  name: "Dr. M. Sarfraz",
-                  jobTitle: "Orthodontist",
-                },
-              ],
+              "@graph": buildSiteJsonLdGraph(),
             }),
           }}
         />

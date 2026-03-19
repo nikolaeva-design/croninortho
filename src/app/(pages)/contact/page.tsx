@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components';
 import { CONTACT, OFFICE_HOURS } from '@/lib/constants';
+import { getContactFormPostUrl } from '@/lib/contact-api';
 
 // Animation hook for scroll-triggered animations
 function useScrollAnimation() {
@@ -82,7 +83,7 @@ export default function ContactPage() {
     setError('');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(getContactFormPostUrl(), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

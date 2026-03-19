@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Button } from '@/components';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
 import { CONTACT } from '@/lib/constants';
+import { getContactFormPostUrl } from '@/lib/contact-api';
 
 // Credentials and achievements
 const credentials = [
@@ -104,7 +105,7 @@ export default function DrCroninPage() {
     setError('');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(getContactFormPostUrl(), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
