@@ -12,7 +12,13 @@ function escapeHtml(text: string) {
 function defaultAllowedOrigins(): string[] {
   const raw =
     process.env.ALLOWED_ORIGINS ||
-    'http://localhost:3000,https://croninortho.com,https://www.croninortho.com';
+    [
+      'http://localhost:3000',
+      'https://croninortho.com',
+      'https://www.croninortho.com',
+      // GitHub Pages (project site still sends this origin, without repo path)
+      'https://nikolaeva-design.github.io',
+    ].join(',');
   return raw
     .split(',')
     .map((s) => s.trim())

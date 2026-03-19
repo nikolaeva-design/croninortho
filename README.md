@@ -22,10 +22,26 @@ After that, every push to `main` will deploy.
 
 ## Contact form email (SMTP)
 
-Forms POST to `/api/contact`, which sends mail via **Nodemailer** using eNom (or any SMTP) settings from environment variables. See **`.env.example`** — copy to `.env.local` for local testing; **never commit passwords**.
+Forms need a **live** `/api/contact` handler and **SMTP env vars on that host** (not in GitHub — never commit `.env`). Local: see **`.env.example`** → `.env.local`.
 
-- **GitHub Pages** builds are **static only** (no server), so `/api/contact` is **not** on that host. Either:
-  1. **Deploy the same repo to [Vercel](https://vercel.com)** (recommended): Vercel sets `VERCEL` during build so Next.js runs in **server mode** and the API route works. Add `SMTP_*` and `RECIPIENT_EMAIL` in the Vercel project **Environment Variables**, or  
-  2. Keep GitHub Pages for the site but host the API elsewhere, then set **`NEXT_PUBLIC_CONTACT_API_URL`** at **build time** to the full URL of that API (e.g. `https://your-app.vercel.app/api/contact`) and add your live site origin(s) to **`ALLOWED_ORIGINS`** on the API.
+### If the public site is on GitHub Pages (static)
+
+Pages has **no server**, so you must:
+
+1. **Deploy this repo on [Vercel](https://vercel.com)** (Import Project → same GitHub repo). Vercel runs full Next.js, including the API.
+2. In Vercel → **Settings → Environment Variables** (Production), add the same values as `.env.example`:  
+   `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `RECIPIENT_EMAIL`.  
+   Redeploy after saving.
+3. Copy your Vercel URL for the API, e.g. `https://<project>.vercel.app/api/contact/` (include trailing slash).
+4. On GitHub: **Settings → Secrets and variables → Actions → New repository secret**  
+   Name: `NEXT_PUBLIC_CONTACT_API_URL`  
+   Value: that full URL from step 3.
+5. Push any commit or **re-run** the “Deploy to GitHub Pages” workflow so the static build embeds the secret and forms call Vercel.
+
+CORS defaults already allow `https://nikolaeva-design.github.io` and `croninortho.com`. For another domain, set **`ALLOWED_ORIGINS`** on Vercel (comma-separated).
+
+### If the whole site is on Vercel (custom domain)
+
+Add the same **`SMTP_*` / `RECIPIENT_EMAIL`** variables in Vercel only — no GitHub secret needed.
 
 # ortho
