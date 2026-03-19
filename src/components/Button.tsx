@@ -86,7 +86,7 @@ export default function Button({
       href.startsWith('tel:') ||
       href.startsWith('//');
 
-    // Use Next <Link> for internal navigation so basePath works (GitHub Pages).
+    // Use Next <Link> for internal navigation (supports basePath when set).
     if (!isExternal && href.startsWith('/')) {
       return (
         <Link

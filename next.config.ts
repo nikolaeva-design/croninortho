@@ -1,15 +1,9 @@
 import type { NextConfig } from 'next';
 
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
-const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1];
-// GitHub Pages (project pages) are served from https://<user>.github.io/<repo>/...
-// For user/organization pages (<user>.github.io), repo is typically '<user>.github.io' and basePath should be empty.
-const isUserOrOrgPages = !!repoName && repoName.endsWith('.github.io');
-const basePath = isGithubActions && repoName && !isUserOrOrgPages ? `/${repoName}` : '';
-
-// Vercel (and similar) set VERCEL during build — use a full Next.js build so Route Handlers (/api/*) work.
-// GitHub Pages workflow has no VERCEL → static export (no server; forms need NEXT_PUBLIC_CONTACT_API_URL).
+// Vercel sets VERCEL during build → full Next.js app with Route Handlers (/api/*).
+// Local / other CI without VERCEL → static export to `out/` (no server-side API).
 const isVercel = Boolean(process.env.VERCEL);
+const basePath = '';
 
 const nextConfig: NextConfig = {
   output: isVercel ? undefined : 'export',
@@ -23,7 +17,7 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000,
-    // Next Image Optimization doesn't run on GitHub Pages static hosting.
+    // Unoptimized: required for static export; on Vercel you could enable optimization separately.
     unoptimized: true,
     qualities: [75, 80, 85],
   },
