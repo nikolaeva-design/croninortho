@@ -34,8 +34,11 @@ function openingHoursSpecification() {
 const primaryNavItems: { name: string; path: string }[] = [
   { name: 'Contact Us', path: '/contact/' },
   { name: 'About Us', path: '/about/' },
-  { name: 'Meet Dr. Don Cronin', path: '/about/dr-cronin/' },
-  { name: 'Meet Dr. Mo', path: '/about/dr-mo/' },
+  { name: 'Meet Dr. D.G. Cronin', path: '/about/dr-cronin/' },
+  {
+    name: 'Meet Dr. Mohymen Sarfraz (Dr. Mo)',
+    path: '/about/dr-mo/',
+  },
   { name: 'Meet the Team', path: '/about/team/' },
   { name: 'Patient', path: '/patient/' },
   { name: 'Patient Care', path: '/patient-care/' },
@@ -60,7 +63,7 @@ export function buildSiteJsonLdGraph() {
     '@id': orgId,
     name: SITE_NAME,
     description:
-      'Expert orthodontic treatment and smile correction by Dr. D.G. Cronin & Dr. M. Sarfraz',
+      'Expert orthodontic treatment and smile correction by Dr. D.G. Cronin & Dr. Mohymen Sarfraz',
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
     image: `${SITE_URL}/hero-image.png`,
@@ -97,7 +100,7 @@ export function buildSiteJsonLdGraph() {
     ],
     employee: [
       { '@type': 'Dentist', name: 'Dr. D.G. Cronin', jobTitle: 'Orthodontist' },
-      { '@type': 'Dentist', name: 'Dr. M. Sarfraz', jobTitle: 'Orthodontist' },
+      { '@type': 'Dentist', name: 'Dr. Mohymen Sarfraz', jobTitle: 'Orthodontist' },
     ],
   };
 
