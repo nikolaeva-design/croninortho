@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Adult Orthodontics | Ages 20+ | CroninOrtho',
+  title: 'Adult Orthodontics | Ages 20+',
   description:
     'Discreet orthodontic solutions for adults. Invisalign, clear braces, and modern treatment options at CroninOrtho.',
 };

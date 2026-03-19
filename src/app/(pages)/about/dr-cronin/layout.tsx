@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Meet Dr. D.G. Cronin | Cronin Ortho',
-  description: 'Meet Dr. D.G. Cronin, a specialist orthodontist with over 25 years of experience providing quality orthodontic care in Langley, BC.',
+  title: 'Meet Dr. D.G. Cronin',
+  description:
+    'Meet Dr. D.G. Cronin — Langley, BC specialist orthodontist with 25+ years of experience in quality orthodontic care at CroninOrtho.',
 };
 
 export default function DrCroninLayout({

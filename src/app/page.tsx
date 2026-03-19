@@ -5,7 +5,8 @@ import Hero from '@/components/Hero';
 import { SEO_HOME_DESCRIPTION, SEO_HOME_TITLE } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: SEO_HOME_TITLE,
+  // Ignore root title.template — full homepage title is fixed.
+  title: { absolute: SEO_HOME_TITLE },
   description: SEO_HOME_DESCRIPTION,
 };
 

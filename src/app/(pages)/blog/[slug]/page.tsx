@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { Button } from '@/components';
 import { Metadata } from 'next';
 import { blogPosts } from '@/data/blog-posts';
+import { SITE_NAME } from '@/lib/constants';
+
+const blogBrand = `${SITE_NAME} Blog`;
 
 // Generate static params for all blog posts
 export function generateStaticParams() {
@@ -23,15 +26,15 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: 'Post Not Found | Cronin Orthodontics Blog',
+      title: { absolute: `Post Not Found | ${blogBrand}` },
     };
   }
 
   return {
-    title: `${post.title} | Cronin Orthodontics Blog`,
+    title: { absolute: `${post.title} | ${blogBrand}` },
     description: post.excerpt,
     openGraph: {
-      title: post.title,
+      title: `${post.title} | ${blogBrand}`,
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,

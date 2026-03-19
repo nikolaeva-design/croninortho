@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Meet the Team | Cronin Ortho',
-  description: 'Meet the incredible team at Cronin Ortho - skilled, experienced professionals dedicated to providing high-quality, personalized orthodontic care in Langley, BC.',
+  title: 'Meet the Team',
+  description:
+    'Meet the CroninOrtho team — skilled professionals offering personalized orthodontic care in Langley, BC.',
 };
 
 export default function TeamLayout({

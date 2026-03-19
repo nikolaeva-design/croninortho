@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
+import { SITE_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Gallery | CroninOrtho',
+  title: 'Gallery',
   description: 'View our smile transformations gallery. See before and after results from orthodontic treatments at CroninOrtho.',
   openGraph: {
-    title: 'Gallery | CroninOrtho',
+    title: `Gallery | ${SITE_NAME}`,
     description: 'View our smile transformations gallery. See before and after orthodontic treatment results.',
   },
 };

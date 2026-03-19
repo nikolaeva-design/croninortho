@@ -23,10 +23,11 @@ export function generatePageMetadata({
   pathname = '/',
 }: GenerateMetadataOptions): Metadata {
   const url = `${SITE_URL}${pathname}`;
-  const fullTitle = title === 'Home' ? SITE_NAME : `${title} | ${SITE_NAME}`;
+  // Root layout uses title.template ("%s | CroninOrtho") — only pass the segment here.
+  const ogTitle = title === 'Home' ? SITE_NAME : `${title} | ${SITE_NAME}`;
 
   return {
-    title: fullTitle,
+    title,
     description,
     keywords: [
       'orthodontist',
@@ -44,7 +45,7 @@ export function generatePageMetadata({
       locale: 'en_US',
       url,
       siteName: SITE_NAME,
-      title: fullTitle,
+      title: ogTitle,
       description,
       images: [
         {
@@ -57,7 +58,7 @@ export function generatePageMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: fullTitle,
+      title: ogTitle,
       description,
       images: [image.startsWith('http') ? image : `${SITE_URL}${image}`],
     },

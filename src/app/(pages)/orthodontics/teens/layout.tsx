@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Teen Orthodontics | Ages 13-19 | CroninOrtho',
+  title: 'Teen Orthodontics | Ages 13-19',
   description:
     'Comprehensive orthodontic treatment for teenagers. Braces, clear aligners, and modern solutions for teens at CroninOrtho.',
 };
