@@ -10,6 +10,14 @@ Next.js site for CroninOrtho.
 
 **Custom domain:** attach it in Vercel → **Settings → Domains**.
 
+## GitHub Pages (optional)
+
+On push to **`master`**, [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds a static `out/` site and deploys it with **GitHub Actions**.
+
+1. Repo → **Settings → Pages** → **Source**: **GitHub Actions**.
+2. First run may need the **`github-pages`** environment approved under **Settings → Environments**.
+3. **Contact forms** on Pages still need a live API: deploy the same repo on Vercel with SMTP env vars, then add repo secret **`NEXT_PUBLIC_CONTACT_API_URL`** (e.g. `https://your-app.vercel.app/api/contact/`) so the static build points forms at that URL.
+
 ## Local development
 
 ```bash
