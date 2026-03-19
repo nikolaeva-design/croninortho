@@ -3,7 +3,13 @@ import type { NextConfig } from 'next';
 // Vercel sets VERCEL during build → full Next.js app with Route Handlers (/api/*).
 // Local / other CI without VERCEL → static export to `out/` (no server-side API).
 const isVercel = Boolean(process.env.VERCEL);
-const basePath = '';
+
+// GitHub Actions: project Pages are served from /repo-name/; user/org Pages use repo named *.github.io → no basePath.
+const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
+const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1];
+const isUserOrOrgPages = !!repoName && repoName.endsWith('.github.io');
+const basePath =
+  isGithubActions && repoName && !isUserOrOrgPages ? `/${repoName}` : '';
 
 const nextConfig: NextConfig = {
   output: isVercel ? undefined : 'export',
