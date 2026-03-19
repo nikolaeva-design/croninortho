@@ -1,6 +1,13 @@
 import dynamic from 'next/dynamic';
+import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import { SEO_HOME_DESCRIPTION, SEO_HOME_TITLE } from '@/lib/constants';
+
+export const metadata: Metadata = {
+  title: SEO_HOME_TITLE,
+  description: SEO_HOME_DESCRIPTION,
+};
 
 // Skeleton loader for consistent loading states with subtle animation
 const SectionSkeleton = ({ height = '600px', bg = '#0a0a0a' }: { height?: string; bg?: string }) => (

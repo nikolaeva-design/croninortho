@@ -3,6 +3,12 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import { buildSiteJsonLdGraph } from "@/lib/site-jsonld";
+import {
+  SEO_HOME_DESCRIPTION,
+  SEO_HOME_TITLE,
+  SEO_LOCATION_SHORT,
+  SITE_NAME,
+} from "@/lib/constants";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,12 +29,13 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://croninortho.com"),
   title: {
-    default: "CroninOrtho | Expert Orthodontic Treatment in Langley, BC",
-    template: "%s | CroninOrtho",
+    default: SEO_HOME_TITLE,
+    template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "Dr. D.G. Cronin & Dr. M. Sarfraz offer personalized orthodontic treatments for children, teens, and adults. Invisalign, braces, and aesthetic smile correction focused on function, health, and confident smiles.",
+  description: SEO_HOME_DESCRIPTION,
   keywords: [
+    "orthodontist Langley BC",
+    "Langley orthodontist",
     "orthodontist",
     "braces",
     "Invisalign",
@@ -61,10 +68,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "CroninOrtho",
-    title: "CroninOrtho | Expert Orthodontic Treatment & Smile Correction",
-    description:
-      "Personalized orthodontic and aesthetic treatments by Dr. D.G. Cronin & Dr. M. Sarfraz. Serving children, teens, and adults with modern orthodontic solutions.",
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} | Orthodontist in ${SEO_LOCATION_SHORT} | Invisalign & Braces`,
+    description: SEO_HOME_DESCRIPTION,
     images: [
       {
         url: "/og-image.png",
@@ -76,9 +82,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CroninOrtho | Expert Orthodontic Treatment",
-    description:
-      "Personalized orthodontic treatments for all ages. Invisalign, braces, and aesthetic smile correction.",
+    title: SEO_HOME_TITLE,
+    description: SEO_HOME_DESCRIPTION,
     images: ["/og-image.png"],
   },
   alternates: {
