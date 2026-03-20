@@ -79,6 +79,7 @@ export function buildSiteJsonLdGraph() {
       postalCode: CONTACT.address.zip,
       addressCountry: CONTACT.address.country,
     },
+    hasMap: CONTACT.googleMapsUrl,
     ...(hours ? { openingHoursSpecification: hours } : {}),
     ...(sameAs.length ? { sameAs } : {}),
     availableService: [
