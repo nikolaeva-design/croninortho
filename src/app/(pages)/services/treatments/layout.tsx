@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import { SITE_NAME } from '@/lib/constants';
+import { SEO_DOCTORS, SITE_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Common Treatments',
-  description: 'Learn about orthodontic treatments at CroninOrtho. Explore surgical orthodontics, TMJ-TMD, clear braces, metal braces, aligners, palatal expanders, and more.',
+  description: `Invisalign®, clear aligners, braces, and more with ${SEO_DOCTORS} at ${SITE_NAME}. Surgical orthodontics, expanders, retainers, and personalized care in Langley, BC.`,
   openGraph: {
     title: `Common Treatments | ${SITE_NAME}`,
-    description: 'Explore our comprehensive orthodontic treatment options. Expert care for every smile.',
+    description: `Invisalign and clear aligners, braces, and full orthodontic options with ${SEO_DOCTORS}.`,
   },
 };
 

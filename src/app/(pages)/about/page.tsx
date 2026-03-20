@@ -1,10 +1,15 @@
 import type { Metadata } from 'next';
 import { Button, TeamExpertsScroll } from '@/components';
+import { SEO_DOCTORS, SITE_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Straightening teeth, changing smiles, and transforming lives—one person at a time. Learn about Cronin Orthodontics and our dedicated team.',
+  description: `What sets ${SEO_DOCTORS} apart: personalized orthodontic care in Langley, BC — straightening teeth, changing smiles, and transforming lives.`,
   alternates: { canonical: '/about' },
+  openGraph: {
+    title: `About Us | ${SITE_NAME}`,
+    description: `Meet ${SEO_DOCTORS} and the ${SITE_NAME} team — expert orthodontics and a patient-first experience.`,
+  },
 };
 
 export default function AboutPage() {

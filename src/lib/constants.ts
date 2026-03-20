@@ -6,12 +6,14 @@
 export const SITE_NAME = 'CroninOrtho';
 /** Use everywhere titles/descriptions need a real location (not a placeholder). */
 export const SEO_LOCATION_SHORT = 'Langley, BC';
+/** Use in meta titles/descriptions so search snippets match the correct doctor name. */
+export const SEO_DOCTORS = 'Dr. D.G. Cronin & Dr. M. Sarfraz';
 export const SITE_DESCRIPTION =
-  `Expert orthodontic treatment and smile correction in ${SEO_LOCATION_SHORT} by Dr. D.G. Cronin & Dr. M. Sarfraz`;
+  `Expert orthodontic treatment and smile correction in ${SEO_LOCATION_SHORT} by ${SEO_DOCTORS}`;
 export const SITE_URL = 'https://croninortho.com';
 export const SEO_HOME_TITLE = `${SITE_NAME} | Expert Orthodontic Treatment in ${SEO_LOCATION_SHORT}`;
 export const SEO_HOME_DESCRIPTION =
-  `${SEO_LOCATION_SHORT} orthodontists Dr. D.G. Cronin & Dr. M. Sarfraz — Invisalign, braces, and personalized care for children, teens, and adults.`;
+  `${SEO_LOCATION_SHORT} orthodontists ${SEO_DOCTORS} — Invisalign, braces, and personalized care for children, teens, and adults.`;
 
 // Contact Information (update with real values)
 export const CONTACT = {
