@@ -125,3 +125,32 @@ After deploy, confirm **Production** environment variables on the host include `
 > Hi — we’ve updated the website so all contact form and appointment-style messages are delivered to **info@croninortho.com** instead of the request@ mailbox. You can keep request@ only for the technical mail login if your host requires it; that does not change where inquiries land.
 >
 > Please send yourself a quick test from the site and confirm it arrives in the **info@** inbox. If anything still goes only to request@, let us know and we’ll recheck the server settings.
+
+---
+
+## Client handoff: Langley, Google & old links
+
+**Developer note:** Legacy path redirects are configured in `legacy-redirects.ts` / `next.config.ts` (HTTP redirects on **Vercel** for `croninortho.com`). Static/GitHub Pages builds use soft-redirect pages for key paths. No redirect rules for the client to edit in DNS or cPanel unless the primary domain is not pointed at this deployment.
+
+**Copy for the client:**
+
+> **Subject:** Google search & old links — what we did and what you can do
+>
+> Hi [Name],
+>
+> A quick update on two things that often come up after a new site goes live.
+>
+> **1. City / local search**  
+> The site is built around **Langley, BC** as the practice location (address, copy, and SEO metadata). If you use **Google Business Profile**, double-check that the profile address and website URL both point to **https://croninortho.com** so Google keeps everything consistent.
+>
+> **2. Old links in Google (sitelinks, Invisalign, old pages)**  
+> Google may still show **URLs or text from the old website** for a while — that’s normal; their index updates on its own schedule.
+>
+> On our side we’ve **set up redirects** so common old paths forward to the right pages on the new site instead of a 404, when visitors use **your live main domain** (where the new site is hosted). **You don’t need to configure redirects yourself** — that’s handled in the site deployment.
+>
+> **Optional, to refresh Google faster:** If you have access to **[Google Search Console](https://search.google.com/search-console)** for `croninortho.com`, you can use **URL inspection** on main pages and **request indexing** (home, About, Contact, Treatments, etc.).
+>
+> If something still 404s after a few weeks, send us the **exact link** from the search result and we can add a redirect for that path.
+>
+> Best,  
+> [Your name]
