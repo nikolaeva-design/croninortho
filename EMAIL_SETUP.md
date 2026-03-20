@@ -111,3 +111,17 @@ If you need help:
 1. Contact Enom for SMTP settings: https://www.enom.com/support
 2. Check your Enom hosting control panel documentation
 3. Ask your web developer to help configure
+
+---
+
+## Client handoff: inquiries go to `info@`
+
+Form mail is addressed to **`RECIPIENT_EMAIL`** (default `info@croninortho.com`). SMTP may still use `request@` for sending only.
+
+After deploy, confirm **Production** environment variables on the host include `RECIPIENT_EMAIL=info@croninortho.com` (or omit it to use the default).
+
+**Copy for the client:**
+
+> Hi — we’ve updated the website so all contact form and appointment-style messages are delivered to **info@croninortho.com** instead of the request@ mailbox. You can keep request@ only for the technical mail login if your host requires it; that does not change where inquiries land.
+>
+> Please send yourself a quick test from the site and confirm it arrives in the **info@** inbox. If anything still goes only to request@, let us know and we’ll recheck the server settings.

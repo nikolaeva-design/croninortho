@@ -76,7 +76,7 @@ function smtpTransport() {
 }
 
 const RECIPIENT_EMAIL =
-  process.env.RECIPIENT_EMAIL?.trim() || 'request@croninortho.com';
+  process.env.RECIPIENT_EMAIL?.trim() || 'info@croninortho.com';
 
 export async function OPTIONS(request: NextRequest) {
   const origin = request.headers.get('origin');
