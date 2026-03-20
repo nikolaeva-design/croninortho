@@ -1,6 +1,18 @@
-# Email Setup Guide - Enom SMTP Configuration
+# Email setup & client handoff (CroninOrtho)
 
-This guide explains how to connect your website forms to your Enom email hosting.
+This guide covers **(1)** connecting website forms to Enom SMTP and **(2)** copy-paste emails you can send the client (form delivery, Google / old links, local search).
+
+---
+
+## Contents
+
+- **Part 1 — Enom SMTP:** [What you need from Enom](#what-you-need-from-enom) through [Support](#support)
+- **Client email — form delivery:** [Inquiries to info@](#client-handoff-inquiries-to-info)
+- **Client email — search & redirects:** [Langley, Google, old links](#client-handoff-langley-google-old-links)
+
+---
+
+## Part 1: Enom SMTP (forms)
 
 ## What You Need from Enom
 
@@ -114,7 +126,7 @@ If you need help:
 
 ---
 
-## Client handoff: inquiries go to `info@`
+## Client handoff: inquiries to info@
 
 Form mail is addressed to **`RECIPIENT_EMAIL`** (default `info@croninortho.com`). SMTP may still use `request@` for sending only.
 
@@ -128,7 +140,7 @@ After deploy, confirm **Production** environment variables on the host include `
 
 ---
 
-## Client handoff: Langley, Google & old links
+## Client handoff: Langley, Google, old links
 
 **Developer note:** Legacy path redirects are configured in `legacy-redirects.ts` / `next.config.ts` (HTTP redirects on **Vercel** for `croninortho.com`). Static/GitHub Pages builds use soft-redirect pages for key paths. No redirect rules for the client to edit in DNS or cPanel unless the primary domain is not pointed at this deployment.
 
