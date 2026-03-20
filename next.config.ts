@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { LEGACY_REDIRECTS } from './legacy-redirects';
 
 // Vercel sets VERCEL during build → full Next.js app with Route Handlers (/api/*).
 // Local / other CI without VERCEL → static export to `out/` (no server-side API).
@@ -40,6 +41,15 @@ const nextConfig: NextConfig = {
 
   // Strict mode for better development
   reactStrictMode: true,
+
+  /** Old-site URLs (Google sitelinks) → current routes. Primary on Vercel; static hosts use soft redirect pages where added. */
+  async redirects() {
+    return LEGACY_REDIRECTS.map(({ source, destination, permanent = true }) => ({
+      source,
+      destination,
+      permanent,
+    }));
+  },
 
   // Turbopack configuration (silences warning when using webpack config)
   turbopack: {},
