@@ -11,7 +11,7 @@ const services = [
       'Retainers are used after orthodontic treatment to help maintain the final position of the teeth and preserve long-term results.',
     image: '/other-service-1.png',
     alt: 'Clear retainer - maintains teeth alignment with 8-10 hours daily usage',
-    href: '/services/retainers',
+    href: '/services/retainers/',
   },
   {
     id: 'nightguards',

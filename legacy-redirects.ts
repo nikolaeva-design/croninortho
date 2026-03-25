@@ -22,7 +22,8 @@ export const LEGACY_REDIRECTS: LegacyRedirect[] = [
 
   { source: '/retainers', destination: '/services/retainers/', permanent: true },
   { source: '/retainers/', destination: '/services/retainers/', permanent: true },
-  { source: '/services/retainers', destination: '/services/retainers/', permanent: true },
+  // Do not add `/services/retainers` → `/services/retainers/` here: Next matches both with and
+  // without trailing slash and causes ERR_TOO_MANY_REDIRECTS (308 to itself).
 
   // Typical WordPress-style contact / about slugs
   { source: '/contact-us', destination: '/contact/', permanent: true },
