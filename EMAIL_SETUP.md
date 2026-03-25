@@ -128,15 +128,15 @@ If you need help:
 
 ## Client handoff: inquiries to info@
 
-Form mail is addressed to **`RECIPIENT_EMAIL`** (default `info@croninortho.com`). SMTP may still use `request@` for sending only.
+Form mail is addressed to **`RECIPIENT_EMAIL`** (default `info@croninortho.com`). **`SMTP_USER`** should be a mailbox that exists on your host (often the same **`info@croninortho.com`** for both login and delivery).
 
-After deploy, confirm **Production** environment variables on the host include `RECIPIENT_EMAIL=info@croninortho.com` (or omit it to use the default).
+After deploy, confirm **Production** on Vercel includes `RECIPIENT_EMAIL=info@croninortho.com` and `SMTP_USER=info@croninortho.com` (or omit `RECIPIENT_EMAIL` to use the code default).
 
 **Copy for the client:**
 
-> Hi — we’ve updated the website so all contact form and appointment-style messages are delivered to **info@croninortho.com** instead of the request@ mailbox. You can keep request@ only for the technical mail login if your host requires it; that does not change where inquiries land.
+> Hi — form messages are delivered to **info@croninortho.com**. The mail server login (`SMTP_USER`) is set to the same address so sending and delivery stay in sync.
 >
-> Please send yourself a quick test from the site and confirm it arrives in the **info@** inbox. If anything still goes only to request@, let us know and we’ll recheck the server settings.
+> Please send yourself a quick test from the site and confirm it arrives in the **info@** inbox. If not, let us know and we’ll recheck the server settings.
 
 ---
 

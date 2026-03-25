@@ -60,7 +60,7 @@ function smtpTransport() {
     (process.env.SMTP_SECURE !== 'false' && port === 465);
 
   const user =
-    process.env.SMTP_USER?.trim() || 'request@croninortho.com';
+    process.env.SMTP_USER?.trim() || 'info@croninortho.com';
 
   const transporter = nodemailer.createTransport({
     host,
