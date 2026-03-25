@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
-import { CONTACT } from '@/lib/constants';
+import { CONTACT, PATIENT_PORTAL_URL } from '@/lib/constants';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
 
 export const metadata: Metadata = {
@@ -11,9 +11,6 @@ export const metadata: Metadata = {
     'Patient resources including forms, office visits, online services, and more.',
   alternates: { canonical: '/patient' },
 };
-
-const PATIENT_PORTAL_URL =
-  'https://patient-portal-prd-cluster-2.sesamecommunications.com/dcronin/index.html';
 
 const NEW_PATIENT_FORM_URL =
   'https://patient-portal-prd-cluster-2.sesamecommunications.com/dcronin/ohhf';

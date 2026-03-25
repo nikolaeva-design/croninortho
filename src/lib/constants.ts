@@ -30,6 +30,10 @@ export const CONTACT = {
   googleMapsUrl: 'https://maps.app.goo.gl/sJhbvndjJnzoDadr8',
 } as const;
 
+/** Ortho Sesame patient portal (same link as “Patient Login” on /patient/). */
+export const PATIENT_PORTAL_URL =
+  'https://patient-portal-prd-cluster-2.sesamecommunications.com/dcronin/index.html' as const;
+
 // Social Media Links (update with real values)
 export const SOCIAL_LINKS = {
   facebook: 'https://facebook.com/croninortho',

@@ -2,6 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Button from '@/components/Button';
+import { PATIENT_PORTAL_URL } from '@/lib/constants';
 
 export default function Hero() {
   return (
@@ -78,12 +80,16 @@ export default function Hero() {
               >
                 Book Free Consultation
               </a>
-              <a
-                href="/contact#contact-form"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base font-medium bg-white/10 text-white border border-white/20 rounded-full hover:bg-white/20 hover:border-white/40 hover:scale-[1.02] transition-all duration-300 backdrop-blur-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white/50"
+              <Button
+                variant="primary"
+                size="lg"
+                href={PATIENT_PORTAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
               >
-                See Your Options
-              </a>
+                Patient Login
+              </Button>
             </div>
           </div>
         </div>
