@@ -83,7 +83,7 @@ export default function Hero() {
                 href={PATIENT_PORTAL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base font-medium bg-white text-[#1a2744] rounded-full hover:bg-white/95 hover:scale-[1.02] transition-all duration-300 shadow-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base font-medium bg-white/10 text-white border border-white/25 rounded-full hover:bg-white/20 hover:border-white/45 hover:scale-[1.02] transition-all duration-300 backdrop-blur-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent"
               >
                 Patient Login
               </a>
