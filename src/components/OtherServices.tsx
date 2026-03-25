@@ -2,6 +2,7 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const services = [
   {
@@ -20,7 +21,7 @@ const services = [
       'Nightguards help protect teeth and reduce stress on the jaw during sleep, particularly for patients who grind or clench their teeth.',
     image: '/other-service-2.png',
     alt: 'Night guard - reduces grinding and clenching, supports TMJ comfort',
-    href: '/services/nightguards',
+    href: '/services/nightguards/',
   },
   {
     id: 'splints',
@@ -29,7 +30,7 @@ const services = [
       'Splints are therapeutic appliances used to support jaw alignment and manage bite-related discomfort.',
     image: '/other-service-3.png',
     alt: 'Therapeutic splint - supports jaw alignment, reduces bite-related discomfort',
-    href: '/services/splints',
+    href: '/services/splints/',
   },
 ];
 
@@ -58,56 +59,56 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
 
   return (
     <article className="group">
-      {/* 3D Card Wrapper */}
-      <div
-        className="relative aspect-square mb-6"
-        style={{ perspective: '1000px' }}
-      >
-        <div
-          ref={cardRef}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          className="relative w-full h-full cursor-pointer transition-all duration-300 ease-out"
-          style={{
-            transformStyle: 'preserve-3d',
-            willChange: 'transform',
-          }}
-        >
-          <Image
-            src={service.image}
-            alt={service.alt}
-            fill
-            className="object-contain"
-            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 450px"
-            quality={85}
-            loading="lazy"
-          />
-        </div>
-      </div>
-
-      {/* Title & Description */}
-      <h3 className="text-white text-xl lg:text-2xl font-semibold tracking-tight mb-3">
-        {service.title}
-      </h3>
-      <p className="text-white/50 text-sm leading-relaxed mb-4">
-        {service.description}
-      </p>
-
-      {/* Learn More Link */}
-      <a
+      <Link
         href={service.href}
-        className="inline-flex items-center gap-2 text-white/70 text-sm font-medium hover:text-white transition-colors group/link"
-        aria-label={`Learn more about ${service.title}`}
+        className="block rounded-2xl focus-visible:outline focus-visible:ring-2 focus-visible:ring-[#c9a962]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
+        aria-label={`${service.title} — open full page`}
       >
-        Learn More
-        <iconify-icon
-          icon="solar:arrow-right-linear"
-          width="16"
-          height="16"
-          className="transition-transform group-hover/link:translate-x-1"
-          aria-hidden="true"
-        />
-      </a>
+        {/* 3D Card Wrapper */}
+        <div
+          className="relative aspect-square mb-6"
+          style={{ perspective: '1000px' }}
+        >
+          <div
+            ref={cardRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className="relative w-full h-full cursor-pointer transition-all duration-300 ease-out"
+            style={{
+              transformStyle: 'preserve-3d',
+              willChange: 'transform',
+            }}
+          >
+            <Image
+              src={service.image}
+              alt={service.alt}
+              fill
+              className="object-contain"
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 450px"
+              quality={85}
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <h3 className="text-white text-xl lg:text-2xl font-semibold tracking-tight mb-3">
+          {service.title}
+        </h3>
+        <p className="text-white/50 text-sm leading-relaxed mb-4">
+          {service.description}
+        </p>
+
+        <span className="inline-flex items-center gap-2 text-white/70 text-sm font-medium group-hover:text-white transition-colors">
+          Learn More
+          <iconify-icon
+            icon="solar:arrow-right-linear"
+            width="16"
+            height="16"
+            className="transition-transform group-hover:translate-x-1"
+            aria-hidden="true"
+          />
+        </span>
+      </Link>
     </article>
   );
 }

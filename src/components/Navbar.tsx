@@ -22,8 +22,8 @@ const aboutUsDropdown = [
 
 const otherServicesDropdown = [
   { label: 'Retainers', href: '/services/retainers/', description: 'Maintain your perfect smile' },
-  { label: 'Night Guards', href: '/services/nightguards', description: 'Protect teeth while you sleep' },
-  { label: 'Splints', href: '/services/splints', description: 'TMJ & bite therapy solutions' },
+  { label: 'Night Guards', href: '/services/nightguards/', description: 'Protect teeth while you sleep' },
+  { label: 'Splints', href: '/services/splints/', description: 'TMJ & bite therapy solutions' },
 ];
 
 const patientsDropdown = [
