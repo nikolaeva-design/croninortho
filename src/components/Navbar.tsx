@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
@@ -42,12 +42,33 @@ const navItems = [
   { label: 'Other Services', href: '#services', hasDropdown: true, dropdownItems: otherServicesDropdown },
 ];
 
+const DROPDOWN_CLOSE_MS = 180;
+
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
+  const closeDropdownTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openDropdown = useCallback((label: string) => {
+    if (closeDropdownTimer.current) {
+      clearTimeout(closeDropdownTimer.current);
+      closeDropdownTimer.current = null;
+    }
+    setActiveDropdown(label);
+  }, []);
+
+  const scheduleCloseDropdown = useCallback(() => {
+    if (closeDropdownTimer.current) {
+      clearTimeout(closeDropdownTimer.current);
+    }
+    closeDropdownTimer.current = setTimeout(() => {
+      setActiveDropdown(null);
+      closeDropdownTimer.current = null;
+    }, DROPDOWN_CLOSE_MS);
+  }, []);
 
   // Reset scroll state and check position when pathname changes
   useEffect(() => {
@@ -72,6 +93,14 @@ export default function Navbar() {
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    return () => {
+      if (closeDropdownTimer.current) {
+        clearTimeout(closeDropdownTimer.current);
+      }
+    };
+  }, []);
 
   const toggleMenu = useCallback(() => {
     setMobileMenuOpen((prev) => !prev);
@@ -114,8 +143,10 @@ export default function Navbar() {
             <li
               key={item.label}
               className="relative"
-              onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.label)}
-              onMouseLeave={() => setActiveDropdown(null)}
+              onMouseEnter={() =>
+                item.hasDropdown && openDropdown(item.label)
+              }
+              onMouseLeave={() => item.hasDropdown && scheduleCloseDropdown()}
             >
               {item.hasDropdown ? (
                 <button
@@ -123,6 +154,7 @@ export default function Navbar() {
                   className="flex items-center gap-1 text-sm text-white/80 hover:text-white transition-all duration-300 uppercase tracking-wide group hover:-translate-y-0.5 focus:outline-none focus:text-white cursor-pointer"
                   aria-haspopup="menu"
                   aria-expanded={activeDropdown === item.label}
+                  onMouseEnter={() => openDropdown(item.label)}
                 >
                   {item.label}
                   <iconify-icon
@@ -151,16 +183,18 @@ export default function Navbar() {
               {/* Dropdown Menu */}
               {item.hasDropdown && item.dropdownItems && (
                 <div
-                  className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-300 ${
+                  className={`absolute top-full left-1/2 z-[100] -translate-x-1/2 -mt-1 pt-1 transition-all duration-300 ${
                     activeDropdown === item.label
                       ? 'opacity-100 visible translate-y-0'
-                      : 'opacity-0 invisible -translate-y-2'
+                      : 'opacity-0 invisible pointer-events-none -translate-y-2'
                   }`}
+                  onMouseEnter={() => openDropdown(item.label)}
+                  onMouseLeave={scheduleCloseDropdown}
                 >
                   <div className="bg-[#1a1a1a]/95 backdrop-blur-xl rounded-2xl border border-white/10 p-2 min-w-[280px] shadow-2xl">
                     {item.dropdownItems.map((dropdownItem) => (
                       <Link
-                        key={dropdownItem.label}
+                        key={`${item.label}-${dropdownItem.label}`}
                         href={dropdownItem.href}
                         className="flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-white/10 transition-colors group whitespace-nowrap"
                       >
