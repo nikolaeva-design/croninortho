@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Button, TeamExpertsScroll } from '@/components';
+import { Button, ClinicTourGallery, TeamExpertsScroll } from '@/components';
 import { SEO_DOCTORS, SITE_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
@@ -146,7 +146,12 @@ export default function AboutPage() {
       {/* Team Highlights - Scroll Animation */}
       <TeamExpertsScroll />
 
-
+      <ClinicTourGallery
+        sectionId="clinic-tour"
+        eyebrow="Clinic tour"
+        title="Clinic Tour"
+        subtitle="Take a quick look around our space."
+      />
     </div>
   );
 }

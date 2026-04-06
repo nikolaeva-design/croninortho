@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Button from './Button';
+import { CONTACT } from '@/lib/constants';
 
 const orthodonticsDropdown = [
   { label: 'Kids', href: '/orthodontics/kids', description: 'Early treatment for children' },
@@ -28,6 +29,12 @@ const otherServicesDropdown = [
 
 const patientsDropdown = [
   { label: 'Patient', href: '/patient', description: 'Forms, visits, and helpful resources' },
+  {
+    label: 'Dentist Referral Form',
+    href: '/64596%20Cronin%20Ortho-Dr.%20Cronin_Patient%20Referal%20Pad.pdf',
+    description: 'Printable PDF for referring dentists',
+    openInNewTab: true,
+  },
   { label: 'Patient Care', href: '/patient-care', description: 'Video guides for your treatment' },
   { label: 'Emergency', href: '/emergency', description: 'What to do and who to contact' },
   { label: 'Common Treatments', href: '/services/treatments', description: 'Overview of treatment options' },
@@ -196,6 +203,12 @@ export default function Navbar() {
                       <Link
                         key={`${item.label}-${dropdownItem.label}`}
                         href={dropdownItem.href}
+                        target={'openInNewTab' in dropdownItem && dropdownItem.openInNewTab ? '_blank' : undefined}
+                        rel={
+                          'openInNewTab' in dropdownItem && dropdownItem.openInNewTab
+                            ? 'noopener noreferrer'
+                            : undefined
+                        }
                         className="flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-white/10 transition-colors group whitespace-nowrap"
                       >
                         <span className="text-white text-sm font-medium group-hover:translate-x-1 transition-transform">
@@ -213,10 +226,17 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA Button */}
-        <div className="hidden xl:block">
-          <Button variant="primary" size="sm" href="/contact#contact-form">
-            Book an appointment
+        {/* Call CTA */}
+        <div className="hidden xl:block shrink-0">
+          <Button
+            variant="primary"
+            size="sm"
+            href={`tel:${CONTACT.phone}`}
+            icon="solar:phone-bold"
+            ariaLabel={`Call ${CONTACT.phoneDisplay}`}
+            className="!font-normal tabular-nums !gap-2"
+          >
+            {CONTACT.phoneDisplay}
           </Button>
         </div>
 
@@ -282,6 +302,12 @@ export default function Navbar() {
                           <Link
                             key={dropdownItem.label}
                             href={dropdownItem.href}
+                            target={'openInNewTab' in dropdownItem && dropdownItem.openInNewTab ? '_blank' : undefined}
+                            rel={
+                              'openInNewTab' in dropdownItem && dropdownItem.openInNewTab
+                                ? 'noopener noreferrer'
+                                : undefined
+                            }
                             className="flex flex-col gap-0.5 py-2 px-3 rounded-lg hover:bg-white/10 transition-colors"
                             onClick={closeMenu}
                             tabIndex={mobileMenuOpen ? 0 : -1}
@@ -326,11 +352,13 @@ export default function Navbar() {
               <Button
                 variant="primary"
                 size="md"
-                href="/contact#contact-form"
-                className="w-full"
+                href={`tel:${CONTACT.phone}`}
+                icon="solar:phone-bold"
+                ariaLabel={`Call ${CONTACT.phoneDisplay}`}
+                className="w-full !justify-center !font-normal tabular-nums !gap-2"
                 onClick={closeMenu}
               >
-                Book an appointment
+                {CONTACT.phoneDisplay}
               </Button>
             </li>
           </ul>

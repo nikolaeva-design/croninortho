@@ -2,13 +2,14 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
+import ClinicTourGallery from '@/components/ClinicTourGallery';
 import { CONTACT, PATIENT_PORTAL_URL } from '@/lib/constants';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
 
 export const metadata: Metadata = {
-  title: 'Patient Information',
+  title: 'Patient and Dentist Information',
   description:
-    'Patient resources including forms, office visits, online services, and more.',
+    'Patient and dentist resources including forms, office visits, online services, and more.',
   alternates: { canonical: '/patient' },
 };
 
@@ -153,10 +154,8 @@ export default function PatientPage() {
             </div>
 
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-4 sm:mb-6">
-              Patient{' '}
-              <span className="text-white/50">
-                Information
-              </span>
+              Patient and Dentist{' '}
+              <span className="text-white/50">Information</span>
             </h1>
             <p className="text-white/60 text-base sm:text-lg lg:text-xl leading-relaxed mb-8 sm:mb-10 max-w-lg">
               Forms, visit prep, and quick answers — everything you need to
@@ -610,78 +609,12 @@ export default function PatientPage() {
         </p>
       </SectionShell>
 
-      {/* Office Tour */}
-      <SectionShell
-        id="office-tour"
+      <ClinicTourGallery
+        sectionId="office-tour"
         eyebrow="Office tour"
         title="Office Tour"
         subtitle="Take a quick look around our space."
-        tone="darker"
-        align="center"
-      >
-        <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-webkit-overflow-scrolling:touch]">
-          {[
-            {
-              src: '/2024-10-29.webp',
-              alt: 'Cronin Orthodontics office interior with diplomas and computer workstation',
-            },
-            {
-              src: '/2024-10-29 (1).webp',
-              alt: 'Reception area with wooden desk and comfortable seating',
-            },
-            {
-              src: '/2024-10-29 (2).webp',
-              alt: 'Waiting area with brown leather sofas and natural lighting',
-            },
-            {
-              src: '/2024-10-29 (3).webp',
-              alt: 'Spacious waiting room with modern furniture and plants',
-            },
-            {
-              src: '/2024-10-29 (4).webp',
-              alt: 'Reception area with TV and welcoming atmosphere',
-            },
-            {
-              src: '/2024-10-29 (5).webp',
-              alt: 'Modern treatment room with dental chairs and equipment',
-            },
-            {
-              src: '/2024-10-29 (6).webp',
-              alt: 'Dental laboratory with professional equipment',
-            },
-            {
-              src: '/2024-12-05.webp',
-              alt: 'Cronin Orthodontics clinic interior view',
-            },
-            {
-              src: '/2024-12-05 (1).webp',
-              alt: 'Additional view of Cronin Orthodontics office space',
-            },
-          ].map((image, idx) => (
-            <div
-              key={idx}
-              className="group snap-start shrink-0 w-[280px] sm:w-[320px] md:w-[360px] rounded-3xl bg-white/[0.03] border border-white/10 overflow-hidden transition-all duration-200 hover:border-[#c9a962]/40 hover:shadow-lg hover:shadow-[#c9a962]/10"
-            >
-              <div className="aspect-[4/3] relative">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 360px"
-                />
-                <div
-                  className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"
-                  aria-hidden="true"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-        <p className="text-white/40 text-sm mt-2">
-          Swipe to see more →
-        </p>
-      </SectionShell>
+      />
 
       {/* Testimonials */}
       <section

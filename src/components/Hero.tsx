@@ -64,13 +64,18 @@ export default function Hero() {
             className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 animate-fade-in-up opacity-0"
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
-            <p
-              className="text-lg text-white/80 max-w-2xl leading-relaxed"
-              style={{ textWrap: 'balance' }}
-            >
-              Custom plans for kids, teens, and adults — precision orthodontics
-              and smile design for natural-looking results.
-            </p>
+            <div className="max-w-2xl">
+              <p
+                className="text-lg text-white/80 leading-relaxed"
+                style={{ textWrap: 'balance' }}
+              >
+                Custom plans for kids, teens, and adults — precision orthodontics
+                and smile design for natural-looking results.
+              </p>
+              <p className="mt-3 text-sm font-medium text-[#c9a962] tracking-wide">
+                No referral required
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 flex-shrink-0 w-full sm:w-auto">
               <a

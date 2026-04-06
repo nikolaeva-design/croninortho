@@ -10,7 +10,7 @@ import { getContactFormPostUrl } from '@/lib/contact-api';
 // Credentials and achievements
 const credentials = [
   { label: 'Experience', value: '30+ Years' },
-  { label: 'Education', value: 'DDS, UWO Ortho' },
+  { label: 'Education', value: 'DDS, UWO' },
   { label: 'Specialty', value: 'Orthodontics' },
   { label: 'Location', value: 'Langley Twp, BC' },
 ];

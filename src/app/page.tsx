@@ -25,6 +25,9 @@ const AestheticServices = dynamic(() => import('@/components/AestheticServices')
 const OtherServices = dynamic(() => import('@/components/OtherServices'), {
   loading: () => <SectionSkeleton height="600px" />,
 });
+const HomeStats = dynamic(() => import('@/components/HomeStats'), {
+  loading: () => <SectionSkeleton height="180px" bg="#ffffff" />,
+});
 const CTA = dynamic(() => import('@/components/CTA'), {
   loading: () => <SectionSkeleton height="80vh" />,
 });
@@ -52,9 +55,10 @@ export default function Home() {
           <Hero />
           <OrthodonticCare />
           <AestheticServices />
+          <About />
+          <HomeStats />
           <OtherServices />
           <CTA />
-          <About />
           <Technology />
         </div>
         

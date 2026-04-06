@@ -67,29 +67,26 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right - Balanced Images */}
-          <div className="relative h-[350px] sm:h-[450px] lg:h-[600px] mt-4 lg:mt-0">
-            {/* Dr. Cronin - Left (smaller) */}
-            <div className="absolute left-0 top-[0%] w-[52%] sm:w-[54%] h-[70%] sm:h-[75%] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white z-10">
+          {/* Right — equal-size doctor portraits */}
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mt-4 lg:mt-0 w-full max-w-xl lg:max-w-none mx-auto lg:mx-0">
+            <div className="relative w-full aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white">
               <Image
                 src="/dr-cronin.jpg"
                 alt="Dr. Cronin - Orthodontist"
                 fill
                 className="object-cover object-top"
-                sizes="(max-width: 640px) 52vw, (max-width: 1024px) 54vw, 35vw"
+                sizes="(max-width: 640px) 45vw, (max-width: 1024px) 22vw, 18vw"
                 loading="lazy"
                 quality={80}
               />
             </div>
-
-            {/* Dr. Mo - Right */}
-            <div className="absolute right-0 top-[8%] w-[46%] sm:w-[45%] h-[58%] sm:h-[62%] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white">
+            <div className="relative w-full aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white">
               <Image
                 src="/dr-mo.jpg"
                 alt="Dr. Mo - Orthodontist"
                 fill
                 className="object-cover object-top"
-                sizes="(max-width: 640px) 46vw, (max-width: 1024px) 45vw, 35vw"
+                sizes="(max-width: 640px) 45vw, (max-width: 1024px) 22vw, 18vw"
                 loading="lazy"
                 quality={80}
               />
