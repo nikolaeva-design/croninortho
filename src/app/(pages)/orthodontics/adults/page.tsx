@@ -801,7 +801,7 @@ export default function AdultsOrthodonticsPage() {
       ))}
 
       {/* Testimonials Section */}
-      <section className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-[#0f0f0f] relative overflow-x-clip overflow-y-visible">
         <div className="max-w-[1400px] mx-auto">
           <TestimonialsSlider 
             testimonials={testimonials} 

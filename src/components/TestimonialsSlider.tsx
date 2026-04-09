@@ -23,7 +23,7 @@ const defaultTestimonials: Testimonial[] = [
   { name: 'M Prins', initial: 'M', quote: "The best orthodontic and patient care! They treated myself and my three daughters with some tricky situations over the last 6 years, and have given us royal treatment the entire time. The team at reception are exceptional!" },
   { name: 'Scott Drummond', initial: 'S', quote: 'We now have our third child going through with Cronin Ortho. The service has never wavered over the years and the end results are fantastic. All of the staff are so friendly and very accommodating.' },
   { name: 'Melissa Ketel', initial: 'M', quote: "Cronin Ortho is fantastic! Both Dr. Mo and Dr. Cronin are attentive and caring, they take care of children's comfort, understand exactly what's happening, and are always ready to help." },
-  { name: 'Daine DOK', initial: 'D', quote: 'Great place to get Ortho treatment for yourself or your kids. Staff are knowledgeable and friendly. They happily answer questions or address your concerns, giving you a stress free experience.' },
+  { name: 'Daine Dok', initial: 'D', quote: 'Great place to get Ortho treatment for yourself or your kids. Staff are knowledgeable and friendly. They happily answer questions or address your concerns, giving you a stress free experience.' },
   { name: 'Tiffany Froese', initial: 'T', quote: 'Absolutely amazing ortho office! The staff is friendly, gentle, and always on time. They made the whole process so easy and stress-free. Highly recommend!' },
   { name: 'Yuliya Davidovsky', initial: 'Y', quote: 'We had a great experience at the orthodontic clinic Cronin. The staff was friendly, professional, and very patient. Everything was explained clearly, and the treatment was done with care.' },
 ];
@@ -38,6 +38,11 @@ export default function TestimonialsSlider({
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
+  /** Fixed `h-*` clips long quotes; use min-height so cards grow with content. */
+  const cardMinHeightClass = cardHeight.startsWith('h-')
+    ? cardHeight.replace(/^h-/, 'min-h-')
+    : cardHeight;
+
   const checkScrollButtons = () => {
     if (sliderRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
@@ -49,11 +54,15 @@ export default function TestimonialsSlider({
   useEffect(() => {
     checkScrollButtons();
     const slider = sliderRef.current;
-    if (slider) {
-      slider.addEventListener('scroll', checkScrollButtons);
-      return () => slider.removeEventListener('scroll', checkScrollButtons);
-    }
-  }, []);
+    const onScroll = () => checkScrollButtons();
+    const onResize = () => checkScrollButtons();
+    slider?.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize, { passive: true });
+    return () => {
+      slider?.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+    };
+  }, [testimonials.length]);
 
   const scroll = (direction: 'left' | 'right') => {
     if (sliderRef.current) {
@@ -78,7 +87,7 @@ export default function TestimonialsSlider({
           <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight mb-4">
             {title}
           </h2>
-          <p className="text-white/50 text-lg">
+          <p className="text-white/50 text-lg leading-relaxed max-w-2xl">
             {subtitle}
           </p>
         </div>
@@ -125,8 +134,8 @@ export default function TestimonialsSlider({
       >
         {testimonials.map((testimonial, idx) => (
           <div
-            key={idx}
-            className={`shrink-0 w-[300px] sm:w-[320px] rounded-2xl p-6 bg-white/[0.02] border border-white/10 flex flex-col ${cardHeight} snap-start`}
+            key={`${getDisplayName(testimonial) || 'review'}-${idx}`}
+            className={`shrink-0 w-[300px] sm:w-[320px] rounded-2xl p-6 bg-white/[0.02] border border-white/10 flex flex-col ${cardMinHeightClass} snap-start`}
           >
             {/* Stars - fixed height to prevent layout shift while loading */}
             <div className="flex items-center gap-0.5 text-[#c9a962] mb-4 h-4">
@@ -135,7 +144,9 @@ export default function TestimonialsSlider({
               ))}
             </div>
             {/* Quote */}
-            <p className="text-white/55 text-sm leading-relaxed flex-1">&ldquo;{testimonial.quote}&rdquo;</p>
+            <p className="text-white/55 text-sm leading-relaxed flex-1 break-words">
+              &ldquo;{testimonial.quote}&rdquo;
+            </p>
             {/* Author - Always at bottom */}
             <div className="flex items-center gap-3 mt-auto pt-4 border-t border-white/5">
               <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium bg-gradient-to-br from-[#c9a962] to-[#d4b978] text-[#0a0a0a]">
