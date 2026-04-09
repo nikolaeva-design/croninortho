@@ -2,14 +2,13 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components';
-import ClinicTourGallery from '@/components/ClinicTourGallery';
 import { CONTACT, PATIENT_PORTAL_URL } from '@/lib/constants';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
 
 export const metadata: Metadata = {
-  title: 'Patient and Dentist Information',
+  title: 'Patient Information',
   description:
-    'Patient and dentist resources including forms, office visits, online services, and more.',
+    'Patient resources including forms, office visits, online services, and more.',
   alternates: { canonical: '/patient' },
 };
 
@@ -50,13 +49,6 @@ const toc = [
     description: 'Stories from our patients.',
     href: '#testimonials',
     icon: 'solar:star-shine-bold',
-    accent: false,
-  },
-  {
-    label: 'Office Tour',
-    description: 'A look inside our office.',
-    href: '#office-tour',
-    icon: 'solar:gallery-wide-bold',
     accent: false,
   },
 ];
@@ -154,8 +146,7 @@ export default function PatientPage() {
             </div>
 
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-4 sm:mb-6">
-              Patient and Dentist{' '}
-              <span className="text-white/50">Information</span>
+              Patient <span className="text-white/50">Information</span>
             </h1>
             <p className="text-white/60 text-base sm:text-lg lg:text-xl leading-relaxed mb-8 sm:mb-10 max-w-lg">
               Forms, visit prep, and quick answers — everything you need to
@@ -524,13 +515,12 @@ export default function PatientPage() {
         align="center"
         withOrbs
       >
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {/* Online New Patient Form */}
+        <div className="max-w-xl mx-auto">
           <a
             href={NEW_PATIENT_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group rounded-3xl bg-gradient-to-br from-[#c9a962]/10 via-transparent to-transparent border border-[#c9a962]/20 hover:border-[#c9a962]/40 transition-all p-7 lg:p-8 text-left"
+            className="group block rounded-3xl bg-gradient-to-br from-[#c9a962]/10 via-transparent to-transparent border border-[#c9a962]/20 hover:border-[#c9a962]/40 transition-all p-7 lg:p-8 text-left"
           >
             <div className="w-14 h-14 rounded-2xl bg-[#c9a962]/15 border border-[#c9a962]/25 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
               <iconify-icon
@@ -540,49 +530,15 @@ export default function PatientPage() {
                 className="text-[#c9a962]"
                 aria-hidden="true"
               />
-          </div>
+            </div>
             <h3 className="text-white text-xl font-semibold mb-2 group-hover:text-[#c9a962] transition-colors">
               Online New Patient Form
-              </h3>
+            </h3>
             <p className="text-white/55 text-sm leading-relaxed mb-4">
               Fill out your new patient information online — quick and convenient.
             </p>
             <span className="inline-flex items-center gap-2 text-[#c9a962] text-sm font-medium">
               Fill out online
-                      <iconify-icon
-                icon="solar:arrow-right-linear"
-                width="16"
-                height="16"
-                className="group-hover:translate-x-1 transition-transform"
-                        aria-hidden="true"
-                      />
-            </span>
-          </a>
-
-          {/* Printable Referral Form */}
-          <a
-            href="/64596%20Cronin%20Ortho-Dr.%20Cronin_Patient%20Referal%20Pad.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group rounded-3xl bg-white/[0.03] border border-white/10 hover:border-white/25 transition-all p-7 lg:p-8 text-left"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
-              <iconify-icon
-                icon="solar:file-download-bold"
-                width="28"
-                height="28"
-                className="text-white/60"
-                aria-hidden="true"
-              />
-            </div>
-            <h3 className="text-white text-xl font-semibold mb-2 group-hover:text-white/90 transition-colors">
-              Printable Referral Form for Dentist
-            </h3>
-            <p className="text-white/55 text-sm leading-relaxed mb-4">
-              Download the referral form as a PDF to print and fill out by hand.
-            </p>
-            <span className="inline-flex items-center gap-2 text-white/70 text-sm font-medium group-hover:text-white transition-colors">
-              Download PDF
               <iconify-icon
                 icon="solar:arrow-right-linear"
                 width="16"
@@ -592,29 +548,8 @@ export default function PatientPage() {
               />
             </span>
           </a>
-          </div>
-
-        {/* Adobe Reader note */}
-        <p className="text-white/40 text-sm text-center mt-8">
-          Unable to open PDF files?{' '}
-          <a
-            href="https://get.adobe.com/ru/reader/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/55 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white/40 transition-colors"
-          >
-            Get Adobe Reader® for free
-          </a>
-          .
-        </p>
+        </div>
       </SectionShell>
-
-      <ClinicTourGallery
-        sectionId="office-tour"
-        eyebrow="Office tour"
-        title="Office Tour"
-        subtitle="Take a quick look around our space."
-      />
 
       {/* Testimonials */}
       <section

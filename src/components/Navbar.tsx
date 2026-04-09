@@ -12,6 +12,12 @@ const orthodonticsDropdown = [
   { label: 'Teens', href: '/orthodontics/teens', description: 'Braces & aligners for teenagers' },
   { label: 'Adults', href: '/orthodontics/adults', description: 'Modern solutions for adults' },
   { label: 'Surgical Orthodontics', href: '/orthodontics/surgical', description: 'Complex jaw corrections' },
+  {
+    label: 'Dentist Referral Form',
+    href: '/64596%20Cronin%20Ortho-Dr.%20Cronin_Patient%20Referal%20Pad.pdf',
+    description: 'Printable PDF for referring dentists',
+    openInNewTab: true,
+  },
 ];
 
 const aboutUsDropdown = [
@@ -29,12 +35,6 @@ const otherServicesDropdown = [
 
 const patientsDropdown = [
   { label: 'Patient', href: '/patient', description: 'Forms, visits, and helpful resources' },
-  {
-    label: 'Dentist Referral Form',
-    href: '/64596%20Cronin%20Ortho-Dr.%20Cronin_Patient%20Referal%20Pad.pdf',
-    description: 'Printable PDF for referring dentists',
-    openInNewTab: true,
-  },
   { label: 'Patient Care', href: '/patient-care', description: 'Video guides for your treatment' },
   { label: 'Emergency', href: '/emergency', description: 'What to do and who to contact' },
   { label: 'Common Treatments', href: '/services/treatments', description: 'Overview of treatment options' },
