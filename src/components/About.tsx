@@ -71,24 +71,24 @@ export default function About() {
           <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mt-4 lg:mt-0 w-full max-w-xl lg:max-w-none mx-auto lg:mx-0">
             <div className="relative w-full aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white">
               <Image
-                src="/dr-cronin.jpg"
+                src="/dr%20cronin%20portrait.png"
                 alt="Dr. Cronin - Orthodontist"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-center"
                 sizes="(max-width: 640px) 45vw, (max-width: 1024px) 22vw, 18vw"
                 loading="lazy"
-                quality={80}
+                quality={85}
               />
             </div>
             <div className="relative w-full aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white">
               <Image
-                src="/dr-mo.jpg"
+                src="/dr%20mo%20portrait.png"
                 alt="Dr. Mo - Orthodontist"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-center"
                 sizes="(max-width: 640px) 45vw, (max-width: 1024px) 22vw, 18vw"
                 loading="lazy"
-                quality={80}
+                quality={85}
               />
             </div>
           </div>
